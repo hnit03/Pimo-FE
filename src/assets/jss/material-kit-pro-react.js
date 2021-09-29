@@ -169,7 +169,7 @@ const container = {
     maxWidth: "960px",
   },
   "@media (min-width: 1200px)": {
-    maxWidth: "100%",
+    maxWidth: "98%",
   },
 };
 
@@ -325,7 +325,8 @@ const defaultBoxShadow = {
 };
 
 const title = {
-  color: grayColor[1],
+//   color: grayColor[1],
+color: 'black',
   textDecoration: "none",
   fontWeight: "700",
   marginTop: "30px",
@@ -340,6 +341,8 @@ const cardTitle = {
     marginTop: ".625rem",
     marginBottom: "0.75rem",
     minHeight: "auto",
+    fontSize: '3.5rem',
+    fontFamily: `AvenirNext-DemiBold, Avenir-Heavy, Lato, sans-serif`
   },
 };
 
