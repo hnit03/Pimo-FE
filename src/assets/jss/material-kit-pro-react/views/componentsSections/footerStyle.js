@@ -28,6 +28,7 @@ const style = {
       overflow: "hidden",
       paddingBottom: "10px",
       maxWidth: 300,
+      color: 'black'
     },
     "& i": {
       fontSize: "20px",

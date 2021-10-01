@@ -48,7 +48,7 @@ const headerStyle = (theme) => ({
   container: {
     ...container,
     minHeight: "50px",
-    alignItems: "center",
+    alignItems: "inherit",
     justifyContent: "space-between",
     display: "flex",
     flexWrap: "nowrap",
@@ -73,7 +73,8 @@ const headerStyle = (theme) => ({
   },
   appResponsive: {
     margin: "20px 10px",
-    marginTop: "0px",
+    marginTop: "23%",
+    borderTop: "1px solid #c4c4c4",
   },
   primary: {
     backgroundColor: primaryColor[0],

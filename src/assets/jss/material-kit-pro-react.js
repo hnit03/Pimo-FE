@@ -106,7 +106,7 @@ const infoColor = [
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#f8bbd0", "#f06292"];
 const grayColor = [
   "#999",
-  "#3C4858",
+  "black",
   "#eee",
   "#343434",
   "#585858",
@@ -169,7 +169,7 @@ const container = {
     maxWidth: "960px",
   },
   "@media (min-width: 1200px)": {
-    maxWidth: "98%",
+    maxWidth: "90%",
   },
 };
 

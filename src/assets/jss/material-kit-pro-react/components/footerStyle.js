@@ -50,7 +50,7 @@ const footerStyle = {
   },
   big: {
      backgroundColor: '#f69cb8',
-    padding: "1.875rem 0",
+   //  padding: "1.875rem 0",
     "& h5, & h4": {
       fontWeight: 700,
       fontFamily: "Roboto Slab,Times New Roman,serif",

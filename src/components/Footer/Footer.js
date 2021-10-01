@@ -36,7 +36,7 @@ export default function Footer(props) {
             {children !== undefined ? (
                <div>
                   <div className={classes.content}>{children}</div>
-                  <hr />
+                  <hr style={{border: '1px solid black'}}/>
                </div>
             ) : (
                " "

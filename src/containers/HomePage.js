@@ -1,26 +1,31 @@
 import React from "react";
 import NavBar from "../components/Header/NavBar";
-import ModelCard from "../components/ModelCard/ModelCard";
-import ListModel from "../components/ListModel/ListModel";
 import CardBlog from "../components/Card/CardBlog";
 import { makeStyles } from "@material-ui/core/styles";
-import imageBackgroundHeader from "../assets/img/imageBackgroundHeader.jpg";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
-import brandLogo from "../assets/img/brandLogo.jpg";
+import brandLogo from "../assets/img/logoBrand.png";
+import android from "../assets/img/android.png"
+import ios from "../assets/img/ios.jpg"
 import SectionFooter from "../components/Footer/SectionFooter";
 
 const useStyles = makeStyles((theme) => ({
    backgroundImage: {
-      backgroundImage: `url(${imageBackgroundHeader})`,
-      height: "53.7em",
-      backgroundSize: "100% auto",
-      backgroundRepeat: "no-repeat",
-      position: "center top",
+      marginTop: "10%",
    },
    cardBlog: {
-      // width: "90%",
       margin: 'auto'
+   },
+   logo: {
+      // marginTop: '37%',
+      marginLeft: '21%'
+   },
+   slogan: {
+      marginTop: '30%',
+      fontSize: '1.5vw',
+      maxWidth: '30%',
+      textAlign: 'center',
+      marginLeft: '22.6%'
    }
 }));
 
@@ -28,22 +33,41 @@ export default function HomePage() {
    const classes = useStyles();
    return (
       <div>
-         <GridContainer>
-            <GridItem xs={12} sm={12} md={12} className={classes.backgroundImage}>
-               <NavBar />
-            </GridItem>
-         </GridContainer>
-         <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
-               <img style={{ width: '100%' }} src={brandLogo} />
-            </GridItem>
-         </GridContainer>
-         <div className={classes.cardBlog}>
-            <CardBlog />
+         <div className={classes.slogan}>
+            <p>Pimo - the largest platform to connect models and brands in Viet Nam</p>
          </div>
-         {/* <ModelCard/> */}
-         {/* <ListModel/> */}
-         <SectionFooter />
+         <div className={classes.logo}>
+            <a href="/#" onClick={(e) => e.preventDefault()}
+               style={{ marginRight: '3%' }}>
+               <img
+                  width="20%"
+                  src={android}
+                  alt=''
+               />
+            </a>
+            <a href="/#" onClick={(e) => e.preventDefault()}>
+               <img
+                  width="20%"
+                  src={ios}
+                  href="/#"
+                  alt=''
+               />
+            </a>
+         </div>
+         <div className={classes.backgroundImage}>
+            <GridContainer>
+               <GridItem xs={12} sm={12} md={12}>
+                  <NavBar />
+               </GridItem>
+            </GridContainer>
+            <img width="100%" src={brandLogo} alt='' />
+            <div className={classes.cardBlog}>
+               <CardBlog />
+            </div>
+            {/* <ModelCard/> */}
+            {/* <ListModel/> */}
+            <SectionFooter />
+         </div>
       </div>
    );
 }

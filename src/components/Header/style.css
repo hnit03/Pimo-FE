@@ -25,13 +25,13 @@
   }
   
   .navbar_inside {
-    min-width: 25rem;
+    min-width: 27rem;
     max-width: 25rem;
   }
   
   .searchInput_Style {
     color: black !important;
-    width: 25rem;
+    width: 27rem;
     height: 4rem;
     margin-left: 1rem;
     font-size: 15px;

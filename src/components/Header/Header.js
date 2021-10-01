@@ -1,20 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
+import classNames from "classnames";
+import Button from "@material-ui/core/Button";
 // core components
 import styles from "../../assets/jss/material-kit-pro-react/components/headerStyle";
 
@@ -24,7 +21,6 @@ export default function Header(props) {
    const [mobileOpen, setMobileOpen] = React.useState(false);
    const classes = useStyles();
    React.useEffect(() => {
-      headerColorChange()
       if (props.changeColorOnScroll) {
          window.addEventListener("scroll", headerColorChange);
       }
@@ -39,15 +35,16 @@ export default function Header(props) {
    };
    const headerColorChange = () => {
       const { color, changeColorOnScroll } = props;
+
       const windowsScrollTop = window.pageYOffset;
       if (windowsScrollTop > changeColorOnScroll.height) {
          document.body
-         .getElementsByTagName("header")[0]
-         .classList.remove(classes[color]);
+            .getElementsByTagName("header")[0]
+            .classList.remove(classes[color]);
          document.body
-         .getElementsByTagName("header")[0]
-         .classList.add(classes[changeColorOnScroll.color]);
-         document.getElementById('logo_image').style.width= "6.5rem";
+            .getElementsByTagName("header")[0]
+            .classList.add(classes[changeColorOnScroll.color]);
+         document.getElementById('logo_image').style.width = "6.5rem ";
       } else {
          document.body
             .getElementsByTagName("header")[0]
@@ -55,19 +52,30 @@ export default function Header(props) {
          document.body
             .getElementsByTagName("header")[0]
             .classList.remove(classes[changeColorOnScroll.color]);
-         document.getElementById('logo_image').style.width= "15rem";
+         document.getElementById('logo_image').style.width = "15rem ";
       }
    };
    const { color, links, brand, fixed, absolute } = props;
+   const appBarClasses = classNames({
+      [classes.appBar]: true,
+      [classes[color]]: color,
+      [classes.absolute]: absolute,
+      [classes.fixed]: fixed,
+   });
    return (
-      <AppBar className={classes.appBar}>
+      <AppBar className={appBarClasses}>
          <Toolbar className={classes.container}>
+            <Hidden smDown implementation="css" className={classes.hidden}>
+               <Button className={classes.title}>
+                  <img id="logo_image" alt="" src={brand} style={{ paddingTop: '0.3rem', width: "15rem" }} />
+               </Button>
+            </Hidden>
             <Hidden smDown implementation="css" className={classes.hidden}>
                <div className={classes.collapse}>{links}</div>
             </Hidden>
             <Hidden mdUp>
                <IconButton
-                  color="black"
+                  style={{ height: '3rem' , marginLeft: 'auto' }}
                   aria-label="open drawer"
                   onClick={handleDrawerToggle}
                >
@@ -138,6 +146,6 @@ Header.propTypes = {
          "white",
          "rose",
          "dark",
-      ])
+      ]).isRequired,
    }),
 };

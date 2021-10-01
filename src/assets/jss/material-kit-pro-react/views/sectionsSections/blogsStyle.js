@@ -43,7 +43,7 @@ const blogsSection = {
     },
   },
   card: {
-    marginBottom: "10rem",
+    marginBottom: "5%",
    //  marginTop: '10rem'
   },
   card4: {
