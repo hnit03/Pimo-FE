@@ -37,10 +37,8 @@ function CardBlog({ ...rest }) {
                                  width: '40%',
                                  height: '1.5rem',
                               }}></div>
-                              <h3 className={classes.cardTitle}>
-                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    Model
-                                 </a>
+                              <h3 style={{ fontSize: '40px' , margin: '0'}}>
+                                 Model
                               </h3>
                               <p className={classes.description1}>
                                  Search for and hire the best models that fit your requirements? This has never been easier.
@@ -85,8 +83,8 @@ function CardBlog({ ...rest }) {
                                     alignItems: 'end',
                                  }}
                               >
-                                 <img width="85%" src={macbook} alt='' />
                                  <img width="15%" height="15%" src={phone} alt='' />
+                                 <img width="85%" src={macbook} alt='' />
                               </div>
                               <div
                                  className={classes.coloredShadow}
@@ -114,11 +112,9 @@ function CardBlog({ ...rest }) {
                                     height: '1.5rem',
                                  }}></div>
                               </div>
-                              <h3 className={classes.cardTitle}>
-                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                              <h1 style={{ fontSize: '40px' , margin: '0'}}>
                                     Brand
-                                 </a>
-                              </h3>
+                              </h1>
                               <p className={classes.description1}>
                                  Search for and hire the best models that fit your requirements? This has never been easier.
                               </p>
@@ -185,7 +181,7 @@ function CardBlog({ ...rest }) {
                                  textAlign: 'center',
                                  margin: '5%',
                                  minHeight: "auto",
-                                 fontSize: '5vw',
+                                 fontSize: '4vw',
                               }}>
                                  AN EASIER WAY TO BOOKING.
                               </h3>
@@ -205,7 +201,7 @@ function CardBlog({ ...rest }) {
                                  >
                                     <div style={{
                                        fontWeight: '800',
-                                       fontSize: '3vw'
+                                       fontSize: '2vw'
                                     }}>
                                        SIGN UP NOW
                                     </div>

@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
    },
    slogan: {
       marginTop: '30%',
-      fontSize: '1.5vw',
-      maxWidth: '30%',
+      fontSize: '2vw',
+      maxWidth: '40%',
       textAlign: 'center',
-      marginLeft: '22.6%'
+      marginLeft: '17.7%'
    }
 }));
 
