@@ -2,11 +2,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/img/background1.png');
+  background-image: url("../img/background1.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 * {
-   font-family: Calibri, sans-serif !important;
+  font-family: Calibri, sans-serif !important;
 }

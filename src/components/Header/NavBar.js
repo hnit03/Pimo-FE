@@ -17,36 +17,16 @@ import { Link } from "react-router-dom";
 import LineStyle from "@material-ui/icons/LineStyle";
 import Layers from "@material-ui/icons/Layers";
 import Icon from "@material-ui/core/Icon";
-import style from './style.css'
+import style from '../../assets/css/navbar.css'
 import image from '../../assets/img/logo.png';
 import avatar from '../../assets/img/logo.png';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-class Toggle extends React.Component {
-   render() {
-      return <div>
-         <ReactCSSTransitionGroup
-            transitionName="toggle"
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}>
-            {this.props.hidden ? null : <div className="toggle-base">{this.props.children}</div>}
-         </ReactCSSTransitionGroup>
-      </div>
-   }
-}
 
 class Navbar extends React.Component {
    constructor(props) {
       super(props);
-      this.onClick = this.onClick.bind(this);
-      this.state = { hidden: true, show: true };
    }
 
-   onClick() {
-      this.setState((prevState, props) => ({
-         hidden: !(prevState.hidden),
-         show: !(prevState.show)
-      }));
-   }
    render() {
       const { classes } = this.props;
       return (
@@ -117,6 +97,19 @@ class Navbar extends React.Component {
                            color="transparent"
                         >
                            <AccountCircleIcon /> Login
+                        </Button>
+                     </ListItem>
+                     <ListItem className={classes.listItem1} >
+                        <Button
+                           href="#pablo"
+                           className={classes.navLink + " " + classes.navLinkActive}
+                           onClick={(e) => e.preventDefault()}
+                           style={{
+                              backgroundColor: 'black',
+                              color: 'white',
+                           }}
+                        >
+                           Create an event
                         </Button>
                      </ListItem>
                   </List>

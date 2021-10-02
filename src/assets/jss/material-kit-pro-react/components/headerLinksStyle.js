@@ -67,6 +67,34 @@ const headerLinksStyle = (theme) => ({
          },
       },
    },
+   listItem1: {
+      float: "left",
+      color: "inherit",
+      position: "relative",
+      display: "block",
+      width: "auto",
+      margin: "0",
+      // marginLeft: "5%",
+      padding: "0",
+
+      [theme.breakpoints.down("sm")]: {
+         "& ul": {
+            maxHeight: "400px",
+            overflow: "scroll",
+         },
+         width: "100%",
+         "&:not(:last-child)": {
+            "&:after": {
+               width: "calc(100% - 30px)",
+               content: '""',
+               display: "block",
+               height: "1px",
+               marginLeft: "15px",
+               backgroundColor: grayColor[14],
+            },
+         },
+      },
+   },
    listItemText: {
       padding: "0 !important",
    },
