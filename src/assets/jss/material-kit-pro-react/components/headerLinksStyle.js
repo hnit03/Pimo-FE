@@ -3,9 +3,9 @@ import {
   whiteColor,
   mlAuto,
   hexToRgb,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../jss/material-kit-pro-react.js";
 
-import tooltip from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
+import tooltip from "../../../jss/material-kit-pro-react/tooltipsStyle.js";
 
 const headerLinksStyle = (theme) => ({
   list: {
@@ -27,6 +27,7 @@ const headerLinksStyle = (theme) => ({
     marginBottom: "0",
     listStyle: "none",
     padding: "0",
+    height: "4rem"
   },
   listItem: {
     float: "left",
@@ -58,11 +59,12 @@ const headerLinksStyle = (theme) => ({
     padding: "0 !important",
   },
   navLink: {
-    color: "inherit",
+    color: "black",
     position: "relative",
-    padding: "0.9375rem",
-    fontWeight: "400",
-    fontSize: "12px",
+    paddingLeft: "0.9375rem",
+    paddingRight: "0.9375rem",
+    fontWeight: "700",
+    fontSize: "20px",
     textTransform: "uppercase",
     lineHeight: "20px",
     textDecoration: "none",
@@ -70,6 +72,7 @@ const headerLinksStyle = (theme) => ({
     display: "inline-flex",
     "&:hover,&:focus": {
       color: "inherit",
+      
     },
     "& .fab,& .far,& .fal,& .fas,& .material-icons": {
       position: "relative",
@@ -149,8 +152,8 @@ const headerLinksStyle = (theme) => ({
   },
   navLinkActive: {
     "&, &:hover, &:focus,&:active ": {
-      color: "inherit",
-      backgroundColor: "rgba(" + hexToRgb(whiteColor) + ", 0.1)",
+      color: "black",
+      // backgroundColor: "rgba(" + hexToRgb(whiteColor) + ", 0.3)",
     },
   },
   icons: {

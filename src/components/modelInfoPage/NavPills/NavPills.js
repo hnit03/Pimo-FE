@@ -13,7 +13,7 @@ import Tabs from "@material-ui/core/Tabs";
 import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 
-import styles from "../../assets/jss/material-kit-pro-react/components/navPillsStyle.js"
+import styles from "../../../assets/jss/material-kit-pro-react/components/navPillsStyle.js"
 
 const useStyles = makeStyles(styles);
 
@@ -32,9 +32,9 @@ export default function NavPills(props) {
     <Tabs
       classes={{
         root: classes.root,
-        fixed: classes.fixed,
+       fixed: classes.fixed,
         flexContainer: flexContainerClasses,
-        indicator: classes.displayNone,
+      indicator: classes.displayNone,
       }}
       value={active}
       onChange={handleChange}

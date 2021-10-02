@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import {
   defaultFont,
   primaryColor,
@@ -17,7 +17,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../jss/material-kit-pro-react.js";
 
 const customDropdownStyle = (theme) => ({
   popperClose: {

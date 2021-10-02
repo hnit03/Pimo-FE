@@ -9,7 +9,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb,
-} from "../../../../assets/jss/material-kit-pro-react.js";
+} from "../../../../assets/jss/material-kit-pro-react.js"
 
 const navPillsStyle = (theme) => ({
   root: {
@@ -18,22 +18,27 @@ const navPillsStyle = (theme) => ({
     marginBottom: "0",
     overflow: "visible !important",
   },
-  flexContainer: {
-    [theme.breakpoints.down("xs")]: {
-      display: "flex",
-      flexWrap: "wrap",
-    },
-  },
-  displayNone: {
-    display: "none !important",
-  },
-  fixed: {
-    overflow: "visible !important",
-  },
+  // flexContainer: {
+  //   [theme.breakpoints.down("xs")]: {
+  //     display: "flex",
+  //     flexWrap: "wrap",
+  //    // backgroundColor:'pink',
+  //   },
+  // },
+  // displayNone: {
+  //   display: "none !important",
+  //   //backgroundColor:'pink',
+  // },
+  // fixed: {
+  //   overflow: "visible !important",
+  //   //backgroundColor:'pink',
+  // },
   horizontalDisplay: {
     display: "block",
+   // backgroundColor:'pink',
   },
   pills: {
+   // backgroundColor:'pink',
     float: "left",
     position: "relative",
     display: "block",
@@ -49,114 +54,125 @@ const navPillsStyle = (theme) => ({
     margin: "0 5px",
     minHeight: "unset",
     lineHeight: "24px",
-    textTransform: "uppercase",
-    fontSize: "12px",
-    fontWeight: "500",
+    //textTransform: "lowercase",
+    fontSize: "15px",
+    fontWeight: "700",
   },
   pillsWithIcons: {
     borderRadius: "4px",
+    //backgroundColor:'pink',
   },
   tabIcon: {
     width: "30px",
     height: "30px",
     display: "block",
     margin: "15px 0 !important",
+   // backgroundColor:'pink',
   },
   horizontalPills: {
     width: "100%",
     float: "none !important",
     "& + button": {
       margin: "10px 0",
-    },
+    },//backgroundColor:'pink',
   },
   contentWrapper: {
     marginTop: "20px",
     "& .react-swipeable-view-container > div > div": {
       paddingLeft: "15px",
       paddingRight: "15px",
+     // backgroundColor:'pink',
     },
   },
-  primary: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: primaryColor[0],
-      boxShadow:
-        "0 4px 20px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.14), 0 7px 10px -5px rgba(" +
-        hexToRgb(primaryColor[0]) +
-        ", 0.4)",
-    },
-  },
-  info: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: infoColor[0],
-      boxShadow:
-        "0 4px 20px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.14), 0 7px 10px -5px rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.4)",
-    },
-  },
-  success: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: successColor[0],
-      boxShadow:
-        "0 2px 2px 0 rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.14), 0 3px 1px -2px rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.2), 0 1px 5px 0 rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.12)",
-    },
-  },
-  warning: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: warningColor[0],
-      boxShadow:
-        "0 4px 20px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.14), 0 7px 10px -5px rgba(" +
-        hexToRgb(warningColor[0]) +
-        ", 0.4)",
-    },
-  },
-  danger: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: dangerColor[0],
-      boxShadow:
-        "0 4px 20px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.14), 0 7px 10px -5px rgba(" +
-        hexToRgb(warningColor[0]) +
-        ", 0.4)",
-    },
-  },
-  rose: {
-    "&,&:hover": {
-      color: whiteColor,
-      backgroundColor: roseColor[0],
-      boxShadow:
-        "0 4px 20px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.14), 0 7px 10px -5px rgba(" +
-        hexToRgb(roseColor[0]) +
-        ", 0.4)",
-    },
-  },
-  alignCenter: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tabLabelContainer: {
-    padding: "unset !important",
-  },
+  // primary: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //     //backgroundColor: primaryColor[0],
+  //     boxShadow:
+  //       "0 4px 20px 0px rgba(" +
+  //       hexToRgb(blackColor) +
+  //       ", 0.14), 0 7px 10px -5px rgba(" +
+  //       hexToRgb(primaryColor[0]) +
+  //       ", 0.4)",
+  //      // backgroundColor:'pink',
+  //   },
+  // },
+  // info: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //    // backgroundColor: infoColor[0],
+  //     boxShadow:
+  //       "0 4px 20px 0px rgba(" +
+  //       hexToRgb(blackColor) +
+  //       ", 0.14), 0 7px 10px -5px rgba(" +
+  //       hexToRgb(successColor[0]) +
+  //       ", 0.4)",
+  //      // backgroundColor:'pink',
+  //   },
+  // },
+  // success: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //    // backgroundColor:'pink',
+  //    // backgroundColor: successColor[0],
+  //     boxShadow:
+  //       "0 2px 2px 0 rgba(" +
+  //       hexToRgb(successColor[0]) +
+  //       ", 0.14), 0 3px 1px -2px rgba(" +
+  //       hexToRgb(successColor[0]) +
+  //       ", 0.2), 0 1px 5px 0 rgba(" +
+  //       hexToRgb(successColor[0]) +
+  //       ", 0.12)",
+  //   },
+  // },
+  // warning: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //     //backgroundColor: warningColor[0],
+  //     boxShadow:
+  //       "0 4px 20px 0px rgba(" +
+  //       hexToRgb(blackColor) +
+  //       ", 0.14), 0 7px 10px -5px rgba(" +
+  //       hexToRgb(warningColor[0]) +
+  //       ", 0.4)",
+  //       //backgroundColor:'pink',
+  //   },
+  // },
+  // danger: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //    // backgroundColor: dangerColor[0],
+  //     boxShadow:
+  //       "0 4px 20px 0px rgba(" +
+  //       hexToRgb(blackColor) +
+  //       ", 0.14), 0 7px 10px -5px rgba(" +
+  //       hexToRgb(warningColor[0]) +
+  //       ", 0.4)",
+  //      // backgroundColor:'pink',
+  //   },
+  // },
+  // rose: {
+  //   "&,&:hover": {
+  //     color: whiteColor,
+  //     //backgroundColor: roseColor[0],
+  //     boxShadow:
+  //       "0 4px 20px 0px rgba(" +
+  //       hexToRgb(blackColor) +
+  //       ", 0.14), 0 7px 10px -5px rgba(" +
+  //       hexToRgb(roseColor[0]) +
+  //       ", 0.4)",
+  //     //  backgroundColor:'pink',
+  //   },
+  // },
+  // alignCenter: {
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // //  backgroundColor:'pink',
+  // },
+  // tabLabelContainer: {
+  //   padding: "unset !important",
+  //   //backgroundColor:'pink',
+  // },
 });
 
 export default navPillsStyle;

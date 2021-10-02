@@ -5,6 +5,7 @@ function HomePage() {
    return (
       <div>
          <Navbar />
+         {/* <br/>
          <br/>
          <br/>
          <br/>
@@ -81,8 +82,7 @@ function HomePage() {
          <br/>
          <br/>
          <br/>
-         <br/>
-         <br/>
+         <br/> */}
       </div>
    )
 }

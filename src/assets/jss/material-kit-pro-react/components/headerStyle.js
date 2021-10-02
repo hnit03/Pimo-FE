@@ -14,7 +14,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../jss/material-kit-pro-react.js";
 
 const headerStyle = (theme) => ({
   appBar: {
@@ -52,6 +52,7 @@ const headerStyle = (theme) => ({
     justifyContent: "space-between",
     display: "flex",
     flexWrap: "nowrap",
+    padding: "0 !important"
   },
   title: {
     letterSpacing: "unset",
@@ -207,6 +208,9 @@ const headerStyle = (theme) => ({
     top: "9px",
     zIndex: "1",
   },
+  appBar: {
+     backgroundColor: 'white'
+  }
 });
 
 export default headerStyle;

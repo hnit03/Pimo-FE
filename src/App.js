@@ -1,17 +1,20 @@
 
 import './App.css';
-import ModelProfile from './components/ModelProfile';
 import HomePage from './components/navbar/HomePage';
-
+import ModelInfoPage from './containers/ModelInfoPage';
+import { BrowserRouter } from 'react-router-dom';
+import HowPimoWorkPage from './containers/HowPimoWorkPage';
 
 function App() {
   return (
-    <div className="App">
-      <ModelProfile/>
+    <BrowserRouter className="App">
+      {/* <ModelInfoPage /> */}
       <nav class="navigation">
-      <HomePage/>
-</nav>
-    </div>
+        <HomePage />
+      </nav>
+      <HowPimoWorkPage/>
+    </BrowserRouter>
+
   );
 }
 

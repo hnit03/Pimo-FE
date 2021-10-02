@@ -4,7 +4,7 @@ import List from "@material-ui/core/List";
 import { withStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
 import Button from "../CustomButtons/Button.js";
-import navbarsStyle from "../../assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle.js";
+import navbarsStyle from "../../../assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle.js";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -17,8 +17,9 @@ import LineStyle from "@material-ui/icons/LineStyle";
 import Layers from "@material-ui/icons/Layers";
 import Icon from "@material-ui/core/Icon";
 import style from './style.css'
-import image from '../../assets/img/logo3.png'
-import avatar from '../../assets/img/dg10.jpg'
+import image from '../../../assets/img/logo3.png'
+import avatar from '../../../assets/img/dg10.jpg'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 class Toggle extends React.Component {
    render() {
       return <div>
@@ -73,7 +74,7 @@ class Navbar extends React.Component {
                                        onClick={(e) => e.preventDefault()}
                                        color="transparent"
                                     >
-                                       Home
+                                       How Pimo work
                                     </Button>
                                  </ListItem>
                                  <ListItem className={classes.listItem}>
@@ -83,26 +84,29 @@ class Navbar extends React.Component {
                                        onClick={(e) => e.preventDefault()}
                                        color="transparent"
                                     >
-                                       Home
+                                       Model
                                     </Button>
                                  </ListItem>
-                                 <ListItem className={classes.listItem}>
+                                 {/* <ListItem className={classes.listItem}>
                                     <Button
                                        href="#pablo"
                                        className={classes.navLink + " " + classes.navLinkActive}
                                        onClick={(e) => e.preventDefault()}
                                        color="transparent"
                                     >
-                                       Home
+                                       Brand
                                     </Button>
-                                 </ListItem>
-                                 <ListItem className={classes.listItem}>
+                                 </ListItem> */}
+                                 
+                             
+                                 
+                                <ListItem className={classes.listItem}>
                                     <CustomDropdown
                                        left
                                        noLiPadding
                                        navDropdown
                                        dropdownHeader="Dropdown Header"
-                                       buttonText="Be Creative"
+                                       buttonText="Brand"
                                        buttonProps={{
                                           className: classes.navLink,
                                           color: "transparent",
@@ -124,7 +128,7 @@ class Navbar extends React.Component {
                                           </a>,
                                        ]}
                                     />
-                                 </ListItem>
+                                 </ListItem> 
                                  <ListItem className={classes.listItem}>
                                     <Button color="transparent" className={classes.navLink + " " + classes.navLinkActive}
                                     >
@@ -151,7 +155,19 @@ class Navbar extends React.Component {
                               :
                               (<CloseIcon className={classes.navLink + " " + classes.navLinkActive} />)}
                         </IconButton>
-                        <CustomDropdown
+                        <List className={classes.list + " " + classes.mlAuto}>
+                                 <ListItem className={classes.listItem}>
+                                    <Button
+                                       href="#pablo"
+                                       className={classes.navLink + " " + classes.navLinkActive}
+                                       onClick={(e) => e.preventDefault()}
+                                       color="transparent"
+                                    >
+                                       <AccountCircleIcon/> Login
+                                    </Button>
+                                 </ListItem>
+                                 </List>
+                        {/* <CustomDropdown
                            left
                            navDropdown
                            dropdownHeader="Dropdown Header"
@@ -182,7 +198,7 @@ class Navbar extends React.Component {
                                  Documentation
                               </a>,
                            ]}
-                        />
+                        /> */}
                      </div>
                   </div>
                }

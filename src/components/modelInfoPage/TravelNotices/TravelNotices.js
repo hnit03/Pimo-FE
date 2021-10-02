@@ -1,10 +1,6 @@
 import React from "react";
-import useStyles from "./style";
-import DividerLine from "./Divider";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import useStyles from "../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/travelNoticesStyle";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import Divider from '@mui/material/Divider';
 
 export default function TravelNotices(){
     const classes = useStyles();
