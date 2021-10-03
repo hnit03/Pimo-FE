@@ -7,13 +7,12 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import GridContainer from "../Grid/GridContainer";
+import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 import brandLogo from "../../assets/img/logoBrand.png";
 import android from "../../assets/img/android.png"
-import ios from "../../assets/img/ios.jpg"
-// import SectionFooter from "../components/Footer/SectionFooter";
-// import background from '../assets/img/background1.jpg';
+import ios from "../../assets/img/ios.jpg";
+import background from '../../assets/img/background1.png';
 
 const Accordion = styled((props) => (
    <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -66,39 +65,30 @@ export default function DownloadPimoApp(props) {
                dành riêng cho người mẫu trên GooglePlay hoặc AppStore. Chúng tôi sẽ cố gắng cập nhập sớm nhất các tính năng dành cho người mẫu trên
                website, xin lỗi bạn vì sự bất tiện này.
             </p>
-            <div>
-               <div className={classes.background}>
-                  <div className={classes.slogan}>
-                     <p>Pimo - nền tảng kết nối người mẫu và thương hiệu lớn nhất Việt Nam</p>
-                  </div>
-                  <div className={classes.logo}>
-                     <a href="/#" onClick={(e) => e.preventDefault()}
-                        style={{ marginRight: '2%' }}>
-                        <img
-                           width="20%"
-                           src={android}
-                           alt=''
-                        />
-                     </a>
-                     <a href="/#" onClick={(e) => e.preventDefault()}>
-                        <img
-                           width="20%"
-                           src={ios}
-                           href="/#"
-                           alt=''
-                        />
-                     </a>
-                  </div>
-                  <div className={classes.backgroundImage}>
-                     <GridContainer>
-                        <GridItem xs={12} sm={12} md={12}>
-                        </GridItem>
-                     </GridContainer>
-                  </div>
+            <div className={classes.background}>
+               <div className={classes.slogan}>
+                  <p>Pimo - the largest platform to connect models and brands in Viet Nam</p>
+               </div>
+               <div className={classes.logo}>
+                  <a href="/#" onClick={(e) => e.preventDefault()}
+                     style={{ marginRight: '3%' }}>
+                     <img
+                        width="20%"
+                        src={android}
+                        alt=''
+                     />
+                  </a>
+                  <a href="/#" onClick={(e) => e.preventDefault()}>
+                     <img
+                        width="20%"
+                        src={ios}
+                        href="/#"
+                        alt=''
+                     />
+                  </a>
                </div>
             </div>
          </AccordionDetails>
       </Accordion>
-
    );
 }

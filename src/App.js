@@ -16,7 +16,6 @@ function App() {
                <GuildPage />
             </Route>
          </Switch>
-         <SectionFooter />
       </BrowserRouter>
    );
 }

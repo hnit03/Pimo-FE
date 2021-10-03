@@ -1,6 +1,6 @@
 import React from "react";
 import Accordions from "../Accordion/Accordion";
-import useStyles from "../../assets/jss/material-kit-pro-react/components/agendaContentStyle";
+import useStyles from '../../assets/jss/material-kit-pro-react/components/agendaContentStyle';
 import Divider from '@mui/material/Divider';
 import DownloadPimoApp from "../Accordion/DownloadPimo";
 import MailIcon from '@mui/icons-material/Mail';
@@ -67,7 +67,7 @@ export default function AgendaContent(props) {
     <div className={classes.agendaContentTree} >
 
       <div className={classes.forceOverflow}>
-        <p className={classes.generalQuestion} id="General"><a>Các câu hỏi chung</a></p>
+        <p className={classes.generalQuestion} id="General"><a>Câu hỏi chung</a></p>
         <div className={classes.generalLine}></div>
         <p></p>
         <div id="Overview">

@@ -1,6 +1,6 @@
 import React from "react";
 
-import useStyles from "../../assets/jss/material-kit-pro-react/components/agendaListStyle";
+import useStyles from '../../assets/jss/material-kit-pro-react/components/agendaListStyle';
 const agendaTitle =
     [{ name: "Tổng quan", value: "#General" },
     { name: "Người mẫu", value: "#Model" },

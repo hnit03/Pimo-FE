@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
 export default function HomePage() {
    const classes = useStyles();
    document.body.style.backgroundImage = `url(${background})`;
-   var footer = document.querySelector('footer')
-   if(footer !== null) {footer.style = 'display: block'}
+   // var footer = document.querySelector('footer')
+   // if(footer !== null) {footer.style = 'display: block'}
    return (
       <div>
          <div className={classes.slogan}>
@@ -68,6 +68,7 @@ export default function HomePage() {
                <CardBlog />
             </div>
          </div>
+         <SectionFooter />
       </div>
    );
 }

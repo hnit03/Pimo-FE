@@ -8,8 +8,8 @@ import AgendaContent from '../components/AgendaContent/AgendaContent';
 export default function HowPimoWorkPage() {
    const classes = useStyles();
    document.body.style.backgroundImage = 'none';
-   var footer = document.querySelector('footer')
-   if(footer !== null) {footer.style = 'display: none'}
+   // var footer = document.querySelector('footer')
+   // if(footer !== null) {footer.style = 'display: none'}
    return (
       <Box sx={{ flexGrow: 1 }}>
          <Grid container spacing={2}>

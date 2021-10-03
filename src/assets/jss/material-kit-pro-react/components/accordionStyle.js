@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage: `url(${img})`,
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
+      width: '100%',
       height: '40vh',
       marginBottom: 0,
       paddingBottom: 0,
