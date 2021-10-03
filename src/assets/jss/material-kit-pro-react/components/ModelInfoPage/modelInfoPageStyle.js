@@ -16,10 +16,6 @@ const useStyles = makeStyles((theme) => ({
     
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
   },
-  
- 
-
-
   model_info_Style: {
     // backgroundColor:'pink',
     float: 'left',

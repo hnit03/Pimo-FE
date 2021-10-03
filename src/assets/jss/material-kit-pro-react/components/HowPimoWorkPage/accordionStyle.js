@@ -2,11 +2,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import img from '../../../../img/download.png';
 const useStyles = makeStyles((theme) => ({
     TitleAccordion:{
-        fontSize:'2rem',
-        
+        fontSize:'1.3rem',
+        fontWeight:'bold',
+        color:'pink',
         padding:0,
         margin:0,
         fontStyle: 'italic',
+
     },
     question:{
         fontSize:'1.6rem',
@@ -20,14 +22,14 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft:'2.7rem',
     },
     buttonGoogle:{
-        marginTop:'22rem',
+        marginTop:'21rem',
         height:'60px',
         width:'200px',
         marginRight:'1%',
         marginLeft:'13%',
     },
     buttonAppStore:{
-        marginTop:'22rem',
+        marginTop:'21rem',
         height:'60px',
         width:'200px',
         marginRight:'1%',
@@ -43,9 +45,9 @@ const useStyles = makeStyles((theme) => ({
     },
     text:{
         position: 'absolute',
-        marginTop:'17rem',
+        marginTop:'16.5rem',
         marginLeft:'10%',
-        fontSize:'1.5rem',
+        fontSize:'1.3rem',
         width:'50%',
         textAlign:'center',
     },

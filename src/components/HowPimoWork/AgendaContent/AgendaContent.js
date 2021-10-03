@@ -1,324 +1,121 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Accordions from "../Accordion/Accordion";
 import useStyles from "../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/agendaContentStyle";
-import UseWindowPosition from "../Accordion/scroll";
+import Divider from '@mui/material/Divider';
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 import componentsStyle from "../../../assets/jss/material-kit-pro-react/views/componentsStyle.js";
-import DowloadPimoApp from "../Accordion/DownloadPimo";
-const useStyles1 = makeStyles(componentsStyle);
+import DownloadPimoApp from "../Accordion/DownloadPimo";
+import MailIcon from '@mui/icons-material/Mail';
+
+//const useStyles1 = makeStyles(componentsStyle);
+function link() {
+  return (<a href="Download_Pimo_App"></a>);
+};
 var listOverview =
-  [{ name: "WHAT IS PIMO?", value: "Pimo is a booking platform for the model industry in Viet Nam. We can help you hire a wide and diverse range of models by creating attractive events, campaigns to attract models to apply for ." },
-  { name: "WHO GETS ONTO PIMO?", value: "Pimo gives priority to brands in the fashion industry in Vietnam. We're also actively looking for new talent for each of our categories, whether it's hot new face models. We always try to verify and provide brands and models with the most relevant and reliable information before they join the pimo platform." },
-  { name: "WHAT'S NEXT FOR PIMO?", value: "Swipecast’s goal is to become the preeminent platform where fashion brands come to view each others’ work, communicate and find new opportunities." },];
+  [{ name: "PIMO LÀ GÌ?", value: "Pimo là một nền tảng kết nối giữa người mẫu và các nhãn hàng dành riêng cho thị trường Việt Nam. Chúng tôi có thể giúp nhãn hàng thuê nhiều người mẫu với các phong cách đa dạng bằng cách hỗ trợ nền tảng để các nhãn hàng tạo ra các sự kiện hấp dẫn, các chiến dịch thu hút người mẫu đăng ký tham gia. Đối với người mẫu, chúng tôi luôn cố gắng đưa đến những cơ hội làm việc phù hợp với khả năng, phong cách của họ. Ở Pimo,  cơ hội tìm kiếm việc làm trong lĩnh vực thời trang chưa bao giờ dễ dàng đến thế." },
+  { name: "HIỆN TẠI TÔI ĐANG Ở TRONG DANH SÁCH CHỜ, LÀM THẾ NÀO ĐỂ TÔI CÓ THỂ BẮT ĐẦU ĐƯỢC DUYỆT?", value: "Pimo đang có nhu cầu rất cao! Chúng tôi đang cố gắng đưa bạn lên nền tảng sớm nhất có thể. Tuy nhiên, để quá trình xét duyệt thông tin diễn ra nhanh chóng, bạn nên đảm bảo cập nhật tiểu sử và hình ảnh của mình với thông tin mới nhất và chính xác nhất. Khi chúng tôi biết càng nhiều thông tin về bạn, thì càng dễ dàng được đưa ra khỏi danh sách chờ đợi." },
+  { name: "NHỮNG ĐỐI TƯỢNG NÀO ĐƯỢC THAM GIA PIMO?", value: "Pimo ưu tiên cho các thương hiệu trong lĩnh vực thời trang tại Việt Nam. Chúng tôi cũng đang tích cực tìm kiếm người mẫu phù hợp cho từng hạng mục của chúng tôi, cho dù đó là những người mẫu gương mặt mới đang nổi bật hay những người mẫu đã làm lâu năm trong nghề. Chúng tôi luôn cố gắng xác minh và cung cấp cho các thương hiệu và mô hình những thông tin phù hợp và đáng tin cậy nhất trước khi họ tham gia vào nền tảng pimo." },
+  { name: "MỤC TIÊU CỦA PIMO??", value: "Mục tiêu của Pimo là trở thành nền tảng ưu việt, nơi các thương hiệu thời trang và người mẫu được giao tiếp và tìm kiếm thêm nhiều cơ hội mới tại thị trường thời trang Việt Nam." },];
 
 var listSecurity =
-  [{ name: "WHAT SYSTEM-LEVEL SECURITY MEASURES DOES SWIPECAST PROVIDE?", value: "Pimo has multiple layers of state-of-the-art technology in place to protect sensitive information. From SSL encryption, to authorization tokens in HTTP requests, we make sure that your privacy is protected. Payment transactions are compliant with top-level security standards thanks to Stripe." },
-  { name: "WHAT DO I DO IN CASE OF EMERGENCIES?", value: "If you are in immediate threat, call 113. Otherwise, contact us at pimo.studio@gmail.com or  091.3333.999." },
-  { name: "HOW DO I PROTECT THE SECURITY OF MY PIMO ACCOUNT?", value: " Never share your google account and beware of phishing attempts. Pimo will never ask for your password. We also recommend that you change your password every 90 days. If you log in from a friend's device, remember to log out after use." },
-  { name: "WHY SHOULDN'T I GET PAID DIRECTLY?", value: "Whenever you get booked for a job, Pimo ensures that you get paid 100% of the time after the job is complete, within 2-3 business days. We do this to protect all the parties involved. Any payments performed outside of the app violate our Terms & Conditions and would lead to account suspension." },
-  { name: "REPORT SUSPECTED VULNERABILITIES?", value: "If you have concerns, please flag them with us at pimo.studio@gmail.com." },
-  { name: "CAN I BLOCK A USER?", value: "You can block a user using the flag icon on the person's profile, or in an existing chat using the 'Chat Options'. This will alert us to inappropriate activity. We will then review the communications and either supsend or delete the user's account if it is deemed appropriate." }];
+  [{ name: "PIMO CUNG CẤP CÁC BIỆN PHÁP BẢO MẬT CẤP HỆ THỐNG NÀO?", value: "Pimo có nhiều lớp công nghệ hiện đại để bảo vệ thông tin nhạy cảm. Từ mã hóa SSL đến mã thông báo ủy quyền trong các yêu cầu HTTP, chúng tôi luôn luôn đảm bảo rằng quyền riêng tư của bạn được bảo vệ khi tham gia vào nền tảng pimo. Các giao dịch thanh toán tuân thủ các tiêu chuẩn bảo mật cấp cao nhất nhờ Stripe." },
+  { name: "TÔI PHẢI LÀM GÌ TRONG TRƯỜNG HỢP KHẨN CẤP?", value: "Nếu bạn đang bị đe dọa, ngay lập tức gọi 113. Nếu không, hãy liên hệ với chúng tôi theo địa chỉ studio@pimo.com hoặc 091.3333.999." },
+  { name: "LÀM CÁCH NÀO ĐỂ BẢO MẬT TÀI KHOẢN PIMO CỦA TÔI?", value: "Cách tối ưu nhất là không bao giờ chia sẻ tài khoản google của bạn và đề phòng lừa đảo mạng. Nếu bạn đăng nhập từ thiết bị của bạn bè, hãy nhớ đăng xuất sau khi sử dụng." },
+  { name: "BÁO CÁO Ở ĐÂU KHI GẶP CÁC VẤN ĐỀ TRONG QUÁ TRÌNH SỬ DỤNG PIMO?", value: "Nếu bạn có thắc mắc hoặc cần giải quyết các vấn đề liên quan đến Pimo, vui lòng gửi mail đến địa chỉ support@pimo.com. Chúng tôi sẽ cố gắng giải đáp các vấn đề sớm nhất có thể." },
+  { name: "TÔI CÓ THỂ CHẶN NGƯỜI DÙNG KHÁC KHÔNG?", value: "Tạm thời nền tảng Pimo chưa cho phép bạn chặn các người dùng khác. Tuy nhiên bạn có thể báo cáo với chúng tôi thông qua việc gửi mail đến địa chỉ report@pimo.com.Điều này sẽ cảnh báo chúng tôi về các hoạt động không phù hợp. Sau đó, chúng tôi sẽ xem xét các thông tin liên lạc và hỗ trợ hoặc xóa tài khoản của người dùng nếu thấy phù hợp." },
+  ];
 
 var listWorkingWithBrands =
-  [{ name: "HOW DO I VIEW BRANDS ON THE APP?", value: "You can find brands on our network page. You can select the specific type of brands you would like to work with on the search brands page or we can recommend a few brands that suit your style." },
-  { name: "HOW DO I CONNECT WITH A BRAND?", value: "To connect with a brand, you need to send them an application request. If they approve your request, we will send you a notification and you can get the details of the casting. In order to send them an application request, please download our app from CHPlay or AppStore, then you can head over to brand's profile, and click on the Apply button." },
-  { name: "WHO CAN CONTACT ME?", value: "Under your account settings, you can decide if you want to be contacted by everyone, only by verified clients or only by clients you have liked. You always have the ability to accept or reject incoming message requests and jobs." },
-  { name: "WHAT ARE THE RATES AND TERMS?", value: "Job postings either have an hourly or day rate. We encourage you to accept jobs that are aligned with your rate." },
-  { name: "WHAT DO I DO IF THE BRAND CANCELS LAST MINUTE?", value: "If you are unable to get in touch with a brand, please contact us at pimo.studio@gmail.com or 091.3333.999." },
-  { name: "WHAT IF THERE IS A DISPUTE WITH THE CLIENT?", value: "If there is a dispute with a client, please contact us at pimo.studio@gmail.com. We will work directly with all of the parties to resolve the dispute. In extreme cases, if we believe that the brand misrepresented a booking, we will serve as your advocate to ensure that the usage conforms to what was agreed between you and the client and our Terms and Conditions." },];
+  [{ name: "LÀM THẾ NÀO ĐỂ XEM THÔNG TIN CỦA CÁC NHÃN HÀNG TRÊN PIMO?", value: "Bạn có thể tìm thấy các nhãn hàng trên website của chúng tôi. Bạn có thể chọn loại nhãn hiệu cụ thể mà bạn muốn hợp tác trên trang tìm kiếm nhãn hiệu hoặc chúng tôi có thể đề xuất một vài nhãn hiệu phù hợp với phong cách của bạn." },
+  { name: "LÀM THẾ NÀO ĐỂ KẾT NỐI VỚI NHÃN HÀNG?", value: "Để kết nối với một nhãn hàng, bạn cần gửi cho họ một yêu cầu ứng tuyển vào sự kiện bạn mong muốn. Nếu nhãn hàng chấp thuận yêu cầu của bạn, chúng tôi sẽ gửi cho bạn thông báo và bạn có thể biết chi tiết về lịch trình casting ngay sau đó. Để gửi cho nhãn hàng một yêu cầu ứng tuyển , vui lòng tải xuống ứng dụng của chúng tôi từ GooglePlay hoặc AppStore (vui lòng xem thêm về cách tải ứng dụng ở mục Tải xuống ứng dụng Pimo ), sau đó bạn có thể truy cập thông tin sự kiện của nhãn hàng và nhấp vào nút ứng tuyển." },
+  { name: "TỶ GIÁ VÀ ĐIỀU KHOẢN LÀ GÌ?", value: "Các tin tuyển dụng có tỷ lệ theo giờ hoặc theo ngày. Chúng tôi khuyến khích bạn chấp nhận những công việc phù hợp với tỷ lệ của bạn." },
+  { name: "TÔI PHẢI LÀM GÌ NẾU NHÃN HÀNG HỦY BỎ HỢP TÁC Ở PHÚT CUỐI CÙNG?", value: "Nếu bạn không thể liên hệ vớI nhãn hàng bạn đang hợp tác, vui lòng liên hệ với chúng tôi theo địa chỉ support@pimo.com hoặc 091.3333.999." },
+  { name: "NẾU CÓ TRANH CHẤP VỚI NHÃN HÀNG THÌ TÔI NÊN LÀM GÌ?  ", value: "Nếu có tranh chấp với nhãn hàng, vui lòng liên hệ với chúng tôi theo địa chỉ support@pimo.com. Chúng tôi sẽ làm việc trực tiếp với tất cả các bên để giải quyết tranh chấp. Trong những trường hợp cực đoan, nếu chúng tôi tin rằng nhãn hàng này đã làm sai thỏa thuận về casting hoặc các vấn đề khác, chúng tôi sẽ đóng vai trò là người biện hộ cho bạn để đảm bảo rằng việc sử dụng tuân thủ những gì đã được thỏa thuận giữa bạn và nhãn hàng cũng như các Điều khoản và Điều kiện của chúng tôi." },];
 
 var listApplyToAnEvent =
-  [{ name: "HOW DO I SEE WHAT JOBS ARE AVAILABLE?", value: "By going to our events page." },
-  { name: "WHAT DO I DO WHEN THE JOB IS COMPLETED?", value: "Post your profile on Pimo and tell users a little about yourself.  If you’re a model, what runway shows have you walked?, What is your style? As a model, you should include updated digitals taken within the last month, so that clients can see what you look like today." },
-  { name: "CAN I CANCEL A JOB?", value: "Congratulations! No further action is required. With Pimo, the payment will automatically be deposited into your account after 3 business days. Don't forget to share your experience with your friends on Instagram with #CastMePimo" },
-  { name: "WHAT DO I DO WHEN THE JOB IS COMPLETED?", value: "We strongly recommend that you do not cancel any jobs unless you know you are unable to attend. Canceling jobs will lower your rating, which could prevent you from booking future jobs." },];
+  [{ name: "LÀM THẾ NÀO ĐỂ XEM ĐƯỢC NHỮNG CÔNG VIỆC CÓ SẴN?", value: "Bằng cách truy cập trang sự kiện của chúng tôi." },
+  { name: "LÀM THẾ NÀO ĐỂ TÔI ĐƯỢC ỨNG TUYỂN VÀO CÁC SỰ KIỆN?", value: "Đăng hồ sơ của bạn trên Pimo và cho nhãn hàng biết một chút về bản thân bạn. Nếu bạn là một người mẫu, bạn đã từng bước qua những chương trình đường băng nào ?, Phong cách của bạn là gì? Là một người mẫu, bạn nên chia sẻ các thông tin cụ thể về các số đo, kinh nghiệm đã có để các nhãn hàng có thể thấy bạn phù hợp với tiêu chí của họ." },
+  { name: "TÔI PHẢI LÀM GÌ KHI CÔNG VIỆC HOÀN THÀNH?", value: "Xin chúc mừng! Không có thêm công việc nào được yêu cầu. Với Pimo, khoản thanh toán sẽ tự động được gửi vào tài khoản của bạn sau 3 ngày làm việc. Đừng quên chia sẻ trải nghiệm của bạn với bạn bè trên Instagram với #CastMePimo." },
+  { name: "TÔI CÓ THỂ HỦY VIỆC LÀM KHÔNG?", value: "Chúng tôi đặc biệt khuyên bạn không nên hủy bỏ bất kỳ công việc nào trừ khi bạn biết mình không thể tham dự. Trong trường hợp bất khả kháng phải hủy bỏ công việc, bạn cần ngay lập tức liên hệ với chúng tôi và nhãn hàng.Tuy nhiên, việc hủy bỏ công việc sẽ làm giảm xếp hạng của bạn, điều này có thể khiến bạn khó có được công việc trong tương lai." },];
 
 var listPaymentsModel =
-  [{ name: "HOW DO I GET PAID?", value: "For those looking to get paid, simply add your bank account number, your bank routing number, and the last 4 digits of your social security number. This information is securely stored by Stripe, our payment processing partner. Once your information has been entered, you can then be hired and paid for upcoming projects." },
-  { name: "WHEN WILL I GET PAID?", value: "Pimo allows you to get paid as quickly as the day after your shoot. In other cases, a client may take as many as 7 business days to pay." },
-  { name: "HOW CAN I VIEW MY ACCOUNTING STATUS?", value: "Under my jobs section, you will find a summary of how much payment you have received and how much you should expect to receive." },
-  { name: "WHAT PERCENTAGE DOES PIMO TAKE?", value: "Pimo charges a flat 15% fee on transactions. This fee may change if the talent is signed with an agency and decides to manage the booking with their agent." },];
-
-var listDownloadPimoApp =
-  [{ name: "HOW TO DOWNLOAD PIMO APP?", value: "helllo" },];
+  [{ name: "LÀM THẾ NÀO ĐỂ TÔI ĐƯỢC TRẢ TIỀN?", value: "Đối với những người muốn được thanh toán, chỉ cần thêm phương thức thanh toán, Thông tin này được lưu trữ an toàn bởi Stripe, đối tác xử lý thanh toán của chúng tôi. Khi thông tin của bạn đã được nhập, bạn có thể được thuê và trả tiền cho các dự án sắp tới." },
+  { name: "KHI NÀO TÔI SẼ ĐƯỢC TRẢ TIỀN?", value: "Pimo cho phép bạn được thanh toán nhanh nhất vào ngày sau khi công việc hoàn thành và chúng tôi nhận được đánh giá của nhãn hàng về bạn. Trong các trường hợp khác, nhãn hàng có thể mất đến 7 ngày làm việc để thanh toán." },
+  { name: "PIMO MẤT PHẦN TRĂM NÀO?", value: "Pimo tính phí cố định 15% cho các giao dịch. Phí này có thể thay đổi nếu nhân tài ký hợp đồng với một đại lý và quyết định quản lý đặt phòng với đại lý của họ." },];
 
 var listWorkingWithModel =
-  [{ name: "HOW DO I VIEW MODEL ON THE APP?", value: "You can find talents on our network page. You can select the specific type of model (search by style, search by sex, search by tattoo,...) you would like to work with on the sidebar." },
-  { name: "HOW DO I CONNECT WITH A MODEL?", value: "Your job is simply to register in our system, then create an event with detailed information about your event. We will filter and recommend models that match your requirements. If a model sends you an application request, we will notify you and you have the right to directly accept or decline the model's request by click on the button accept or decline." },
-  { name: "WHO CAN CONTACT ME?", value: "Under your account settings, you can decide if you want to be contacted by everyone, only by verified clients or only by clients you have liked. You always have the ability to accept or reject incoming message requests and jobs." },
-  { name: "WHAT ARE THE RATES AND TERMS?", value: "When you create a job, you have the option to specify either a day rate or an hourly payment. Please view our full terms and conditions to ensure your job listing meets our requirements." },
-  { name: "WHAT DO I DO IF THE MODEL DOES NOT SHOW UP AT THE SCHEDULED TIME?", value: "If you are unable to get in touch with the talent, please contact us at pimo.studio@gmail.com or 091.3333.999." },
-  { name: "HOW DO I SEND THE MODEL HIS OR HER CALL SHEET?", value: "To email a call sheet to the model, you can use the email address we provided in the 'job accepted' email." },
-  { name: "WHAT IF THERE IS A DISPUTE WITH THE MODEL?", value: "If you have a dispute with a talent booking, simply email us at pimo.info@gmail.com, explaining the issue. We will aim to resolve the issue as quickly as possible. Under extreme circumstances where a talent fails to perform the services contracted in your agreement, a partial or full refund may be possible. Please see our Terms and Conditions." },
-  { name: "HOW IS USAGE MANAGED?", value: "The standard usage on Pimo is 6 months across social media, the Internet, and point of sale (POS) within the country where the photoshoot took place. Our standard user does not include outdoor advertising such as billboards. If you wish to expand the usage beyond the terms above, please contact us at pimo.studio@gmail.com to negotiate an agreement." }];
+  [{ name: "LÀM THẾ NÀO ĐỂ TÌM KIẾM NGƯỜI MẪU TRÊN ỨNG DỤNG?", value: "Bạn có thể tìm thấy người mẫu trên website của chúng tôi. Bạn có thể lọc người mẫu theo yêu cầu cụ thể (tìm kiếm theo phong cách, tìm kiếm theo giới tính, tìm kiếm theo hình xăm,...) trên trang tìm kiếm người mẫu của chúng tôi." },
+  { name: "LÀM THẾ NÀO ĐỂ KẾT NỐI VỚI MỘT NGƯỜI MẪU?", value: "Công việc của bạn chỉ đơn giản là đăng ký vào hệ thống của chúng tôi, sau đó tạo sự kiện với thông tin chi tiết về sự kiện của bạn. Chúng tôi sẽ lọc và đề xuất những người mẫu phù hợp với yêu cầu của bạn. Nếu một người mẫu gửi cho bạn một yêu cầu ứng tuyển, chúng tôi sẽ thông báo cho bạn và bạn có quyền trực tiếp chấp nhận hoặc từ chối yêu cầu của người mẫu đó bằng cách nhấp vào nút chấp nhận hoặc từ chối.  " },
+  { name: "TỶ GIÁ VÀ ĐIỀU KHOẢN LÀ GÌ?", value: "Khi bạn tạo một công việc, bạn có tùy chọn để chỉ định mức giá theo ngày hoặc khoản thanh toán theo giờ. Vui lòng xem đầy đủ các điều khoản và điều kiện của chúng tôi để đảm bảo danh sách việc làm của bạn đáp ứng các yêu cầu của chúng tôi." },
+  { name: "TÔI PHẢI LÀM GÌ NẾU NGƯỜI MẪU KHÔNG THAM GIA VÀO THỜI GIAN ĐÃ ĐƯỢC LÊN LỊCH TRÌNH?", value: "Nếu bạn không thể liên lạc với người mẫu, vui lòng liên hệ với chúng tôi theo địa chỉ support@pimo.com hoặc 091.3333.999." },
+  { name: "LÀM THẾ NÀO ĐỂ CÓ ĐƯỢC THÔNG TIN LIÊN LẠC CỦA NGƯỜI MẪU?", value: "Khi người mẫu ứng tuyển vào sự kiện của bạn, chúng tôi sẽ gửi đến bạn thông tin chi tiết của nguòi mẫu bao gồm cả thông tin liên lạc." },
+  { name: "NẾU CÓ TRANH CHẤP VỚI NGƯỜI MẪU THÌ NÊN LÀM NHƯ THẾ NÀO?", value: "Nếu bạn có tranh chấp với người mẫu, chỉ cần gửi email cho chúng tôi theo địa chỉ support@pimo.com và giải thích cụ thể vấn đề. Chúng tôi sẽ cố gắng giải quyết vấn đề càng nhanh càng tốt. Trong những trường hợp khắc nghiệt khi một người mẫu không thực hiện được các dịch vụ đã ký kết trong thỏa thuận của bạn, bạn có thể hoàn lại một phần hoặc toàn bộ. Xin vui lòng xem các điều khoản và điều kiện của chúng tôi." },];
 
 var listBookingModel =
-  [{ name: "HOW DO I POST AN EVENT?", value: "Once your profile on Pimo is complete, you'll be able to create and post events under the Events tab. Click on the Create Event button on the Event section and input the details of the job such as job type and whether it is paid work or unpaid. Specify what kind of talent you are seeking, a project name, a day rate or hourly rate, the dates you would like to book the talent, enter a start time, a location address and upload a picture for your project. You'll have the chance to review your job details before posting them." },
-  { name: "HOW DO I BOOK A MODEL DIRECTLY?", value: "If you come across a model who is right for your job, feel free to connect with the talent directly. By clicking sending them a connect request on their profile." },
-  { name: "HOW DO I EDIT OR CANCEL MY JOB?", value: "After you have posted a job, you will have the ability to make any necessary edits to the event details. Should you have to cancel a job, please note that doing so less than 72 hours in advance might involve a penalty fee, up to the total rate of the project." },
-  { name: "HOW DO I BOOK THE MODEL TALENT?", value: "There are multiple ways to find talent on PIMO. Use our filters to discover models based on specific criteria such as height, sex, style, city,..... Additionally, if you create a job listing, we will help you to identify models appropriate for your event. Our best candidates wait for clients to reach out to them and seek opportunities with complete job details and offer competitive rates." },
-  { name: "HOW DO I INVITE A MODEL TO MY CASTINGS?", value: "Navigate the profiles of talent of your choice, connect with them and send them a direct message to invite them to your casting." },
-  { name: "WHAT CAN I DO IF I RUN INTO BOOKING ISSUES?", value: "Contact us anytime by emailing pimo.studio@gmai.com. We will get to your question as soon as possible." }];
+  [{ name: "LÀM THẾ NÀO ĐỂ TẠO MỘT SỰ KIỆN TRÊN NỀN TẢNG PIMO?", value: "Sau khi hồ sơ của bạn trên Pimo hoàn tất, bạn sẽ có thể tạo và đăng sự kiện trong tab Sự kiện. Nhấp vào nút Tạo sự kiện trên phần Sự kiện và nhập các chi tiết của công việc như loại công việc và đó là công việc được trả lương hay không được trả lương. Chỉ định loại người mẫu bạn đang tìm kiếm, tên dự án, tỷ lệ ngày hoặc giờ, ngày bạn muốn đặt tài năng, nhập thời gian bắt đầu, địa chỉ vị trí và tải lên hình ảnh cho dự án của bạn. Bạn sẽ có cơ hội xem lại chi tiết công việc của mình trước khi đăng chúng." },
+  { name: "LÀM THẾ NÀO ĐỂ HỢP TÁC TRỰC TIẾP VỚI NGƯỜI MẪU?", value: "Hiện tại chúng tôi chỉ hỗ trợ các tính năng đề cập các sự kiện phù hợp với người mẫu và người mẫu sẽ yêu cầu ứng tuyển nếu họ thấy phù hợp. Chúng tôi sẽ cập nhập tính năng này trong thời gian sớm nhất, xin lỗi bạn vì sự bất tiện này. " },
+  { name: "LÀM THẾ NÀO ĐỂ CHỈNH SỬA HOẶC HỦY CÔNG VIỆC CỦA TÔI?", value: "Sau khi bạn đã đăng một công việc, bạn sẽ có thể thực hiện bất kỳ chỉnh sửa cần thiết nào đối với chi tiết sự kiện. Nếu bạn phải hủy một công việc, xin lưu ý rằng làm như vậy trước ít hơn 72 giờ, nếu không bạn có thể phải trả phí phạt, lên đến tổng mức giá trị của sự kiện." },
+  { name: "LÀM THẾ NÀO ĐỂ HỢP TÁC VỚI NGƯỜI MẪU?", value: "Có nhiều cách để tìm người mẫu trên Pimo. Sử dụng bộ lọc của chúng tôi để khám phá các mô hình dựa trên các tiêu chí cụ thể như chiều cao, giới tính, phong cách, thành phố,... Ngoài ra, nếu bạn tạo danh sách việc làm, chúng tôi sẽ giúp bạn xác định các mô hình phù hợp với sự kiện của bạn. Các ứng viên tốt nhất của chúng tôi chờ đợi khách hàng liên hệ với họ và tìm kiếm cơ hội với đầy đủ thông tin chi tiết về công việc và cung cấp mức giá cạnh tranh." },
+  { name: "LÀM THẾ NÀO ĐỂ THÔNG BÁO KÉT QUẢ CASTING CHO NGƯỜI MẪU?", value: "Sau khi buổi casting diễn ra thành công, bạn cần cập nhật kết quả casting lên hệ thống. Chúng tôi sẽ giúp bạn thông báo kết quả này đến người mẫu sớm nhất có thể." },
+  { name: "TÔI CÓ THỂ LÀM GÌ NẾU GẶP CÁC VẤN ĐỀ LIÊN QUAN ĐẾN VIỆC HỢP TÁC VỚI NGƯỜI MẪU?  ", value: "Liên hệ với chúng tôi bất cứ lúc nào bằng cách gửi email đến support@pimo.com. Chúng tôi sẽ cố gắng phải hồi vấn đề của bạn sớm nhất có thể." }];
 
 var listPaymentsBrand =
-  [{ name: "WHAT ARE THE AVAILABLE BILLING METHODS?", value: "We accept Visa, Mastercard and American Express. We also accept ACH. The payment has to be made by the person posting the job or by a third party. Either way, the booking needs to be paid in full before a booking is confirmed." },
-  { name: "HOW CAN I VIEW MY ACCOUNTING STATUS?", value: "Go to the My Events section to view the total payment due and your booking history. For each booking, you will be able to see a breakdown of the status, date, location, amount, fees & taxes, and notes." },
+  [{ name: "CÁC PHƯƠNG THỨC THANH TOÁN HÓA ĐƠN CÓ SẴN LÀ GÌ?", value: "Chúng tôi chấp nhận thẻ Visa, Mastercard, thẻ ngân hàng nội địa, các loại ví điện tử. Việc thanh toán phải được thực hiện bởi người đăng công việc hoặc bởi một bên thứ ba. Dù bằng cách nào, giao dịch cần phải được thanh toán đầy đủ trước khi giao dịch được xác nhận." },
+  { name: "LÀM THẾ NÀO ĐỂ XEM TRẠNG THÁI KẾ TOÁN CỦA TÔI, TÔI CÓ ĐƯỢC XEM LẠI CÁC GIAO DỊCH ĐÃ HOÀN THÀNH KHÔNG?", value: "Chuyển đến phần Sự kiện của tôi để xem tổng số tiền đến hạn thanh toán và lịch sử thuê người mẫu. Đối với mỗi sự kiện hoàn thành, bạn sẽ có thể thấy bảng phân tích về trạng thái, ngày, địa điểm, số tiền, phí và thuế cũng như ghi chú." },
   ];
-const HookDoSomething = () => {
-  React.useEffect(() => {
-    var href = window.location.href.substring(
-      window.location.href.lastIndexOf("#") + 1
-    );
-    if (window.location.href.lastIndexOf("#") > 0) {
-      document.getElementById(href).scrollIntoView();
-    }
-    window.addEventListener("scroll", updateView);
-    updateView();
-    return function cleanup() {
-      window.removeEventListener("scroll", updateView);
-    };
-  });
-}
-const easeInOutQuad = (t, b, c, d) => {
-  t /= d / 2;
-  if (t < 1) return (c / 2) * t * t + b;
-  t--;
-  return (-c / 2) * (t * (t - 2) - 1) + b;
-};
-const updateView = () => {
-  var contentSections = document.getElementsByClassName("cd-section");
-  var navigationItems = document
-    .getElementById("cd-vertical-nav")
-    .getElementsByTagName("a");
+const titleEnd = "Nếu bạn có bất kì thắc mắc nào khác, vui lòng gửi mail đến địa chỉ mail dưới đây, chúng tôi sẽ cố gắng phản hồi bạn sớm nhất có thể.";
 
-  for (let i = 0; i < contentSections.length; i++) {
-    var activeSection =
-      parseInt(navigationItems[i].getAttribute("data-number"), 10) - 1;
-    if (
-      contentSections[i].offsetTop -
-      window.innerHeight / 2 +
-      document.getElementById("main-panel").offsetTop <
-      window.pageYOffset &&
-      contentSections[i].offsetTop +
-      contentSections[i].scrollHeight -
-      window.innerHeight / 2 +
-      document.getElementById("main-panel").offsetTop >
-      window.pageYOffset
-    ) {
-      navigationItems[activeSection].classList.add("is-selected");
-    } else {
-      navigationItems[activeSection].classList.remove("is-selected");
-    }
-  }
-};
-const smoothScroll = (target) => {
-  var targetScroll = document.getElementById(target);
-  scrollTo(document.documentElement, targetScroll.offsetTop, 900);
-};
-const scrollTo = (element, to, duration) => {
-  var start = element.scrollTop,
-    change = to - start + document.getElementById("main-panel").offsetTop,
-    currentTime = 0,
-    increment = 20;
-
-  var animateScroll = function () {
-    currentTime += increment;
-    var val = easeInOutQuad(currentTime, start, change, duration);
-    element.scrollTop = val;
-    if (currentTime < duration) {
-      setTimeout(animateScroll, increment);
-    }
-  };
-  animateScroll();
-};
-
-
-
-const titleGenaralQuestion = ["Overview", "Security"];
-const titleModel = ["Working with Brands", "Apply to an event", "Download Pimo App", "Payments"];
-const titleBrand = ["Working with Model", "Booking Model", "Payments"];
+const titleGeneralQuestion = ["Tổng quan về Pimo", "Bảo mật thông tin"];
+const titleModel = ["Làm việc với nhãn hàng", "Ứng tuyển vào sự kiện của nhãn hàng", "Tải xuống ứng dụng Pimo", "Thanh toán"];
+const titleBrand = ["Làm việc với người mẫu", "Tạo sự kiện và casting", "Thanh toán"];
 export default function AgendaContent(props) {
   const classes = useStyles();
-  // const classes = useStyles1();
   return (
     <div className={classes.agendaContentTree} >
+
       <div className={classes.forceOverflow}>
         <p className={classes.generalQuestion} id="General"><a>GENERAL QUESTIONS</a></p>
-        <div className={classes.genaralLine}></div>
+        <div className={classes.generalLine}></div>
         <p></p>
 
         <div id="Overview">
-          <Accordions list={listOverview} title={titleGenaralQuestion[0]} />
+          <Accordions list={listOverview} title={titleGeneralQuestion[0]} />
         </div>
         <div id="Security">
-          <Accordions list={listSecurity} title={titleGenaralQuestion[1]} />
+          <Accordions list={listSecurity} title={titleGeneralQuestion[1]} />
         </div>
-
-        <p className={classes.generalQuestion} id="Model">MODEL</p>
-        <div className={classes.genaralLine}></div>
         <p></p>
-        <div className={classNames(classes.main, classes.mainRaised)}
-          id="main-panel">
-          <div
-            className={classNames(
-              classes.section,
-              classes.sectionGray,
-              "cd-section"
-            )}
-            id="footers"
-          ><div id="Working_with_Brands">
-              <Accordions list={listWorkingWithBrands} title={titleModel[0]} />
-            </div></div></div>
-
+        <p className={classes.generalQuestion} id="Model">MODEL</p>
+        <div className={classes.generalLine}></div>
+        <p></p>
+        <div id="Download_Pimo_App">
+          <DownloadPimoApp />
+        </div>
+        <div id="Working_with_Brands">
+          <Accordions list={listWorkingWithBrands} title={titleModel[0]} />
+        </div>
         <div id="Apply_To_An_Event">
           <Accordions list={listApplyToAnEvent} title={titleModel[1]} />
         </div>
-        <div id="Download_Pimo_App">
-          <DowloadPimoApp />
-        </div>
+
         <div id="Payments_model">
           <Accordions list={listPaymentsModel} title={titleModel[3]} />
         </div>
-
+        <p></p>
         <p className={classes.generalQuestion} id="Brand">BRAND</p>
-        <div className={classes.genaralLine}></div>
+        <div className={classes.generalLine}></div>
         <p></p>
         <div id="Working_with_Model"><Accordions list={listWorkingWithModel} title={titleBrand[0]} /></div>
         <div id="Booking_Model"><Accordions list={listBookingModel} title={titleBrand[1]} /></div>
         <div id="Payments_brand"><Accordions list={listPaymentsBrand} title={titleBrand[2]} /></div>
-        <nav id="cd-vertical-nav">
-          <ul>
-            <li>
-              <a
-                href="#Working_with_Brands"
-                data-number="1"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("Working_with_Brands");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Basic Elements</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#navigation"
-                data-number="2"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("navigation");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Navigation</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#notifications"
-                data-number="3"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("notifications");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Notifications</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#footers"
-                data-number="4"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("footers");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Footers</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#typography"
-                data-number="5"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("typography");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Typography</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contentAreas"
-                data-number="6"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("contentAreas");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Content Areas</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#cards"
-                data-number="7"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("cards");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Cards</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#morphingCards"
-                data-number="8"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("morphingCards");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Morphing Cards</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#pablo"
-                data-number="9"
-                className=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScroll("javascriptComponents");
-                }}
-              >
-                <span className="cd-dot" />
-                <span className="cd-label">Javascript</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-
+        <Divider className={classes.divider_Style}></Divider>
+        <p className={classes.EndTitle}><i>{titleEnd}</i></p>
+        <ul className={classes.ul}>
+          <li style={{ display: 'flex', }} className={classes.li}>
+            <MailIcon className={classes.icon} /><span className={classes.text} >customercare@pimo.com</span>
+          </li>
+        </ul>
       </div>
 
     </div>

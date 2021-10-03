@@ -25,14 +25,13 @@ export default function HowPimoWorkPage() {
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} className = {classes.agendaHeader}>
-                   <CustomButton/>
                 </Grid>
-                <Grid item xs={2.5}>
+                <Grid item xs={3}>
                    <AgendaList></AgendaList>
                 </Grid>
-                <Grid item xs={0.5}>
+                {/* <Grid item xs={0.5}>
                    <div className = {classes.dividerLine}></div>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={9.0}>
                    <AgendaContent></AgendaContent>
                 </Grid>

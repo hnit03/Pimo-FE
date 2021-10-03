@@ -11,8 +11,6 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
   ))(({ theme }) => ({
-    // border: `1px solid ${theme.palette.divider}`,
-    //color:'pink',
     '&:not(:last-child)': {
       borderBottom: 0,
     },
@@ -23,7 +21,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
   
   const AccordionSummary = styled((props) => (
     <MuiAccordionSummary
-      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.5rem' },{color:'pink'}} />}
       {...props}
     />
   ))(({ theme }) => ({
@@ -42,7 +40,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
     color:'black',
   }));
   
-  export default function DowloadPimoApp(props) {
+  export default function DownloadPimoApp(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState('panel1');
   
@@ -51,6 +49,9 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
     };
   return (
     <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+          <p className = {classes.TitleAccordion}>Download Pimo App</p>
+        </AccordionSummary>
     <AccordionDetails>
     <p className = {classes.question}>LÀM THẾ NÀO ĐỂ TẢI ỨNG DỤNG PIMO?</p>
         <p className = {classes.answer}>Hiện tại chúng tôi chỉ hỗ trợ người mẫu xem thông tin về sự kiện của các nhãn hàng trên website. Vì vậy, nếu bạn 

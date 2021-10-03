@@ -31,18 +31,54 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'4rem',
         fontWeight:'800',
     }, 
-    genaralLine:{
+    generalLine:{
         height:'0.3rem',
         marginTop:0,
-        //borderBottom:'0.4rem solid pink',
         backgroundColor:'pink',
         width:'97%',
         float:'left',
         borderRightRadius:'0.1rem',
     },
-
+    divider_Style: {
+      paddingTop:'2rem',
+      width: '100%',
+      marginLeft:'3rem',
+      fontFamily: "Calibri, sans-serif",
+      fontSize: '1rem',
+    
+    },
     forceOverflow: {
         minHeight: '450px',
+      },
+      EndTitle:{
+          color:'gray',
+          textAlign:'center',
+          marginBottom: 0,
+      },
+      icon: {
+        margin: 0,
+        color: 'gray',
+        margin:'0',
+        textAlign:'center',
+      },
+      text: {
+        textAlign: 'center',
+        color: 'gray',
+        float: 'left',
+        fontSize: '1rem',
+        width: '100%',
+        fontFamily: "Calibri, sans-serif",
+      },
+      ul: {
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        textAlign:'center',
+    
+      },li:{
+        
+        margin:'auto',
+          width: '20%',
       }
 
 }

@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     agendaHeader:{
-        height:'11rem',
+        height:'9.5rem',
        // backgroundColor:'pink',
 
     },
@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom:'2rem',
         height:'80%',
         width: '3px',
-    }
+    },
+
     
 }
 ));
