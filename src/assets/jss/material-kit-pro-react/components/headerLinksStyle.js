@@ -104,7 +104,7 @@ const headerLinksStyle = (theme) => ({
       paddingLeft: "0.9375rem",
       paddingRight: "0.9375rem",
       fontWeight: "700",
-      fontSize: "20px",
+      fontSize: "17px",
       textTransform: "uppercase",
       lineHeight: "20px",
       textDecoration: "none",

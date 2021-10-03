@@ -68,7 +68,7 @@ export default function Header(props) {
             <Hidden smDown implementation="css" className={classes.hidden}>
                <Button className={classes.title}>
                   <Link to="/">
-                     <img id="logo_image" alt="" src={brand} style={{ paddingTop: '0.3rem', width: "15rem" }} />
+                     <img id="logo_image" alt="" src={brand} style={{ width: "15rem" }} />
                   </Link>
                </Button>
             </Hidden>

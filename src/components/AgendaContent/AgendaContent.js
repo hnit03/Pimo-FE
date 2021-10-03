@@ -67,7 +67,7 @@ export default function AgendaContent(props) {
     <div className={classes.agendaContentTree} >
 
       <div className={classes.forceOverflow}>
-        <p className={classes.generalQuestion} id="General"><a>Câu hỏi chung</a></p>
+        <p className={classes.generalQuestion} id="General"><a>Tổng quan</a></p>
         <div className={classes.generalLine}></div>
         <p></p>
         <div id="Overview">

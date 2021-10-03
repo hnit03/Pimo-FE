@@ -4,7 +4,7 @@ import CardBlog from "../components/Card/CardBlog";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
-import brandLogo from "../assets/img/logoBrand.png";
+import brandLogo from "../assets/img/trustBy.png";
 import android from "../assets/img/android.png"
 import ios from "../assets/img/ios.jpg"
 import SectionFooter from "../components/Footer/SectionFooter";
@@ -38,7 +38,7 @@ export default function HomePage() {
    return (
       <div>
          <div className={classes.slogan}>
-            <p>Pimo - nền tảng kết nối người mẫu và thương hiệu lớn nhất Việt Nam</p>
+            <p>Pimo - nền tảng kết nối người mẫu và nhãn hàng lớn nhất Việt Nam</p>
          </div>
          <div className={classes.logo}>
             <a href="/#" onClick={(e) => e.preventDefault()}
@@ -63,7 +63,9 @@ export default function HomePage() {
                <GridItem xs={12} sm={12} md={12}>
                </GridItem>
             </GridContainer>
-            <img width="100%" src={brandLogo} alt='' />
+            <div style={{textAlign: 'center'}}>
+            <img width="60%" src={brandLogo} alt='' />
+            </div>
             <div className={classes.cardBlog}>
                <CardBlog />
             </div>
