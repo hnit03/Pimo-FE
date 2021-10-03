@@ -1,6 +1,6 @@
 import React from "react";
 import Accordions from "../Accordion/Accordion";
-import useStyles from "../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/agendaContentStyle";
+import useStyles from "../../../assets/jss/material-kit-pro-react/components/HowPimoWorkPage/agendaContentStyle";
 import Divider from '@mui/material/Divider';
 import DownloadPimoApp from "../Accordion/DownloadPimo";
 import MailIcon from '@mui/icons-material/Mail';

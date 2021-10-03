@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import useStyles from "../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/agendaListStyle";
+import useStyles from "../../../assets/jss/material-kit-pro-react/components/HowPimoWorkPage/agendaListStyle";
 import componentsStyle from "../../../assets/jss/material-kit-pro-react/views/componentsStyle.js";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles1 = makeStyles(componentsStyle);
