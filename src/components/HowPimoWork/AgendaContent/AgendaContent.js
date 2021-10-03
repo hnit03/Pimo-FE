@@ -2,16 +2,8 @@ import React from "react";
 import Accordions from "../Accordion/Accordion";
 import useStyles from "../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/agendaContentStyle";
 import Divider from '@mui/material/Divider';
-import { makeStyles } from "@material-ui/core/styles";
-import classNames from "classnames";
-import componentsStyle from "../../../assets/jss/material-kit-pro-react/views/componentsStyle.js";
 import DownloadPimoApp from "../Accordion/DownloadPimo";
 import MailIcon from '@mui/icons-material/Mail';
-
-//const useStyles1 = makeStyles(componentsStyle);
-function link() {
-  return (<a href="Download_Pimo_App"></a>);
-};
 var listOverview =
   [{ name: "PIMO LÀ GÌ?", value: "Pimo là một nền tảng kết nối giữa người mẫu và các nhãn hàng dành riêng cho thị trường Việt Nam. Chúng tôi có thể giúp nhãn hàng thuê nhiều người mẫu với các phong cách đa dạng bằng cách hỗ trợ nền tảng để các nhãn hàng tạo ra các sự kiện hấp dẫn, các chiến dịch thu hút người mẫu đăng ký tham gia. Đối với người mẫu, chúng tôi luôn cố gắng đưa đến những cơ hội làm việc phù hợp với khả năng, phong cách của họ. Ở Pimo,  cơ hội tìm kiếm việc làm trong lĩnh vực thời trang chưa bao giờ dễ dàng đến thế." },
   { name: "HIỆN TẠI TÔI ĐANG Ở TRONG DANH SÁCH CHỜ, LÀM THẾ NÀO ĐỂ TÔI CÓ THỂ BẮT ĐẦU ĐƯỢC DUYỆT?", value: "Pimo đang có nhu cầu rất cao! Chúng tôi đang cố gắng đưa bạn lên nền tảng sớm nhất có thể. Tuy nhiên, để quá trình xét duyệt thông tin diễn ra nhanh chóng, bạn nên đảm bảo cập nhật tiểu sử và hình ảnh của mình với thông tin mới nhất và chính xác nhất. Khi chúng tôi biết càng nhiều thông tin về bạn, thì càng dễ dàng được đưa ra khỏi danh sách chờ đợi." },
@@ -78,7 +70,6 @@ export default function AgendaContent(props) {
         <p className={classes.generalQuestion} id="General"><a>GENERAL QUESTIONS</a></p>
         <div className={classes.generalLine}></div>
         <p></p>
-
         <div id="Overview">
           <Accordions list={listOverview} title={titleGeneralQuestion[0]} />
         </div>
@@ -117,7 +108,6 @@ export default function AgendaContent(props) {
           </li>
         </ul>
       </div>
-
     </div>
   );
 

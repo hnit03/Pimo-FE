@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import AgendaContent from '../components/HowPimoWork/AgendaContent/AgendaContent';
 import CustomButton from '../components/HowPimoWork/CustomButton/CustomButton';
+import VI from '../components/HowPimoWork/AgendaList/scroll';
 const aboutMe = (
     `My instagram page: EcemUzgor1
 
