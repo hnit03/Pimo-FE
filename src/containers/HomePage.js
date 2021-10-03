@@ -8,6 +8,7 @@ import brandLogo from "../assets/img/logoBrand.png";
 import android from "../assets/img/android.png"
 import ios from "../assets/img/ios.jpg"
 import SectionFooter from "../components/Footer/SectionFooter";
+import background from '../assets/img/background1.jpg';
 
 const useStyles = makeStyles((theme) => ({
    backgroundImage: {
@@ -31,10 +32,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomePage() {
    const classes = useStyles();
+   document.body.style.backgroundImage = `url(${background})`;
+   var footer = document.querySelector('footer')
+   if(footer !== null) {footer.style = 'display: block'}
    return (
       <div>
          <div className={classes.slogan}>
-            <p>Pimo - the largest platform to connect models and brands in Viet Nam</p>
+            <p>Pimo - nền tảng kết nối người mẫu và thương hiệu lớn nhất Việt Nam</p>
          </div>
          <div className={classes.logo}>
             <a href="/#" onClick={(e) => e.preventDefault()}
@@ -57,16 +61,12 @@ export default function HomePage() {
          <div className={classes.backgroundImage}>
             <GridContainer>
                <GridItem xs={12} sm={12} md={12}>
-                  <NavBar />
                </GridItem>
             </GridContainer>
             <img width="100%" src={brandLogo} alt='' />
             <div className={classes.cardBlog}>
                <CardBlog />
             </div>
-            {/* <ModelCard/> */}
-            {/* <ListModel/> */}
-            <SectionFooter />
          </div>
       </div>
    );

@@ -1,10 +1,22 @@
 import HomePage from './containers/HomePage';
-import { BrowserRouter } from 'react-router-dom';
+import GuildPage from './containers/GuildPage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from "./components/Header/NavBar";
+import SectionFooter from "./components/Footer/SectionFooter";
 
 function App() {
    return (
       <BrowserRouter>
-         <HomePage />
+         <NavBar />
+         <Switch>
+            <Route exact={true} path="/">
+               <HomePage />
+            </Route>
+            <Route path="/how-it-work">
+               <GuildPage />
+            </Route>
+         </Switch>
+         <SectionFooter />
       </BrowserRouter>
    );
 }

@@ -37,19 +37,12 @@ function CardBlog({ ...rest }) {
                                  width: '40%',
                                  height: '1.5rem',
                               }}></div>
-                              <h3 style={{ fontSize: '40px' , margin: '0'}}>
-                                 Model
+                              <h3 style={{ fontSize: '40px', margin: '0' }}>
+                                 Người mẫu
                               </h3>
                               <p className={classes.description1}>
-                                 Search for and hire the best models that fit your requirements? This has never been easier.
+                                 Tìm kiếm và ứng tuyển các sự kiện của các thương hiệu phù hợp với bạn một cách nhanh chóng . Cơ hội làm việc với các thương hiệu nổi tiếng ngay trong tầm tay.
                               </p>
-                              {/* <p className={classes.author}>
-                                 by{" "}
-                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <b>Mike Butcher</b>
-                                 </a>{" "}
-                                 , 2 days ago
-                              </p> */}
                               <Button
                                  href="#pablo"
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
@@ -57,7 +50,7 @@ function CardBlog({ ...rest }) {
                                  color="transparent"
                               >
                                  <div style={{ fontWeight: '800' }}>
-                                    Apply now
+                                    Ứng tuyển ngay
                                  </div>
                               </Button>
                               <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -112,19 +105,12 @@ function CardBlog({ ...rest }) {
                                     height: '1.5rem',
                                  }}></div>
                               </div>
-                              <h1 style={{ fontSize: '40px' , margin: '0'}}>
-                                    Brand
+                              <h1 style={{ fontSize: '40px', margin: '0' }}>
+                                 Nhãn hàng
                               </h1>
                               <p className={classes.description1}>
-                                 Search for and hire the best models that fit your requirements? This has never been easier.
+                                 Tìm kiếm và hợp tác với những người mẫu phù hợp với tiêu chí của bạn? Điều này chưa bao giờ dễ dàng hơn thế.
                               </p>
-                              {/* <p className={classes.author}>
-                                 by{" "}
-                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                    <b>Mike Butcher</b>
-                                 </a>{" "}
-                                 , 2 days ago
-                              </p> */}
                               <Button
                                  href="#pablo"
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
@@ -134,7 +120,7 @@ function CardBlog({ ...rest }) {
                                  <div style={{
                                     fontWeight: '800',
                                  }}>
-                                    Start now
+                                    Bắt đầu ngay
                                  </div>
                               </Button>
                               <div style={{
@@ -182,8 +168,9 @@ function CardBlog({ ...rest }) {
                                  margin: '5%',
                                  minHeight: "auto",
                                  fontSize: '4vw',
+                                 textTransform: 'uppercase',
                               }}>
-                                 AN EASIER WAY TO BOOKING.
+                                 Bạn có muốn trở thành đối tác của chúng tôi?
                               </h3>
                               <div style={{
                                  display: 'flex',
@@ -203,7 +190,7 @@ function CardBlog({ ...rest }) {
                                        fontWeight: '800',
                                        fontSize: '2vw'
                                     }}>
-                                       SIGN UP NOW
+                                       Đăng kí ngay
                                     </div>
                                  </Button>
                               </div>

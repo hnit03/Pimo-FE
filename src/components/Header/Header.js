@@ -67,7 +67,9 @@ export default function Header(props) {
          <Toolbar className={classes.container}>
             <Hidden smDown implementation="css" className={classes.hidden}>
                <Button className={classes.title}>
-                  <img id="logo_image" alt="" src={brand} style={{ paddingTop: '0.3rem', width: "15rem" }} />
+                  <Link to="/">
+                     <img id="logo_image" alt="" src={brand} style={{ paddingTop: '0.3rem', width: "15rem" }} />
+                  </Link>
                </Button>
             </Hidden>
             <Hidden smDown implementation="css" className={classes.hidden}>
@@ -75,7 +77,7 @@ export default function Header(props) {
             </Hidden>
             <Hidden mdUp>
                <IconButton
-                  style={{ height: '3rem' , marginLeft: 'auto' }}
+                  style={{ height: '3rem', marginLeft: 'auto' }}
                   aria-label="open drawer"
                   onClick={handleDrawerToggle}
                >

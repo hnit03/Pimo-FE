@@ -28,7 +28,7 @@ export default function FooterHome() {
          content={
 
             <div style={{ fontSize: '20px' }} className={classNames(classes.pullCenter, classes.copyRight)}>
-               421 Su Van Hanh, 12 Ward, 10 District, Ho Chi Minh City, 700000<br />
+               421 Sư Vạn Hạnh, phường 12, quận 10, thành phố Hồ Chí Minh, 700000<br />
                Copyright &copy; {1900 + new Date().getYear()}{" "}
                <a
                   href="https://www.creative-tim.com?ref=mkpr-footer-components"
@@ -38,7 +38,7 @@ export default function FooterHome() {
                   Pimo
                </a>{" "}
                All Rights Reserved.<br />
-               Email: pimo.studio@gmail.com - Hotline: 091.3333.999
+               Email: pimo.studio@gmail.com - Đường dây nóng: 091.3333.999
             </div>
          }
       >
@@ -52,47 +52,44 @@ export default function FooterHome() {
                   <img src={image} width='200vw' alt='' />
                </GridItem>
                <GridItem xs={12} sm={2} md={2} style={{ fontSize: '30px' }}>
-                  <h5>About Us</h5>
+                  <h5>Về chúng tôi</h5>
                   <ul className={classes.linksVertical}>
+                     <li>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Giới thiệu</a>
+                     </li>
+                     <li>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Tuyển dụng</a>
+                     </li>
+                     <li>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Truyền thông</a>
+                     </li>
                      <li>
                         <a style={{ fontSize: '15px' }} href="#pablo">Blog</a>
                      </li>
-                     <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">About us</a>
-                     </li>
-                     <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Presentation</a>
-                     </li>
-                     <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Contact Us</a>
-                     </li>
                   </ul>
                </GridItem>
                <GridItem xs={12} sm={2} md={2} style={{ fontSize: '30px' }}>
-                  <h5>Market</h5>
+                  <h5>Hỗ trợ khách hàng</h5>
                   <ul className={classes.linksVertical}>
                      <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Sales FAQ</a>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Trung tâm trợ giúp</a>
                      </li>
                      <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">How to register</a>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Giao dịch an toàn</a>
                      </li>
                      <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Sell goods</a>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Quy định cần biết</a>
                      </li>
                      <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Receive Payment</a>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Quy chế quyền riêng tư</a>
                      </li>
                      <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Transactions issues</a>
-                     </li>
-                     <li>
-                        <a style={{ fontSize: '15px' }} href="#pablo">Affiliates program</a>
+                        <a style={{ fontSize: '15px' }} href="#pablo">Liên hệ hỗ trợ</a>
                      </li>
                   </ul>
                </GridItem>
                <GridItem xs={12} sm={2} md={2} style={{ fontSize: '30px' }}>
-                  <h5>Follow Us</h5>
+                  <h5>Liên hệ</h5>
                   <ul className={classes.socialButtons}>
                      <li>
                         <Button justIcon href="#pablo" color="twitter">
@@ -120,12 +117,12 @@ export default function FooterHome() {
                         </Button>
                      </li>
                   </ul>
-                  <h5 style={{ fontSize: '15px' }}>Numbers Don{"'"}t Lie</h5>
+                  <h5 style={{ fontSize: '15px' }}>Con số không biết nói dối</h5>
                   <h4 style={{ fontSize: '15px' }}>
-                     721 <medium>Models</medium>
+                     721 <medium>Người mẫu</medium>
                   </h4>
                   <h4 style={{ fontSize: '15px' }}>
-                     1.183 <medium>Brands</medium>
+                     1.183 <medium>Nhãn hàng</medium>
                   </h4>
                </GridItem>
                <GridItem xs={12} sm={4} md={4} style={{ fontSize: '30px' }} >
