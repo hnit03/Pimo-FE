@@ -9,49 +9,41 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Link } from "react-router-dom";
 import image from '../../assets/img/logo.png';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import {useHistory} from 'react-router-dom';
-import axios from 'axios';
-import firebase from './../../adapters/firebase.js';
+import { useHistory } from 'react-router-dom';
+import { auth, provider } from './../../adapters/firebase.js';
+import { useDispatch } from 'react-redux';
+import { login } from '../../actions/auth';
 
 const useStyles = makeStyles(navbarsStyle);
 
 function Navbar() {
+   const dispatch = useDispatch();
    const history = useHistory();
    const classes = useStyles();
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
    const onClickSearchModel = useCallback(() => history.push('/model-search'), [history]);
-   const handleLogin = () =>{
-      var provider = new firebase.auth.GoogleAuthProvider ();
-    firebase
-      .auth ()
-      .signInWithPopup (provider)
-      .then (function (result) {
-        var token = result.user.multiFactor.user.accessToken;
-        var mail = result.user.email;
-        console.log(token);
-        console.log(mail);
-        var postData = {
-          token:token,
-          mail: mail,
-        };
-        
-        let axiosConfig = {
-          headers: {
-              'Content-Type': 'application/json;charset=UTF-8',
-              "Access-Control-Allow-Origin": "*",
-          }
-        };
-        axios.post('http://api.pimo.studio/api/v1/auth', postData, axiosConfig)
-        .then((res) => {
-          console.log("RESPONSE RECEIVED: ", res);
-        })
-        .catch((err) => {
-          console.log("AXIOS ERROR: ", err);
-        })
-      })
-      .catch (function (error) {
-        console.log (error);
-      });
+   const handleLogin = () => {
+      auth.signInWithPopup(provider)
+         .then((result) => {
+            var token = result.user.multiFactor.user.accessToken;
+            var mail = result.user.email;
+            console.log(token);
+            console.log(mail);
+            var postData = {
+               token: token,
+               mail: mail,
+            };
+            let axiosConfig = {
+               headers: {
+                  'Content-Type': 'application/json;charset=UTF-8',
+                  "Access-Control-Allow-Origin": "*",
+               }
+            };
+            dispatch(login(postData, axiosConfig));
+         })
+         .catch(function (error) {
+            console.log(error);
+         });
    }
    return (
       <div >
@@ -83,7 +75,7 @@ function Navbar() {
                         color="transparent"
                      >
                         <Link to="/model-search" className={classes.dropdownLink}>
-                        Người mẫu
+                           Người mẫu
                         </Link>
                      </Button>
                   </ListItem>
