@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Header from '../Header/Header';
 import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,7 +12,14 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useHistory } from 'react-router-dom';
 import { auth, provider } from './../../adapters/firebase.js';
 import { useDispatch } from 'react-redux';
-import { login } from '../../actions/auth';
+import { login, logout } from '../../actions/auth';
+import LineStyle from "@material-ui/icons/LineStyle";
+import Layers from "@material-ui/icons/Layers";
+import Icon from "@material-ui/core/Icon";
+import CustomDropdown from "../CustomDropdown/CustomDropdown";
+import Cookies from 'js-cookie';
+import { useSelector } from 'react-redux';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const useStyles = makeStyles(navbarsStyle);
 
@@ -20,15 +27,25 @@ function Navbar() {
    const dispatch = useDispatch();
    const history = useHistory();
    const classes = useStyles();
+   const [name, setName] = useState('')
+   const nameAuth = useSelector((state) => state.auth);
+
+   useEffect(() => {
+      if (Cookies.get('name') !== undefined) {
+         setName(Cookies.get('name'));
+      } else {
+         setName(nameAuth)
+      }
+   }, [nameAuth])
+
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
    const onClickSearchModel = useCallback(() => history.push('/model-search'), [history]);
+
    const handleLogin = () => {
       auth.signInWithPopup(provider)
          .then((result) => {
             var token = result.user.multiFactor.user.accessToken;
             var mail = result.user.email;
-            // console.log(token);
-            // console.log(mail);
             var postData = {
                token: token,
                mail: mail,
@@ -45,6 +62,14 @@ function Navbar() {
             console.log(error);
          });
    }
+
+   const handleLogout = () => {
+      Cookies.remove('name');
+      Cookies.remove('jwt');
+      setName('');
+      dispatch(logout());
+   }
+
    return (
       <div >
          <Header
@@ -94,14 +119,49 @@ function Navbar() {
                      </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                     <Button
-                        href="#pablo"
-                        className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={() => handleLogin()}
-                        color="transparent"
-                     >
-                        <AccountCircleIcon /> Đăng nhập
-                     </Button>
+                     {name === '' ? (
+                        <Button
+                           href="#pablo"
+                           className={classes.navLink + " " + classes.navLinkActive}
+                           onClick={() => handleLogin()}
+                           color="transparent"
+                        >
+                           <AccountCircleIcon /> Đăng nhập
+                        </Button>
+                     ) : (
+                        <CustomDropdown
+                           left
+                           navDropdown
+                           dropdownHeader="Dropdown Header"
+                           buttonText={name}
+                           buttonProps={{
+                              className: classes.navLink,
+                              color: "transparent",
+                           }}
+                           dropdownList={[
+                              <Link to="/" className={classes.dropdownLink}>
+                                 <LineStyle className={classes.dropdownIcons} /> Presentation Page
+                              </Link>,
+                              <Link to="/components" className={classes.dropdownLink}>
+                                 <Layers className={classes.dropdownIcons} />
+                                 All components
+                              </Link>,
+                              <a
+                                 href="https://demos.creative-tim.com/material-kit-pro-react/#/documentation/tutorial?ref=mkpr-navbar"
+                                 className={classes.dropdownLink}
+                              >
+                                 <Icon className={classes.dropdownIcons}>content_paste</Icon>
+                                 Documentation
+                              </a>,
+                              <div onClick={handleLogout} className={classes.dropdownLink}
+                              style={{ color: 'red' }}>
+                                 <LogoutIcon className={classes.dropdownIcons} />
+                                    Logout
+                              </div>
+                           ]}
+                        />
+                     )}
+
                   </ListItem>
                   <ListItem className={classes.listItem1} >
                      <Button
