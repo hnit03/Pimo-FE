@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/Header/NavBar";
 import CardBlog from "../components/Card/CardBlog";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "../components/Grid/GridContainer.js";

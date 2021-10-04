@@ -12,7 +12,7 @@ const headerLinksStyle = (theme) => ({
       [theme.breakpoints.up("md")]: {
          WebkitBoxAlign: "center",
          MsFlexAlign: "center",
-         alignItems: "center",
+         alignItems: "end",
          WebkitBoxOrient: "horizontal",
          WebkitBoxDirection: "normal",
          MsFlexDirection: "row",
@@ -74,7 +74,7 @@ const headerLinksStyle = (theme) => ({
       display: "block",
       width: "auto",
       margin: "0",
-      // marginLeft: "5%",
+      marginBottom: "0.7%",
       padding: "0",
 
       [theme.breakpoints.down("sm")]: {

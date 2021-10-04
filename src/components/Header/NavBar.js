@@ -17,6 +17,7 @@ function Navbar() {
    const history = useHistory();
    const classes = useStyles();
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
+   const onClickSearchModel = useCallback(() => history.push('/model-search'), [history]);
    return (
       <div >
          <Header
@@ -43,10 +44,12 @@ function Navbar() {
                      <Button
                         href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={(e) => e.preventDefault()}
+                        onClick={onClickSearchModel}
                         color="transparent"
                      >
+                        <Link to="/model-search" className={classes.dropdownLink}>
                         Người mẫu
+                        </Link>
                      </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
