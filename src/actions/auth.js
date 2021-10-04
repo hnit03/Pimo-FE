@@ -1,15 +1,14 @@
 import * as api from '../api/auth.js';
 
-export const login = (postData, axiosConfig) => async (dispatch) => {
+export const login = (postData, axiosConfig) => async () => {
+   var { data } = ''
    try {
       await api.login(postData, axiosConfig)
          .then((res) => {
-            console.log("RESPONSE RECEIVED: ", res);
+            // console.log("RESPONSE RECEIVED: ", res.data.jwt);
+            data = res.data
          })
-         .catch((err) => {
-            console.log("AXIOS ERROR: ", err);
-         })
-      // dispatch({ type: 'LOGIN'});
+         console.log("Data: " + data);
    } catch (error) {
       console.log(error.message);
    }

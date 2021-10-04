@@ -27,8 +27,8 @@ function Navbar() {
          .then((result) => {
             var token = result.user.multiFactor.user.accessToken;
             var mail = result.user.email;
-            console.log(token);
-            console.log(mail);
+            // console.log(token);
+            // console.log(mail);
             var postData = {
                token: token,
                mail: mail,
@@ -57,7 +57,6 @@ function Navbar() {
                <List className={classes.list + " " + classes.mlAuto}>
                   <ListItem className={classes.listItem}>
                      <Button
-                        // href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
                         onClick={onClickHowItWork}
                         color="transparent"
