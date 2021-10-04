@@ -106,7 +106,7 @@ const infoColor = [
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#f8bbd0", "#f06292"];
 const grayColor = [
   "#999",
-  "#3C4858",
+  "black",
   "#eee",
   "#343434",
   "#585858",
@@ -169,7 +169,7 @@ const container = {
     maxWidth: "960px",
   },
   "@media (min-width: 1200px)": {
-    maxWidth: "1140px",
+    maxWidth: "90%",
   },
 };
 
@@ -325,7 +325,8 @@ const defaultBoxShadow = {
 };
 
 const title = {
-  color: grayColor[1],
+//   color: grayColor[1],
+color: 'black',
   textDecoration: "none",
   fontWeight: "700",
   marginTop: "30px",
@@ -340,6 +341,8 @@ const cardTitle = {
     marginTop: ".625rem",
     marginBottom: "0.75rem",
     minHeight: "auto",
+    fontSize: '3.5rem',
+    fontFamily: `AvenirNext-DemiBold, Avenir-Heavy, Lato, sans-serif`
   },
 };
 

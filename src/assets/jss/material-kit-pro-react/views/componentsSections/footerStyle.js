@@ -8,9 +8,9 @@ import {
   dribbbleColor,
   instagramColor,
   grayColor,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../material-kit-pro-react.js";
 
-import imagesStyles from "assets/jss/material-kit-pro-react/imagesStyles.js";
+import imagesStyles from "../../../material-kit-pro-react/imagesStyles.js";
 
 const style = {
   ...imagesStyles,
@@ -28,6 +28,7 @@ const style = {
       overflow: "hidden",
       paddingBottom: "10px",
       maxWidth: 300,
+      color: 'black'
     },
     "& i": {
       fontSize: "20px",

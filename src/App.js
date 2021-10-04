@@ -1,21 +1,27 @@
-
-import './App.css';
-import HomePage from './components/navbar/HomePage';
-import ModelInfoPage from './containers/ModelInfoPage';
-import { BrowserRouter } from 'react-router-dom';
-import HowPimoWorkPage from './containers/HowPimoWorkPage';
+import HomePage from './containers/HomePage';
+import GuildPage from './containers/GuildPage';
+import ModelSearchPage from './containers/ModelSearchPage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from "./components/Header/NavBar";
+import SectionFooter from "./components/Footer/SectionFooter";
 
 function App() {
-  return (
-    <BrowserRouter className="App">
-      {/* <ModelInfoPage /> */}
-      <nav class="navigation">
-        <HomePage />
-      </nav>
-      <HowPimoWorkPage/>
-    </BrowserRouter>
-
-  );
+   return (
+      <BrowserRouter>
+         <NavBar />
+         <Switch>
+            <Route exact={true} path="/">
+               <HomePage />
+            </Route>
+            <Route path="/how-it-work">
+               <GuildPage />
+            </Route>
+            <Route path="/model-search">
+               <ModelSearchPage />
+            </Route>
+         </Switch>
+      </BrowserRouter>
+   );
 }
 
 export default App;

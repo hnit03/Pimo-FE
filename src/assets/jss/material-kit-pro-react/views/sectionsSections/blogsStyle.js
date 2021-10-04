@@ -7,7 +7,7 @@ import {
   mlAuto,
   mrAuto,
   grayColor,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../material-kit-pro-react.js";
 
 const blogsSection = {
   container,
@@ -18,7 +18,7 @@ const blogsSection = {
   mrAuto,
   description,
   blog: {
-    padding: "50px 0",
+   //  padding: "50px 0",
   },
   cardCategory: {
     marginBottom: "0",
@@ -31,7 +31,10 @@ const blogsSection = {
   },
   description1: {
     ...description,
-    lineHeight: "1.313rem",
+    lineHeight: "1.5rem",
+    fontSize: "1.2rem",
+   //  fontFamily: `AvenirNext-DemiBold, Avenir-Heavy, Lato, sans-serif`,
+    fontWeight: '450',
   },
   author: {
     "& a": {
@@ -40,7 +43,8 @@ const blogsSection = {
     },
   },
   card: {
-    marginBottom: "80px",
+    marginBottom: "5%",
+   //  marginTop: '10rem'
   },
   card4: {
     marginBottom: "60px",

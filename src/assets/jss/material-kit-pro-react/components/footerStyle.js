@@ -8,7 +8,7 @@ import {
   dribbbleColor,
   instagramColor,
   hexToRgb,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../material-kit-pro-react.js";
 
 const footerStyle = {
   left: {
@@ -49,7 +49,8 @@ const footerStyle = {
     },
   },
   big: {
-    padding: "1.875rem 0",
+     backgroundColor: '#f69cb8',
+   //  padding: "1.875rem 0",
     "& h5, & h4": {
       fontWeight: 700,
       fontFamily: "Roboto Slab,Times New Roman,serif",

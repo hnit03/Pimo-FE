@@ -1,4 +1,5 @@
-import { container, title } from "../../../../../assets/jss/material-kit-pro-react.js"
+import { container, title } from "assets/jss/material-kit-pro-react.js";
+
 const pillsStyle = {
   section: {
     padding: "70px 0",
@@ -9,7 +10,6 @@ const pillsStyle = {
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none",
-    float:"right",
   },
 };
 

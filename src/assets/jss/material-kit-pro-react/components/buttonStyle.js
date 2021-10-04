@@ -21,11 +21,10 @@ import {
   redditColor,
   instagramColor,
   hexToRgb,
-} from "../../../jss/material-kit-pro-react.js";
+} from "../../material-kit-pro-react.js";
 
 const buttonStyle = {
   button: {
-   fontFamily: "Calibri, sans-serif",
     minHeight: "auto",
     minWidth: "auto",
     backgroundColor: grayColor[0],
@@ -45,7 +44,7 @@ const buttonStyle = {
     margin: ".3125rem 1px",
     fontSize: "12px",
     fontWeight: "400",
-   textTransform: "uppercase",
+    textTransform: "uppercase",
     letterSpacing: "0",
     willChange: "box-shadow, transform",
     transition:

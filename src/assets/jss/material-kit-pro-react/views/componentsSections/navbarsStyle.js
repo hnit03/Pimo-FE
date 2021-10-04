@@ -1,5 +1,5 @@
-import { container, title } from "../../../../../assets/jss/material-kit-pro-react";
-import headerLinksStyle from "../../../../../assets/jss/material-kit-pro-react/components/headerLinksStyle.js";
+import { container, title } from "../../../../jss/material-kit-pro-react.js";
+import headerLinksStyle from "../../../../jss/material-kit-pro-react/components/headerLinksStyle.js";
 
 const navbarsStyle = (theme) => ({
   container,
@@ -28,7 +28,7 @@ const navbarsStyle = (theme) => ({
     backgroundPosition: "50%",
     backgroundSize: "cover",
     marginTop: "0",
-    minHeight: "1200px",
+    minHeight: "740px",
   },
   formControl: {
     margin: "0 !important",
