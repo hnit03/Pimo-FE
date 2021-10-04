@@ -1,4 +1,4 @@
-import * as api from '../api/index.js';
+import * as api from '../api/models.js';
 
 export const getModelById = (id) => async (dispatch) => {
    try {
