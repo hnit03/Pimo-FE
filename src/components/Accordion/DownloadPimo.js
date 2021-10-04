@@ -1,18 +1,12 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import useStyles from '../../assets/jss/material-kit-pro-react/components/accordionStyle';
-import googleplay from '../../assets/img/android.png';
-import appstore from "../../assets/img/ios.png";
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import GridContainer from "../Grid/GridContainer.js";
-import GridItem from "../Grid/GridItem.js";
-import brandLogo from "../../assets/img/logoBrand.png";
 import android from "../../assets/img/android.png"
 import ios from "../../assets/img/ios.jpg";
-import background from '../../assets/img/background1.png';
 
 const Accordion = styled((props) => (
    <MuiAccordion disableGutters elevation={0} square {...props} />
