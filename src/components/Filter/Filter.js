@@ -86,7 +86,7 @@ export default function StandardImageList() {
    const [checkSearchHeightMin, setCheckSearchHeightMin] = React.useState();
    const [checkSearchAgeMin, setCheckSearchAgeMin] = React.useState();
    const [checkSearchHeightMax, setCheckSearchHeightMax] = React.useState();
-   const [checkSearchAgetMax, setCheckSearchAgeMax] = React.useState();
+   const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState();
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
 
@@ -97,9 +97,9 @@ export default function StandardImageList() {
    const handleCheckHeight = () => {
       if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
          setCheckHeight(true);
-      } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgetMax)) {
+      } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgeMax)) {
          setCheckAge(true)
-      } else if (parseInt(checkSearchAgeMin) < parseInt(checkSearchAgetMax)) {
+      } else if (parseInt(checkSearchAgeMin) < parseInt(checkSearchAgeMax)) {
          setCheckAge(false)
       } else {
          setCheckHeight(false);
