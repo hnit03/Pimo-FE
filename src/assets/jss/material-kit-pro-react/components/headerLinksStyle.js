@@ -1,8 +1,8 @@
 import {
    grayColor,
-   whiteColor,
+   // whiteColor,
    mlAuto,
-   hexToRgb,
+   // hexToRgb,
 } from "../../../jss/material-kit-pro-react.js";
 
 import tooltip from "../../../jss/material-kit-pro-react/tooltipsStyle.js";

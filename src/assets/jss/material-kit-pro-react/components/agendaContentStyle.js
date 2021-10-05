@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     margin: 0,
     color: 'gray',
-    margin: '0',
     textAlign: 'center',
   },
   text: {
