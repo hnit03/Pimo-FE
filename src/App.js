@@ -6,17 +6,36 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
 import { useDispatch } from 'react-redux';
 import { getModelById } from './actions/models';
-// import { useSelector } from 'react-redux';
+import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 
 function App() {
-   // const model = useSelector((state) => state.models);
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getModelById(1));
    }, [dispatch]);
-   // console.log(model);
    return (
       <BrowserRouter>
+         <div id="alert" style={{
+            position: 'fixed',
+            right: 0,
+            marginRight: '5%',
+            marginTop: '8%',
+            zIndex: 1000,
+            top: 0,
+            display: 'none',
+            width: '35%',
+         }}>
+            <SnackbarContent
+               message={
+                  <span style={{ fontSize: '120%' , textAlign: 'right'}}>
+                     <b>Đăng nhập thất bại: </b> Tài khoản gmail chưa được đăng kí
+                     hoặc tài khoản không thể đăng nhập vào trang
+                  </span>
+               }
+               close
+               color="danger"
+            />
+         </div>
          <NavBar />
          <Switch>
             <Route exact={true} path="/">

@@ -33,7 +33,13 @@ function Navbar() {
    useEffect(() => {
       if (Cookies.get('name') !== undefined) {
          setName(Cookies.get('name'));
-      } else {
+      } else if(nameAuth.indexOf('@LoginFail:') !== -1) {
+         document.getElementById('alert').style.display = 'block';
+         setTimeout(
+            () => document.getElementById('alert').style.display = 'none',
+            3000
+         );
+      } else if (nameAuth !== undefined) {
          setName(nameAuth)
       }
    }, [nameAuth])
@@ -119,17 +125,17 @@ function Navbar() {
                      </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                     {name === '' ? (
-                        <Button
+                     {name === '' ?
+                        (<Button
                            href="#pablo"
                            className={classes.navLink + " " + classes.navLinkActive}
                            onClick={() => handleLogin()}
                            color="transparent"
                         >
                            <AccountCircleIcon /> Đăng nhập
-                        </Button>
-                     ) : (
-                        <CustomDropdown
+                        </Button>)
+                        :
+                        (<CustomDropdown
                            left
                            navDropdown
                            dropdownHeader="Dropdown Header"
@@ -154,13 +160,13 @@ function Navbar() {
                                  Documentation
                               </a>,
                               <div onClick={handleLogout} className={classes.dropdownLink}
-                              style={{ color: 'red' }}>
+                                 style={{ color: 'red' }}>
                                  <LogoutIcon className={classes.dropdownIcons} />
-                                    Logout
+                                 Logout
                               </div>
                            ]}
-                        />
-                     )}
+                        />)
+                     }
 
                   </ListItem>
                   <ListItem className={classes.listItem1} >

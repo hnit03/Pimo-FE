@@ -3,14 +3,23 @@ import Cookies from 'universal-cookie';
 
 const login = (postData, axiosConfig) => async (dispatch) => {
    const cookies = new Cookies();
+   var isExist = true;
 
    try {
       await api.login(postData, axiosConfig)
          .then((res) => {
-            cookies.set('name', res.data.name, { path: '/' , maxAge: 60 * 60});
-            cookies.set('jwt', res.data.jwt, { path: '/' , maxAge: 60 * 60});
+            if (res.data.isExist === false) {
+               isExist = false;
+            } else {
+               cookies.set('name', res.data.name, { path: '/', maxAge: 60 * 60 });
+               cookies.set('jwt', res.data.jwt, { path: '/', maxAge: 60 * 60 });
+            }
          })
-      dispatch({ type: 'LOGIN', payload: cookies.get('name')})
+      if (isExist) {
+         dispatch({ type: 'LOGIN', payload: cookies.get('name') })
+      } else {
+         dispatch({ type: 'LOGIN', payload: "@LoginFail: " + Math.random() })
+      }
    } catch (error) {
       console.log(error.message);
    }
@@ -18,10 +27,10 @@ const login = (postData, axiosConfig) => async (dispatch) => {
 
 const logout = () => async (dispatch) => {
    try {
-      dispatch({ type: 'LOGOUT', payload: null})
+      dispatch({ type: 'LOGOUT', payload: null })
    } catch (error) {
       console.log(error.message);
    }
 };
 
-export {login, logout}
+export { login, logout }

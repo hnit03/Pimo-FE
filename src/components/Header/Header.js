@@ -63,7 +63,7 @@ export default function Header(props) {
       [classes.fixed]: fixed,
    });
    return (
-      <AppBar className={appBarClasses}>
+      <AppBar style={{zIndex: 100}} className={appBarClasses}>
          <Toolbar className={classes.container}>
             <Hidden smDown implementation="css" className={classes.hidden}>
                <Button className={classes.title}>
