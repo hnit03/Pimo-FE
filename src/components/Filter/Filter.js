@@ -25,6 +25,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import CardImage from "../CardImage/CardImage";
 import {
   searchBySexValue,
   searchByStyleValue,
@@ -288,8 +289,24 @@ export default function StandardImageList() {
           marginLeft: "-5%",
         }}
       >
-         <GridContainer spacing={2}>
-          {itemData.map((image, index) => (
+         <GridContainer spacing={1}>
+           
+           <GridItem  xs={12} sm={4} md={3}>
+              <CardImage/>
+           </GridItem>
+           <GridItem  xs={12} sm={4} md={3}>
+              <CardImage/>
+           </GridItem>
+           <GridItem  xs={12} sm={4} md={3}>
+              <CardImage/>
+           </GridItem>
+           <GridItem  xs={12} sm={4} md={3}>
+              <CardImage/>
+           </GridItem>
+           <GridItem  xs={12} sm={4} md={3}>
+              <CardImage/>
+           </GridItem>
+          {/* {itemData.map((image, index) => (
             <GridItem key={index} xs={12} sm={4} md={3}>
               <a style={{ textDecoration: "none" }} href="/how-it-works">
                 <Card blog>
@@ -317,7 +334,7 @@ export default function StandardImageList() {
                 </Card>
               </a>
             </GridItem>
-          ))}
+          ))} */}
         </GridContainer>
         <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
           <Pagination count={10} showFirstButton showLastButton />

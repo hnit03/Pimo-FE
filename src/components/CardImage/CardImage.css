@@ -1,0 +1,92 @@
+/* body{
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+    } */
+.hieu_ung{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:640px;
+    height:400px;
+    overflow: hidden;
+    background:#000;
+}
+.noi_dung{
+    width: 100%;
+    height:100%;
+}
+img{
+    width:100%;
+    transition: 0.5s;
+}
+.hieu_ung:hover img {
+    transform: rotate(-10deg) scale(1.3);
+    opacity:0.5;
+}
+.phu_de{
+    position: absolute;
+    top:40px;
+    left:40px;
+    right:40px;
+    bottom:40px;
+}
+.phu_de::before{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+  border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scale(0,1)
+}
+.hieu_ung:hover .phu_de:before{
+    transform: scale(1,1)
+}
+.phu_de::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scale(1,0)
+}
+.hieu_ung:hover .phu_de:after{
+    transform: scale(1,1)
+}
+.thong_tin{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:1;
+    padding:20px;
+    text-align: center;
+    opacity:0;
+    transition: 0.5s;
+}
+.hieu_ung:hover .thong_tin{
+    opacity: 1;
+}
+.thong_tin h2{
+    color: #fff;
+    margin:0;
+    padding:0;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.thong_tin p{
+    color: #fff;
+    margin:20px 0 0;
+    padding:0;
+    font-size: 15px;
+}
