@@ -140,12 +140,12 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '50vh',
       color: 'black',
       margin: 0,
-      fontSize: '24px',
+      fontSize: '120%',
       textTransform: 'uppercase',
       marginBottom: '1rem',
       background: 'pink',
       backgroundColor: 'rgb(255,192,203, 0.5)',
-      padding: '10px 0 10px 0',
+      padding: '5% 0 5% 0',
       borderRadius: '0.6rem'
    },
    p: {
