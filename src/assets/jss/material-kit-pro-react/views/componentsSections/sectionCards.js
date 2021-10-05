@@ -55,7 +55,7 @@ import {
        top: "8px",
      },
      //bonus
-     fontSize: 18,
+     fontSize: 22,
      fontWeight: "bold",
      color: "black",
    },
@@ -268,7 +268,7 @@ import {
    },
    searchHeight:{
      "& label": {
-       fontSize: "1.2em",
+       fontSize: "0.8em",
        color: "black",
      },
      "& label.Mui-focused": {
@@ -322,8 +322,11 @@ import {
    deleteText:{
      fontWeight:'bold',
      color:'#f64aa4a8',
-     fontSize:'1.3rem !important',
+     fontSize:'1.2rem !important',
      cursor: "pointer",
+     marginRight:'1rem',
+     marginTop:'0.13rem'
+
    },
    titleSearch: {
      margin: 0,
@@ -337,13 +340,33 @@ import {
      marginTop: "0.3em !important",
    },
    containerRadioGroup:{
-     marginTop:'0.8rem'
+     marginTop:'0.5rem'
    },
-   customLabelRadio: {
+   checkBox:{
+    padding: '0 !important',
+    marginBottom:'0.3rem !important',
+    "&.Mui-checked": {
+      color: "#f64aa4a8 !important",
+    },
+    },
+   containerCheckBox:{
+    marginLeft: "1.2rem" ,
+    marginTop:'0.5rem'
+   },
+   customLabelCheckBox: {
      fontSize: "1rem",
      width: "10em",
      margin: 0,
+     marginLeft:'0.6rem',
+     color: '#4c4b4b'
    },
+   customLabelRadio: {
+    fontSize: "1rem",
+    width: "10em",
+    margin: 0,
+    marginLeft:'0.1rem',
+    color: '#4c4b4b'
+  },
    containerViewMore: {
      listStyleType: "none",
      padding: 0,
@@ -365,21 +388,24 @@ import {
      color: "#f64aa4a8",
     },
    cardBody: {
-     textAlign: "center",
-     width: "90%",
+    //  textAlign: "center",
+      width: "80%",
+    paddingBottom:0
    },
-   buttonDetail: {
-     borderRadius: " 0.7em !important",
-     width: "100%",
-     border: "3px solid #f64aa4a8 !important",
-     color: "#f64aa4a8 !important",
-      fontWeight: " bold !important",
-     "&:hover": {
-       backgroundColor: "#f64aa4a8 !important",
-       color: "white !important",
-      
-     },
+   textAddress:{
+    marginTop: 0,
+     marginBottom: 0 ,
+     color: '#4c4b4b',
+     fontSize:'1rem',
+     marginLeft:'0.3rem'
    },
+   textMeasurements:{
+    marginTop: '0.3rem',
+    color: '#4c4b4b',
+    fontSize:'1rem',
+    marginBottom:'0.7rem'
+
+   }
  };
  
  export default styles;

@@ -36,7 +36,7 @@ import {
      borderRadius: "6px",
      "& img": {
        width: "100%",
-       // borderRadius: "6px",
+       borderRadius: "6px",
        pointerEvents: "none",
        boxShadow:
          "0 5px 15px -8px rgba(" +
@@ -48,7 +48,7 @@ import {
      "& a": {
        display: "block",
      },
-     width:'100%',
+    //  width:'100%',
     },
    noShadow: {
      "& img": {
