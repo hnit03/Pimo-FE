@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HomePage from './containers/HomePage';
 import GuildPage from './containers/GuildPage';
 import ModelSearchPage from './containers/ModelSearchPage';
+import ModelInfoPage from './containers/ModelInfoPage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
-import { useDispatch } from 'react-redux';
-import { getModelById } from './actions/models';
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 
 function App() {
-   const dispatch = useDispatch();
-   useEffect(() => {
-      dispatch(getModelById(1));
-   }, [dispatch]);
    return (
       <BrowserRouter>
          <div id="alert" style={{
@@ -46,6 +41,9 @@ function App() {
             </Route>
             <Route path="/model-search">
                <ModelSearchPage />
+            </Route>
+            <Route path="/model-info">
+               <ModelInfoPage />
             </Route>
          </Switch>
       </BrowserRouter>

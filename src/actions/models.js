@@ -8,3 +8,12 @@ export const getModelById = (id) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const getModels = (pageNo) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchModels(pageNo);
+      dispatch({ type: 'FETCH_MODELS', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};
