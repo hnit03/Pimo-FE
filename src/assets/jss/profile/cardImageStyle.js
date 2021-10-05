@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '1rem',
       background: 'pink',
       backgroundColor: 'rgb(255,192,203, 0.5)',
-      padding: '5% 0 5% 0',
+      padding: '4% 0 4% 0',
       borderRadius: '0.6rem'
    },
    p: {
