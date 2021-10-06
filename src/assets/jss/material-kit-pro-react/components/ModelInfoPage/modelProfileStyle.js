@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
       textLocation: {
         color: 'gray',
         float: 'left',
-        fontSize: '1.1rem',
+        fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
         marginTop: '0.1rem',

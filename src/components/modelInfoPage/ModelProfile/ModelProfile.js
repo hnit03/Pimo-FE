@@ -6,7 +6,7 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMale, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import WcIcon from '@mui/icons-material/Wc';
-
+import BasicChips from "../Chip/Chip";
 
 const Root = styled('div')(({ theme }) => ({
     width: '100%',
@@ -29,8 +29,10 @@ export default function ModelProfile(props) {
                     <li style={{ display: 'flex', }} className={classes.li}>
                         <LocationOn className={classes.icon} /><span className={classes.text} >{props.location}</span>
                     </li>
-                </ul>
+                    <BasicChips label={props.listLabel}/>
+                </ul>    
             </div>
+            
             <Divider className={classes.divider_Style} >About Me</Divider>
             <div className={classes.textLocation}>
                 {props.aboutMe}

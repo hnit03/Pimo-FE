@@ -56,8 +56,8 @@ export default function SectionPills() {
                     <SectionContent 
                     list1 = {listModelDetails} 
                     list2 = {listBodyAttributes}
-                    list3 = {listBodyMeasurements}
-                    list4 = {listModelStyles}/>
+                    list3 = {listBodyMeasurements}>
+                    </SectionContent>
                   </span>
                 ),
               },
@@ -65,7 +65,9 @@ export default function SectionPills() {
                 tabButton: "Body attributes",
                 tabContent: (
                   <span>
-                  
+                  <SectionContent 
+                    list1 = {listBodyAttributes} >
+                    </SectionContent>
                   </span>
                 ),
               },
@@ -73,15 +75,9 @@ export default function SectionPills() {
                 tabButton: "Body measurements",
                 tabContent: (
                   <span>
-                    <p></p>
-                  </span>
-                ),
-              },
-              {
-                tabButton: "Model Styles",
-                tabContent: (
-                  <span>
-                    <p></p>
+                    <SectionContent 
+                    list1 = {listBodyMeasurements} >
+                    </SectionContent>
                   </span>
                 ),
               },

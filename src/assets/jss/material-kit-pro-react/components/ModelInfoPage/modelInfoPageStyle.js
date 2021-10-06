@@ -1,11 +1,13 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   cover_image_Style: {
-    width: '98%',
-    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-    borderRadius: '0.5rem',
-    margin: '1.3%',
+    width: '100.5%',
+    boxShadow: '10px 4px 8px 0 rgba(0, 0, 0, 0.3), 10px 10px 20px 0 rgba(0, 0, 0, 0.3)',
+    margin: '0',
     marginBottom: 0,
+    objectFit: 'cover',
+    height: '100vh',
+    objectPosition: '100% 50%',
   },
   avatar_image_Style: {
     width: '100%',
@@ -13,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '0.5rem',
     margin: '2.5%',
     marginBottom: '4%',
+    marginTop:'-20vh',
     
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
   },
@@ -68,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 },
   pageLeft_Style:{
     margin:'0',
-    paddingLeft: '1.7%',
+    paddingLeft: '0.5%',
     //backgroundColor:'pink',
     width:'100%',
   },
@@ -80,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Calibri, sans-serif",
     marginTop: '0.1rem'
 },
+listCardImage:{
+  width: '100%',
+  backgroundColor: 'pink'
+}
 }
 ));
 export default useStyles;

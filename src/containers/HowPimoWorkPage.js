@@ -4,19 +4,6 @@ import AgendaList from '../components/HowPimoWork/AgendaList/AgendaList';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import AgendaContent from '../components/HowPimoWork/AgendaContent/AgendaContent';
-const aboutMe = (
-    `My instagram page: EcemUzgor1
-
-    I am a very patient, creative and hard-working person. My future goals are to participate in catwalks and photo shoots made by creative stylists and photographers. I am also very interested in singing, playing violin/guitar.
-    
-    Top Model of The World'16 - Miss Turkey
-    
-    Miss Asia Pacific World Beauty Contest'12 (Top 10) / Korea - Miss Turkey`
-);
-
-
-
-
 
 export default function HowPimoWorkPage() {
     const classes = useStyles();
