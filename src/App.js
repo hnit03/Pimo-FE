@@ -10,7 +10,7 @@ import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 function App() {
    return (
       <BrowserRouter>
-         {/* <div id="alert" style={{
+         <div id="signupSuccess" style={{
             position: 'fixed',
             right: 0,
             marginRight: '5%',
@@ -22,21 +22,20 @@ function App() {
          }}>
             <SnackbarContent
                message={
-                  <span style={{ fontSize: '120%' , textAlign: 'right'}}>
-                     <b>Đăng nhập thất bại: </b> Tài khoản gmail chưa được đăng kí
-                     hoặc tài khoản không thể đăng nhập vào trang
+                  <span style={{ fontSize: '120%', textAlign: 'right' }}>
+                     <b>Đăng ký thành công</b>
                   </span>
                }
                close
-               color="danger"
+               color="success"
             />
-         </div> */}
+         </div>
          <NavBar />
          <Switch>
-            <Route exact={true} path="/" component={HomePage}/>
-            <Route path="/how-it-work" component={GuildPage}/>
-            <Route path="/model-search/:id" component={ModelSearchPage}/>
-            <Route path="/model-info" component={ModelInfoPage}/>
+            <Route exact={true} path="/" component={HomePage} />
+            <Route path="/how-it-work" component={GuildPage} />
+            <Route path="/model-search/:id" component={ModelSearchPage} />
+            <Route path="/model-info" component={ModelInfoPage} />
          </Switch>
       </BrowserRouter>
    );

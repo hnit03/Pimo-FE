@@ -266,6 +266,12 @@ const buttonStyle = {
       color: grayColor[0],
     },
   },
+  black: {
+   "&,&:focus,&:hover": {
+     backgroundColor: "black",
+     color: 'white',
+   },
+ },
   twitter: {
     backgroundColor: twitterColor,
     color: whiteColor,

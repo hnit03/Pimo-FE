@@ -25,7 +25,7 @@ const modalStyle = (theme) => ({
     minHeight: "16.43px",
   },
   modalTitle: {
-    margin: "0",
+   //  marginTop: "0",
     lineHeight: "1.5",
   },
   modalCloseButton: {
@@ -144,7 +144,7 @@ const modalStyle = (theme) => ({
     "& $modalTitle": {
       textAlign: "center",
       width: "100%",
-      marginTop: "0.625rem",
+      // marginTop: "0.625rem",
     },
     "& $modalBody": {
       paddingBottom: "0",

@@ -35,12 +35,7 @@ function Navbar() {
    useEffect(() => {
       if (Cookies.get('name') !== undefined) {
          setName(Cookies.get('name'));
-      } else if(nameAuth.indexOf('@LoginFail:') !== -1) {
-         // document.getElementById('alert').style.display = 'block';
-         // setTimeout(
-         //    () => document.getElementById('alert').style.display = 'none',
-         //    3000
-         // );
+      } else if (nameAuth.indexOf('@LoginFail:') !== -1) {
          setLoginFail(nameAuth);
       } else if (nameAuth !== undefined) {
          setName(nameAuth)
@@ -81,7 +76,7 @@ function Navbar() {
 
    return (
       <div >
-         <SignUpDialog loginFail={loginFail}/>
+         <SignUpDialog loginFail={loginFail} />
          <Header
             brand={image}
             color="transparent"

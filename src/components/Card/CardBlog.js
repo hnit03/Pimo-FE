@@ -190,7 +190,7 @@ function CardBlog({ ...rest }) {
                                        fontWeight: '800',
                                        fontSize: '2vw'
                                     }}>
-                                       Đăng kí ngay
+                                       Đăng ký ngay
                                     </div>
                                  </Button>
                               </div>

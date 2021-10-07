@@ -338,7 +338,7 @@ color: 'black',
 const cardTitle = {
   "&, & a": {
     ...title,
-    marginTop: ".625rem",
+   //  marginTop: ".625rem",
     marginBottom: "0.75rem",
     minHeight: "auto",
     fontSize: '3.5rem',

@@ -18,9 +18,9 @@ const customInputStyle = {
       borderBottomColor: grayColor[11] + " !important",
       borderBottomWidth: "1px !important",
     },
-    "&:after": {
-      borderBottomColor: primaryColor[0],
-    },
+   //  "&:after": {
+   //    borderBottomColor: primaryColor[0],
+   //  },
   },
   underlineError: {
     "&:after": {
