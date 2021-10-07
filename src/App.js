@@ -10,7 +10,7 @@ import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 function App() {
    return (
       <BrowserRouter>
-         <div id="alert" style={{
+         {/* <div id="alert" style={{
             position: 'fixed',
             right: 0,
             marginRight: '5%',
@@ -30,7 +30,7 @@ function App() {
                close
                color="danger"
             />
-         </div>
+         </div> */}
          <NavBar />
          <Switch>
             <Route exact={true} path="/" component={HomePage}/>

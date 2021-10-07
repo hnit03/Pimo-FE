@@ -20,6 +20,7 @@ import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import Cookies from 'js-cookie';
 import { useSelector } from 'react-redux';
 import LogoutIcon from '@mui/icons-material/Logout';
+import SignUpDialog from '../Dialog/SignUpDialog'
 
 const useStyles = makeStyles(navbarsStyle);
 
@@ -29,16 +30,18 @@ function Navbar() {
    const classes = useStyles();
    const [name, setName] = useState('')
    const nameAuth = useSelector((state) => state.auth);
+   const [loginFail, setLoginFail] = useState('')
 
    useEffect(() => {
       if (Cookies.get('name') !== undefined) {
          setName(Cookies.get('name'));
       } else if(nameAuth.indexOf('@LoginFail:') !== -1) {
-         document.getElementById('alert').style.display = 'block';
-         setTimeout(
-            () => document.getElementById('alert').style.display = 'none',
-            3000
-         );
+         // document.getElementById('alert').style.display = 'block';
+         // setTimeout(
+         //    () => document.getElementById('alert').style.display = 'none',
+         //    3000
+         // );
+         setLoginFail(nameAuth);
       } else if (nameAuth !== undefined) {
          setName(nameAuth)
       }
@@ -78,6 +81,7 @@ function Navbar() {
 
    return (
       <div >
+         <SignUpDialog loginFail={loginFail}/>
          <Header
             brand={image}
             color="transparent"
