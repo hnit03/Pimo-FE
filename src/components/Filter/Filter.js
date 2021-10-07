@@ -52,16 +52,22 @@ export default function StandardImageList() {
    const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState();
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
+   const [pageNo, setPageNo] = React.useState(1);
 
    const models = useSelector((state) => state.models);
 
    const dispatch = useDispatch();
    useEffect(() => {
-      dispatch(getModels(1));
-   }, [dispatch]);
+      dispatch(getModels(pageNo));
+   }, [pageNo]);
 
    const handleChange = () => {
       setViewMore(!viewMore);
+   };
+
+   const handleChangePage = (event, value) => {
+      setPageNo(value)
+      window.scrollTo(0, 0)
    };
 
    const handleCheckHeight = () => {
@@ -358,7 +364,7 @@ export default function StandardImageList() {
           ))} */}
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
-               <Pagination count={10} showFirstButton showLastButton />
+               <Pagination onChange={handleChangePage} count={10} showFirstButton showLastButton />
             </Stack>
          </div>
       </div>
