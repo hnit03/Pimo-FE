@@ -45,7 +45,7 @@ function Navbar() {
    }, [nameAuth])
 
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
-   const onClickSearchModel = useCallback(() => history.push('/model-search'), [history]);
+   const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -99,7 +99,6 @@ function Navbar() {
                   </ListItem>
                   <ListItem className={classes.listItem}>
                      <Button
-                        href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
                         onClick={onClickSearchModel}
                         color="transparent"
@@ -127,7 +126,6 @@ function Navbar() {
                   <ListItem className={classes.listItem}>
                      {name === '' ?
                         (<Button
-                           href="#pablo"
                            className={classes.navLink + " " + classes.navLinkActive}
                            onClick={() => handleLogin()}
                            color="transparent"

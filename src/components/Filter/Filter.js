@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 // import useStyles from "./style";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../assets/jss/material-kit-pro-react/views/componentsSections/sectionCards";
@@ -6,10 +6,6 @@ import { Button } from "@material-ui/core";
 // import "./style.css";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
-import Card from "../Card/Card";
-import CardHeader from "../Card/CardHeader";
-import CardBody from "../Card/CardBody";
-import Rose from "../Typography/Rose";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -23,12 +19,11 @@ import Stack from "@mui/material/Stack";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import CardImage from "../CardImage/CardImage";
 import { useDispatch } from 'react-redux';
 import { getModels } from '../../actions/models';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import {
    searchBySexValue,
@@ -39,11 +34,10 @@ import {
 import {
    searchByTattooValue,
 } from "./RadioData.js";
-import { itemData } from './ImageData';
 
 const useStyles = makeStyles(styles);
 
-export default function StandardImageList() {
+export default function StandardImageList(props) {
    const classes = useStyles();
    const [viewMore, setViewMore] = React.useState(false);
    const [checkSearchHeightMin, setCheckSearchHeightMin] = React.useState();
@@ -52,7 +46,8 @@ export default function StandardImageList() {
    const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState();
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
-   const [pageNo, setPageNo] = React.useState(1);
+   const [pageNo, setPageNo] = React.useState(props.pageOffset);
+   const history = useHistory();
 
    const models = useSelector((state) => state.models);
 
@@ -65,10 +60,18 @@ export default function StandardImageList() {
       setViewMore(!viewMore);
    };
 
+   const changeURL =  useCallback((data) => history.push(`/model-search/${data}`), [history]);
+
    const handleChangePage = (event, value) => {
       setPageNo(value)
       window.scrollTo(0, 0)
+      changeURL(value)
    };
+
+   // const handleChangePage = (event, value) => {
+   //    console.log(value);
+   //    history.push(`/model-search/${value}`);
+   // };
 
    const handleCheckHeight = () => {
       if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
@@ -318,55 +321,12 @@ export default function StandardImageList() {
                      ) : (null)) : null
 
                }
-               {/* <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem> */}
-               {/* {itemData.map((image, index) => (
-            <GridItem key={index} xs={12} sm={4} md={3}>
-              <a style={{ textDecoration: "none" }} href="/how-it-works">
-                <Card blog>
-                  <CardHeader image>
-                    <img src={image.img} alt="..." height="300vh" />
-                    <div
-                      className={classes.coloredShadow}
-                      style={{
-                        backgroundImage: `url(${image.img})`,
-                        opacity: "1",
-                      }}
-                    />
-                  </CardHeader>
-
-                  <CardBody className={classes.cardBody}>
-                    <Rose>
-                      <h className={classes.cardCategory}>Okìki</h>
-                    </Rose>
-                 <span style={{display:'flex',  marginTop: '0.3rem' }}>  
-                      <FontAwesomeIcon style={{marginTop:'0.2rem'}} icon={faMapMarkerAlt} color='#4c4b4b'/>
-                     <h4 className={classes.textAddress}>Quận 1</h4>             
-                    </span>
-                    <h4 className={classes.textMeasurements}>Số đo: 45-45-45</h4>
-                  </CardBody>
-                </Card>
-              </a>
-            </GridItem>
-          ))} */}
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
-               <Pagination onChange={handleChangePage} count={10} showFirstButton showLastButton />
+               <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />
             </Stack>
          </div>
+         {/* {console.log(pageNo)} */}
       </div>
    );
 }

@@ -3,7 +3,7 @@ import HomePage from './containers/HomePage';
 import GuildPage from './containers/GuildPage';
 import ModelSearchPage from './containers/ModelSearchPage';
 import ModelInfoPage from './containers/ModelInfoPage';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 
@@ -33,18 +33,10 @@ function App() {
          </div>
          <NavBar />
          <Switch>
-            <Route exact={true} path="/">
-               <HomePage />
-            </Route>
-            <Route path="/how-it-work">
-               <GuildPage />
-            </Route>
-            <Route path="/model-search">
-               <ModelSearchPage />
-            </Route>
-            <Route path="/model-info">
-               <ModelInfoPage />
-            </Route>
+            <Route exact={true} path="/" component={HomePage}/>
+            <Route path="/how-it-work" component={GuildPage}/>
+            <Route path="/model-search/:id" component={ModelSearchPage}/>
+            <Route path="/model-info" component={ModelInfoPage}/>
          </Switch>
       </BrowserRouter>
    );
