@@ -75,11 +75,13 @@ function SignUpDialog(props) {
             3000
          );
       } else {
+         setSignupModal(false)
          document.getElementById('signupSuccess').style.display = 'block';
          setTimeout(
             () => document.getElementById('signupSuccess').style.display = 'none',
             3000
          );
+         setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
       }
       // console.log(brands);
       // setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });

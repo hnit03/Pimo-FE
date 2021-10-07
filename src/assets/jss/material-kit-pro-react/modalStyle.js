@@ -8,8 +8,8 @@ const modalStyle = (theme) => ({
   modal: {
     [theme.breakpoints.up("sm")]: {
       maxWidth: "500px",
-      margin: "auto",
-      marginTop: "130px !important",
+      // margin: "auto",
+      // marginTop: "130px !important",
     },
     borderRadius: "6px",
     overflow: "visible",
