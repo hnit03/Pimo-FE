@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
       height: '40vh',
       transition: '0.5s',
       objectFit: 'cover',
-      objectPosition: '50% 100%',
+      objectPosition: '50% 20%',
    },
 
    thongtin: {
