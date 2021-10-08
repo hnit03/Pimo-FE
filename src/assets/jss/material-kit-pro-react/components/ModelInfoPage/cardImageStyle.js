@@ -1,45 +1,42 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
-    hieuungbenngoai:{
+    hieuungbenngoai: {
         width: '100%',
-        height: '100vh',
-       // overflow: 'hidden',
-       // background: '#000',
-        padding: '1%',
-        marginLeft:0,
+        height: '80vh',
+        // padding: '1%',
+        marginRight: 0,
+        marginRight: '1rem',
+
     },
     hieuung: {
-       // position: 'absolute',
-        // top: '50%',
-        // left: '50%',
-        //transform: 'translate(-50%, -50%)',
+        boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)',
+        // boxShadow:'0 0 8px 0 rgb(255, 192, 203,03), 0 6px 20px 0 rgb(255, 192, 203,0.2)',
         width: '91%',
         height: '91%',
         overflow: 'hidden',
         background: '#000',
-        margin: '3%',
-        borderRadius:'0.5rem',
+        // margin: '3%',
+        margin: '0',
+        marginLeft: '1.2rem',
+        borderRadius: '0.5rem',
         '&:hover': {
+            boxShadow: '0 0 8px 0 rgb(255, 192, 203,03), 0 6px 20px 0 rgb(255, 192, 203,0.2)',
             background: 'pink',
             marginTop: '0px',
-            marginBottom:'0px',
-            marginRight:'0px',
-            marginLeft:'0px',
+            marginBottom: '0px',
+            marginRight: '0px',
+            marginLeft: '0px',
             width: '98%',
             height: '98%',
             transition: '0.4s',
             '& img': {
                 transform: 'rotate(-10deg) scale(1.3)',
-                opacity: '0.5',
+                opacity: '0.3',
             },
-            '& h2':{
-                padding: '20px',
-                paddingBottom:0,
+            '& h2': {
+
+                paddingBottom: 0,
             },
-            // '& p': {
-            //    opacity: 1,
-            // },
-            
             '& phude': {
                 '&::before': {
                     transform: 'scale(1,1)'
@@ -55,54 +52,13 @@ const useStyles = makeStyles((theme) => ({
     img: {
         width: '100%',
         transition: '0.5s',
-        height: '100vh',
-      transition: '0.5s',
-      objectFit: 'cover',
-      objectPosition: '50% 100%',
+        height: '80vh',
+        transition: '0.5s',
+        objectFit: 'cover',
+        objectPosition: '50% 100%',
     },
 
-    phude: {
-        //position: 'absolute',
-      //  backgroundColor:'pink',
-        // top: '40px',
-        // left: '40px',
-        // right: '40px',
-        // bottom: '40px',
-        '&::before': {
-            content: "''",
-          //  position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '1rem',
-            height: '1rem',
-             borderTop: '1px solid #fff',
-             borderBottom: '1px solid #fff',
-            boxSizing: 'border-box',
-            transition: '0.5s',
-            transform: 'scale(1,1)',
-        },
-        '&::after': {
-            content: "''",
-           // position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '100%',
-            height: '100%',
-            borderLeft: '1px solid #fff',
-            borderRight: '1px solid #fff',
-            boxSizing: 'border-box',
-            transition: '0.5s',
-            transform: 'scale(1,1)',
-        },
-    },
-    //    phu_de
-    //    .hieu_ung:hover .phu_de:before{
-    //         transform: scale(1,1)
-    //     },
 
-    //    .hieu_ung:hover .phu_de:after{
-    //         transform: scale(1,1)
-    //     },
     thongtin: {
         marginTop: '-200px',
         transform: 'translateY(-50%)',
@@ -112,35 +68,36 @@ const useStyles = makeStyles((theme) => ({
         opacity: 1,
         transition: '0.5s',
     },
-    // // .hieu_ung:hover .thong_tin{
-    // //     opacity: 1;
-    // // },
-    h2: {
 
+    h2: {
+        fontFamily: "Calibri, sans-serif",
+        padding: '0.3rem',
         color: '#fff',
         margin: 0,
         padding: 0,
-        fontSize: '24px',
+        fontSize: '2rem',
         textTransform: 'uppercase',
     },
     p: {
+        fontFamily: "Calibri, sans-serif",
         color: '#fff',
         margin: '0',
         padding: 0,
-      //  opacity: 1,
         fontSize: '15px',
     },
-    button:{
+    button: {
+        fontFamily: "Calibri, sans-serif",
         color: '#fff !important',
-        borderColor:'#fff !important',
-        marginTop:'20px !important',
-        padding:'10px 30px !important',
-        fontSize:'1rem !important',
-        '&:hover':{
-            paddingTop:'5px',
-            backgroundColor:'pink !important',
-            //color:'#fff !important'
-            borderColor:'pink !important',
+        borderWidth: '0.2rem !important',
+        borderColor: '#fff !important',
+        marginTop: '20px !important',
+        padding: '5px 25px !important',
+        fontSize: '1.2rem !important',
+        fontWeight: '800 !important',
+        '&:hover': {
+            paddingTop: '5px',
+            backgroundColor: 'pink !important',
+            borderColor: 'pink !important',
         }
     }
 }

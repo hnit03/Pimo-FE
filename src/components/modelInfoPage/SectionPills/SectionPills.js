@@ -32,11 +32,6 @@ var listModelDetails =
   { name: "Hair Color", value: "Blonde" },
   { name: "Piercings", value: "None" }, 
   { name: "Tattoos", value: "None" },];
-  
-  var listModelStyles = [
-    "Acting","Art","Bodypaint","Cosplay","Editorial","Erotic",
-    "Fashion","Fetish","Fit Modeling","Fitness","Glamour","Hair/Makeup",
-    "Lifestyle","Lingerie"];
 
 export default function SectionPills() {
 

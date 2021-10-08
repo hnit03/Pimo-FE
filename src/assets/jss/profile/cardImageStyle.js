@@ -2,11 +2,13 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
    hieuungbenngoai: {
       width: '100%',
-      height: '50vh',
+      height: '40vh',
       // overflow: 'hidden',
       // background: '#000',
       padding: '1%',
       marginLeft: 0,
+      marginTop: '0.5rem',
+      //border:'2px solid gray',
 
    },
    hieuung: {
@@ -14,146 +16,101 @@ const useStyles = makeStyles((theme) => ({
       // top: '50%',
       // left: '50%',
       //transform: 'translate(-50%, -50%)',
+      // background: 'pink',
+      // border:'2px solid gray',
       boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-      width: '91%',
-      height: '91%',
+      width: '95%',
+      height: '95%',
       overflow: 'hidden',
-      background: '#000',
-      margin: '3%',
-      borderRadius: '0.5rem',
+      margin: '2%',
+      borderRadius: '0.1rem',
       '&:hover': {
-         background: 'pink',
-         marginTop: '0px',
-         marginBottom: '0px',
-         marginRight: '0px',
-         marginLeft: '0px',
-         width: '98%',
-         height: '98%',
-         transition: '0.4s',
-         '& img': {
-            // transform: 'rotate(-10deg) scale(1.3)',
-            opacity: '0.2',
-         },
-         '& h2': {
-            // padding: '20px',
-            marginTop: '10vh',
-            paddingBottom: 0,
-            color: 'black',
-            transition: '0.4s',
-            backgroundColor: 'rgb(255,192,203, 0)',
-         },
-         '& button': {
-            backgroundColor: 'black !important',
-            opacity: '1'
-         },
-         '& phude': {
-            '&::before': {
-               transform: 'scale(1,1)'
-            },
-            '&::after': {
-               transform: 'scale(1,1)'
-            },
-         },
-         '& thongtin': {
-            marginTop: '-5vh',
-            backgroundColor: 'pink'
+         backgroundColor: 'rgb(255,192,203, 0)',
+      //    background: 'pink',
+      //    marginTop: '0px',
+      //    marginBottom: '0px',
+      //    marginRight: '0px',
+      //    marginLeft: '0px',
+      //    width: '98%',
+      //    height: '98%',
+      //    transition: '0.4s',
+      //    '& img': {
+      //       // transform: 'rotate(-10deg) scale(1.3)',
+      //       opacity: '0.2',
+      //    },
+      //    '& h2': {
+      //       // padding: '20px',
+      //       marginTop: '10vh',
+      //       paddingBottom: 0,
+      //       color: 'black',
+      //       transition: '0.4s',
+      //       
+      //    },
+      //    '& button': {
+      //       backgroundColor: 'black !important',
+      //       opacity: '1'
+      //    },
+      //    '& thongtin': {
+      //       marginTop: '-5vh',
+      //       backgroundColor: 'pink'
 
-         },
-         '& p': {
-            opacity: '1',
-            color: 'black',
-         }
+      //    },
+      //    '& p': {
+      //       opacity: '1',
+      //       color: 'black',
+      //    }
       },
 
    },
-   // noidung: {
-   //     width: '100%',
-   //     height: '100%',
-   //     //   backgroundColor:'pink',
-   // },
    img: {
-      width: '100%',
-      height: '50vh',
+      width: '50%',
+      height: '40vh',
       transition: '0.5s',
       objectFit: 'cover',
       objectPosition: '50% 100%',
    },
-   //    hieu_ung:hover img :{
-   //         transform: 'rotate(-10deg) scale(1.3)',
-   //         opacity:'0.5',
-   //     },
-   phude: {
-      //position: 'absolute',
-      //  backgroundColor:'pink',
-      // top: '40px',
-      // left: '40px',
-      // right: '40px',
-      // bottom: '40px',
-      '&::before': {
-         content: "''",
-         //  position: 'absolute',
-         left: 0,
-         top: 0,
-         width: '1rem',
-         height: '1rem',
-         borderTop: '1px solid #fff',
-         borderBottom: '1px solid #fff',
-         boxSizing: 'border-box',
-         transition: '0.5s',
-         transform: 'scale(1,1)',
-      },
-      '&::after': {
-         content: "''",
-         // position: 'absolute',
-         left: 0,
-         top: 0,
-         width: '100%',
-         height: '100%',
-         borderLeft: '1px solid #fff',
-         borderRight: '1px solid #fff',
-         boxSizing: 'border-box',
-         transition: '0.5s',
-         transform: 'scale(1,1)',
-      },
-   },
-   //    phu_de
-   //    .hieu_ung:hover .phu_de:before{
-   //         transform: scale(1,1)
-   //     },
 
-   //    .hieu_ung:hover .phu_de:after{
-   //         transform: scale(1,1)
-   //     },
    thongtin: {
+     // backgroundColor: 'pink',
+      width: '40%',
+      float: 'right',
       marginTop: '-30vh',
       transform: 'translateY(-50%)',
-      //zIndex: '1',
       padding: '20px',
       textAlign: 'center',
       opacity: 1,
       transition: '0.5s',
+      // marginRight:'5%'
    },
-   // // .hieu_ung:hover .thong_tin{
-   // //     opacity: 1;
-   // // },
    h2: {
-      marginTop: '50vh',
+      textAlign: 'Left',
       color: 'black',
       margin: 0,
-      fontSize: '120%',
+      fontSize: '1.6rem',
       textTransform: 'uppercase',
       marginBottom: '1rem',
-      background: 'pink',
-      backgroundColor: 'rgb(255,192,203, 0.5)',
       padding: '4% 0 4% 0',
-      borderRadius: '0.6rem'
+      borderRadius: '0.6rem',
+      marginTop: '10vh',
+      marginBottom: 0,
+      color: 'black',
+      transition: '0.1s',
+      backgroundColor: 'rgb(255,192,203, 0)',
+      '&:hover':{
+            textDecoration: "underline",
+            color: 'pink',
+      }
    },
    p: {
+      textAlign: 'Left',
       color: '#fff',
-      margin: '0',
+      margin:'0',
+      marginBottom: '0.2rem',
       padding: 0,
-      opacity: 0,
+      opacity: 1,
       fontSize: '15px',
+      opacity: '1',
+      color: 'black',
    },
    button: {
       color: '#fff !important',
@@ -162,14 +119,24 @@ const useStyles = makeStyles((theme) => ({
       padding: '5px 15px !important',
       fontSize: '0.9rem !important',
       fontWeight: 'bold !important',
-      opacity: 0,
+      backgroundColor: 'black !important',
+      //       opacity: '1'
+      opacity: 1,
       '&:hover': {
          paddingTop: '5px',
          backgroundColor: 'pink !important',
-         //color:'#fff !important'
          borderColor: 'pink !important',
+
       }
-   }
+   },
+   divider_Style: {
+      marginTop: '5rem',
+      width: '95%',
+      fontFamily: "Calibri, sans-serif",
+      fontSize: '1rem',
+      marginTop:'0.5rem !important',
+      marginBottom:'1rem !important'
+   },
 }
 ));
 export default useStyles;

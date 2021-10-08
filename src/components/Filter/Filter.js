@@ -305,7 +305,7 @@ export default function StandardImageList() {
                   (models.modelList !== undefined) ? (
                      (models.modelList.length > 0) ? (
                         models.modelList.map((model) => (
-                           <GridItem xs={12} sm={4} md={3}>
+                           <GridItem xs={12} sm={6} md={6}>
                               <CardImage model={model} />
                            </GridItem>
                         ))

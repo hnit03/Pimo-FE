@@ -1,14 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
-  cover_image_Style: {
-    width: '100.5%',
-    boxShadow: '10px 4px 8px 0 rgba(0, 0, 0, 0.3), 10px 10px 20px 0 rgba(0, 0, 0, 0.3)',
-    margin: '0',
-    marginBottom: 0,
-    objectFit: 'cover',
-    height: '100vh',
-    objectPosition: '100% 50%',
-  },
   avatar_image_Style: {
     width: '100%',
     float: 'left',
@@ -86,7 +77,11 @@ const useStyles = makeStyles((theme) => ({
 listCardImage:{
   width: '100%',
   backgroundColor: 'pink'
-}
+},
+body:{
+  //backgroundColor: '#fbedf2',
+  backgroundColor:'white',
+   marginLeft:'2%'},
 }
 ));
 export default useStyles;

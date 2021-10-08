@@ -1,46 +1,55 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+    box: {
+        // backgroundColor: 'pink',
+        margin: 'auto',
+        width: '75rem',
+        height: '25rem',
+        //margin:'3%',
+        background: 'white !important',
+        boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
+        marginBottom: "3rem",
+        marginTop: "0vh",
+        //padding:'2rem',
+
+    },
     location_icon_small_Style: {
         color: 'red',
         fontSize: '0.9rem',
 
     },
     travelNotices_out_Style: {
-        margin: 'auto',
-        float: 'left',
-        width: '91%',
-        height: '4.1rem',
-        marginTop: '10px',
-        marginBottom: '1rem',
+        ///margin: 'auto',
+        float: 'right',
+        width: '90%',
+       // paddingLeft: '1%',
+
+        //  height: '4.1rem',
+        marginTop: '0.9rem',
+         marginBottom: 0,
         marginRight: 0,
-        paddingBottom: '2rem',
+        // paddingBottom: '2rem',
+        // backgroundColor:'pink'
     },
     travelNotices_Style: {
         margin: 'auto',
         float: 'left',
         width: '100%',
         marginTop: '5px',
-        padding: '1rem',
+        paddingTop: '2.5vh',
         textAlign: 'left',
         marginRight: 0,
-        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         borderRadius: '0.35rem',
         transition: '0.4s',
-        //backgroundColor:'pink',
-        "&:hover": {
-            background: 'pink',
-            marginTop: '0px',
-            transition: '0.4s',
-        },
-        //backgroundColor:'pink'
     },
     travelName_Style: {
+        paddingTop: '1.5vh',
         float: 'left',
-        fontSize: '1.1rem',
+        fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        fontWeight: '800',
+        //  fontWeight: '800',
         marginBottom: '0.2rem',
     },
     travelType_Style: {
@@ -64,13 +73,58 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0.1rem'
     },
     textTime_Style: {
+        textAlign: 'center',
         color: 'rgb(24, 112, 243)',
         float: 'left',
         fontSize: '0.9rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
+        marginBottom: '0.2rem',
+        fontWeight: 'bold',
+        color: '#f9a3b2',
+    },
+    textTimeDate_Style: {
+        textAlign: 'center',
+        //color: 'rgb(24, 112, 243)',
+        color: '#f9a3b2',
+        float: 'left',
+        fontSize: '2.3rem',
+        width: '100%',
+        fontFamily: "Calibri, sans-serif",
         marginBottom: '0.2rem'
     },
+    img: {
+        marginLeft: '15%',
+        marginTop: '6vh',
+
+    },
+    boxLeft: {
+        textAlign: 'center',
+        //backgroundColor: 'pink',
+        marginLeft: '0%',
+        marginTop: '6vh',
+    },
+    divider_Style: {
+        marginLeft:'5% !important',
+        width: '85%',
+        fontFamily: "Calibri, sans-serif",
+        fontSize: '1rem',
+        marginBottom: '2vh',
+    },
+    h1: {
+        marginBottom: '1rem',
+        fontSize: '3rem'
+    },
+    imgDay: {
+        width: '15%',
+        height: '15vh',
+        float: 'left',
+    },
+    divider: {
+       marginTop: '5%',
+        height: '100% !important',
+       // width: '100%',
+    }
 
 }
 ));
