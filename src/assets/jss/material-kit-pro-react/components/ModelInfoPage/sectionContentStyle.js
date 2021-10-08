@@ -3,12 +3,13 @@ const useStyles = makeStyles((theme) => ({
     name_attribute:{
         fontWeight:'700',
         fontFamily: "Calibri, sans-serif",
-        fontSize: '1.2rem',
+        fontSize: '1.1rem',
+        color:'pink'
     },
     value_attribute:{
         fontFamily: "Calibri, sans-serif",
         color: 'gray',
-        fontSize: '1.2rem',
+        fontSize: '1.1rem',
     }
 }
 ));

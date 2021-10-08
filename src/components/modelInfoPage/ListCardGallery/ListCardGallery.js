@@ -1,8 +1,9 @@
 import React from 'react';
-import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/ListCardGallery';
+import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/listCardGalleryStyle';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CardImage1 from '../CardImage/CardImage';
+import Button from '@mui/material/Button';
 
 var listGallery = [ 
 {image:'https://i.vietgiaitri.com/2019/11/26/bo-3-gia-ky-vio-ho-va-mong-thuong-khang-dinh-ca-tinh-cua-the-he-nguoi-mau-unisex-qua-bo-anh-moi-1d752f.jpeg',
@@ -29,15 +30,17 @@ export default function ListCardGallery(props) {
     })
     return (
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
-
-            <Grid container spacing={1}>
+            <Grid container spacing={1} className={classes.gallery}>
                 <Grid item xs={12}>
                     <p className={classes.galleryTitle}>BỘ SƯU TẬP HÌNH ẢNH</p>
                     <p className={classes.galleryDes}>Đa dạng hình ảnh, đa dạng trong từng phong cách</p>
-
                 </Grid>
                 {list}
-                
+                <Grid item xs={12}>
+                </Grid>
+                <Grid item xs={12}>
+                        <Button variant="outlined" className={classes.button}>XEM CHI TIẾT</Button>
+                </Grid>
 
             </Grid>
         </Box>

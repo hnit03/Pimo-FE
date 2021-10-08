@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
    },
    stack:{
        width:'100% !important',
-        marginBottom:'1vh'
+        marginBottom:'1rem'
    }
 }
 ));

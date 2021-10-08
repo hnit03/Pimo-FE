@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import AgendaContent from '../components/HowPimoWork/AgendaContent/AgendaContent';
 
+
 export default function HowPimoWorkPage() {
     const classes = useStyles();
     return (

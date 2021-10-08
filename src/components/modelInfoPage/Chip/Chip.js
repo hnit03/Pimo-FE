@@ -7,17 +7,16 @@ export default function BasicChips(props) {
     const classes = useStyles();
     const listChip = props.label.map((item) => {
         return (
-            <Chip label={item} variant="outlined" className={classes.chip}/>
+            <Chip label={item} variant="outlined" className={classes.chip} />
 
         );
     })
     return (
         <Stack direction="row" spacing={1}  >
             <div className={classes.stack}>
-            {listChip}
+                {listChip}
             </div>
-            {/* //<Chip label="Chip Filled" /> */}
-            
+
         </Stack>
     );
 }
