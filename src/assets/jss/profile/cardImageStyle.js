@@ -8,7 +8,9 @@ const useStyles = makeStyles((theme) => ({
       padding: '1%',
       marginLeft: 0,
       marginTop: '0.5rem',
-      //border:'2px solid gray',
+      '&:hover':{
+         
+      }
 
    },
    hieuung: {
@@ -24,8 +26,15 @@ const useStyles = makeStyles((theme) => ({
       overflow: 'hidden',
       margin: '2%',
       borderRadius: '0.1rem',
+      transition: '0.4s',
       '&:hover': {
-         backgroundColor: 'rgb(255,192,203, 0)',
+         
+         backgroundColor: 'rgb(255,192,203, 0.5)',
+         '& img': {
+            backgroundColor: 'rgb(255,192,203, 0.5)',
+            opacity:'0.5'
+         },
+
       //    background: 'pink',
       //    marginTop: '0px',
       //    marginBottom: '0px',
@@ -65,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
    img: {
       width: '50%',
       height: '40vh',
-      transition: '0.5s',
+      //transition: '0.5s',
       objectFit: 'cover',
       objectPosition: '50% 20%',
    },
@@ -74,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
      // backgroundColor: 'pink',
       width: '40%',
       float: 'right',
-      marginTop: '-30vh',
+      marginTop: '-27vh',
       transform: 'translateY(-50%)',
       padding: '20px',
       textAlign: 'center',
@@ -96,10 +105,6 @@ const useStyles = makeStyles((theme) => ({
       color: 'black',
       transition: '0.1s',
       backgroundColor: 'rgb(255,192,203, 0)',
-      '&:hover':{
-            textDecoration: "underline",
-            color: 'pink',
-      }
    },
    p: {
       textAlign: 'Left',
@@ -111,6 +116,18 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '15px',
       opacity: '1',
       color: 'black',
+   },
+   p_Title: {
+      textAlign: 'Left',
+      color: '#ff93a6',
+      fontWeight:'800',
+      margin:'0',
+      marginBottom: '0.2rem',
+      padding: 0,
+      opacity: 1,
+      fontSize: '15px',
+      opacity: '1',
+
    },
    button: {
       color: '#fff !important',

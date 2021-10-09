@@ -29,7 +29,8 @@ var listLabel = [
     "Acting", "Unisex", "Bodypaint", "Cosplay", "Editorial", "Erotic",
     "Fashion", "Fetish", "Fit Modeling", "Fitness", "Glamour", "Hair/Makeup",
     "Lifestyle"];
-
+    var listTop3Label = [
+        "Acting", "Unisex", "Bodypaint"];
 
 export default function ModelInfoPage() {
     const classes = useStyles();
@@ -43,13 +44,13 @@ export default function ModelInfoPage() {
                     <GalleryModal/>
                 </Grid>
                 <Grid item xs={12}>
-                    <AttributeCard listLabel={listLabel}/>
+                    <AttributeCard listLabel={listLabel} list={listTop3Label}/>
                 </Grid>
                 <Grid item xs={12} >
                     <ListTravelNotices/>
                 </Grid>
                 <Grid item xs={12} >
-                    <ListCardGallery/>
+                    <ListCardGallery />
                 </Grid>
             </Grid>
             <SectionFooter />

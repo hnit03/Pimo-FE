@@ -40,6 +40,9 @@ import {
    searchByTattooValue,
 } from "./RadioData.js";
 import { itemData } from './ImageData';
+import{ 
+   listTop3Label
+}from "./Top3StyleData";
 
 const useStyles = makeStyles(styles);
 
@@ -306,7 +309,7 @@ export default function StandardImageList() {
                      (models.modelList.length > 0) ? (
                         models.modelList.map((model) => (
                            <GridItem xs={12} sm={6} md={6}>
-                              <CardImage model={model} />
+                              <CardImage model={model} listTop3Label={listTop3Label}/>
                            </GridItem>
                         ))
                      ) : (null)) : null
