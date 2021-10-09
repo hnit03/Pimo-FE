@@ -35,6 +35,7 @@ var listLabel = [
 export default function ModelInfoPage() {
     const classes = useStyles();
     return (
+        <>
         <Box sx={{ flexGrow: 1 }} className={classes.body}>
             <Grid container spacing={2}>
                 <Grid item xs={12} >
@@ -53,7 +54,8 @@ export default function ModelInfoPage() {
                     <ListCardGallery />
                 </Grid>
             </Grid>
-            <SectionFooter />
         </Box>
+        <SectionFooter />
+        </>
     );
 }

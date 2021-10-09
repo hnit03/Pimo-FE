@@ -16,9 +16,6 @@ export default function HowPimoWorkPage() {
                 <Grid item xs={3}>
                    <AgendaList></AgendaList>
                 </Grid>
-                {/* <Grid item xs={0.5}>
-                   <div className = {classes.dividerLine}></div>
-                </Grid> */}
                 <Grid item xs={9.0}>
                    <AgendaContent></AgendaContent>
                 </Grid>
