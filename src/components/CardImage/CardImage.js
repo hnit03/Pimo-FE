@@ -14,13 +14,14 @@ export default function CardImage(model) {
       <div className={classes.hieuungbenngoai} onClick={onClickInfo}>
          <div className={classes.hieuung}>
             <div className={classes.noidung}>
-               <img src={model.model.avatar} className={classes.img} />
+               <img src={model.model.model.avatar} className={classes.img} />
                <div className={classes.phude}>
                   <p className={classes.thongtin}>
-                     <h2 className={classes.h2} >{model.model.name} </h2>
+                     <h2 className={classes.h2} >{model.model.model.name} </h2>
                      <Divider className={classes.divider_Style} ></Divider>
-                     <p className={classes.p}><span className={classes.p_Title}>Vị trí: </span>{model.model.district}, {model.model.country}</p>
-                     <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.gifted}</p>
+                     <p className={classes.p}><span className={classes.p_Title}>Vị trí: </span>{model.model.model.district}, {model.model.model.country}</p>
+                     {/* <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.model.gifted}</p> */}
+                     <p className={classes.p}><span className={classes.p_Title}>Giới tính: </span>Nữ</p>
                      {
                         (model.listTop3Label !== undefined) ? (
                            (model.listTop3Label.length > 0) ? (
