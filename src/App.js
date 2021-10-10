@@ -1,43 +1,43 @@
-import React from 'react';
-import HomePage from './containers/HomePage';
-import GuildPage from './containers/GuildPage';
-import ModelSearchPage from './containers/ModelSearchPage';
-import ModelInfoPage from './containers/ModelInfoPage';
-import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
-import NavBar from "./components/Header/NavBar";
-import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
+import './App.css';
+import firebase from './adapters/firebase.js';
+import axios from 'axios';
+import React from 'react'
 
 function App() {
+
+   const [token, setToken] = React.useState();
+   const [mail, setMail] = React.useState();
+
+   const handleLogin = () => {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+         .auth()
+         .signInWithPopup(provider)
+         .then(function (result) {
+            setToken(result.user.multiFactor.user.accessToken)
+            setMail(result.user.email);
+         })
+         .catch(function (error) {
+            console.log(error);
+         });
+   }
+
+   const handleCopyToken = (e) => {
+      token.select();
+      document.execCommand('copy');
+    };
+
    return (
-      <BrowserRouter>
-         <div id="signupSuccess" style={{
-            position: 'fixed',
-            right: 0,
-            marginRight: '5%',
-            marginTop: '8%',
-            zIndex: 1000,
-            top: 0,
-            display: 'none',
-            width: '35%',
-         }}>
-            <SnackbarContent
-               message={
-                  <span style={{ fontSize: '120%', textAlign: 'right' }}>
-                     <b>Đăng ký thành công</b>
-                  </span>
-               }
-               close
-               color="success"
-            />
-         </div>
-         <NavBar />
-         <Switch>
-            <Route exact={true} path="/" component={HomePage} />
-            <Route path="/how-it-work" component={GuildPage} />
-            <Route path="/model-search/:id" component={ModelSearchPage} />
-            <Route path="/model-info" component={ModelInfoPage} />
-         </Switch>
-      </BrowserRouter>
+      <div style={{ width: '100%', textAlign: 'center', marginTop: '10%' }}>
+         <button onClick={handleLogin}>
+            Get token
+         </button>
+         <br/>
+         <br/>
+         <textarea placeholder='Token...' style={{width: '50rem', height: '15rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left'}} value={token}/>
+         <br/>
+         <textarea placeholder='Mail...' style={{width: '50rem', height: '2rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left'}} value={mail}/>
+      </div>
    );
 }
 
