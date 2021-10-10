@@ -25,18 +25,18 @@ function App() {
    const handleCopyToken = (e) => {
       token.select();
       document.execCommand('copy');
-    };
+   };
 
    return (
       <div style={{ width: '100%', textAlign: 'center', marginTop: '10%' }}>
          <button onClick={handleLogin}>
             Get token
          </button>
-         <br/>
-         <br/>
-         <textarea placeholder='Token...' style={{width: '50rem', height: '15rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left'}} value={token}/>
-         <br/>
-         <textarea placeholder='Mail...' style={{width: '50rem', height: '2rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left'}} value={mail}/>
+         <br />
+         <br />
+         <textarea placeholder='Token...' style={{ width: '50rem', height: '15rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left' }} value={token} />
+         <br />
+         <textarea placeholder='Mail...' style={{ width: '50rem', height: '2rem', wordWrap: 'break-word', margin: 'auto', textAlign: 'left' }} value={mail} />
       </div>
    );
 }
