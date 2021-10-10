@@ -233,7 +233,7 @@ export default function StandardImageList() {
                   <form onSubmit={handleSubmit}>
                      <div className={classes.containerTextAndIconSearch}>
                         <TextField
-                           id="standard-basic"
+                           id="searchName"
                            label="Nhập để tìm kiếm"
                            variant="standard"
                            className={classes.searchTextField}
