@@ -4,6 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/tabsStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faSmile, faUser , faMale } from '@fortawesome/free-solid-svg-icons'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -12,8 +15,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -33,38 +36,30 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
-export default function VerticalTabs() {
+export default function CenterTabs() {
   const [value, setValue] = React.useState(0);
+
+  const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 350 }}
-    >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
-      >
-        <Tab label="Ảnh chân dung" {...a11yProps(0)} />
-        <Tab label="Ảnh bán thân" {...a11yProps(1)} />
-        <Tab label="Ảnh toàn thân" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+    <Box sx={{flexGrow: 1 }} className = {classes.box}>
+      <h1 className={classes.h1}>BÔ SƯU TẬP CÁ NHÂN</h1>
+      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      <Tabs value={value} onChange={handleChange} centered>
+        <Tab icon={<FontAwesomeIcon icon={faSmile} />} label="Ảnh chân dung" />
+        <Tab icon={<FontAwesomeIcon icon={faUser} />} label="Ảnh bán thân" />
+        <Tab icon={<FontAwesomeIcon icon={faMale} />} label="Ảnh toàn thân" />
       </Tabs>
+    </Box>
       <TabPanel value={value} index={0}>
         Item One
       </TabPanel>
@@ -73,18 +68,6 @@ export default function VerticalTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
       </TabPanel>
     </Box>
   );

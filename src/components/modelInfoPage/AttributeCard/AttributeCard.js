@@ -47,11 +47,11 @@ export default function AttributeCard(props) {
                         </Grid>
                         <Grid item xs={3.5}>
                             <SectionContent list1={listBodyMeasurements} />
-                            {/* <Divider className={classes.divider} orientation="vertical" flexItem></Divider> */}
+                    
                         </Grid>
                         <Grid item xs={3.5}>
                             <SectionContent list1={listBodyAttributes} />
-                            {/* <Divider className={classes.divider} orientation="vertical" flexItem></Divider> */}
+                        
                         </Grid>
                         <Grid item xs={5}>
                             <SectionContent list1={listModelDetails} />
@@ -64,7 +64,7 @@ export default function AttributeCard(props) {
                 </Grid>
                 <Grid item xs={4.5} >
                     <div>
-                        <img className={classes.avatar_image_Style} src="https://static.dosi-in.com/images/news_content/22711/2020/09/16/nguoi-mau-phi-gioi-tinh_2020_09_16_111.jpg" alt="vioho" />
+                        <img className={classes.avatar_image_Style} src="https://image-us.eva.vn/upload/4-2020/images/2020-12-14/1-1607917452-189-width600height901.jpg" alt="vioho" />
                     </div>
                 </Grid>
 

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
     avatar_image_Style: {
         objectFit: 'cover',
-        objectPosition: '50% 100%',
+        objectPosition: '50% 10%',
         width: '90%',
         float: 'right',
         height:'30rem',

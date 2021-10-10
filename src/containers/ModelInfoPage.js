@@ -4,14 +4,13 @@ import Divider from '@mui/material/Divider';
 import ListTravelNotices from "../components/modelInfoPage/TravelNotices/ListTravelNotices";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import image from '../assets/img/VioHo.jpeg';
-import ModelProfile from "../components/modelInfoPage/ModelProfile/ModelProfile";
-import SectionPills from '../components/modelInfoPage/SectionPills/SectionPills';
+import CenterTabs from '../components/modelInfoPage/Tabs/Tabs'
 import ListCardGallery from '../components/modelInfoPage/ListCardGallery/ListCardGallery';
 import SectionFooter from "../components/Footer/SectionFooter";
 import AttributeCard from '../components/modelInfoPage/AttributeCard/AttributeCard';
 import StyleCard from '../components/modelInfoPage/StyleCard/StyleCard';
 import GalleryModal from '../components/modelInfoPage/GalleryModal/GalleryModal'
+import ReviewAreas from '../components/modelInfoPage/ReviewAreas/ReviewAreas'
 
 const aboutMe = (
     `Tôi là một người rất kiên nhẫn, sáng tạo và làm việc chăm chỉ. Mục tiêu trong tương lai của tôi là tham gia các sàn diễn thời trang và các buổi chụp hình do các nhà tạo mẫu và nhiếp ảnh gia sáng tạo. Tôi cũng rất thích ca hát, chơi violin / guitar.`
@@ -42,10 +41,13 @@ export default function ModelInfoPage() {
                     <StyleCard  listLabel={listLabel}/> 
                 </Grid>
                 <Grid item xs={12} >
-                    <GalleryModal/>
+                    <ReviewAreas />
                 </Grid>
                 <Grid item xs={12}>
                     <AttributeCard listLabel={listLabel} list={listTop3Label}/>
+                </Grid>
+                <Grid item xs={12} >
+                    <CenterTabs/>
                 </Grid>
                 <Grid item xs={12} >
                     <ListTravelNotices/>
@@ -53,6 +55,7 @@ export default function ModelInfoPage() {
                 <Grid item xs={12} >
                     <ListCardGallery />
                 </Grid>
+                
             </Grid>
         </Box>
         <SectionFooter />
