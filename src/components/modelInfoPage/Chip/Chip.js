@@ -8,7 +8,6 @@ export default function BasicChips(props) {
     const listChip = props.label.map((item) => {
         return (
             <Chip label={item} variant="outlined" className={classes.chip} />
-
         );
     })
     return (
