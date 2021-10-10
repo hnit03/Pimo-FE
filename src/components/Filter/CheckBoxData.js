@@ -1,44 +1,68 @@
 export const searchBySexValue = [
-    {
-        name:'Nữ'
-    },
-    {
-        name:'Nam'
-    },
-    {
-        name:'Khác'
-    },
+   {
+       id: 1,
+       name:'Nữ',
+       checked : false
+   },
+   {
+       id: 2,
+       name:'Nam',
+       checked : false
+   },
+   {
+       id: 3,
+       name:'Khác',
+       checked : false
+   },
 ]
 export const searchByStyleValue = [
-    {
-        name:'Tóc'
-    },
-    {
-        name:'Nghệ thuật'
-    },
-    {
-        name:'Hóa trang'
-    },
-    {
-        name:'Cách sống'
-    },
+   {
+       id : 1,
+       name:'Tóc',
+       checked :false
+   },
+   {
+       id : 2,
+       name:'Nghệ thuật',
+       checked :false
+   },
+   {
+       id : 3,
+       name:'Hóa trang',
+       checked :false
+   },
+   {
+       id : 4,
+       name:'Cách sống',
+       checked :false
+   },
 ]
 export const searchByStyleMoreValue = [
-    {
-        name:'Nội y'
-    },
-    {
-        name:'Nghệ sĩ trình diễn'
-    },
+   {
+       id: 1,
+       name:'Nội y',
+       checked :false
+   },
+   {
+       id:2,
+       name:'Nghệ sĩ trình diễn',
+       checked :false
+   },
 ]
 export const searchBySkinColorValue = [
-    {
-        name:'Da vàng'
-    },
-    {
-        name:'Da trắng'
-    },
-    {
-        name:'Da đen'
-    },
+   {
+       id:1,
+       name:'Da vàng',
+       checked :false
+   },
+   {
+       id:2,
+       name:'Da trắng',
+       checked :false
+   },
+   {
+       id:3,
+       name:'Da đen',
+       checked :false
+   },
 ]
