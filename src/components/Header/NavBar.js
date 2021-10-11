@@ -44,6 +44,7 @@ function Navbar() {
 
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
    const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
+   const onClickSearchBrand = useCallback(() => history.push('/brand-search/1'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -111,10 +112,12 @@ function Navbar() {
                      <Button
                         href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={(e) => e.preventDefault()}
+                        onClick={onClickSearchBrand}
                         color="transparent"
-                     >
+                     >            
+                        <Link to="/brand-search" className={classes.dropdownLink}>
                         Nhãn hàng
+                        </Link>
                      </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>

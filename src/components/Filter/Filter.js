@@ -75,6 +75,7 @@ export default function StandardImageList(props) {
    const handleCheckHeight = () => {
       if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
          setCheckHeight(true);
+         setValueChoose([]);
       } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgeMax)) {
          setCheckAge(true);
       } else if (parseInt(checkSearchAgeMin) < parseInt(checkSearchAgeMax)) {
@@ -89,8 +90,10 @@ export default function StandardImageList(props) {
       setValueChoose([]);
       if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
          setCheckHeight(true);
+          return;
       } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgeMax)) {
          setCheckAge(true);
+         return;
       } else if (parseInt(checkSearchAgeMin) < parseInt(checkSearchAgeMax)) {
          setCheckAge(false);
       } else {
@@ -496,6 +499,7 @@ export default function StandardImageList(props) {
                      ) : (null)) : null
 
                }
+
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
                <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />
