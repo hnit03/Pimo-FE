@@ -17,3 +17,12 @@ export const getModels = (pageNo) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const getInfo = (id) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchModelInfo(id);
+      dispatch({ type: 'MODEL_INFO', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};

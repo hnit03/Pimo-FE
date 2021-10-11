@@ -5,6 +5,8 @@ export default (models = [], action) => {
          return action.payload;
       case 'FETCH_MODELS':
          return action.payload
+      case 'MODEL_INFO':
+         return action.payload
       default:
          return models;
    }

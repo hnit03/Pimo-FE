@@ -490,7 +490,7 @@ export default function StandardImageList(props) {
                      (models.modelList.length > 0) ? (
                         models.modelList.map((model) => (
                            <GridItem xs={12} sm={6} md={6}>
-                              <CardImage model={model} listTop3Label={listTop3Label} />
+                              <CardImage model={model}/>
                            </GridItem>
                         ))
                      ) : (null)) : null

@@ -32,7 +32,7 @@ export default function ModelProfile(props) {
                     </li>
                 </ul>    
             </div>
-            <Divider className={classes.divider_Style} >About Me</Divider>
+            <Divider className={classes.divider_Style} >Mô tả</Divider>
             <div className={classes.textLocation}>
                 {props.aboutMe}
             </div>

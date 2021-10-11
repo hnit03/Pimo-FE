@@ -35,7 +35,7 @@ function App() {
             <Route exact={true} path="/" component={HomePage} />
             <Route path="/how-it-work" component={GuildPage} />
             <Route path="/model-search/:id" component={ModelSearchPage} />
-            <Route path="/model-info" component={ModelInfoPage} />
+            <Route path="/model-info/:id" component={ModelInfoPage} />
          </Switch>
       </BrowserRouter>
    );

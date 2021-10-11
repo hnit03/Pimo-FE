@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1rem'
       },
       text: {
+         marginLeft: '3%',
         textAlign: 'left',
         color: 'gray',
         float: 'left',

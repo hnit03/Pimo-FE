@@ -11,7 +11,7 @@ export default function BasicChips(props) {
         );
     })
     return (
-        <Stack direction="row" spacing={1}  >
+        <Stack style={{textAlign: 'center'}} direction="row" spacing={1}  >
             <div className={classes.stack}>
                 {listChip}
             </div>

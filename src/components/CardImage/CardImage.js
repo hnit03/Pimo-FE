@@ -7,8 +7,7 @@ import BasicChips from '../modelInfoPage/Chip/Chip';
 export default function CardImage(model) {
    const classes = useStyles();
    const history = useHistory();
-
-   const onClickInfo = useCallback(() => history.push('/model-info'), [history]);
+   const onClickInfo = useCallback(() => history.push(`/model-info/${model.model.model.id}`), [history]);
 
    return (
       <div className={classes.hieuungbenngoai} onClick={onClickInfo}>
