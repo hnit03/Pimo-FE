@@ -5,7 +5,7 @@ import {
   whiteColor,
   grayColor,
   defaultFont,
-} from "../../material-kit-pro-react.js";
+} from "../../../../assets/jss/material-kit-pro-react.js";
 
 const customInputStyle = {
   disabled: {
@@ -18,9 +18,9 @@ const customInputStyle = {
       borderBottomColor: grayColor[11] + " !important",
       borderBottomWidth: "1px !important",
     },
-   //  "&:after": {
-   //    borderBottomColor: primaryColor[0],
-   //  },
+    "&:after": {
+      borderBottomColor: primaryColor[0],
+    },
   },
   underlineError: {
     "&:after": {

@@ -2,10 +2,6 @@ import React from 'react';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/styleCardStyle';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import BasicChips from "../Chip/Chip";
-import Divider from '@mui/material/Divider';
-import TravelNotices from "../../../components/modelInfoPage/TravelNotices/TravelNotices";
-import image from '../../../assets/img/VioHo.jpeg';
 import ModelProfile from '../../../components/modelInfoPage/ModelProfile/ModelProfile'
 import SectionPills from '../../../components/modelInfoPage/SectionPills/SectionPills';
 const aboutMe = (
@@ -30,14 +26,13 @@ export default function StyleCard(props) {
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
             <Grid container spacing={2} className={classes.pageLeft_Style}>
                     <Grid item xs={0.5} >
-            
                         </Grid>
                         <Grid item xs={4.5} >
                             <div>
-                                <img className={classes.avatar_image_Style} src="https://i.vietgiaitri.com/2019/11/26/bo-3-gia-ky-vio-ho-va-mong-thuong-khang-dinh-ca-tinh-cua-the-he-nguoi-mau-unisex-qua-bo-anh-moi-dfe4a6.jpeg" alt="vioho" />
+                                <img className={classes.avatar_image_Style} src="https://i.vietgiaitri.com/2019/11/26/bo-3-gia-ky-vio-ho-va-mong-thuong-khang-dinh-ca-tinh-cua-the-he-nguoi-mau-unisex-qua-bo-anh-moi-c2e089.jpeg" alt="vioho" />
                             </div>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={6.5}>
                             <div className={classes.model_info_Style}>
                                 <ModelProfile
                                     aboutMe={aboutMe}
