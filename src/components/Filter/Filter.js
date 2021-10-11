@@ -65,6 +65,7 @@ export default function StandardImageList(props) {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getModels(pageNo));
+      console.log(models);
    }, [pageNo]);
 
    const handleChange = () => {
