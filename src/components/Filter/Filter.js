@@ -64,8 +64,8 @@ export default function StandardImageList(props) {
 
    const dispatch = useDispatch();
    useEffect(() => {
-      dispatch(getModels(1));
-   }, [dispatch]);
+      dispatch(getModels(pageNo));
+   }, [pageNo]);
 
    const handleChange = () => {
       setViewMore(!viewMore);
