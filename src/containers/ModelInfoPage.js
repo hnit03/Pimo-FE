@@ -4,7 +4,7 @@ import Divider from '@mui/material/Divider';
 import ListTravelNotices from "../components/modelInfoPage/TravelNotices/ListTravelNotices";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import CenterTabs from '../components/modelInfoPage/Tabs/Tabs'
+import CenterTabs from '../components/modelInfoPage/Tabs/Tabs.js'
 import ListCardGallery from '../components/modelInfoPage/ListCardGallery/ListCardGallery';
 import SectionFooter from "../components/Footer/SectionFooter";
 import AttributeCard from '../components/modelInfoPage/AttributeCard/AttributeCard';
