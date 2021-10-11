@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 // import useStyles from "./style";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../assets/jss/material-kit-pro-react/views/componentsSections/sectionCards";
@@ -22,6 +22,7 @@ import CardImage from "../CardImage/CardImage";
 import { useDispatch } from 'react-redux';
 import { getModels } from '../../actions/models';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import {
    searchBySexValue,
@@ -40,7 +41,7 @@ import IconButton from "@mui/material/IconButton";
 
 const useStyles = makeStyles(styles);
 
-export default function StandardImageList() {
+export default function StandardImageList(props) {
    const classes = useStyles();
    const [viewMore, setViewMore] = React.useState(false);
    const [searchName, setSearchName] = React.useState('');
@@ -50,12 +51,14 @@ export default function StandardImageList() {
    const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState();
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
+   const [pageNo, setPageNo] = React.useState(props.pageOffset);
    const [radioUnChecked, setRadioUnChecked] = React.useState("");
    var [checkBoxSex, setCheckBoxSex] = React.useState([]);
    var [checkBoxStyle, setCheckBoxStyle] = React.useState([]);
    var [checkBoxStyleMore, setCheckBoxStyleMore] = React.useState([]);
    var [checkBoxSkinColor, setCheckBoxSkinColor] = React.useState([]);
    var [valueChoose, setValueChoose] = React.useState([]);
+   const history = useHistory();
 
    const models = useSelector((state) => state.models);
 
@@ -222,6 +225,14 @@ export default function StandardImageList() {
       }
    };
 
+   const handleChangePage = (event, value) => {
+      setPageNo(value)
+      window.scrollTo(0, 0)
+      changeURL(value)
+   };
+
+   const changeURL = useCallback((data) => history.push(`/model-search/${data}`), [history]);
+
    return (
       <div className={classes.containerFilterAndResult}>
          <div
@@ -248,7 +259,6 @@ export default function StandardImageList() {
                            />{" "}
                         </IconButton>
                      </div>
-
                      <div className={classes.containerTextFilterAndDelete}>
                         <div className={classes.filterText}>
                            <span style={{ fontSize: "1.5rem" }}> Bộ lọc</span>
@@ -263,7 +273,6 @@ export default function StandardImageList() {
                            Xóa
                         </span>
                      </div>
-
                      <p className={classes.titleSearch}>Tìm kiếm theo giới tính</p>
                      <FormGroup className={classes.containerCheckBox}>
                         {searchBySexValue.map((value, index) => (
@@ -282,7 +291,6 @@ export default function StandardImageList() {
                            />
                         ))}
                      </FormGroup>
-
                      <p className={classes.titleSearch}>Tìm kiếm theo phong cách</p>
                      <FormGroup className={classes.containerCheckBox} >
                         {searchByStyleValue.map((value, index) => (
@@ -318,7 +326,6 @@ export default function StandardImageList() {
                            </>
                         )}
                      </FormGroup>
-
                      <ul className={classes.containerViewMore}>
                         <li style={{ display: "flex" }}>
                            {!viewMore ? (
@@ -351,8 +358,6 @@ export default function StandardImageList() {
                            )}
                         </li>
                      </ul>
-
-
                      <p className={classes.titleSearch}>Tìm kiếm theo màu da</p>
                      <FormGroup className={classes.containerCheckBox}>
                         {searchBySkinColorValue.map((value, index) => (
@@ -368,7 +373,6 @@ export default function StandardImageList() {
                            />
                         ))}
                      </FormGroup>
-
                      <p className={classes.titleSearch}>Tìm kiếm theo hình xăm</p>
                      <FormControl className={classes.formControl}>
                         <RadioGroup
@@ -405,7 +409,6 @@ export default function StandardImageList() {
                         </RadioGroup>
                      </FormControl>
                      <p>{radioUnChecked}</p>
-
                      <p className={classes.titleSearch}>Tìm kiếm theo chiều cao (cm)</p>
                      <div className={classes.containerSearchHeight_Age}>
                         <TextField
@@ -437,7 +440,6 @@ export default function StandardImageList() {
                            />
                         </div>
                      </div>
-
                      <p className={classes.titleSearch}>Tìm kiếm theo tuổi</p>
                      <div className={classes.containerSearchHeight_Age}>
                         <TextField
@@ -471,8 +473,6 @@ export default function StandardImageList() {
                </GridItem>
             </GridContainer>
          </div>
-
-
          <div
             className={classes.container}
             style={{
@@ -495,53 +495,9 @@ export default function StandardImageList() {
                      ) : (null)) : null
 
                }
-               {/* <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem>
-               <GridItem xs={12} sm={4} md={3}>
-                  <CardImage />
-               </GridItem> */}
-               {/* {itemData.map((image, index) => (
-            <GridItem key={index} xs={12} sm={4} md={3}>
-              <a style={{ textDecoration: "none" }} href="/how-it-works">
-                <Card blog>
-                  <CardHeader image>
-                    <img src={image.img} alt="..." height="300vh" />
-                    <div
-                      className={classes.coloredShadow}
-                      style={{
-                        backgroundImage: `url(${image.img})`,
-                        opacity: "1",
-                      }}
-                    />
-                  </CardHeader>
-
-                  <CardBody className={classes.cardBody}>
-                    <Rose>
-                      <h className={classes.cardCategory}>Okìki</h>
-                    </Rose>
-                 <span style={{display:'flex',  marginTop: '0.3rem' }}>  
-                      <FontAwesomeIcon style={{marginTop:'0.2rem'}} icon={faMapMarkerAlt} color='#4c4b4b'/>
-                     <h4 className={classes.textAddress}>Quận 1</h4>             
-                    </span>
-                    <h4 className={classes.textMeasurements}>Số đo: 45-45-45</h4>
-                  </CardBody>
-                </Card>
-              </a>
-            </GridItem>
-          ))} */}
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
-               <Pagination count={10} showFirstButton showLastButton />
+               <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />
             </Stack>
          </div>
       </div>
