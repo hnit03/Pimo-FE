@@ -1,4 +1,4 @@
-import { container } from "assets/jss/material-kit-pro-react.js";
+import { container } from "../../../../../assets/jss/material-kit-pro-react.js";
 
 const carouselStyle = {
   section: {

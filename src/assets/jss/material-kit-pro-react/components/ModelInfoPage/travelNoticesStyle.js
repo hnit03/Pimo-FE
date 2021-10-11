@@ -2,17 +2,13 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        // backgroundColor: 'pink',
         margin: 'auto',
         width: '75rem',
         height: '25rem',
-        //margin:'3%',
         background: 'white !important',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
         marginBottom: "3rem",
         marginTop: "0vh",
-        //padding:'2rem',
-
     },
     location_icon_small_Style: {
         color: 'red',
@@ -20,17 +16,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
     travelNotices_out_Style: {
-        ///margin: 'auto',
         float: 'right',
         width: '90%',
-       // paddingLeft: '1%',
-
-        //  height: '4.1rem',
         marginTop: '0.9rem',
          marginBottom: 0,
         marginRight: 0,
-        // paddingBottom: '2rem',
-        // backgroundColor:'pink'
     },
     travelNotices_Style: {
         margin: 'auto',
@@ -49,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        //  fontWeight: '800',
         marginBottom: '0.2rem',
     },
     travelType_Style: {
@@ -85,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
     },
     textTimeDate_Style: {
         textAlign: 'center',
-        //color: 'rgb(24, 112, 243)',
         color: '#f9a3b2',
         float: 'left',
         fontSize: '2.3rem',
@@ -100,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
     },
     boxLeft: {
         textAlign: 'center',
-        //backgroundColor: 'pink',
         marginLeft: '0%',
         marginTop: '6vh',
     },
@@ -123,7 +110,6 @@ const useStyles = makeStyles((theme) => ({
     divider: {
        marginTop: '5%',
         height: '100% !important',
-       // width: '100%',
     }
 
 }

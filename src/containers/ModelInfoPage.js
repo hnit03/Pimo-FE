@@ -40,9 +40,6 @@ export default function ModelInfoPage() {
                 <Grid item xs={12} >
                     <StyleCard  listLabel={listLabel}/> 
                 </Grid>
-                <Grid item xs={12} >
-                    <ReviewAreas />
-                </Grid>
                 <Grid item xs={12}>
                     <AttributeCard listLabel={listLabel} list={listTop3Label}/>
                 </Grid>
@@ -55,7 +52,9 @@ export default function ModelInfoPage() {
                 <Grid item xs={12} >
                     <ListCardGallery />
                 </Grid>
-                
+                <Grid item xs={12} >
+                    <ReviewAreas />
+                </Grid>
             </Grid>
         </Box>
         <SectionFooter />

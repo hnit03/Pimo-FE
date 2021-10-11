@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 0,
         padding: 0,
         width: '100%',
-    
+        marginTop: 0,
+        marginBottom: 0
       }
       ,title: {
         margin: 0,
@@ -18,10 +19,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         fontSize: '5.5rem',
         fontFamily: "Calibri, sans-serif",
-    
       },
       divider_Style: {
-        marginTop: '5rem',
+        marginTop: '0rem !important',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem'
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        marginTop: '0.1rem',
+        marginTop: '0',
         marginBottom:'1rem',
     },
 }

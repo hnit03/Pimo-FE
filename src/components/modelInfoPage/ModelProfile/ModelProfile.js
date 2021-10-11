@@ -30,10 +30,8 @@ export default function ModelProfile(props) {
                     <li style={{ display: 'flex', }} className={classes.li}>
                         <LocationOn className={classes.icon} /><span className={classes.text} >{props.location}</span>
                     </li>
-                    
                 </ul>    
             </div>
-            
             <Divider className={classes.divider_Style} >About Me</Divider>
             <div className={classes.textLocation}>
                 {props.aboutMe}

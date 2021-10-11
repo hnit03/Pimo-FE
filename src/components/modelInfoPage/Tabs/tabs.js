@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/tabsStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faSmile, faUser , faMale } from '@fortawesome/free-solid-svg-icons'
+import SectionCarousel from '../SectionCarousel/SectionCarousel'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,7 +62,7 @@ export default function CenterTabs() {
       </Tabs>
     </Box>
       <TabPanel value={value} index={0}>
-        Item One
+        {/* <SectionCarousel/> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
