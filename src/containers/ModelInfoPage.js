@@ -25,7 +25,6 @@ export default function ModelInfoPage(props) {
       dispatch(getInfo(props.match.params.id));
       dispatch(getReviews(props.match.params.id, 1));
    }, [])
-   console.log(reviews);
 
    const classes = useStyles();
    return (

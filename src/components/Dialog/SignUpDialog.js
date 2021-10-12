@@ -83,7 +83,6 @@ function SignUpDialog(props) {
          );
          setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
       }
-      // console.log(brands);
       // setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
    };
 

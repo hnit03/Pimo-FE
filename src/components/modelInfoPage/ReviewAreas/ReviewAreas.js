@@ -45,17 +45,17 @@ export default function ReviewAreas({reviewList}) {
                                 avatar={avatar}
                                 title={
                                     <span>
-                                        Victoria's Secret <small style={{color: '#b0b3b8'}}>· {
-                                        new Date(review.timeOfReview).toLocaleDateString("vi-VN", {year: 'numeric', month: 'long', day: 'numeric'}) 
+                                        <large>{review.brand.name}</large> <small style={{color: '#b0b3b8'}}>- {
+                                        new Date(review.review.timeOfReview).toLocaleDateString("vi-VN", {year: 'numeric', month: 'long', day: 'numeric'}) 
                                         + " lúc " 
-                                        + new Date(review.timeOfReview).toLocaleTimeString("vi-VN", {hour: '2-digit', minute:'2-digit'})
+                                        + new Date(review.review.timeOfReview).toLocaleTimeString("vi-VN", {hour: '2-digit', minute:'2-digit'})
                                         }</small>
                                     </span>
                                 }
                                 body={
                                     <span>
                                         <p style={{wordBreak: 'break-all'}}>
-                                           {review.review1}
+                                           {review.review.review1}
                                         </p>
                                     </span>
                                 }

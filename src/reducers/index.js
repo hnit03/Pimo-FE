@@ -4,7 +4,8 @@ import auth from './auth'
 import categories from './categories'
 import brands from './brands'
 import reviews from './reviews'
+import styles from './styles'
 
 export default combineReducers({
-   models, auth, categories, brands, reviews
+   models, auth, categories, brands, reviews, styles
 })

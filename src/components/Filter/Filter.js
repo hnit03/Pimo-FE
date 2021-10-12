@@ -20,7 +20,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import CardImage from "../CardImage/CardImage";
 import { useDispatch } from 'react-redux';
-import { getModels } from '../../actions/models';
+import { getModels, searchModels } from '../../actions/models';
+import { getStyles } from '../../actions/styles';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -52,26 +53,27 @@ export default function StandardImageList(props) {
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
+   const [checkTattoo, setCheckTattoo] = React.useState(null);
    const [radioUnChecked, setRadioUnChecked] = React.useState("");
    var [checkBoxSex, setCheckBoxSex] = React.useState([]);
    var [checkBoxStyle, setCheckBoxStyle] = React.useState([]);
    var [checkBoxStyleMore, setCheckBoxStyleMore] = React.useState([]);
    var [checkBoxSkinColor, setCheckBoxSkinColor] = React.useState([]);
    var [valueChoose, setValueChoose] = React.useState([]);
-   const [searchData, setSearchData] = React.useState({ name: '', sex: [], style: [], skinColor: [], tattoo: false });
    const history = useHistory();
 
    const models = useSelector((state) => state.models);
+   const styles = useSelector((state) => state.styles);
 
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getModels(pageNo));
+      dispatch(getStyles());
    }, [pageNo]);
 
    const handleChange = () => {
       setViewMore(!viewMore);
    };
-
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -87,25 +89,6 @@ export default function StandardImageList(props) {
       } else {
          setCheckHeight(false);
       }
-      for (let i in checkBoxSex) {
-         if (checkBoxSex[i].checked === true) {
-            valueChoose.push(checkBoxSex[i].name);
-            setSearchData({ ...searchData, sex: valueChoose });
-         }
-      }
-      for (let i in checkBoxStyle) {
-         if (checkBoxStyle[i].checked === true)
-            valueChoose.push(checkBoxStyle[i].name);
-      }
-      for (let i in checkBoxStyleMore) {
-         if (checkBoxStyleMore[i].checked === true)
-            valueChoose.push(checkBoxStyleMore[i].name);
-      }
-      for (let i in checkBoxSkinColor) {
-         if (checkBoxSkinColor[i].checked === true)
-            valueChoose.push(checkBoxSkinColor[i].name);
-      }
-
       if (parseInt(checkSearchHeightMin).toString() !== "NaN") {
          valueChoose.push(parseInt(checkSearchHeightMin));
       }
@@ -124,7 +107,31 @@ export default function StandardImageList(props) {
       if (radioUnChecked !== "") {
          valueChoose.push(radioUnChecked);
       }
-      console.log(searchData);
+      const sexList = []
+      checkBoxSex.map(item => {
+         if (item.checked === true) sexList.push(item.id);
+      })
+      const styleList = []
+      checkBoxStyle.map(item => {
+         if (item.checked === true) styleList.push(item.id);
+      })
+      const data = {
+         "name": searchName,
+         "sex": sexList,
+         "style": styleList,
+         "skin": checkBoxSkinColor,
+         "height": {
+            "min_height": checkSearchHeightMin,
+            "max_height": checkSearchHeightMax
+         },
+         "age": {
+            "min_age": checkSearchAgeMin,
+            "max_age": checkSearchAgeMax
+         },
+         "tattoo" : checkTattoo
+      }
+      // console.log(data);
+      dispatch(searchModels(data, pageNo))
    };
 
    const handlerFilter = (e, value, item) => {
@@ -134,6 +141,11 @@ export default function StandardImageList(props) {
                setRadioUnChecked("");
             } else {
                setRadioUnChecked(e.target.value);
+               if('Không có hình xăm' === e.target.value) {
+                  setCheckTattoo(false)
+               } else {
+                  setCheckTattoo(true)
+               }
             }
             break;
          case 2:
@@ -144,11 +156,13 @@ export default function StandardImageList(props) {
             setCheckBoxSex(updateSex);
             break;
          case 3:
-            const updateStyle = searchByStyleValue.map((value) => {
+            const updateStyle = styles.style.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
+               
                return value;
             });
             setCheckBoxStyle(updateStyle);
+            // console.log(checkBoxStyle);
             break;
          case 4:
             const updateStyleMore = searchByStyleMoreValue.map((value) => {
@@ -197,6 +211,7 @@ export default function StandardImageList(props) {
             setValueChoose([]);
             setCheckHeight(false);
             setCheckAge(false);
+            setCheckTattoo(null)
             break;
          default:
       }
@@ -268,22 +283,29 @@ export default function StandardImageList(props) {
                         ))}
                      </FormGroup>
                      <p className={classes.titleSearch}>Tìm kiếm theo phong cách</p>
-                     <FormGroup className={classes.containerCheckBox} >
-                        {searchByStyleValue.map((value, index) => (
-                           <FormControlLabel
-                              control={
-                                 <Checkbox
-                                    className={classes.checkBox}
-                                    checked={value.checked}
-                                    onClick={(input) => handlerFilter(input, 3, value)}
-                                 />
-                              }
-                              label={
-                                 <p className={classes.customLabelCheckBox}>{value.name}</p>
-                              }
-                           />
-                        ))}
-                        {viewMore && (
+                     <div className={classes.containerCheckBox} >
+                        {
+                           (styles.style !== undefined) ?
+                              (
+                                 (styles.style.length > 0) ? (
+                                    styles.style.map(style => (
+                                       <FormControlLabel
+                                          control={
+                                             <Checkbox
+                                                className={classes.checkBox}
+                                                checked={style.checked}
+                                                onClick={(input) => handlerFilter(input, 3, style)}
+                                             />
+                                          }
+                                          label={
+                                             <p className={classes.customLabelCheckBox}>{style.name}</p>
+                                          }
+                                       />
+                                    ))
+                                 ) : null
+                              ) : null
+                        }
+                        {/* {viewMore && (
                            <>
                               {searchByStyleMoreValue.map((value, index) => (
                                  <FormControlLabel
@@ -300,9 +322,9 @@ export default function StandardImageList(props) {
                                  />
                               ))}
                            </>
-                        )}
-                     </FormGroup>
-                     <ul className={classes.containerViewMore}>
+                        )} */}
+                     </div>
+                     {/* <ul className={classes.containerViewMore}>
                         <li style={{ display: "flex" }}>
                            {!viewMore ? (
                               <ArrowDropDownIcon
@@ -333,7 +355,7 @@ export default function StandardImageList(props) {
                               </h4>
                            )}
                         </li>
-                     </ul>
+                     </ul> */}
                      <p className={classes.titleSearch}>Tìm kiếm theo màu da</p>
                      <FormGroup className={classes.containerCheckBox}>
                         {searchBySkinColorValue.map((value, index) => (
@@ -384,7 +406,6 @@ export default function StandardImageList(props) {
                            ))}
                         </RadioGroup>
                      </FormControl>
-                     <p>{radioUnChecked}</p>
                      <p className={classes.titleSearch}>Tìm kiếm theo chiều cao (cm)</p>
                      <div className={classes.containerSearchHeight_Age}>
                         <TextField
