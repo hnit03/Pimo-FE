@@ -45,10 +45,10 @@ export default function StandardImageList(props) {
    const classes = useStyles();
    const [viewMore, setViewMore] = React.useState(false);
    const [searchName, setSearchName] = React.useState('');
-   const [checkSearchHeightMin, setCheckSearchHeightMin] = React.useState();
-   const [checkSearchAgeMin, setCheckSearchAgeMin] = React.useState();
-   const [checkSearchHeightMax, setCheckSearchHeightMax] = React.useState();
-   const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState();
+   const [checkSearchHeightMin, setCheckSearchHeightMin] = React.useState('');
+   const [checkSearchAgeMin, setCheckSearchAgeMin] = React.useState('');
+   const [checkSearchHeightMax, setCheckSearchHeightMax] = React.useState('');
+   const [checkSearchAgeMax, setCheckSearchAgeMax] = React.useState('');
    const [checkHeight, setCheckHeight] = React.useState(false);
    const [checkAge, setCheckAge] = React.useState(false);
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
@@ -72,19 +72,7 @@ export default function StandardImageList(props) {
       setViewMore(!viewMore);
    };
 
-   const handleCheckHeight = () => {
-      if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
-         setCheckHeight(true);
-         setValueChoose([]);
-      } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgeMax)) {
-         setCheckAge(true);
-      } else if (parseInt(checkSearchAgeMin) < parseInt(checkSearchAgeMax)) {
-         setCheckAge(false);
-      } else {
-         setCheckHeight(false);
-      }
-   };
-
+  
    const handleSubmit = (e) => {
       e.preventDefault();
       setValueChoose([]);
@@ -258,7 +246,7 @@ export default function StandardImageList(props) {
                         <IconButton style={{ color: "black" }} type="submit">
                            {" "}
                            <SearchIcon
-                              onClick={() => handleCheckHeight()}
+                            
                               className={classes.searchIcon}
                            />{" "}
                         </IconButton>
@@ -499,7 +487,6 @@ export default function StandardImageList(props) {
                      ) : (null)) : null
 
                }
-
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
                <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />

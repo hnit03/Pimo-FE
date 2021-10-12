@@ -26,15 +26,14 @@ import { searchByMonopolytimeValue } from "./RadioData.js";
 import { listTop3Label } from "./Top3StyleData";
 import IconButton from "@mui/material/IconButton";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useHistory } from 'react-router-dom';
-
+import { useHistory } from "react-router-dom";
 
 function formatDate(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var amPm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
-  hours = hours ? hours : 12; 
+  hours = hours ? hours : 12;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   var strTime = hours + ":" + minutes + " " + amPm;
   return (
@@ -66,14 +65,17 @@ export default function StandardImageList(props) {
   useEffect(() => {
     dispatch(getModels(pageNo));
     console.log(models);
- }, [pageNo]);
+  }, [pageNo]);
 
- const handleChangePage = (event, value) => {
-  setPageNo(value)
-  window.scrollTo(0, 0)
-  changeURL(value)
-};
-const changeURL = React.useCallback((data) => history.push(`/brand-search/${data}`), [history]);
+  const handleChangePage = (event, value) => {
+    setPageNo(value);
+    window.scrollTo(0, 0);
+    changeURL(value);
+  };
+  const changeURL = React.useCallback(
+    (data) => history.push(`/brand-search/${data}`),
+    [history],
+  );
 
   function valueTextPrice(value) {
     return `${value} triệu đồng`;
@@ -283,7 +285,13 @@ const changeURL = React.useCallback((data) => history.push(`/brand-search/${data
             : null}
         </GridContainer>
         <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
-          <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)}  count={10} showFirstButton showLastButton />
+          <Pagination
+            onChange={handleChangePage}
+            defaultPage={parseInt(pageNo)}
+            count={10}
+            showFirstButton
+            showLastButton
+          />
         </Stack>
       </div>
     </div>
