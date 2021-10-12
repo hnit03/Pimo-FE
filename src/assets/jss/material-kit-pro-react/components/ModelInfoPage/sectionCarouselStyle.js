@@ -27,11 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
     button:{
         marginTop: '15rem',
-       // backgroundColor: 'pink !important'
     },
     img:{
-        width: '14rem !important',
-        height: '14rem !important',
+        width: '13.5rem !important',
+        height: '13.5rem !important',
     }
 
 }

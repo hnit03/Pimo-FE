@@ -1,6 +1,6 @@
 export const personalGalleryList = [
     {
-        name:'name1',
+        name:'Catwalk in the moon',
         image:[{
             name: "https://vcdn1-giaitri.vnecdn.net/2021/01/05/mongthuongava-1609841663-9213-1609841706.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=x7A9BK_19jrdvqQM93nAHg",
           },
@@ -15,7 +15,7 @@ export const personalGalleryList = [
           }]
     },
     {
-        name:'name2',
+        name:'Daily activity',
         image:[{
             name: "https://vcdn1-ione.vnecdn.net/2020/12/18/6-1608281596.jpg?w=460&h=0&q=100&dpr=1&fit=crop&s=ODVwUrF-DtNCaqXV2a-7Xw",
           },
@@ -30,7 +30,7 @@ export const personalGalleryList = [
           }]
     },
     {
-        name:'name3',
+        name:'My hobbies',
         image:[{
             name: "https://showbizvn.vn/wp-content/uploads/2020/12/Mong-Thuong-3.jpg",
           },

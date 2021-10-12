@@ -60,21 +60,24 @@ export default function CenterTabs() {
   let button = null;
   let i = -1;
   let y = -1;
-  view == true ?
-    (button = <div className={classes.button}>
-      <ViewComfyIcon className={classes.iconViewCarouse} onClick={() => changeViewType(false)} />
-      <ViewCarouselIcon className={classes.iconViewComfyIcon} onClick={() => changeViewType(true)} />
-    </div>) :
-    (button = <div className={classes.button}>
-      <ViewComfyIcon className={classes.iconViewCarouseChange} onClick={() => changeViewType(false)} />
-      <ViewCarouselIcon className={classes.iconViewComfyIconChange} onClick={() => changeViewType(true)} />
-    </div>)
+
 
 
   return (
     <div className={classes.box}>
       <h1 className={classes.h1} >BÔ SƯU TẬP CÁ NHÂN</h1>
-      {button}
+
+      {view == true ?
+        (<div className={classes.button}>
+          <ViewComfyIcon className={classes.iconViewCarouse} onClick={() => changeViewType(false)} />
+          <ViewCarouselIcon className={classes.iconViewComfyIcon} onClick={() => changeViewType(true)} />
+        </div>) :
+        (<div className={classes.button}>
+          <ViewComfyIcon className={classes.iconViewCarouseChange} onClick={() => changeViewType(false)} />
+          <ViewCarouselIcon className={classes.iconViewComfyIconChange} onClick={() => changeViewType(true)} />
+        </div>)
+      }
+
       <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 450 }}
         className={classes.innerTabs}>
         <Tabs
@@ -84,14 +87,16 @@ export default function CenterTabs() {
           onChange={handleChange}
           aria-label="Vertical tabs example"
           sx={{ borderRight: 1, borderColor: 'divider' }}
-
         >
+
           {
             personalGalleryList.map((item, index) =>
               <Tab label={item.name} {...a11yProps({ index })} />
             )
           }
+
         </Tabs>
+        
         {
           personalGalleryList.map((item, index) =>
             <TabPanel value={value} index={index}>
