@@ -364,30 +364,87 @@ import {
     fontSize: "1rem",
     width: "10em",
     margin: 0,
-    marginLeft:'0.1rem',
-    color: '#4c4b4b'
+    marginLeft: "0.6rem",
+    color: "#4c4b4b",
   },
-   containerViewMore: {
-     listStyleType: "none",
-     padding: 0,
-     margin: "0.2em",
-   },
-   btnViewMore:{
-     cursor: "pointer", 
-     color:'#f64aa4a8'
-   },
-   containerSearchHeight_Age:{
-     display: 'flex',
-     marginTop:'1rem'
-   },
-   //right
-   textSearchResult: {
-     margin: 0,
-     marginLeft: "1.5%",
-     marginTop: "1.5%",
-     color: "#f64aa4a8",
+  customLabelRadio: {
+    fontSize: "1rem",
+    width: "13em",
+    margin: 0,
+    marginLeft: "0.1rem",
+    color: "#4c4b4b",
+  },
+  containerViewMore: {
+    listStyleType: "none",
+    padding: 0,
+    margin: "0.2em",
+  },
+  btnViewMore: {
+    cursor: "pointer",
+    color: "#f64aa4a8",
+  },
+  containerSearchHeight_Age: {
+    display: "flex",
+    marginTop: "1rem",
+  },
+  dateTime:{
+    
+   
+  },
+  searchDateTime:{
+    
+    "& label": {
+      fontSize: "0.8em",
+      color: "black",
     },
-   cardBody: {
+    "& label.Mui-focused": {
+      color: "#f64aa4a8",
+    },
+    "&:hover .MuiFormLabel-root": {
+      color: "#f64aa4a8",
+    },
+    "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#cfcfcf",
+    },
+    "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#f64aa4a8",
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#f64aa4a8",
+    },
+    // "& .MuiOutlinedInput-input": {
+    //   color: "green"
+    // },
+    // "& .MuiInputLabel-outlined": {
+    //   color: "green"
+    // },
+    "&:hover .MuiInputLabel-outlined": {
+      color: "#f64aa4a8",
+    },
+    "& .MuiInputLabel-outlined.Mui-focused": {
+      color: "#f64aa4a8",
+    },
+  },
+  customSlider:{
+    '& .MuiSlider-track': {
+     color:'pink'
+    },
+    '& .MuiSlider-thumb': {  
+      backgroundColor: 'pink',
+    },
+    '& .MuiSlider-rail': {
+    opacity: 0.5,
+    backgroundColor: '#bfbfbf',
+  },
+  },
+  //right
+  textSearchResult: {
+    margin: 0,
+    marginLeft: "1.5%",
+    marginTop: "1.5%",
+    color: "#f64aa4a8",
+  },
+  cardBody: {
     //  textAlign: "center",
       width: "80%",
     paddingBottom:0
