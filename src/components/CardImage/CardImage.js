@@ -21,13 +21,7 @@ export default function CardImage(model) {
                      <p className={classes.p}><span className={classes.p_Title}>Vị trí: </span>{model.model.model.district}, {model.model.model.country}</p>
                      {/* <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.model.gifted}</p> */}
                      <p className={classes.p}><span className={classes.p_Title}>Giới tính: </span>Nữ</p>
-                     {
-                        (model.listTop3Label !== undefined) ? (
-                           (model.listTop3Label.length > 0) ? (
-                              <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.model.gifted}</p>
-                           ) : (null)) : null
-      
-                     }
+                     <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.model.gifted}</p>
                   </p>
                </div>
             </div>

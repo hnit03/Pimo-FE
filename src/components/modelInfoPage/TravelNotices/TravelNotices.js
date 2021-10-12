@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 export default function TravelNotices({ task }) {
    const classes = useStyles();
-   console.log(task);
    var optionsRight = { day: 'numeric'};
    var optionsBottom = { year: 'numeric', month: 'long'};
    var startDate = new Date(task.startDate)

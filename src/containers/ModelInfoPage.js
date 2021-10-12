@@ -13,16 +13,19 @@ import GalleryModal from '../components/modelInfoPage/GalleryModal/GalleryModal'
 import ReviewAreas from '../components/modelInfoPage/ReviewAreas/ReviewAreas'
 import { withRouter } from "react-router";
 import { getInfo } from '../actions/models';
+import { getReviews } from '../actions/reviews';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 export default function ModelInfoPage(props) {
    const model = useSelector((state) => state.models);
+   const reviews = useSelector((state) => state.reviews);
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getInfo(props.match.params.id));
+      dispatch(getReviews(props.match.params.id, 1));
    }, [])
-
+   console.log(reviews);
 
    const classes = useStyles();
    return (
@@ -48,7 +51,7 @@ export default function ModelInfoPage(props) {
                            <ListCardGallery model={model}/>
                         </Grid>
                         <Grid item xs={12} >
-                           <ReviewAreas model={model}/>
+                           <ReviewAreas reviewList={reviews}/>
                         </Grid>
                      </Grid>
                   </Box>

@@ -23,13 +23,15 @@ var listModelDetails =
    { name: "Tài năng", value: "Hát, nhảy, catwalk" },
    ];
 
-export default function AttributeCard({ model}) {
+export default function AttributeCard({ model }) {
    const classes = useStyles();
    const [modelStyle, setModelStyle] = React.useState([]);
    var name = 4.5;
    var value = 6.5;
    var name1 = 5;
    var value1 = 5;
+   // var listBodyMeasurements = model.listBodyAttr
+   // var listModelDetails = model.listBodyPart
    useEffect(() => {
       model.styleList.map((style) => {
          const styleName = style.name
@@ -55,10 +57,10 @@ export default function AttributeCard({ model}) {
                   <Grid item xs={1}>
                   </Grid>
                   <Grid item xs={6}>
-                  <SectionContent list1={listModelDetails} name={name} value={value}/>
+                     <SectionContent list1={listModelDetails} name={name} value={value} />
                   </Grid>
                   <Grid item xs={5}>
-                     <SectionContent list1={listBodyMeasurements} name={name1} value={value1}/>
+                     <SectionContent list1={listBodyMeasurements} name={name1} value={value1} />
                   </Grid>
                </Grid>
             </Grid>

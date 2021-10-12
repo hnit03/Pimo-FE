@@ -1,12 +1,12 @@
 export const searchBySexValue = [
    {
        id: 1,
-       name:'Nữ',
+       name:'Nam',
        checked : false
    },
    {
        id: 2,
-       name:'Nam',
+       name:'Nữ',
        checked : false
    },
    {

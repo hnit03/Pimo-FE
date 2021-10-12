@@ -64,7 +64,6 @@ export default function StandardImageList(props) {
 
   useEffect(() => {
     dispatch(getModels(pageNo));
-    console.log(models);
   }, [pageNo]);
 
   const handleChangePage = (event, value) => {
@@ -107,7 +106,6 @@ export default function StandardImageList(props) {
       valueChoose.push(dateTime);
     }
 
-    console.log("valueChoose ", valueChoose);
   };
 
   const handlerFilter = (e, value, item) => {

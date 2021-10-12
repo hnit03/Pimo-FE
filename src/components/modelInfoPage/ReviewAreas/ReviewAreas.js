@@ -18,10 +18,11 @@ import marc from "../../../assets/img/faces/marc.jpg";
 
 const useStylesOfTemplate = makeStyles(style);
 
-export default function ReviewAreas() {
+export default function ReviewAreas({reviewList}) {
 
     const classes = useStylesOfTemplate();
     const classesRreview = useStyles();
+
     return (
         <div className={classesRreview.box}>
             <div className="cd-section" id="contentAreas">
@@ -38,66 +39,29 @@ export default function ReviewAreas() {
                                 ĐÁNH GIÁ CỦA CÁC NHÃN HÀNG
                             </h1>
                             <Divider className={classesRreview.divider_Style} ></Divider>
-                            <Media
+                           {
+                              (reviewList.reviewList.map(review => (
+                                 <Media
                                 avatar={avatar}
                                 title={
                                     <span>
-                                        Victoria's Secret <small>· 10/10/2021</small>
+                                        Victoria's Secret <small style={{color: '#b0b3b8'}}>· {
+                                        new Date(review.timeOfReview).toLocaleDateString("vi-VN", {year: 'numeric', month: 'long', day: 'numeric'}) 
+                                        + " lúc " 
+                                        + new Date(review.timeOfReview).toLocaleTimeString("vi-VN", {hour: '2-digit', minute:'2-digit'})
+                                        }</small>
                                     </span>
                                 }
                                 body={
                                     <span>
-                                        <p>
-                                            Thái độ làm việc của Vio rất tốt và chuyên nghiệp, hi vọng sẽ tiếp tục đc hợp tác với bạn 
-                                            trong thời gian tới.
-                                        </p>
-                                        <p>
-                                            Thanks & best regards!!!
+                                        <p style={{wordBreak: 'break-all'}}>
+                                           {review.review1}
                                         </p>
                                     </span>
                                 }
                             />
-                            <Media
-                                avatar={marc}
-                                title={
-                                    <span>
-                                        John Camber <small>· Yesterday</small>
-                                    </span>
-                                }
-                                body={
-                                    <span>
-                                        <p>
-                                            Hello guys, nice to have you on the platform! There will
-                                            be a lot of great stuff coming soon. We will keep you
-                                            posted for the latest news.
-                                        </p>
-                                        <p>
-                                            Don{"'"}t forget, You{"'"}re Awesome!
-                                        </p>
-                                    </span>
-                                }
-                            />
-                            <Media
-                                key={Math.random() * Date.now()}
-                                avatar={avatar}
-                                title={
-                                    <span>
-                                        Rosa Thompson <small>· 2 Days Ago</small>
-                                    </span>
-                                }
-                                body={
-                                    <span>
-                                        <p>
-                                            Hello guys, nice to have you on the platform! There will
-                                            be a lot of great stuff coming soon. We will keep you
-                                            posted for the latest news.
-                                        </p>
-                                        <p>
-                                            Don{"'"}t forget, You{"'"}re Awesome!
-                                        </p>
-                                    </span>
-                                }
-                            />
+                              )))
+                           }
                             <div>
                                 <Paginations
                                     className={

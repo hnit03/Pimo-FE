@@ -58,6 +58,7 @@ export default function StandardImageList(props) {
    var [checkBoxStyleMore, setCheckBoxStyleMore] = React.useState([]);
    var [checkBoxSkinColor, setCheckBoxSkinColor] = React.useState([]);
    var [valueChoose, setValueChoose] = React.useState([]);
+   const [searchData, setSearchData] = React.useState({ name: '', sex: [], style: [], skinColor: [], tattoo: false });
    const history = useHistory();
 
    const models = useSelector((state) => state.models);
@@ -65,20 +66,19 @@ export default function StandardImageList(props) {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getModels(pageNo));
-      console.log(models);
    }, [pageNo]);
 
    const handleChange = () => {
       setViewMore(!viewMore);
    };
 
-  
+
    const handleSubmit = (e) => {
       e.preventDefault();
       setValueChoose([]);
       if (parseInt(checkSearchHeightMin) > parseInt(checkSearchHeightMax)) {
          setCheckHeight(true);
-          return;
+         return;
       } else if (parseInt(checkSearchAgeMin) > parseInt(checkSearchAgeMax)) {
          setCheckAge(true);
          return;
@@ -88,8 +88,10 @@ export default function StandardImageList(props) {
          setCheckHeight(false);
       }
       for (let i in checkBoxSex) {
-         if (checkBoxSex[i].checked === true)
+         if (checkBoxSex[i].checked === true) {
             valueChoose.push(checkBoxSex[i].name);
+            setSearchData({ ...searchData, sex: valueChoose });
+         }
       }
       for (let i in checkBoxStyle) {
          if (checkBoxStyle[i].checked === true)
@@ -122,14 +124,12 @@ export default function StandardImageList(props) {
       if (radioUnChecked !== "") {
          valueChoose.push(radioUnChecked);
       }
-      console.log("valueChoose11 ", searchName);
-      console.log("valueChoose ", valueChoose);
+      console.log(searchData);
    };
 
    const handlerFilter = (e, value, item) => {
       switch (value) {
          case 1:
-            console.log("aalal ", e.target.value);
             if (e.target.value === radioUnChecked) {
                setRadioUnChecked("");
             } else {
@@ -139,16 +139,13 @@ export default function StandardImageList(props) {
          case 2:
             const updateSex = searchBySexValue.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
-               console.log("checkbox ", value);
                return value;
             });
-            console.log("checkbox11 ", updateSex);
             setCheckBoxSex(updateSex);
             break;
          case 3:
             const updateStyle = searchByStyleValue.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
-               console.log("checkbox ", value);
                return value;
             });
             setCheckBoxStyle(updateStyle);
@@ -156,7 +153,6 @@ export default function StandardImageList(props) {
          case 4:
             const updateStyleMore = searchByStyleMoreValue.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
-               console.log("checkbox ", value);
                return value;
             });
             setCheckBoxStyleMore(updateStyleMore);
@@ -164,7 +160,6 @@ export default function StandardImageList(props) {
          case 5:
             const updateSkinColor = searchBySkinColorValue.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
-               console.log("checkbox ", value);
                return value;
             });
             setCheckBoxSkinColor(updateSkinColor);
@@ -172,44 +167,34 @@ export default function StandardImageList(props) {
          case 6:
             const clearSex = checkBoxSex.map((value) => {
                value.checked = false;
-               console.log("hihi ", value);
                return value;
             });
             setCheckBoxSex(clearSex);
 
             const clearStyle = checkBoxStyle.map((value) => {
                value.checked = false;
-               console.log("hihi ", value);
                return value;
             });
             setCheckBoxStyle(clearStyle);
 
             const clearStyleMore = checkBoxStyleMore.map((value) => {
                value.checked = false;
-               console.log("hihi ", value);
                return value;
             });
             setCheckBoxStyleMore(clearStyleMore);
-
             const clearSkinColor = checkBoxSkinColor.map((value) => {
                value.checked = false;
-               console.log("hihi ", value);
                return value;
             });
             setCheckBoxSkinColor(clearSkinColor);
-
             setSearchName('');
             document.getElementById("searchName").focus();
-
             setCheckSearchHeightMin('');
             setCheckSearchHeightMax('');
             setCheckSearchAgeMin('')
             setCheckSearchAgeMax('')
-
             setRadioUnChecked("");
-
             setValueChoose([]);
-
             setCheckHeight(false);
             setCheckAge(false);
             break;
@@ -246,7 +231,6 @@ export default function StandardImageList(props) {
                         <IconButton style={{ color: "black" }} type="submit">
                            {" "}
                            <SearchIcon
-                            
                               className={classes.searchIcon}
                            />{" "}
                         </IconButton>
@@ -272,7 +256,7 @@ export default function StandardImageList(props) {
                               control={
                                  <Checkbox
                                     checked={value.checked}
-                                    value={value.name}
+                                    value={value.id}
                                     onClick={(input) => handlerFilter(input, 2, value)}
                                     className={classes.checkBox}
                                  />
@@ -481,7 +465,7 @@ export default function StandardImageList(props) {
                      (models.modelList.length > 0) ? (
                         models.modelList.map((model) => (
                            <GridItem xs={12} sm={6} md={6}>
-                              <CardImage model={model}/>
+                              <CardImage model={model} />
                            </GridItem>
                         ))
                      ) : (null)) : null

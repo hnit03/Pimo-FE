@@ -5,6 +5,7 @@ import useStyles from '../../../assets/jss/material-kit-pro-react/components/Mod
 
 export default function BasicChips(props) {
     const classes = useStyles();
+
     const listChip = props.label.map((item) => {
         return (
             <Chip label={item} variant="outlined" className={classes.chip} />

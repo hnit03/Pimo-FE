@@ -7,7 +7,6 @@ import SectionPills from '../../../components/modelInfoPage/SectionPills/Section
 
 export default function StyleCard({ model }) {
    const classes = useStyles();
-   console.log(model);
    var birthDay = new Date(model.model[0].model.dateOfBirth)
 
    return (
