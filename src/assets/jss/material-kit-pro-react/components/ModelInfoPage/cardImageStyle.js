@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0',
         padding: 0,
         fontSize: '15px',
+        fontWeight: '700',
     },
     button: {
         fontFamily: "Calibri, sans-serif",

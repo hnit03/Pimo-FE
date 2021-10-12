@@ -32,7 +32,7 @@ export default function ListCardGallery(props) {
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
             <Grid container spacing={1} className={classes.gallery}>
                 <Grid item xs={12}>
-                    <p className={classes.galleryTitle}>BỘ SƯU TẬP HÌNH ẢNH</p>
+                    <p className={classes.galleryTitle}>CÁC DỰ ÁN NỔI BẬT</p>
                     <p className={classes.galleryDes}>Đa dạng hình ảnh, đa dạng trong từng phong cách</p>
                 </Grid>
                 {list}

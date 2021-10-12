@@ -12,6 +12,8 @@ export default function CardImage(props) {
                     <div className={classes.thongtin}>
                         <p className={classes.p}>Bộ sưu tập ảnh</p>
                         <h2 className={classes.h2}>{props.listGallery.nameGallery}</h2>
+                        <p className={classes.p}>Hợp tác với</p>
+                        <h2 className={classes.h2}>Victoria's Secret</h2>
                          <Button variant="outlined" className={classes.button}>XEM CHI TIẾT</Button>
                     </div>
                 </div>

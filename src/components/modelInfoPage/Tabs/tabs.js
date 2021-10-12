@@ -10,6 +10,7 @@ import QuiltedImageList from '../SectionCarousel/vi';
 import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
 import ViewComfyIcon from '@mui/icons-material/ViewComfy';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/tabsStyle';
+import { styled } from '@mui/material/styles';
 import {
   personalGalleryList
 } from "./PersonalGalleryData";
@@ -61,11 +62,9 @@ export default function CenterTabs() {
   let i = -1;
   let y = -1;
 
-
-
   return (
     <div className={classes.box}>
-      <h1 className={classes.h1} >BÔ SƯU TẬP CÁ NHÂN</h1>
+      <h1 className={classes.h1} >BỘ SƯU TẬP CÁ NHÂN</h1>
 
       {view == true ?
         (<div className={classes.button}>
@@ -78,9 +77,10 @@ export default function CenterTabs() {
         </div>)
       }
 
-      <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 450 }}
+      <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 500 }}
         className={classes.innerTabs}>
         <Tabs
+          className={classes.tabs}
           orientation="vertical"
           variant="scrollable"
           value={value}
@@ -91,7 +91,7 @@ export default function CenterTabs() {
 
           {
             personalGalleryList.map((item, index) =>
-              <Tab label={item.name} {...a11yProps({ index })} />
+              <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
             )
           }
 

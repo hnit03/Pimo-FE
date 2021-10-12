@@ -5,21 +5,29 @@ import useStyles from '../../../assets/jss/material-kit-pro-react/components/Mod
 export default function SectionContent(props) {
     const classes = useStyles();
     var listAtr1 = props.list1;
-    const listItem1 = listAtr1.map((item1) => {
+    const listItemName = listAtr1.map((item) => {
         return (
             <div>
-                <span className={classes.name_attribute}>{item1.name}: </span>
-                <span className={classes.value_attribute}>{item1.value} </span>
+                <span className={classes.name_attribute}>{item.name}: </span>
+            </div>
+        );
+    })
+    const listItemValue = listAtr1.map((item) => {
+        return (
+            <div>
+                <span className={classes.value_attribute}>{item.value} </span>
             </div>
         );
     })
 
-
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    {listItem1}
+                <Grid item xs={props.name}>
+                    {listItemName}
+                </Grid>
+                <Grid item xs={props.value}>
+                    {listItemValue}
                 </Grid>
             </Grid>
         </Box>

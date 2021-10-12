@@ -25,7 +25,6 @@ export default function CardImage(model) {
                         (model.listTop3Label !== undefined) ? (
                            (model.listTop3Label.length > 0) ? (
                               <p className={classes.p}><span className={classes.p_Title}>Tài năng: </span>{model.model.model.gifted}</p>
-                              
                            ) : (null)) : null
       
                      }

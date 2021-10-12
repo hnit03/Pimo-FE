@@ -16,12 +16,19 @@ export default function TravelNotices({ task }) {
             <Grid item xs={2.5} >
                <span className={classes.textTimeDate_Style}>{startDate.toLocaleDateString("vi-VN", optionsRight)}</span>
                <span className={classes.textTime_Style}>{startDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
+
+            </Grid>
+            <Grid item xs={0.5} >
+            <span className={classes.textTimeDate_Style}>-</span>
+            </Grid>
+            <Grid item xs={2.5} >
+               <span className={classes.textTimeDate_Style}>{startDate.toLocaleDateString("vi-VN", optionsRight)}</span>
+               <span className={classes.textTime_Style}>{startDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
             </Grid>
             <Grid item xs={0.5} >
                <Divider className={classes.divider} orientation="vertical" flexItem></Divider>
             </Grid>
-
-            <Grid item xs={8.5} >
+            <Grid item xs={6} >
                <div>
                   <span className={classes.travelName_Style}>{task.name}</span>
                   <span className={classes.textLocation_Style}> <LocationOnIcon className={classes.location_icon_small_Style} />Ho Chi Minh City, Viet Nam</span>
