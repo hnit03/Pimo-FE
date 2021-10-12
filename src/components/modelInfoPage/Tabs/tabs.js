@@ -1,14 +1,18 @@
-import * as React from 'react';
+
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import SectionCarousel from '../SectionCarousel/SectionCarousel';
+import QuiltedImageList from '../SectionCarousel/vi';
+import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
+import ViewComfyIcon from '@mui/icons-material/ViewComfy';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/tabsStyle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faSmile, faUser , faMale } from '@fortawesome/free-solid-svg-icons'
-import SectionCarousel from '../SectionCarousel/SectionCarousel'
-
+import {
+  personalGalleryList
+} from "./PersonalGalleryData";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -16,8 +20,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -37,39 +41,66 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
 export default function CenterTabs() {
   const [value, setValue] = React.useState(0);
-
+  const [view, setView] = useState(true);
   const classes = useStyles();
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const changeViewType = (e) => {
+    setView(e);
+
+  };
+  let button = null;
+  let i = -1;
+  let y = -1;
+  view == true ?
+    (button = <div className={classes.button}>
+      <ViewComfyIcon className={classes.iconViewCarouse} onClick={() => changeViewType(false)} />
+      <ViewCarouselIcon className={classes.iconViewComfyIcon} onClick={() => changeViewType(true)} />
+    </div>) :
+    (button = <div className={classes.button}>
+      <ViewComfyIcon className={classes.iconViewCarouseChange} onClick={() => changeViewType(false)} />
+      <ViewCarouselIcon className={classes.iconViewComfyIconChange} onClick={() => changeViewType(true)} />
+    </div>)
+
 
   return (
-    <Box sx={{flexGrow: 1 }} className = {classes.box}>
-      <h1 className={classes.h1}>BÔ SƯU TẬP CÁ NHÂN</h1>
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <Tabs value={value} onChange={handleChange} centered>
-        <Tab icon={<FontAwesomeIcon icon={faSmile} />} label="Ảnh chân dung" />
-        <Tab icon={<FontAwesomeIcon icon={faUser} />} label="Ảnh bán thân" />
-        <Tab icon={<FontAwesomeIcon icon={faMale} />} label="Ảnh toàn thân" />
-      </Tabs>
-    </Box>
-      <TabPanel value={value} index={0}>
-        {/* <SectionCarousel/> */}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-    </Box>
+    <div className={classes.box}>
+      <h1 className={classes.h1} >BÔ SƯU TẬP CÁ NHÂN</h1>
+      {button}
+      <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 450 }}
+        className={classes.innerTabs}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          sx={{ borderRight: 1, borderColor: 'divider' }}
+
+        >
+          {
+            personalGalleryList.map((item, index) =>
+              <Tab label={item.name} {...a11yProps({ index })} />
+            )
+          }
+        </Tabs>
+        {
+          personalGalleryList.map((item, index) =>
+            <TabPanel value={value} index={index}>
+              {view == true ? <SectionCarousel listCal={item.image} /> : <QuiltedImageList list={item.image} />}
+            </TabPanel>
+          )
+        }
+
+      </Box>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import WcIcon from '@mui/icons-material/Wc';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 
+
 const Root = styled('div')(({ theme }) => ({
     width: '100%',
     ...theme.typography.body2,
