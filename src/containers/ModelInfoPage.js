@@ -41,7 +41,7 @@ export default function ModelInfoPage(props) {
                            <AttributeCard model={model}/>
                         </Grid>
                         <Grid item xs={12} >
-                           <CenterTabs />
+                           <CenterTabs model={model}/>
                         </Grid>
                         <Grid item xs={12} >
                            <ListTravelNotices model={model}/>

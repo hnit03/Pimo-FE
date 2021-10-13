@@ -72,7 +72,6 @@ export const searchModels = (filter, pageNo) => async (dispatch) => {
       if (pageNo !== null) {
          path += '&PageNo=' + pageNo;
       }
-      console.log(path);
       const { data } = await api.searchModels(path);
       dispatch({ type: 'FETCH_MODELS', payload: data });
    } catch (error) {

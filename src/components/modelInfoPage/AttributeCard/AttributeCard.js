@@ -6,23 +6,6 @@ import BasicChips from "../Chip/Chip";
 import SectionContent from "../SectionPills/SectionContent";
 import Divider from '@mui/material/Divider';
 
-var listBodyMeasurements =
-   [{ name: "Màu da", value: "Vàng" },
-   { name: "Màu mắt", value: "Nâu" },
-   { name: "Độ dài tóc", value: "Ngang vai" },
-   { name: "Màu tóc", value: "Vàng sáng" },
-   { name: "Hình xăm", value: "Không" },
-   { name: "Size giày", value: "38" }];
-
-var listModelDetails =
-   [{ name: "Chiều cao", value: "185 cm" },
-   { name: "Cân nặng", value: "49 kg" },
-   { name: "Vòng Ngực", value: "89 cm" },
-   { name: "Vòng Hông", value: "58 cm" },
-   { name: "Vòng Mông", value: "91 cm" },
-   { name: "Tài năng", value: "Hát, nhảy, catwalk" },
-   ];
-
 export default function AttributeCard({ model }) {
    const classes = useStyles();
    const [modelStyle, setModelStyle] = React.useState([]);
@@ -30,7 +13,6 @@ export default function AttributeCard({ model }) {
    var value = 6.5;
    var name1 = 5;
    var value1 = 5;
-   console.log(model);
    useEffect(() => {
       model.styleList.map((style) => {
          const styleName = style.name

@@ -10,10 +10,8 @@ import GridItem from "../Grid/GridItem.js";
 import Media from "../Media/Media.js";
 import Paginations from "../Pagination/Pagination.js";
 import style from "../../../assets/jss/material-kit-pro-react/views/componentsSections/contentAreas.js";
-import avatar from "../../../assets/img/faces/avatar.jpg";
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/reviewAreasStyle';
 
-import marc from "../../../assets/img/faces/marc.jpg";
 
 
 const useStylesOfTemplate = makeStyles(style);
@@ -22,8 +20,6 @@ export default function ReviewAreas({ reviewList }) {
 
    const classes = useStylesOfTemplate();
    const classesRreview = useStyles();
-
-   console.log(reviewList);
 
    return (
       <div className={classesRreview.box}>

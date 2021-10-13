@@ -16,13 +16,15 @@ export default function SectionContent(props) {
       return (
          <div>
             {
-               (item.value.textValue === null) ?
-                  (
-                     <span className={classes.value_attribute}>{`${item.value.quantityValue} ${item.value.measure}`} </span>
-                  ) :
-                  (
-                     <span className={classes.value_attribute}>{item.value.textValue} </span>
-                  )
+               (item.value) ? (
+                  (item.value.textValue) ?
+                     (
+                        <span className={classes.value_attribute}>{item.value.textValue} </span>
+                     ) :
+                     (
+                        <span className={classes.value_attribute}>{`${item.value.quantityValue} ${item.value.measure}`} </span>
+                     )
+               ) : null
             }
          </div>
       );
