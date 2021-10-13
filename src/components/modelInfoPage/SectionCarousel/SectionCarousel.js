@@ -8,10 +8,12 @@ import useStyles from "../../../assets/jss/material-kit-pro-react/components/Mod
 
 export default function SectionCarousel(props) {
    const classes = useStyles();
-   {
+   var bool = props.bool;
+   var carouselStyle = classes.carousel;
+   bool == true ? (carouselStyle = classes.carousel):(carouselStyle = classes.carouselSmall)
       return (
          <Carousel
-            className={classes.carousel}
+            className={carouselStyle}
             NavButton={({ onClick, className, style, next, prev }
             ) => {
                return (
@@ -22,22 +24,24 @@ export default function SectionCarousel(props) {
                )
             }}
                animation="slide"
-            
             >
             {
                props.listCal.map((item, i) => <Item key={i} item={item} />)
             }
          </Carousel>
       )
-   }
-
    function Item(props) {
       return (
          <>
-            <Paper className={classes.paper}>
-
+         {
+            bool == true ? 
+            (<Paper className={classes.paper}>
                <img src={props.item.name} alt="First slide" className={classes.image} />
-            </Paper>
+            </Paper>) : 
+            (<Paper className={classes.paperSmall}>
+               <img src={props.item.fileName} alt="First slide" className={classes.imageSmall} />
+            </Paper>)
+         }
          </>
       )
    }

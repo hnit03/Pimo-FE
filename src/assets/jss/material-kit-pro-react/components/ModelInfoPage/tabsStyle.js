@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
     },
     tabs: {
         marginLeft:'0',
-        //backgroundColor: 'pink !important',
         marginTop:'1rem !important',
         borderRight: '1px solid pink',
         fontFamily: "Calibri, sans-serif",
@@ -73,9 +72,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'none',
         fontSize: '1.1rem !important',
         minWidth: 0,
-       // marginRight: theme.spacing(1),
         color: 'black',
-        //fontWeight:'bold',
         fontFamily: [
             "Calibri, sans-serif",
         ].join(','),

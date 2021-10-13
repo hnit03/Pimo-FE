@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CardImage1 from '../CardImage/CardImage';
 import Button from '@mui/material/Button';
+import GalleryModal from '../GalleryModal/GalleryModal';
 
 export default function ListCardGallery({ model }) {
    const classes = useStyles();
@@ -35,11 +36,6 @@ export default function ListCardGallery({ model }) {
                <p className={classes.galleryDes}>Đa dạng hình ảnh, đa dạng trong từng phong cách</p>
             </Grid>
             {list}
-            <Grid item xs={12}>
-            </Grid>
-            <Grid item xs={12}>
-               <Button variant="outlined" className={classes.button}>XEM CHI TIẾT</Button>
-            </Grid>
          </Grid>
       </Box>
    );

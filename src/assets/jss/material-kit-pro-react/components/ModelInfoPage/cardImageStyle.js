@@ -2,20 +2,17 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     hieuungbenngoai: {
         width: '100%',
-        height: '80vh',
-        // padding: '1%',
+        height: '31rem',
         marginRight: 0,
         marginRight: '1rem',
 
     },
     hieuung: {
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)',
-        // boxShadow:'0 0 8px 0 rgb(255, 192, 203,03), 0 6px 20px 0 rgb(255, 192, 203,0.2)',
         width: '91%',
         height: '91%',
         overflow: 'hidden',
         background: '#000',
-        // margin: '3%',
         margin: '0',
         marginLeft: '1.2rem',
         borderRadius: '0.5rem',

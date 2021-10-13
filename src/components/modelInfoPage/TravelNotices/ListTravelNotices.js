@@ -21,7 +21,7 @@ export default function ListTravelNotices({ model }) {
                   <h1 className={classes.h1}>LỊCH TRÌNH SẮP TỚI</h1>
                   <Divider className={classes.divider_Style} ></Divider>
                   {
-                     model.taskList.map(task => (
+                     model.availabilityList.map(task => (
                         <TravelNotices task={task}/>
                      ))
                   }
