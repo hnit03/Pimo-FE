@@ -18,71 +18,77 @@ import marc from "../../../assets/img/faces/marc.jpg";
 
 const useStylesOfTemplate = makeStyles(style);
 
-export default function ReviewAreas({reviewList}) {
+export default function ReviewAreas({ reviewList }) {
 
-    const classes = useStylesOfTemplate();
-    const classesRreview = useStyles();
+   const classes = useStylesOfTemplate();
+   const classesRreview = useStyles();
 
-    return (
-        <div className={classesRreview.box}>
-            <div className="cd-section" id="contentAreas">
+   console.log(reviewList);
 
-                <GridContainer>
-                    <GridItem
-                        xs={12}
-                        sm={8}
-                        md={8}
-                        className={classes.mlAuto + " " + classes.mrAuto}
-                    >
-                        <div>
-                            <h1 className={classesRreview.h1}>
-                                ĐÁNH GIÁ CỦA CÁC NHÃN HÀNG
-                            </h1>
-                            <Divider className={classesRreview.divider_Style} ></Divider>
-                           {
+   return (
+      <div className={classesRreview.box}>
+         <div className="cd-section" id="contentAreas">
+
+            <GridContainer>
+               <GridItem
+                  xs={12}
+                  sm={8}
+                  md={8}
+                  className={classes.mlAuto + " " + classes.mrAuto}
+               >
+                  <div>
+                     <h1 className={classesRreview.h1}>
+                        ĐÁNH GIÁ CỦA CÁC NHÃN HÀNG
+                     </h1>
+                     <Divider className={classesRreview.divider_Style} ></Divider>
+                     {
+                        (reviewList.reviewList !== undefined) ? (
+                           (reviewList.reviewList.length > 0) ? (
                               (reviewList.reviewList.map(review => (
                                  <Media
-                                avatar={avatar}
-                                title={
-                                    <span>
-                                        <large>{review.brand.name}</large> <small style={{color: '#b0b3b8'}}>- {
-                                        new Date(review.review.timeOfReview).toLocaleDateString("vi-VN", {year: 'numeric', month: 'long', day: 'numeric'}) 
-                                        + " lúc " 
-                                        + new Date(review.review.timeOfReview).toLocaleTimeString("vi-VN", {hour: '2-digit', minute:'2-digit'})
-                                        }</small>
-                                    </span>
-                                }
-                                body={
-                                    <span>
-                                        <p style={{wordBreak: 'break-all'}}>
-                                           {review.review.review1}
-                                        </p>
-                                    </span>
-                                }
-                            />
-                              )))
-                           }
-                            <div>
-                                <Paginations
-                                    className={
-                                        classes.textCenter + " " + classes.justifyContentCenter
+                                    avatar={review.brand.logo}
+                                    title={
+                                       <span>
+                                          <large>{review.brand.name}</large> <small style={{ color: '#b0b3b8' }}>- {
+                                             new Date(review.review.timeOfReview).toLocaleDateString("vi-VN", { year: 'numeric', month: 'long', day: 'numeric' })
+                                             + " lúc "
+                                             + new Date(review.review.timeOfReview).toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' })
+                                          }</small>
+                                       </span>
                                     }
-                                    pages={[
-                                        { text: "«" },
-                                        { text: 1 },
-                                        { text: 2 },
-                                        { active: true, text: 3 },
-                                        { text: 4 },
-                                        { text: 5 },
-                                        { text: "»" },
-                                    ]}
-                                    color="primary"
-                                />
-                            </div>
-                        </div>
-                    </GridItem>
-                </GridContainer>
-            </div>
-        </div>
-    );
+                                    body={
+                                       <span>
+                                          <p style={{ wordBreak: 'break-all' }}>
+                                             {review.review.review1}
+                                          </p>
+                                       </span>
+                                    }
+                                 />
+                              )))
+                           ) : null
+                        ) : null
+                     }
+                     <div>
+                        <Paginations
+                           className={
+                              classes.textCenter + " " + classes.justifyContentCenter
+                           }
+                           pages={[
+                              { text: "«" },
+                              { text: 1 },
+                              { text: 2 },
+                              { active: true, text: 3 },
+                              { text: 4 },
+                              { text: 5 },
+                              { text: "»" },
+                           ]}
+                           color="primary"
+                        />
+                     </div>
+                  </div>
+               </GridItem>
+            </GridContainer>
+         </div>
+      </div>
+   );
 }

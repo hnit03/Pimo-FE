@@ -30,8 +30,7 @@ export default function AttributeCard({ model }) {
    var value = 6.5;
    var name1 = 5;
    var value1 = 5;
-   // var listBodyMeasurements = model.listBodyAttr
-   // var listModelDetails = model.listBodyPart
+   console.log(model);
    useEffect(() => {
       model.styleList.map((style) => {
          const styleName = style.name
@@ -57,16 +56,16 @@ export default function AttributeCard({ model }) {
                   <Grid item xs={1}>
                   </Grid>
                   <Grid item xs={6}>
-                     <SectionContent list1={listModelDetails} name={name} value={value} />
+                     <SectionContent list1={model.listBodyPart} name={name} value={value} />
                   </Grid>
                   <Grid item xs={5}>
-                     <SectionContent list1={listBodyMeasurements} name={name1} value={value1} />
+                     <SectionContent list1={model.listBodyAttr} name={name1} value={value1} />
                   </Grid>
                </Grid>
             </Grid>
             <Grid item xs={4.5} >
                <div>
-                  <img className={classes.avatar_image_Style} src="https://image-us.eva.vn/upload/4-2020/images/2020-12-14/1-1607917452-189-width600height901.jpg" alt="vioho" />
+                  <img className={classes.avatar_image_Style} src={model.imageDetail.fileName} alt="vioho" />
                </div>
             </Grid>
          </Grid>

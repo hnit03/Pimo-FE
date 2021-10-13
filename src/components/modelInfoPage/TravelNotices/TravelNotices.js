@@ -9,9 +9,10 @@ export default function TravelNotices({ task }) {
    var optionsRight = { day: 'numeric'};
    var optionsBottom = { year: 'numeric', month: 'long'};
    var startDate = new Date(task.startDate)
+   var endDate = new Date(task.endDate)
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.travelNotices_out_Style}>
-         <Grid container spacing={2} className={classes.travelNotices_Style}>
+         <Grid container spacing={1} className={classes.travelNotices_Style}>
             <Grid item xs={2.5} >
                <span className={classes.textTimeDate_Style}>{startDate.toLocaleDateString("vi-VN", optionsRight)}</span>
                <span className={classes.textTime_Style}>{startDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
@@ -21,8 +22,8 @@ export default function TravelNotices({ task }) {
             <span className={classes.textTimeDate_Style}>-</span>
             </Grid>
             <Grid item xs={2.5} >
-               <span className={classes.textTimeDate_Style}>{startDate.toLocaleDateString("vi-VN", optionsRight)}</span>
-               <span className={classes.textTime_Style}>{startDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
+               <span className={classes.textTimeDate_Style}>{endDate.toLocaleDateString("vi-VN", optionsRight)}</span>
+               <span className={classes.textTime_Style}>{endDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
             </Grid>
             <Grid item xs={0.5} >
                <Divider className={classes.divider} orientation="vertical" flexItem></Divider>
