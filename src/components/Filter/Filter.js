@@ -130,7 +130,7 @@ export default function StandardImageList(props) {
          },
          "tattoo" : checkTattoo
       }
-      // console.log(data);
+      console.log(data);
       dispatch(searchModels(data, pageNo))
    };
 

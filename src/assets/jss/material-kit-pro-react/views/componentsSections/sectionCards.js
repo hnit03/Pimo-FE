@@ -299,6 +299,9 @@ import {
      },
      "& .MuiInputLabel-outlined.Mui-focused": {
        color: "#f64aa4a8"
+     },
+     '& input[type=number]::-webkit-inner-spin-button,& input[type=number]::-webkit-outer-spin-button ': {
+         WebkitAppearance: 'none'
      }
    },
    
@@ -386,6 +389,7 @@ import {
   containerSearchHeight_Age: {
     display: "flex",
     marginTop: "1rem",
+    marginBottom: "2.5rem",
   },
   dateTime:{
     
@@ -424,6 +428,7 @@ import {
     "& .MuiInputLabel-outlined.Mui-focused": {
       color: "#f64aa4a8",
     },
+    marginBottom:'2.5rem !important'
   },
   customSlider:{
     '& .MuiSlider-track': {

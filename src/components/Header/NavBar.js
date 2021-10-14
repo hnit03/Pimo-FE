@@ -45,6 +45,7 @@ function Navbar() {
    const onClickHowItWork = useCallback(() => history.push('/how-it-work'), [history]);
    const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
    const onClickSearchBrand = useCallback(() => history.push('/brand-search/1'), [history]);
+   const onClickSearchEvent = useCallback(() => history.push('/event-search/1'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -117,6 +118,18 @@ function Navbar() {
                      >            
                         <Link to="/brand-search" className={classes.dropdownLink}>
                         Nhãn hàng
+                        </Link>
+                     </Button>
+                    
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                     <Button
+                        className={classes.navLink + " " + classes.navLinkActive}
+                        onClick={onClickSearchEvent}
+                        color="transparent"
+                     >
+                        <Link to="/event-search" className={classes.dropdownLink}>
+                           Sự kiện
                         </Link>
                      </Button>
                   </ListItem>
