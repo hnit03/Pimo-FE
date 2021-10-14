@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     img: {
         width: '100%',
         transition: '0.5s',
-        height: '80vh',
+        height: '31rem',
         transition: '0.5s',
         objectFit: 'cover',
         objectPosition: '50% 100%',
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
 
     thongtin: {
-        marginTop: '-200px',
+        marginTop: '-12rem',
         transform: 'translateY(-50%)',
         //zIndex: '1',
         padding: '20px',

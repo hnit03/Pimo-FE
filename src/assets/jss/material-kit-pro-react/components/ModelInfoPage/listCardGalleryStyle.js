@@ -18,14 +18,14 @@ const useStyles = makeStyles((theme) => ({
         fontWeight:"bold",
         textAlign:"center",
         marginBottom:0,
-        marginTop:'10vh',
+        marginTop:'3rem',
     },
     galleryDes:{
         fontSize:"1.2rem",
         fontWeight:"bold",
         textAlign:"center",
         color:"#a7a7ab",
-        marginBottom:'8vh',
+        marginBottom:'2rem',
     },
     button:{
         margin:'auto !important',
