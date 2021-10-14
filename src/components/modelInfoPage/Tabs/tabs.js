@@ -10,7 +10,7 @@ import QuiltedImageList from '../SectionCarousel/QuiltedImageList';
 import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
 import ViewComfyIcon from '@mui/icons-material/ViewComfy';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/tabsStyle';
-import {personalGalleryList} from '../Tabs/PersonalGalleryData';
+// import {personalGalleryList} from '../Tabs/PersonalGalleryData';
 function TabPanel(props) {
    const { children, value, index, ...other } = props;
 
@@ -56,23 +56,23 @@ export default function CenterTabs({ model }) {
    };
    var listName = []
    var listImage = []
-   // if (model.listCollectionBody !== undefined) {
-   //    for (var i = 0; i < model.listCollectionBody.length; i++) {
-   //       listName.push({
-   //          name: model.listCollectionBody[i].collection.name,
-   //          description: model.listCollectionBody[i].collection.description
-   //       })
-   //       var imgList = []
-   //       for (var j = 0; j < model.listCollectionBody[i].imageList.length; j++) {
-   //          imgList.push({
-   //             name: model.listCollectionBody[i].imageList[j].fileName,
-   //          })
-   //       }
-   //       listImage.push({
-   //          image: imgList
-   //       })
-   //    }
-   // }
+   if (model.listCollectionBody !== undefined) {
+      for (var i = 0; i < model.listCollectionBody.length; i++) {
+         listName.push({
+            name: model.listCollectionBody[i].collection.name,
+            description: model.listCollectionBody[i].collection.description
+         })
+         var imgList = []
+         for (var j = 0; j < model.listCollectionBody[i].imageList.length; j++) {
+            imgList.push({
+               name: model.listCollectionBody[i].imageList[j].fileName,
+            })
+         }
+         listImage.push({
+            image: imgList
+         })
+      }
+   }
 
 
    return (
@@ -102,29 +102,29 @@ export default function CenterTabs({ model }) {
                sx={{ borderRight: 1, borderColor: 'divider' }}
             >
                {
-                  // listName.map((item, index) => (
-                  //    <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
-                  // )
-                  // )
-                  personalGalleryList.map((item, index) => (
+                  listName.map((item, index) => (
                      <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
                   )
                   )
+                  // personalGalleryList.map((item, index) => (
+                  //    <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
+                  // )
+                  // )
                }
             </Tabs>
             {
-               // listImage.map((item, index) => (
-               //    <TabPanel value={value} index={index}>
-               //       {view == true ? <SectionCarousel listCal={item.image} /> : <QuiltedImageList list={item.image} />}
-               //    </TabPanel>
-               // )
-               // )
-               personalGalleryList.map((item, index) => (
+               listImage.map((item, index) => (
                   <TabPanel value={value} index={index}>
-                     {view == true ? <SectionCarousel listCal={item.image} bool={true}/> : <QuiltedImageList list={item.image} bool={true}/>}
+                     {view == true ? <SectionCarousel listCal={item.image} bool={true} /> : <QuiltedImageList list={item.image} bool={true}/>}
                   </TabPanel>
                )
                )
+               // personalGalleryList.map((item, index) => (
+               //    <TabPanel value={value} index={index}>
+               //       {view == true ? <SectionCarousel listCal={item.image} bool={true}/> : <QuiltedImageList list={item.image} bool={true}/>}
+               //    </TabPanel>
+               // )
+               // )
             }
          </Box>
       </div>
