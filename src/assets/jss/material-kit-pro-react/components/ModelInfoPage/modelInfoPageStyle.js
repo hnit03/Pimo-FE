@@ -7,9 +7,17 @@ const useStyles = makeStyles((theme) => ({
     margin: '2.5%',
     marginBottom: '4%',
     marginTop:'-20vh',
-    
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
   },
+  innerBox: {
+   // background: 'white !important',
+        margin: 'auto',
+        width: '75rem',
+        //boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
+        //paddingBottom:'10vh',
+        marginTop:'-2rem'
+  },
+  
   model_info_Style: {
     // backgroundColor:'pink',
     float: 'left',

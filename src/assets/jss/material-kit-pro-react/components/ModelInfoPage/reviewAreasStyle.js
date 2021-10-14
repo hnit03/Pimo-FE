@@ -1,22 +1,24 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     box:{
-        backgroundColor: 'pink',
         margin: 'auto',
-        width: '75rem',
+        width: '35rem',
         background: 'white !important',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-        paddingBottom:'10vh',
-        marginBottom:"10vh",
-        marginTop:"3rem",
-        fontFamily: "Calibri, sans-serif",
+        marginBottom: "3rem",
+        marginTop: "-1rem",
+        paddingLeft:'2rem',
+        paddingBottom:'0.8rem',
+        minHeight:'31rem',
+        float:'left'
     },
     h1:{
         fontSize: '3rem !important',
         textAlign: 'center',
-        padding:'1rem',
         paddingBottom: 0,
         marginBottom: '1rem',
+        marginTop: '3rem',
+        marginLeft:'-2rem',
     },
     divider_Style: {
         marginLeft:'5% !important',
@@ -24,8 +26,11 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem',
         marginBottom:'2rem !important',
-        //paddingBottom:'10rem'
     },
+    media:{
+        marginLeft:'20rem !important',
+        background: 'pink !important',
+    }
 }
 ));
 export default useStyles;

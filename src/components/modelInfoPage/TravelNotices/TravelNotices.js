@@ -13,7 +13,7 @@ export default function TravelNotices({ task }) {
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.travelNotices_out_Style}>
          <Grid container spacing={1} className={classes.travelNotices_Style}>
-            <Grid item xs={2.5} >
+            <Grid item xs={2.2} >
                <span className={classes.textTimeDate_Style}>{startDate.toLocaleDateString("vi-VN", optionsRight)}</span>
                <span className={classes.textTime_Style}>{startDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
 
@@ -21,7 +21,7 @@ export default function TravelNotices({ task }) {
             <Grid item xs={0.5} >
             <span className={classes.textTimeDate_Style}>-</span>
             </Grid>
-            <Grid item xs={2.5} >
+            <Grid item xs={2.2} >
                <span className={classes.textTimeDate_Style}>{endDate.toLocaleDateString("vi-VN", optionsRight)}</span>
                <span className={classes.textTime_Style}>{endDate.toLocaleDateString("vi-VN", optionsBottom)}</span>
             </Grid>

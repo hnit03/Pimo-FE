@@ -121,7 +121,7 @@ export default function CenterTabs({ model }) {
                // )
                personalGalleryList.map((item, index) => (
                   <TabPanel value={value} index={index}>
-                     {view == true ? <SectionCarousel listCal={item.image} bool={true}/> : <QuiltedImageList list={item.image} />}
+                     {view == true ? <SectionCarousel listCal={item.image} bool={true}/> : <QuiltedImageList list={item.image} bool={true}/>}
                   </TabPanel>
                )
                )

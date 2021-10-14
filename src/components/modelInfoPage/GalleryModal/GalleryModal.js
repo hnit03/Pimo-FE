@@ -66,11 +66,12 @@ export default function GalleryModal(props) {
             </Grid>
             <Grid item xs={8.5} >
               {
-                <SectionCarousel listCal={props.listImage.imageList} bool={false} />
+                view == true ? 
+                <SectionCarousel listCal={props.listImage.imageList} bool={false} /> : 
+                <QuiltedImageList list={props.listImage.imageList} bool={false} />
               }
             </Grid>
             <Grid item xs={3.2} >
-
               <h1 className={classes.h1}>{props.listImage.nameGallery}</h1>
               <Divider className={classes.divider_Style}></Divider>
               <p>{props.listImage.brandName}</p>

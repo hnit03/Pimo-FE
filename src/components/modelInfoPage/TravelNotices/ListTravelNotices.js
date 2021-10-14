@@ -13,10 +13,7 @@ export default function ListTravelNotices({ model }) {
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.box}>
          <Grid container spacing={2}>
-            <Grid item xs={5} className={classes.boxRight}>
-               <img src={image} alt="Travel" className={classes.img}></img>
-            </Grid>
-            <Grid item xs={7} >
+            <Grid item xs={12} >
                <div className={classes.boxLeft}>
                   <h1 className={classes.h1}>LỊCH TRÌNH SẮP TỚI</h1>
                   <Divider className={classes.divider_Style} ></Divider>

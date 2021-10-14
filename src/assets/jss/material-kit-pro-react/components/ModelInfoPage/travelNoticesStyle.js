@@ -3,13 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     box: {
         margin: 'auto',
-        width: '75rem',
-       // height: '25rem',
+        width: '35rem',
         background: 'white !important',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
         marginBottom: "3rem",
         paddingBottom: '2rem',
-        marginTop: "0vh",
+        marginTop: "-1rem",
+        float:'right',
+        marginRight:'1.5rem',
+       minHeight:'31rem',
     },
     location_icon_small_Style: {
         color: 'red',
@@ -19,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
     travelNotices_out_Style: {
         float: 'right',
         width: '90%',
-        marginTop: '0.9rem',
-         marginBottom: 0,
+        marginTop: '0rem',
+        marginBottom: 0,
         marginRight: 0,
     },
     travelNotices_Style: {
@@ -92,16 +94,21 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '0%',
         marginTop: '6vh',
     },
+    h1:{
+        fontSize: '3rem !important',
+        textAlign: 'center',
+        //padding:'0.8rem',
+        paddingBottom: 0,
+        marginBottom: '1rem',
+        marginTop: '3rem'
+    },
     divider_Style: {
         marginLeft:'5% !important',
         width: '85%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem',
-        marginBottom: '2vh',
-    },
-    h1: {
-        marginBottom: '1rem',
-        fontSize: '3rem'
+        marginBottom:'1.2rem !important',
+        //paddingBottom:'10rem'
     },
     imgDay: {
         width: '15%',

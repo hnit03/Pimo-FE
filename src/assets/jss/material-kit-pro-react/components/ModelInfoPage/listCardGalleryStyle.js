@@ -5,15 +5,13 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto',
         width: '75rem',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-        paddingBottom:'10vh',
-       // marginBottom:'2rem',
-     //   marginTop:"2rem",
-        //padding:'2rem',
+        paddingBottom:'2.5rem',
+        marginBottom:'4rem',
+        marginTop:"-1rem",
     },
     gallery:{
         margin: 'auto !important',
         width: '70rem !important',
-        //backgroundColor: 'pink'
     },
     galleryTitle:{
         fontSize:"3.5rem",
@@ -42,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
         '&:hover':{
             paddingTop:'5px',
             backgroundColor:'pink !important',
-            //color:'#fff !important'
             borderColor:'pink !important',
         }
     }

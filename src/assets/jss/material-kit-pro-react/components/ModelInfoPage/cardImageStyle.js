@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             boxShadow: '0 0 8px 0 rgb(255, 192, 203,03), 0 6px 20px 0 rgb(255, 192, 203,0.2)',
             background: 'pink',
-            marginTop: '0px',
+            marginTop: '-17px',
             marginBottom: '0px',
             marginRight: '0px',
-            marginLeft: '0px',
+            marginLeft: '2px',
             width: '98%',
             height: '98%',
             transition: '0.4s',

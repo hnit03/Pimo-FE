@@ -28,13 +28,13 @@ export default function ReviewAreas({ reviewList }) {
             <GridContainer>
                <GridItem
                   xs={12}
-                  sm={8}
-                  md={8}
+                  sm={12}
+                  md={12}
                   className={classes.mlAuto + " " + classes.mrAuto}
                >
                   <div>
                      <h1 className={classesRreview.h1}>
-                        ĐÁNH GIÁ CỦA CÁC NHÃN HÀNG
+                        NHẬN XÉT NGƯỜI MẪU
                      </h1>
                      <Divider className={classesRreview.divider_Style} ></Divider>
                      {
@@ -42,6 +42,7 @@ export default function ReviewAreas({ reviewList }) {
                            (reviewList.reviewList.length > 0) ? (
                               (reviewList.reviewList.map(review => (
                                  <Media
+                                    className={classesRreview.media}
                                     avatar={review.brand.logo}
                                     title={
                                        <span>
