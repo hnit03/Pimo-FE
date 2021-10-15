@@ -440,7 +440,7 @@ import {
     '& .MuiSlider-rail': {
     opacity: 0.5,
     backgroundColor: '#bfbfbf',
-  },
+    },
   },
   //right
   textSearchResult: {
