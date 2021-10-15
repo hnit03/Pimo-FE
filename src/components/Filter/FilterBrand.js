@@ -94,7 +94,6 @@ export default function StandardImageList(props) {
       styles.style.map(item => {
          categoryList.push(item.name)
       })
-      console.log(categoryList);
    }
 
    return (

@@ -46,6 +46,7 @@ function Navbar() {
    const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
    const onClickSearchBrand = useCallback(() => history.push('/brand-search/1'), [history]);
    const onClickSearchEvent = useCallback(() => history.push('/event-search/1'), [history]);
+   const onClickCreateEvent = useCallback(() => history.push('/event-create'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -111,25 +112,23 @@ function Navbar() {
                   </ListItem>
                   <ListItem className={classes.listItem}>
                      <Button
-                        href="#pablo"
-                        className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={onClickSearchBrand}
-                        color="transparent"
-                     >            
-                        <Link to="/brand-search" className={classes.dropdownLink}>
-                        Nhãn hàng
-                        </Link>
-                     </Button>
-                    
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                     <Button
                         className={classes.navLink + " " + classes.navLinkActive}
                         onClick={onClickSearchEvent}
                         color="transparent"
                      >
                         <Link to="/event-search" className={classes.dropdownLink}>
-                           Sự kiện
+                           Chiến dịch
+                        </Link>
+                     </Button>
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                     <Button
+                        className={classes.navLink + " " + classes.navLinkActive}
+                        onClick={onClickSearchBrand}
+                        color="transparent"
+                     >
+                        <Link to="/brand-search" className={classes.dropdownLink}>
+                           Nhãn hàng
                         </Link>
                      </Button>
                   </ListItem>
@@ -184,16 +183,15 @@ function Navbar() {
                   </ListItem>
                   <ListItem className={classes.listItem1} >
                      <Button
-                        href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={(e) => e.preventDefault()}
+                        onClick={onClickCreateEvent}
                         style={{
                            backgroundColor: 'black',
                            color: 'white',
                            borderRadius: '0.5rem',
                         }}
                      >
-                        Tạo sự kiện
+                        Tạo Chiến dịch
                      </Button>
                   </ListItem>
                </List>
