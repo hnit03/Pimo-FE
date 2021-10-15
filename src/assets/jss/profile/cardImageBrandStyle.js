@@ -3,8 +3,6 @@ const useStyles = makeStyles((theme) => ({
    hieuungbenngoai: {
       width: '100%',
       height: '40vh',
-      // overflow: 'hidden',
-      // background: '#000',
       padding: '1%',
       marginLeft: 0,
       marginTop: '0.5rem',
@@ -26,16 +24,16 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    img: {
-      width: '50%',
-      height: '40vh',
-      objectFit: 'cover',
-      objectPosition: '50% 20%',
-   },
+    width: '45%',
+    height: '40vh',
+    objectFit: 'cover',
+    objectPosition: '50% 20%',
+ },
 
    thongtin: {
-      width: '40%',
+      width: '46%',
       float: 'right',
-      marginTop: '-27vh',
+      marginTop: '-10.5rem',
       transform: 'translateY(-50%)',
       padding: '20px',
       textAlign: 'center',
@@ -105,6 +103,29 @@ const useStyles = makeStyles((theme) => ({
       marginTop:'0.5rem !important',
       marginBottom:'1rem !important'
    },
+   icon: {
+    marginTop: 0,
+    color: 'gray',
+    marginBottom:'0.2rem',
+    fontSize: ''
+  },
+  ul: {
+    float: 'left',
+    marginLeft: 0,
+    padding: 0,
+    width: '100%',
+    marginTop: 0,
+    marginBottom: 0
+  },
+  text: {
+    marginLeft: '3%',
+   textAlign: 'left',
+   color: 'gray',
+   float: 'left',
+   fontSize: '1rem',
+   width: '100%',
+   fontFamily: "Calibri, sans-serif",
+ },
 }
 ));
 export default useStyles;
