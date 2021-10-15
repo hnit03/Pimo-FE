@@ -109,8 +109,6 @@ export default function StandardImageList(props) {
     checkBoxStyle.map(item => {
        if (item.checked === true) styleList.push(item.id);
     })
-     console.log('valueChoose ',valueChoose);
-     console.log('sexList ',styleList);
 
      const data = {
       "name": searchName,
@@ -120,7 +118,6 @@ export default function StandardImageList(props) {
       "dateTime": dateTime,
 
    }
-   console.log('data ',data);
 
   };
 

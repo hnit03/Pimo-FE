@@ -27,7 +27,6 @@ export default function ListCardGallery({ model }) {
          </Grid>
       );
    })
-   console.log(listProject);
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.box}>
          <Grid container spacing={1} className={classes.gallery}>
