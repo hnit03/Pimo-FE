@@ -17,7 +17,7 @@ export default function BasicDateTimePicker({value,setValue}) {
       className={classes.dateTime}
       format="yyyy-MM-dd HH:mm:ss"
       // formatDate={(date) => moment(date).format('YYYY-MM-DD')}
-        renderInput={(props) => <TextField {...props}  className={classes.searchDateTime}  sx={{ width: 300,marginTop:'1rem' }}  type="datetime-local" />}
+        renderInput={(props) => <TextField {...props}  className={classes.searchDateTime}  sx={{ width: '100%',marginTop:'1rem' }}  type="datetime-local" />}
         label="DateTimePicker"
         value={value}
         onChange={(newValue) => {
