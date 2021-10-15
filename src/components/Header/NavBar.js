@@ -112,25 +112,23 @@ function Navbar() {
                   </ListItem>
                   <ListItem className={classes.listItem}>
                      <Button
-                        href="#pablo"
-                        className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={onClickSearchBrand}
-                        color="transparent"
-                     >            
-                        <Link to="/brand-search" className={classes.dropdownLink}>
-                        Nhãn hàng
-                        </Link>
-                     </Button>
-                    
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                     <Button
                         className={classes.navLink + " " + classes.navLinkActive}
                         onClick={onClickSearchEvent}
                         color="transparent"
                      >
                         <Link to="/event-search" className={classes.dropdownLink}>
-                           Sự kiện
+                           Chiến dịch
+                        </Link>
+                     </Button>
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                     <Button
+                        className={classes.navLink + " " + classes.navLinkActive}
+                        onClick={onClickSearchBrand}
+                        color="transparent"
+                     >
+                        <Link to="/brand-search" className={classes.dropdownLink}>
+                           Nhãn hàng
                         </Link>
                      </Button>
                   </ListItem>
@@ -185,7 +183,6 @@ function Navbar() {
                   </ListItem>
                   <ListItem className={classes.listItem1} >
                      <Button
-                        href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
                         onClick={onClickCreateEvent}
                         style={{
@@ -194,7 +191,7 @@ function Navbar() {
                            borderRadius: '0.5rem',
                         }}
                      >
-                        Tạo sự kiện
+                        Tạo Chiến dịch
                      </Button>
                   </ListItem>
                </List>

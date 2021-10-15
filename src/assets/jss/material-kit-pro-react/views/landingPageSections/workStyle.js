@@ -9,7 +9,7 @@ const workStyle = {
   mrAuto,
   mlAuto,
   section: {
-    padding: "70px 0",
+    padding: "14% 0 8% 0",
   },
   title: {
     ...title,
@@ -32,7 +32,7 @@ const workStyle = {
   },
   formControl: {
    border: '1px dotted black', 
-   width: '7rem',
+   width: '8rem',
    marginBottom: '1%'
   }
 };
