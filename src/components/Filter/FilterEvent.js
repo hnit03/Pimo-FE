@@ -271,7 +271,7 @@ export default function StandardImageList(props) {
                     ? setValueAddress("")
                     : setValueAddress(value.label);
                 }}
-                sx={{   marginTop: "1rem" }}
+                sx={{ width: 300, marginTop: "1rem" }}
                 renderInput={(params) => (
                   <TextField
                     className={classes.searchHeight}
