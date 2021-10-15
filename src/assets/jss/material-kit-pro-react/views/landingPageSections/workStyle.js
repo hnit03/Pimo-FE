@@ -3,7 +3,7 @@ import {
   mrAuto,
   mlAuto,
   grayColor,
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../../material-kit-pro-react.js";
 
 const workStyle = {
   mrAuto,
@@ -30,6 +30,11 @@ const workStyle = {
     marginRight: "15px",
     marginLeft: "15px",
   },
+  formControl: {
+   border: '1px dotted black', 
+   width: '7rem',
+   marginBottom: '1%'
+  }
 };
 
 export default workStyle;

@@ -46,6 +46,7 @@ function Navbar() {
    const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
    const onClickSearchBrand = useCallback(() => history.push('/brand-search/1'), [history]);
    const onClickSearchEvent = useCallback(() => history.push('/event-search/1'), [history]);
+   const onClickCreateEvent = useCallback(() => history.push('/event-create'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -186,7 +187,7 @@ function Navbar() {
                      <Button
                         href="#pablo"
                         className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={(e) => e.preventDefault()}
+                        onClick={onClickCreateEvent}
                         style={{
                            backgroundColor: 'black',
                            color: 'white',

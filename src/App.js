@@ -8,6 +8,7 @@ import ModelInfoPage from './containers/ModelInfoPage';
 import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
+import CreateEventPage from "./containers/CreateEventPage"
 
 function App() {
    return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/brand-search/:id" component={BrandSearchPage} />
             <Route path="/event-search/:id" component={EventSearchPage} />
             <Route path="/model-info/:id" component={ModelInfoPage} />
+            <Route path="/event-create" component={CreateEventPage} />
          </Switch>
       </BrowserRouter>
    );
