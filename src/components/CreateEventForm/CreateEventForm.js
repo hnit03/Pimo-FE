@@ -139,6 +139,7 @@ function CreateEventForm() {
     },
   ];
   const hairColors2 = ["Hồng", "Tím", "Nâu", "Vàng"];
+  
   const skinColors1 = [
     {  id: 1,name: "Trắng", checked: false },
     { id: 2,name: "Vàng",  checked: false },
@@ -146,6 +147,7 @@ function CreateEventForm() {
     { id: 4,name: "Khác",  checked: false },
     {  id: 5, name: "Đỏ",checked: false },
   ];
+
   const styleList1 = [];
   const styleList2 = [];
   const sex = ["Nam", "Nữ", "Khác"];
@@ -434,13 +436,13 @@ function CreateEventForm() {
                 </h3>
               </div>
               <div>
-                {/* {styles.style !== undefined ? (
+                {styles.style !== undefined ? (
                   <MyFormControlLabel
                     listStyle={styles.style}
                     checkedStyle={checkBoxStyle}
                     setCheckedStyle={setCheckBoxStyle}
                   />
-                ) : null} */}
+                ) : null}
               </div>
             </div>
             <div

@@ -50,6 +50,13 @@ export default function StandardImageList(props) {
       dispatch(getStyles());
    }, [pageNo]);
 
+   const data = {
+       "address": valueAddress,
+      "category": valueMajor,
+   }
+
+   console.log('data ',data);
+
    const handleChangePage = (event, value) => {
       setPageNo(value);
       window.scrollTo(0, 0);
@@ -106,7 +113,7 @@ export default function StandardImageList(props) {
                <GridItem xs={12} sm={4} md={10}>
                   <form autoComplete="off" onSubmit={handleSubmit}>
                      <div className={classes.containerTextAndIconSearch}>
-                        <TextField
+                        {/* <TextField
                            id="searchName"
                            label="Nhập để tìm kiếm"
                            variant="standard"
@@ -117,7 +124,7 @@ export default function StandardImageList(props) {
                         <IconButton style={{ color: "black" }} type="submit">
                            {" "}
                            <SearchIcon className={classes.searchIcon} />{" "}
-                        </IconButton>
+                        </IconButton> */}
                      </div>
 
                      <div className={classes.containerTextFilterAndDelete}>

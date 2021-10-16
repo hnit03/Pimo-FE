@@ -9,11 +9,15 @@ const useStyles = makeStyles(workStyle);
 function MyFormControlLabel({listStyle,checkedStyle,setCheckedStyle }) {
    // const list =[];
    // list.push(listStyle)
+   if(checkedStyle.length <= 0){
+      setCheckedStyle(listStyle)
+   }
+   
    console.log('23232 ', listStyle)
    console.log('checkedStyle ', checkedStyle)
    const classes = useStyles();
    const handlerFilter = (e,item) =>{
-      const updateStyle = listStyle.map((value) => {
+      const updateStyle = checkedStyle.map((value) => {
          value.checked = value.id === item.id ? !value.checked : value.checked;
          return value;
       });
@@ -22,8 +26,8 @@ function MyFormControlLabel({listStyle,checkedStyle,setCheckedStyle }) {
    return (
       <div>
          {
-            (listStyle !== undefined) ? (
-               listStyle.map(item => (
+            (checkedStyle !== undefined) ? (
+               checkedStyle.map(item => (
                    <FormControlLabel
                      control={
                         <Checkbox
