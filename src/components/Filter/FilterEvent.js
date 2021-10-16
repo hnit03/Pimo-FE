@@ -30,6 +30,8 @@ import {searchByStyleValue} from './CheckBoxData';
 import FormGroup from "@mui/material/FormGroup";
  import Checkbox from "@mui/material/Checkbox";
  import { useHistory } from "react-router-dom";
+ import EventCard from "../BrandInfo/EventCard/EventCard";
+ import Grid from '@mui/material/Grid';
 
 function formatDate(date) {
   var hours = date.getHours();
@@ -300,13 +302,25 @@ export default function StandardImageList(props) {
           marginLeft: "-5%",
         }}
       >
-        <GridContainer spacing={1}>
+        <GridContainer spacing={2}>
+        <Grid item xs={12} >
+        </Grid> 
           {models.modelList !== undefined
             ? models.modelList.length > 0
               ? models.modelList.map((model) => (
-                  <GridItem xs={12} sm={6} md={6}>
-                    <CardImage model={model} listTop3Label={listTop3Label} />
-                  </GridItem>
+                  // <GridItem xs={12} sm={6} md={6}>
+                  //   <CardImage model={model} listTop3Label={listTop3Label} />
+                  // </GridItem><Grid item xs={3.6} >
+                <Grid item xs={4} >
+                    <EventCard 
+                    style = {false} //mặc định k đổi nha
+                    bool={false} 
+                    value="Quảng bá dòng nước hoa mới COCO CHANEL"
+                    dayTime="10/10/2021 - 9:00"
+                    location="Paris, French"
+                    img = "https://a.ipricegroup.com/media/Ann/Chanel_Mademoiselle_Eau_Privee_50ml.jpeg"/>
+                </Grid> 
+              
                 ))
               : null
             : null}

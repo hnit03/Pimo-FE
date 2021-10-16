@@ -13,11 +13,16 @@ const useStyles = makeStyles((theme) => ({
     objectPosition: '50% 50%',
     width: '103%',
     height: '14rem',
-    //borderRadius: '50%',
-    marginBottom: '0',
-    //marginTop: '-2.5rem',
+    marginBottom: '0',    
     marginRight: '0',
-    //boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+  },
+  imgBrandSmall:{
+    objectFit: 'cover',
+    objectPosition: '50% 50%',
+    width: '103%',
+    height: '11rem',
+    marginBottom: '0',    
+    marginRight: '0',
   },
   divider_Style: {
     marginTop: '5rem',
@@ -29,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 0,
     color: 'gray',
     fontSize:'1.4rem',
+    marginBottom:'0.1rem',
+  },
+  iconSmall: {
+    marginTop: 0,
+    color: 'gray',
+    fontSize:'1.3rem',
     marginBottom:'0.1rem',
   },
   ul: {
@@ -48,8 +59,31 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.3rem',
     fontFamily: "Calibri, sans-serif",
     wordBreak: 'break-all',
-    fontFamily: 'Merriweather'
   },
+  titleSmall:{
+    margin: 0,
+    marginBottom:'0.5rem',
+    marginTop:'0.1rem',
+    marginLeft: 0,
+    textAlign: 'left',
+    fontSize: '1.2rem',
+    fontFamily: "Calibri, sans-serif",
+    wordBreak: 'break-all',
+  },
+  chipTrueSmall:{
+    color:'white !important',
+    backgroundColor: 'green !important',
+    fontSize: '0.9rem !important',
+    fontWeight:'700',
+    marginTop:'0.5rem',
+  },
+  chipFalseSmall:{
+    marginTop:'0.5rem',
+    color:'white !important',
+    backgroundColor: 'red !important',
+    fontSize: '0.9rem !important',
+    fontWeight:'700'
+},
   divider_Style: {
     marginTop: '0rem !important',
     width: '100%',
