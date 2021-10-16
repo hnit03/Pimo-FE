@@ -13,8 +13,6 @@ function MyFormControlLabel({listStyle,checkedStyle,setCheckedStyle }) {
       setCheckedStyle(listStyle)
    }
    
-   console.log('23232 ', listStyle)
-   console.log('checkedStyle ', checkedStyle)
    const classes = useStyles();
    const handlerFilter = (e,item) =>{
       const updateStyle = checkedStyle.map((value) => {

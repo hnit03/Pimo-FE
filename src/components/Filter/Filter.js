@@ -161,7 +161,6 @@ export default function StandardImageList(props) {
                return value;
             });
             setCheckBoxStyle(updateStyle);
-            // console.log(checkBoxStyle);
             break;
          case 4:
             const updateStyleMore = searchByStyleMoreValue.map((value) => {

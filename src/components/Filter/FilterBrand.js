@@ -55,8 +55,6 @@ export default function StandardImageList(props) {
       "category": valueMajor,
    }
 
-   console.log('data ',data);
-
    const handleChangePage = (event, value) => {
       setPageNo(value);
       window.scrollTo(0, 0);
