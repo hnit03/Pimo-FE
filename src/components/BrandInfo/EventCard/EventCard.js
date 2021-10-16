@@ -14,23 +14,25 @@ export default function ListEvent(props) {
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
             <Grid container spacing={1} className={classes.pageLeft_Style}>
                 <Grid item xs={12} >
-                    <img className={classes.imgBrand} src={props.img}></img>
+                    <img className={props.style ? classes.imgBrand: classes.imgBrandSmall} src={props.img}></img>
                 </Grid>
                 <Grid item xs={12} className={classes.smallBox}>
                     <div className={classes.name}>
-                        <h1 className={classes.title}>{props.value}</h1>
+                        <h1 className={props.style ? classes.title : classes.titleSmall}>{props.value}</h1>
                     </div>
                     <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
-                            <EventIcon className={classes.icon} /><span className={classes.text} >{props.dayTime}</span>
+                            <EventIcon className={props.style ? classes.icon : classes.iconSmall} />
+                            <span className={classes.text} >{props.dayTime}</span>
                         </li>
                         <li style={{ display: 'flex', }} className={classes.li}>
-                            <LocationOn className={classes.icon} /><span className={classes.text} >{props.location}</span>
+                            <LocationOn className={props.style ? classes.icon : classes.iconSmall} />
+                            <span className={classes.text} >{props.location}</span>
                         </li>
                     </ul>
                     {props.bool ?
-                        <Chip label="Đang diễn ra" className={classes.chipTrue} /> :
-                        <Chip label="Đã kết thúc" className={classes.chipFalse} />
+                        <Chip label="Đang diễn ra" className={props.style ? classes.chipTrue : classes.chipTrueSmall} /> :
+                        <Chip label="Đã kết thúc" className={props.style ? classes.chipFalse : classes.chipFalseSmall} />
                     }
                 </Grid>
             </Grid>

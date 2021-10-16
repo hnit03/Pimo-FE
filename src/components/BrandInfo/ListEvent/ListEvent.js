@@ -15,6 +15,7 @@ export default function ListEvent({ model }) {
                 </Grid> 
                 <Grid item xs={3.6} >
                     <EventCard 
+                    style = {true}
                     bool={true} 
                     value="Catwalk: tuần lễ thời trang"
                     dayTime="10/10/2021 - 9:00"
@@ -24,6 +25,7 @@ export default function ListEvent({ model }) {
                 </Grid> 
                 <Grid item xs={3.6} >
                     <EventCard 
+                    style = {true}
                     bool={false} 
                     value="Quảng bá dòng nước hoa mới COCO CHANEL"
                     dayTime="10/10/2021 - 9:00"
@@ -32,6 +34,7 @@ export default function ListEvent({ model }) {
                 </Grid> 
                 <Grid item xs={3.6}>
                     <EventCard  
+                    style = {true}
                     bool={true} 
                     value="Quảng bá dòng nước hoa mới N5' CHANEL"
                     dayTime="10/10/2021 - 9:00"
