@@ -781,7 +781,7 @@ function CreateEventForm() {
                   >
                      <div style={{ width: "45%" }}>
                         <CustomInput
-                           labelText="You can write description here..."
+                           labelText="Viết mô tả của bạn tại đây..."
                            id="textarea-input"
                            formControlProps={{
                               fullWidth: true,
