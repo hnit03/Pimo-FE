@@ -26,7 +26,7 @@ import { searchByMonopolytimeValue } from "./RadioData.js";
 import { listTop3Label } from "./Top3StyleData";
 import IconButton from "@mui/material/IconButton";
 import Autocomplete from "@mui/material/Autocomplete";
-import {searchByStyleValue} from './CheckBoxData';
+import {searchByStyleValue,searchBySexValue} from './CheckBoxData';
 import FormGroup from "@mui/material/FormGroup";
  import Checkbox from "@mui/material/Checkbox";
  import { useHistory } from "react-router-dom";
@@ -56,11 +56,12 @@ const useStyles = makeStyles(styles);
 export default function StandardImageList(props) {
   const classes = useStyles();
   const [searchName, setSearchName] = React.useState("");
-  const [radioMonopolytime, setRadioMonopolytime] = React.useState("");
-  const [checkMonopolytime, setCheckMonopolytime] = React.useState(null);
-   const [valueAddress, setValueAddress] = React.useState("");
-  const [valueDateTime, setValueDateTime] = React.useState(null);
+  const [valueAddress, setValueAddress] = React.useState("");
+  const [valueDateTimeStart, setValueDateTimeStart] = React.useState(null);
+  const [valueDateTimeEnd, setValueDateTimeEnd] = React.useState(null);
+  var [checkInputDate, setCheckInputDate] = React.useState(false);
   var [checkBoxStyle, setCheckBoxStyle] = React.useState([]);
+  var [checkBoxSex, setCheckBoxSex] = React.useState([]);
   var [valueChoose, setValueChoose] = React.useState([]);
   const [pageNo, setPageNo] = React.useState(props.pageOffset);
 
@@ -88,7 +89,8 @@ export default function StandardImageList(props) {
     e.preventDefault();
     
     setValueChoose([]);
-    let dateTime =null;
+    let dateTimeStart =null;
+    let dateTimeEnd =null;
 
     // if (searchName !== "") {
     //   valueChoose.push(searchName);
@@ -103,60 +105,84 @@ export default function StandardImageList(props) {
     // if (valueAddress !== "") {
     //   valueChoose.push(valueAddress);
     // }
-    if (valueDateTime !== null) {
-       dateTime = formatDate(valueDateTime);
-      valueChoose.push(dateTime);
+   
+    if (valueDateTimeStart !== null) {
+      dateTimeStart = formatDate(valueDateTimeStart);
+      valueChoose.push(dateTimeStart);
     }
+    if (valueDateTimeEnd !== null) {
+      dateTimeEnd = formatDate(valueDateTimeEnd);
+     valueChoose.push(dateTimeEnd);
+   }
+
+   if (valueDateTimeStart !== null && valueDateTimeEnd !== null) {
+    if(valueDateTimeStart.getDate()> valueDateTimeEnd.getDate()) {
+      setCheckInputDate(true);
+      return;
+     }else{
+      setCheckInputDate(false);
+     }
+  }
+  
     const styleList = []
     checkBoxStyle.map(item => {
        if (item.checked === true) styleList.push(item.id);
+    })
+    const styleSex = []
+    checkBoxSex.map(item => {
+       if (item.checked === true) styleSex.push(item.id);
     })
 
      const data = {
       "name": searchName,
       "style": styleList,
-      "radioMonopolytime": checkMonopolytime,
+      "sex": styleSex,
       "address": valueAddress,
-      "dateTime": dateTime,
-
+      "dateTime": {
+        'start' : dateTimeStart,
+        'end' : dateTimeEnd,
+      }
    }
-
-  };
+   console.log('hihi ',data);
+   };
 
   const handlerFilter = (e, value, item) => {
     switch (value) {
       case 1:
-        if (e.target.value === radioMonopolytime) {
-          setRadioMonopolytime("");
-        } else {
-          setRadioMonopolytime(e.target.value);
-          if('Không có thời gian độc quyền' === e.target.value) {
-            setCheckMonopolytime(false)
-         } else {
-          setCheckMonopolytime(true)
-         }
-        }
+        
         break;
         case 2:
-            const updateSex = searchByStyleValue.map((value) => {
+            const updateStyle = searchByStyleValue.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
                 return value;
             });
-            setCheckBoxStyle(updateSex);
+            setCheckBoxStyle(updateStyle);
             break;
-      case 3:
+            case 3:
+              const updateSex = searchBySexValue.map((value) => {
+                 value.checked = value.id === item.id ? !value.checked : value.checked;
+                  return value;
+              });
+              setCheckBoxSex(updateSex);
+              break;
+      case 4:
+        const clearSex = checkBoxSex.map((value) => {
+          value.checked = false;
+          return value;
+       });
+       setCheckBoxSex(clearSex);
+
         const clearStyle = checkBoxStyle.map((value) => {
             value.checked = false;
             return value;
          });
          setCheckBoxStyle(clearStyle);
 
-        setRadioMonopolytime("");
-        setCheckMonopolytime(null)
          setSearchName("");
         setValueAddress("");
-        setValueDateTime(null);
-
+        setValueDateTimeStart(null);
+        setValueDateTimeEnd(null);
+        setCheckInputDate(false);
         setValueChoose([]);
 
         break;
@@ -176,7 +202,7 @@ export default function StandardImageList(props) {
               <div className={classes.containerTextAndIconSearch}>
                 <TextField
                   id="searchName"
-                  label="Nhập để tìm kiếmAAAAAA"
+                  label="Nhập để tìm kiếm"
                   variant="standard"
                   className={classes.searchTextField}
                   value={searchName}
@@ -197,53 +223,60 @@ export default function StandardImageList(props) {
                 </div>
 
                 <span
-                  onClick={(e) => handlerFilter(e, 3)}
+                  onClick={(e) => handlerFilter(e, 4)}
                   className={classes.deleteText}
                 >
                   Xóa
                 </span>
               </div>
 
-              <p className={classes.titleSearch}>
-                Tìm kiếm theo thời gian độc quyền
-              </p>
-              <FormControl className={classes.formControl}>
-                <RadioGroup
-                  aria-label="gender"
-                  // defaultValue="female"
-                  name="radio-buttons-group"
-                  className={classes.containerRadioGroup}
-                  value={radioMonopolytime}
-                >
-                  {searchByMonopolytimeValue.map((value, index) => (
-                    <FormControlLabel
-                      value={value.name}
-                      control={
-                        <Radio
-                          sx={{
-                            "&.Mui-checked": {
-                              color: "#f64aa4a8",
-                            },
-                          }}
-                          style={{
-                            padding: 2,
-                            marginRight: "0.6rem",
-                          }}
-                          name="radioButton"
-                          // onChange={(input) => handlerValueRadio(input)}
-                          onClick={(e) => handlerFilter(e, 1)}
-                        />
-                      }
-                      label={
-                        <p className={classes.customLabelRadio}>{value.name}</p>
-                      }
-                    />
-                  ))}
-                </RadioGroup>
-              </FormControl>
+              <p className={classes.titleSearch}>Địa chỉ</p>
+              <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={searchByAddressEvent}
+                value={valueAddress}
+                onChange={(e, value) => {
+                  value === null
+                    ? setValueAddress("")
+                    : setValueAddress(value.label);
+                }}
+                sx={{   marginTop: "1rem" }}
+                renderInput={(params) => (
+                  <TextField
+                    className={classes.searchHeight}
+                    {...params}
+                    label="Chọn"
+                   
+                  />
+                )}
+              />
 
-              <p className={classes.titleSearch}>Tìm kiếm theo phong cách</p>
-              <FormGroup className={classes.containerCheckBox}>
+              <p className={classes.titleSearch}>Thời gian</p>
+              <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate}/>
+              <DateTime value={valueDateTimeEnd} setValue={setValueDateTimeEnd} label='thời gian kết thúc'  />
+
+              <p className={classes.titleSearch}>Giới tính</p>
+                     <FormGroup className={classes.containerCheckBox}>
+                        {searchBySexValue.map((value, index) => (
+                           <FormControlLabel
+                              control={
+                                 <Checkbox
+                                    checked={value.checked}
+                                    value={value.id}
+                                    onClick={(input) => handlerFilter(input, 3, value)}
+                                    className={classes.checkBox}
+                                 />
+                              }
+                              label={
+                                 <p className={classes.customLabelCheckBox}>{value.name}</p>
+                              }
+                           />
+                        ))}
+                     </FormGroup>
+
+              <p className={classes.titleSearch}>Phong cách</p>
+              <FormGroup sx={{marginBottom:'2.5rem'}} className={classes.containerCheckBox}>
                         {searchByStyleValue.map((value, index) => (
                            <FormControlLabel
                               control={
@@ -262,30 +295,7 @@ export default function StandardImageList(props) {
                      </FormGroup>
           
 
-              <p className={classes.titleSearch}>Tìm kiếm theo địa chỉ</p>
-              <Autocomplete
-                disablePortal
-                id="combo-box-demo"
-                options={searchByAddressEvent}
-                value={valueAddress}
-                onChange={(e, value) => {
-                  value === null
-                    ? setValueAddress("")
-                    : setValueAddress(value.label);
-                }}
-                sx={{ width: 300, marginTop: "1rem" }}
-                renderInput={(params) => (
-                  <TextField
-                    className={classes.searchHeight}
-                    {...params}
-                    label="Chọn"
-                   
-                  />
-                )}
-              />
-
-              <p className={classes.titleSearch}>Tìm kiếm theo thời gian</p>
-              <DateTime value={valueDateTime} setValue={setValueDateTime} />
+            
               
             </form>
           </GridItem>
