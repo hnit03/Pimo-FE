@@ -428,8 +428,7 @@ import {
     "& .MuiInputLabel-outlined.Mui-focused": {
       color: "#f64aa4a8",
     },
-    marginBottom:'2.5rem !important'
-  },
+   },
   customSlider:{
     '& .MuiSlider-track': {
      color:'pink'

@@ -40,8 +40,11 @@ function valuetext(value) {
 
 function CreateEventForm() {
    const styles = useSelector((state) => state.styles);
-   const dispatch = useDispatch();
+   const result = useSelector((state) => state.castings);
 
+   
+   const dispatch = useDispatch();
+   
    const classes = useStyles();
    useEffect(() => {
       dispatch(getStyles());
@@ -64,23 +67,45 @@ function CreateEventForm() {
    var [checkSex, setCheckSex] = React.useState([]);
    var [checkHairColor1, setCheckHairColor1] = React.useState([]);
    var [checkHairColor2, setCheckHairColor2] = React.useState([]);
-
+   
    var [checkInputName, setCheckInputName] = React.useState(false);
    var [checkInputDistrict, setCheckInputDistrict] = React.useState(false);
    var [checkInputDate, setCheckInputDate] = React.useState(false);
-
+   
+   
+   const clear = () => {
+      setName('')
+      setValueAddress('')
+      setValue1(new Date())
+      setValue2(new Date())
+      setValue3(0)
+      setValue4([160, 250])
+      setValue5([18, 100])
+      setBust([20, 47])
+      setWaist([20, 45])
+      setHips([31, 50])
+      setImage('')
+      setDescription('')
+      setCheckBoxStyle([])
+      setCheckColor1([])
+      setCheckSex([])
+      setCheckHairColor1([])
+      setCheckHairColor2([])
+   };
+   
+   
    const handleChange3 = (event, newValue) => {
       setValue3(newValue);
    };
-
+   
    const handleChange4 = (event, newValue) => {
       setValue4(newValue);
    };
-
+   
    const handleChange5 = (event, newValue) => {
       setValue5(newValue);
    };
-
+   
    const handleBust = (event, newValue) => {
       setBust(newValue);
    };
@@ -90,10 +115,10 @@ function CreateEventForm() {
    const handleHips = (event, newValue) => {
       setHips(newValue);
    };
-
+   
    const onClickCreateEvent = (event) => {
       event.preventDefault();
-
+      
       if (name === null || name === '') {
          var scroll = document.getElementById("outlined-required")
          if (scroll) {
@@ -112,7 +137,6 @@ function CreateEventForm() {
          setCheckInputDate(false)
       } else if (new Date(value1) >= new Date(value2)) {
          var scroll2 = document.getElementById("date-required")
-         console.log(scroll2);
          if (scroll2) {
             scroll2.focus();
          }
@@ -126,20 +150,8 @@ function CreateEventForm() {
          const filter = {
             name: name,
             district: valueAddress,
-            startDate: new Date(value1).toLocaleDateString("vi-VN", {
-               year: "numeric",
-               month: "2-digit",
-               day: "2-digit",
-               hour: "2-digit",
-               minute: "2-digit",
-            }),
-            endDate: new Date(value2).toLocaleDateString("vi-VN", {
-               year: "numeric",
-               month: "2-digit",
-               day: "2-digit",
-               hour: "2-digit",
-               minute: "2-digit",
-            }),
+            startDate: new Date(value1).toISOString(),
+            endDate: new Date(value2).toISOString(),
             salary: value3,
             height: value4,
             age: value5,
@@ -156,17 +168,29 @@ function CreateEventForm() {
          }
          const jwt = Cookies.get('jwt')
          if (jwt === undefined || jwt === null) {
-            console.log('Fail');
             document.getElementById('CreateFail').style.display = 'block';
             setTimeout(
                () => document.getElementById('CreateFail').style.display = 'none',
                3000
-            );
+               );
          } else {
             dispatch(createCasting(filter, `Bearer ${jwt}`));
          }
       }
    };
+   
+   useEffect(() => {
+      if (result.indexOf('@SUCCESS:') !== -1) {
+         // document.getElementById('CreateSuccess').style.display = 'block';
+         // setTimeout(
+         //    () => document.getElementById('CreateSuccess').style.display = 'none',
+         //    3000
+         // );
+         clear()
+      } else {
+         console.log(false);
+      }
+   }, [result])
 
    function getBase64(file) {
       return new Promise((resolve, reject) => {
@@ -253,6 +277,26 @@ function CreateEventForm() {
                      }
                      close
                      color="danger"
+                  />
+               </div>
+               <div id="CreateSuccess" style={{
+                  display: 'none',
+                  position: 'fixed',
+                  top: 0,
+                  marginTop: '6rem',
+                  zIndex: '1000000',
+                  marginRight: '4rem',
+                  right: 0,
+                  width: '25%'
+               }}>
+                  <SnackbarContent
+                     message={
+                        <span style={{ fontSize: '120%', textAlign: 'right' }}>
+                           <b>Tạo chiến dịch thành công</b>
+                        </span>
+                     }
+                     close
+                     color="success"
                   />
                </div>
                <h1 className={classes.title} style={{ fontSize: "280%" }}>

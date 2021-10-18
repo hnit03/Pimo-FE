@@ -150,31 +150,20 @@ function Navbar() {
                         (<CustomDropdown
                            left
                            navDropdown
-                           dropdownHeader="Dropdown Header"
                            buttonText={name}
                            buttonProps={{
                               className: classes.navLink,
                               color: "transparent",
                            }}
                            dropdownList={[
-                              <Link to="/" className={classes.dropdownLink}>
-                                 <LineStyle className={classes.dropdownIcons} /> Presentation Page
-                              </Link>,
                               <Link to="/components" className={classes.dropdownLink}>
-                                 <Layers className={classes.dropdownIcons} />
-                                 All components
+                                 <AccountCircleIcon className={classes.dropdownIcons} />
+                                 Thông tin
                               </Link>,
-                              <a
-                                 href="https://demos.creative-tim.com/material-kit-pro-react/#/documentation/tutorial?ref=mkpr-navbar"
-                                 className={classes.dropdownLink}
-                              >
-                                 <Icon className={classes.dropdownIcons}>content_paste</Icon>
-                                 Documentation
-                              </a>,
                               <div onClick={handleLogout} className={classes.dropdownLink}
                                  style={{ color: 'red' }}>
                                  <LogoutIcon className={classes.dropdownIcons} />
-                                 Logout
+                                 Đăng xuất
                               </div>
                            ]}
                         />)

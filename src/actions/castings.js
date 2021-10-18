@@ -5,13 +5,14 @@ export const createCasting = (filter, authorization) => async (dispatch) => {
       var postData = {
          name: filter.name,
          description: filter.description,
-         status: true,
          openTime: filter.startDate,
          closeTime: filter.endDate,
-         logo: filter.image,
+         poster: filter.image,
          salary: filter.salary,
          address: filter.district,
-         request: ''
+         request: '',
+         genders: [], 
+         styles: []
       };
       if (filter.bust) postData.request = (postData.request) + `<br/>Vòng 1: ${filter.bust}`;
       if (filter.waist) postData.request = postData.request + `<br/>Vòng 2: ${filter.waist}`;
@@ -21,16 +22,9 @@ export const createCasting = (filter, authorization) => async (dispatch) => {
          if (item.checked === true) checkStyle = true
       })
       if (checkStyle) {
-         postData.request = (postData.request) + `<br/>Phong cách: `;
-         var countStyle = 0
          filter.style.map((item, index) => {
             if (item.checked === true) {
-               if (countStyle === 0) {
-                  postData.request = (postData.request) + item.name
-                  countStyle++
-               } else {
-                  postData.request = (postData.request) + `, ${item.name}`
-               }
+               postData.styles.push(item.id)
             }
          })
       }
@@ -57,16 +51,9 @@ export const createCasting = (filter, authorization) => async (dispatch) => {
          if (item.checked === true) checkSex = true
       })
       if (checkSex) {
-         postData.request = (postData.request) + `<br/>Giới tính: `;
-         var countSex = 0
          filter.sex.map((item, index) => {
             if (item.checked === true) {
-               if (countSex === 0) {
-                  postData.request = (postData.request) + item.name
-                  countSex++
-               } else {
-                  postData.request = (postData.request) + `, ${item.name}`
-               }
+               postData.genders.push(item.id)
             }
          })
       }
@@ -120,11 +107,10 @@ export const createCasting = (filter, authorization) => async (dispatch) => {
             'authorization': authorization
          }
       };
-      console.log(postData);
-      console.log(axiosConfig);
       const { data } = await api.createCasting(postData, axiosConfig);
-      console.log(data);
-      dispatch({ type: 'CREATE_CASTING', payload: data });
+      if(data.success) {
+         dispatch({ type: 'CREATE_CASTING', payload: "@SUCCESS: " + Math.random() });
+      }
    } catch (error) {
       console.log("Search models error: " + error.message);
    }
