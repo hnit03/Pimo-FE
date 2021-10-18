@@ -43,7 +43,7 @@ function App() {
             <Route path="/event-search/:id" component={EventSearchPage} />
             <Route path="/model-info/:id" component={ModelInfoPage} />
             <Route path="/event-create" component={CreateEventPage} />
-            <Route path="/brand-info" component={BrandInfoPage} />
+            <Route path="/brand-info/:id" component={BrandInfoPage} />
          </Switch>
       </BrowserRouter>
    );

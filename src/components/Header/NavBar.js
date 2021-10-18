@@ -179,20 +179,23 @@ function Navbar() {
                            ]}
                         />)
                      }
-
                   </ListItem>
                   <ListItem className={classes.listItem1} >
-                     <Button
-                        className={classes.navLink + " " + classes.navLinkActive}
-                        onClick={onClickCreateEvent}
-                        style={{
-                           backgroundColor: 'black',
-                           color: 'white',
-                           borderRadius: '0.5rem',
-                        }}
-                     >
-                        Tạo Chiến dịch
-                     </Button>
+                     {name === '' ?
+                        null
+                        :
+                        (<Button
+                           className={classes.navLink + " " + classes.navLinkActive}
+                           onClick={onClickCreateEvent}
+                           style={{
+                              backgroundColor: 'black',
+                              color: 'white',
+                              borderRadius: '0.5rem',
+                           }}
+                        >
+                           Tạo Chiến dịch
+                        </Button>)
+                     }
                   </ListItem>
                </List>
             }

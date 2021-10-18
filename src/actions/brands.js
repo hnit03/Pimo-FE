@@ -40,3 +40,12 @@ export const searchBrands = (filter, pageNo) => async (dispatch) => {
       console.log("Search models error: " + error.message);
    }
 };
+
+export const getInfo = (id) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchBrandById(id);
+      dispatch({ type: 'BRAND_INFO', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};

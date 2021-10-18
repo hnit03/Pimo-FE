@@ -129,3 +129,12 @@ export const createCasting = (filter, authorization) => async (dispatch) => {
       console.log("Search models error: " + error.message);
    }
 };
+
+export const getCastings = (pageNo) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchCastings(pageNo);
+      dispatch({ type: 'FETCH_CASTINGS', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};
