@@ -124,3 +124,12 @@ export const getCastings = (pageNo) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const getInfo = (id) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchCastingById(id);
+      dispatch({ type: 'CASTING_INFO', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};

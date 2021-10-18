@@ -5,6 +5,8 @@ export default (castings = [], action) => {
          return action.payload;
       case 'FETCH_CASTINGS':
          return action.payload;
+      case 'CASTING_INFO':
+         return action.payload;
       default:
          return castings;
    }

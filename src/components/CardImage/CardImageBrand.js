@@ -12,8 +12,8 @@ import MailIcon from '@mui/icons-material/Mail';
 export default function CardImage(brand) {
    const classes = useStyles();
    const history = useHistory();
-   // /${brand.brand.brand.id}
-   const onClickInfo = useCallback(() => history.push(`/brand-info`), [history]);
+   const onClickInfo = useCallback(() => history.push(`/brand-info/${brand.brand.brand.id}`), [history]);
+   console.log(brand);
    return (
       <div className={classes.hieuungbenngoai} onClick={onClickInfo}>
          <div className={classes.hieuung}>
@@ -28,13 +28,13 @@ export default function CardImage(brand) {
                                 <WorkIcon className={classes.icon} /><span className={classes.text} >Fashion</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <MailIcon className={classes.icon} /><span className={classes.text} >thanhvi@chanel.com</span>
+                                <MailIcon className={classes.icon} /><span className={classes.text} >{brand.brand.brand.mail}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >0623-456-789</span>
+                                <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >{brand.brand.brand.phone}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <LocationOn className={classes.icon} /><span className={classes.text} >Paris, French</span>
+                                <LocationOn className={classes.icon} /><span className={classes.text} >{brand.brand.brand.address}</span>
                             </li>
                         </ul>
                   </p>
