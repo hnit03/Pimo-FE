@@ -10,8 +10,6 @@ import Divider from '@mui/material/Divider';
 
 export default function StyleCard({ brand }) {
    const classes = useStyles();
-   console.log(brand);
-
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.box}>
          <Grid container spacing={2} className={classes.pageLeft_Style}>

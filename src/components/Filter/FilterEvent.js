@@ -173,7 +173,6 @@ export default function StandardImageList(props) {
       }
    };
 
-   console.log(castings);
    return (
       <div className={classes.containerFilterAndResult}>
          <div

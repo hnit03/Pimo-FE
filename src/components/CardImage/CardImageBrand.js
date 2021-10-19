@@ -12,10 +12,10 @@ import MailIcon from '@mui/icons-material/Mail';
 export default function CardImage(brand) {
    const classes = useStyles();
    const history = useHistory();
-   const onClickInfo = useCallback(() => history.push(`/brand-info/${brand.brand.brand.id}`), [history]);
    console.log(brand);
+   const onClickInfo = useCallback((param) => () => history.push(`/brand-info/${param}`), [history]);
    return (
-      <div className={classes.hieuungbenngoai} onClick={onClickInfo}>
+      <div className={classes.hieuungbenngoai} onClick={onClickInfo(brand.brand.brand.id)}>
          <div className={classes.hieuung}>
             <div className={classes.noidung}>
                <img src={brand.brand.brand.logo} className={classes.img} />
