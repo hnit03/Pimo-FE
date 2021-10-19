@@ -316,7 +316,7 @@ export default function StandardImageList(props) {
                <Pagination
                   onChange={handleChangePage}
                   defaultPage={parseInt(pageNo)}
-                  count={10}
+                  count={castings.totalPage}
                   showFirstButton
                   showLastButton
                />
