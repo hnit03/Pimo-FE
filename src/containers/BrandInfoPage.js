@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 
 export default function BrandInfoPage(props) {
 
+   window.scrollTo(0, 0);
+
    const brand = useSelector((state) => state.brands);
    const dispatch = useDispatch();
    useEffect(() => {
