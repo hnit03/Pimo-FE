@@ -11,8 +11,8 @@ const login = (postData, axiosConfig) => async (dispatch) => {
             if (res.data.isExist === false) {
                isExist = false;
             } else {
-               cookies.set('name', res.data.name, { path: '/', maxAge: 60 * 60 });
-               cookies.set('jwt', res.data.jwt, { path: '/', maxAge: 60 * 60 });
+               cookies.set('name', res.data.name, { path: '/', maxAge: 60 * 60 * 1000 });
+               cookies.set('jwt', res.data.jwt, { path: '/', maxAge: 60 * 60 * 1000 });
             }
          })
       if (isExist) {
