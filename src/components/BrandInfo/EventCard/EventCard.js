@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/BrandInfoCard/eventCardStyle';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LocationOn from '@material-ui/icons/LocationOn';
-import WorkIcon from '@mui/icons-material/Work';
 import EventIcon from '@mui/icons-material/Event';
-import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
+import { useHistory } from 'react-router-dom';
 
 export default function ListEvent(props) {
     const classes = useStyles();
+    const history = useHistory();
+    const onClickInfo = useCallback((param) => () => history.push(`/event-info`), [history]);
     return (
-        <Box sx={{ flexGrow: 1 }} className={classes.box}>
+        <Box sx={{ flexGrow: 1 }} className={classes.box} onClick={onClickInfo()}>
             <Grid container spacing={1} className={classes.pageLeft_Style}>
                 <Grid item xs={12} >
                     <img className={props.style ? classes.imgBrand: classes.imgBrandSmall} src={props.img}></img>

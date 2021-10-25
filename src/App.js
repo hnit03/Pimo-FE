@@ -9,7 +9,8 @@ import BrandInfoPage from './containers/BrandInfoPage';
 import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
-import CreateEventPage from "./containers/CreateEventPage"
+import CreateEventPage from "./containers/CreateEventPage";
+import EventInfoPage from "./containers/EventInfoPage";
 // import CastingInfoPage from "./containers/CastingInfoPage"
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="/model-info/:id" component={ModelInfoPage} />
             <Route path="/event-create" component={CreateEventPage} />
             <Route path="/brand-info/:id" component={BrandInfoPage} />
+            <Route path="/event-info" component={EventInfoPage} />
             {/* <Route path="/casting-info/:id" component={CastingInfoPage} /> */}
          </Switch>
       </BrowserRouter>
