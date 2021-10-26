@@ -8,9 +8,10 @@ import ListEvent from '../components/BrandInfo/ListEvent/ListEvent';
 import { getInfo } from '../actions/brands';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import BrandInfo from "../components/BrandInfoPage/BrandInfo";
 
 export default function BrandInfoPage(props) {
-
+   console.log('hihi ',props.match.params.id)
    window.scrollTo(0, 0);
 
    const brand = useSelector((state) => state.brands);
@@ -19,6 +20,7 @@ export default function BrandInfoPage(props) {
       dispatch(getInfo(props.match.params.id));
    }, [])
    const classes = useStyles();
+   document.body.style.backgroundImage = 'none';
    return (
       <>
          {
@@ -41,5 +43,9 @@ export default function BrandInfoPage(props) {
             </div >
          }
       </>
+   //    <div>
+   //    <BrandInfo pageOffset={props.match.params.id}/>
+   //    <SectionFooter />
+   // </div>
    );
 }

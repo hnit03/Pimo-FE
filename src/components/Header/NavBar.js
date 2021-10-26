@@ -47,6 +47,7 @@ function Navbar() {
    const onClickSearchBrand = useCallback(() => history.push('/brand-search/1'), [history]);
    const onClickSearchEvent = useCallback(() => history.push('/event-search/1'), [history]);
    const onClickCreateEvent = useCallback(() => history.push('/event-create'), [history]);
+   const onClickBrandProfile = useCallback(() => history.push('/brand-profile/1'), [history]);
 
    const handleLogin = () => {
       auth.signInWithPopup(provider)
@@ -156,7 +157,7 @@ function Navbar() {
                               color: "transparent",
                            }}
                            dropdownList={[
-                              <Link to="/components" className={classes.dropdownLink}>
+                              <Link to="/brand-profile/1" className={classes.dropdownLink}>
                                  <AccountCircleIcon className={classes.dropdownIcons} />
                                  Thông tin
                               </Link>,
