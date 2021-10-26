@@ -466,8 +466,23 @@ import {
     fontSize:'1rem',
     marginBottom:'0.7rem'
 
-   }
- };
+   },
+   //Brnad-info
+   logoBrand:{
+    objectFit: 'cover',
+    objectPosition: '50% 10%',
+    width: '10rem',
+    float: 'right',
+    height: '10rem',
+    borderRadius: '50%',
+    marginBottom: '4%',
+    marginTop: '-2.5rem',
+    marginRight: '0',
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+   },
+   
+  
+  };
  
  export default styles;
  

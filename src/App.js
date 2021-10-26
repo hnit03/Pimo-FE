@@ -6,6 +6,7 @@ import BrandSearchPage from './containers/BandSearchPage';
 import EventSearchPage from './containers/EventSearchPage';
 import ModelInfoPage from './containers/ModelInfoPage';
 import BrandInfoPage from './containers/BrandInfoPage';
+import BrandProfile from './containers/BrandProfile';
 import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
 import NavBar from "./components/Header/NavBar";
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
@@ -45,6 +46,7 @@ function App() {
             <Route path="/model-info/:id" component={ModelInfoPage} />
             <Route path="/event-create" component={CreateEventPage} />
             <Route path="/brand-info/:id" component={BrandInfoPage} />
+            <Route path="/brand-profile/:id" component={BrandProfile} />
             {/* <Route path="/casting-info/:id" component={CastingInfoPage} /> */}
          </Switch>
       </BrowserRouter>

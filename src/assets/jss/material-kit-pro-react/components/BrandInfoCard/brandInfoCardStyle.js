@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1.5rem',
     marginTop:'14rem',
     paddingBottom: '2.5rem'
-
   },
   logoBrand: {
     objectFit: 'cover',
