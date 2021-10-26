@@ -15,9 +15,9 @@ export default function InfoDetails() {
             <Grid item xs={12} >
             <img className={classes.img} src="https://www.chanel.com/images//t_one//w_0.67,h_0.67,c_crop/q_auto:good,f_jpg,fl_lossy,dpr_1.2/w_1920/n-5-the-bath-tablets-factory-5-collection-limited-edition-10x0-60oz--packshot-default-105607-8840508309534.jpg"/>
             </Grid>
-            <Grid item xs={1} >
+            <Grid item xs={0.5} >
             </Grid>
-            <Grid item xs={8} >
+            <Grid item xs={9} >
                <h1>CALKWALK BST ÁNH SÁNG MÙA ĐÔNG CALKWALK BST ÁNH SÁNG MÙA ĐÔNG</h1>
                <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>

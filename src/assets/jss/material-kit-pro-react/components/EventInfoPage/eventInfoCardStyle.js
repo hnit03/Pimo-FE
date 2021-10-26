@@ -4,6 +4,11 @@ body:{
   backgroundColor:'white',
    marginLeft:'2%'
 },
+body1:{
+  width:'76rem !important',
+
+},
+
 }
 ));
 export default useStyles;
