@@ -11,6 +11,7 @@ import NavBar from "./components/Header/NavBar";
 import SnackbarContent from "./components/Snackbar/SnackbarContent.js";
 import CreateEventPage from "./containers/CreateEventPage";
 import EventInfoPage from "./containers/EventInfoPage";
+import BrandProfile from './containers/BrandProfile';
 // import CastingInfoPage from "./containers/CastingInfoPage"
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/event-create" component={CreateEventPage} />
             <Route path="/brand-info/:id" component={BrandInfoPage} />
             <Route path="/event-info" component={EventInfoPage} />
+            <Route path="/brand-profile/:id" component={BrandProfile} />
             {/* <Route path="/casting-info/:id" component={CastingInfoPage} /> */}
          </Switch>
       </BrowserRouter>
