@@ -31,16 +31,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem'
   },
   icon: {
-    marginTop: 0,
+    marginTop: '-0.2rem',
     color: 'gray',
     fontSize:'1.4rem',
-    marginBottom:'0.1rem',
+    marginBottom:'0.35rem',
+    
   },
   iconSmall: {
     marginTop: 0,
     color: 'gray',
-    fontSize:'1.3rem',
+    fontSize:'1.2rem',
     marginBottom:'0.1rem',
+    marginTop:'-0.15rem',
   },
   ul: {
     float: 'left',
@@ -91,13 +93,35 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem'
   },
   text: {
-     marginLeft: '3%',
+    marginLeft: '0',
     textAlign: 'left',
     color: 'gray',
     float: 'left',
     fontSize: '0.9rem',
     width: '100%',
     fontFamily: "Calibri, sans-serif",
+  },
+  textOn:{
+    marginLeft: '3%',
+    
+    textAlign: 'left',
+    color: 'gray',
+    float: 'left',
+    fontWeight: 'bold',
+    fontSize: '0.9rem',
+    width: '11rem',
+    fontFamily: "Calibri, sans-serif",
+   // marginTop: '0.2rem'
+  },
+  textIn:{
+    marginLeft: '0',
+    textAlign: 'left',
+    color: 'gray',
+    float: 'left',
+    fontSize: '0.9rem',
+    //width: '100%',
+    fontFamily: "Calibri, sans-serif",
+    marginTop: '-0.1rem'
   },
 
 chipTrue:{

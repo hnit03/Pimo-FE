@@ -19,6 +19,7 @@ export default function ListEvent({ model }) {
                     bool={true} 
                     value="Catwalk: tuần lễ thời trang"
                     dayTime="10/10/2021 - 9:00"
+                    endTime="10/10/2021 - 9:00"
                     location="Paris, French"
                     img = "https://image.bnews.vn/MediaUpload/Org/2019/03/02/143959_bieu-tuong-nganh-thoi-trang-the-gioi-karl-lagerfeld-qua-doi.jpg"
                     />
@@ -29,6 +30,7 @@ export default function ListEvent({ model }) {
                     bool={false} 
                     value="Quảng bá dòng nước hoa mới COCO CHANEL"
                     dayTime="10/10/2021 - 9:00"
+                    endTime="10/10/2021 - 9:00"
                     location="Paris, French"
                     img = "https://a.ipricegroup.com/media/Ann/Chanel_Mademoiselle_Eau_Privee_50ml.jpeg"/>
                 </Grid> 
@@ -38,6 +40,7 @@ export default function ListEvent({ model }) {
                     bool={true} 
                     value="Quảng bá dòng nước hoa mới N5' CHANEL"
                     dayTime="10/10/2021 - 9:00"
+                    endTime="10/10/2021 - 9:00"
                     location="Paris, French"
                     img = "https://www.chanel.com/images//t_one//w_0.67,h_0.67,c_crop/q_auto:good,f_jpg,fl_lossy,dpr_1.2/w_1920/n-5-the-bath-tablets-factory-5-collection-limited-edition-10x0-60oz--packshot-default-105607-8840508309534.jpg"/>
                 </Grid> 

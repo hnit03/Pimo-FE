@@ -47,7 +47,7 @@ function App() {
             <Route path="/model-info/:id" component={ModelInfoPage} />
             <Route path="/event-create" component={CreateEventPage} />
             <Route path="/brand-info/:id" component={BrandInfoPage} />
-            <Route path="/event-info" component={EventInfoPage} />
+            <Route path="/event-info/:id" component={EventInfoPage} />
             <Route path="/brand-profile/:id" component={BrandProfile} />
             {/* <Route path="/casting-info/:id" component={CastingInfoPage} /> */}
          </Switch>

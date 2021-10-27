@@ -6,16 +6,17 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import EventIcon from '@mui/icons-material/Event';
 import Chip from '@mui/material/Chip';
 import { useHistory } from 'react-router-dom';
+import TodayIcon from '@mui/icons-material/Today';
 
 export default function ListEvent(props) {
     const classes = useStyles();
     const history = useHistory();
-    const onClickInfo = useCallback((param) => () => history.push(`/event-info`), [history]);
+    const onClickInfo = useCallback((param) => () => history.push(`/event-info/${param}`), [history]);
     return (
-        <Box sx={{ flexGrow: 1 }} className={classes.box} onClick={onClickInfo()}>
+        <Box sx={{ flexGrow: 1 }} className={classes.box} onClick={onClickInfo(props.id)}>
             <Grid container spacing={1} className={classes.pageLeft_Style}>
                 <Grid item xs={12} >
-                    <img className={props.style ? classes.imgBrand: classes.imgBrandSmall} src={props.img}></img>
+                    <img className={props.style ? classes.imgBrand : classes.imgBrandSmall} src={props.img}></img>
                 </Grid>
                 <Grid item xs={12} className={classes.smallBox}>
                     <div className={classes.name}>
@@ -23,12 +24,18 @@ export default function ListEvent(props) {
                     </div>
                     <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
-                            <EventIcon className={props.style ? classes.icon : classes.iconSmall} />
+                            <TodayIcon className={props.style ? classes.icon : classes.iconSmall} />
+                            <span className={classes.textOn} >Ngày bắt đầu:</span>
                             <span className={classes.text} >{props.dayTime}</span>
                         </li>
                         <li style={{ display: 'flex', }} className={classes.li}>
+                            <EventIcon className={props.style ? classes.icon : classes.iconSmall} />
+                            <span className={classes.textOn} >Ngày kết thúc:</span>
+                            <span className={classes.text} >{props.endTime}</span>
+                        </li>
+                        <li style={{ display: 'flex', }} className={classes.li}>
                             <LocationOn className={props.style ? classes.icon : classes.iconSmall} />
-                            <span className={classes.text} >{props.location}</span>
+                            <span className={classes.textIn} >{props.location}</span>
                         </li>
                     </ul>
                     {props.bool ?

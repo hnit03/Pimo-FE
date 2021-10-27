@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
     box: {
         marginTop: '-1rem',
         overflow: 'hidden',
-        margin: '0',
+        margin: 'auto',
         width: '76rem',
         borderRadius: '0.2rem',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
@@ -37,6 +37,31 @@ const useStyles = makeStyles((theme) => ({
         marginBottom:'-100rem !important'
 
      },
+     icon: {
+        marginTop: 0,
+        color: 'black',
+        fontSize:'2rem',
+        marginBottom:'0.2rem',
+        marginTop:'1.3rem',
+        marginRight:'1rem'
+
+      },
+      iconDES:{
+        marginTop: 0,
+        color: 'black',
+        fontSize:'2rem',
+        marginBottom:'0.2rem',
+        marginTop:'3.3rem',
+        marginRight:'1rem'
+      },
+      ul: {
+        float: 'left',
+        marginLeft: 0,
+        padding: 0,
+        width: '100%',
+        marginTop: 0,
+        marginBottom: 0
+      },
 }
 ));
 export default useStyles;
