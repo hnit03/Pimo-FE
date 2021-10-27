@@ -6,7 +6,7 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 
-export default function InfoDetails() {
+export default function InfoDetails(props) {
    const classes = useStyles();
    const bool=true;
    return (
@@ -18,11 +18,11 @@ export default function InfoDetails() {
             <Grid item xs={0.5} >
             </Grid>
             <Grid item xs={9} >
-               <h1>CALKWALK BST ÁNH SÁNG MÙA ĐÔNG CALKWALK BST ÁNH SÁNG MÙA ĐÔNG</h1>
+               <h1>{props.castingName}</h1>
                <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
                             <LocationOn className={classes.icon} />
-                            <span className={classes.text} >Quận 1,tphcm</span>
+                            <span className={classes.text} >{props.castingAddress}</span>
                         </li>
                     </ul>
                     {bool ?

@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 0,
     color: 'gray',
     fontSize:'1.4rem',
-    marginBottom:'0.1rem',
+    marginBottom:'0.2rem',
+    marginTop:'-0.5rem'
   },
   ul: {
     float: 'left',
@@ -39,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
    fontSize: '1.1rem',
    width: '100%',
    fontFamily: "Calibri, sans-serif",
+   marginTop:'-0.7rem',
+   marginBottom:'0.2rem'
  },
  chipTrue:{
     color:'white !important',
@@ -58,7 +61,6 @@ button:{
     marginTop:'1.5rem !important',
     backgroundColor:'pink !important',
     width:'100% !important',
-   // color:'black !important',
     fontWeight:'700 !important',
     fontSize: '1.3rem !important'
 }

@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'2rem',
         overflow: 'hidden',
         margin: '0',
-        width: '37rem',
+        width: '42rem',
         height: '16.5rem',
         borderRadius: '0.2rem',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
@@ -23,15 +23,17 @@ const useStyles = makeStyles((theme) => ({
       valueReq:{
           marginBottom: '0.7rem',
           fontSize: '1.1rem',
+          color: 'gray',
       },
       valueReqList:{
         marginBottom: '0',
         fontSize: '1.1rem',
+        color: 'gray',
       },
       titleCard:{
             fontSize:'2rem',
             fontWeight:'700',
-            marginLeft:'2rem',
+            marginLeft:'1.5rem',
             fontFamily: "Calibri, sans-serif",
             marginTop:'2rem',
             marginBottom: '0.5rem'

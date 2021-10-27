@@ -3,7 +3,7 @@ import useStyles from '../../../assets/jss/material-kit-pro-react/components/Eve
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-export default function RequirementInfo() {
+export default function RequirementInfo(props) {
     const classes = useStyles();
     const bool = true;
     return (
@@ -17,20 +17,23 @@ export default function RequirementInfo() {
                 <Grid item xs={1} ></Grid>
                 <Grid item xs={5.5} >
                     <div className={classes.titleReq}>Thời gian bắt đầu</div>
-                    <div className={classes.valueReq}>10/10/2021</div>
+                    <div className={classes.valueReq}>{props.startDate}</div>
                     <div className={classes.titleReq}>Tiền lương</div>
-                    <div className={classes.valueReq}>5000$</div>
+                    <div className={classes.valueReq}>{props.salary}</div>
                     <div className={classes.titleReq}>Giới tính</div>
-                    <div className={classes.valueReqList}>Người mẫu nam</div>
-                    <div className={classes.valueReqList}>Người mẫu nữ</div>
-                    <div className={classes.valueReqList}>Khác</div>
+                    {props.model.map((item) =>
+                        <div className={classes.valueReqList}>{item}</div>
+                        )
+                    }
                 </Grid>
                 <Grid item xs={5.5} >
                     <div className={classes.titleReq}>Thời gian kết thúc</div>
-                    <div className={classes.valueReq}>12/10/2021</div>
+                    <div className={classes.valueReq}>{props.endDate}</div>
                     <div className={classes.titleReq}>Phong cách</div>
-                    <div className={classes.valueReqList}>Artist</div>
-                    <div className={classes.valueReqList}>Nhẹ nhàng</div>
+                    {props.style.map((item) =>
+                        <div className={classes.valueReqList}>{item}</div>
+                        )
+                    }
                 </Grid>
             </Grid>
         </Box>

@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     valueReq: {
         fontSize: '1.2rem',
+        color: 'gray',
     },
     divider_Style: {
         width: '100%',

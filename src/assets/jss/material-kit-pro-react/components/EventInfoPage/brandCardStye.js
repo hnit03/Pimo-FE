@@ -18,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'-22.5rem',
         overflow: 'hidden',
         margin: '0',
-        width: '37rem',
+        width: '32rem',
         height: '16.5rem',
         borderRadius: '0.2rem',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
         paddingBottom:'3rem',
         marginBottom:'3rem',
-        marginLeft: '39rem'
+        marginLeft: '44rem'
     
       },
       hieuungbenngoai: {

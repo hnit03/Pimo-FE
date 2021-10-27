@@ -8,7 +8,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailIcon from '@mui/icons-material/Mail';
 
-export default function BrandCard() {
+export default function BrandCard(props) {
    const classes = useStyles();
    const bool=true;
    return (
@@ -19,23 +19,23 @@ export default function BrandCard() {
             <h1 className={classes.title} >ĐƯỢC TẠO BỞI </h1>
             <div className={classes.hieuung}>
             <div className={classes.noidung}>
-               <img src="https://cdn.elly.vn/uploads/2021/01/06205934/y-nghia-logo-thuong-hieu-chanel.png" className={classes.img} />
+               <img src={props.img} className={classes.img} />
                <div className={classes.phude}>
                   <p className={classes.thongtin}>
-                     <h2 className={classes.h2} >sssss </h2>
+                     <h2 className={classes.h2} >{props.brandName} </h2>
                      <Divider className={classes.divider_Style} ></Divider>
                      <ul className={classes.ul}>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <WorkIcon className={classes.icon} /><span className={classes.text} >Fashion</span>
+                                <WorkIcon className={classes.icon} /><span className={classes.text} >{props.brandWorks}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <MailIcon className={classes.icon} /><span className={classes.text} >ddd</span>
+                                <MailIcon className={classes.icon} /><span className={classes.text} >{props.brandEmail}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >dđ</span>
+                                <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >{props.brandPhone}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <LocationOn className={classes.icon} /><span className={classes.text} >dđ</span>
+                                <LocationOn className={classes.icon} /><span className={classes.text} >{props.brandAddress}</span>
                             </li>
                         </ul>
                   </p>
