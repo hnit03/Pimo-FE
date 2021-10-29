@@ -78,13 +78,11 @@ export default function StandardImageList(props) {
       switch (value) {
          case 1:
             break;
-
          case 2:
             setSearchName("");
             setValueAddress("");
             setValueMajor("");
             setValueChoose([]);
-
             break;
          default:
       }
@@ -111,7 +109,7 @@ export default function StandardImageList(props) {
             {/* <GridContainer> */}
             <form style={{ display: "flex" }} autoComplete="off" onSubmit={handleSubmit}>
 
-               <GridItem xs={12} sm={4} md={10}>
+               <GridItem xs={12} sm={4} md={12}>
                   <p className={classes.titleSearch}>Tìm kiếm theo địa chỉ</p>
                   <Autocomplete
                      disablePortal
@@ -181,7 +179,7 @@ export default function StandardImageList(props) {
                   {brands.brandList !== undefined
                      ? brands.brandList.length > 0
                         ? brands.brandList.map((brand) => (
-                           <GridItem xs={12} sm={6} md={6}>
+                           <GridItem xs={6} sm={6} md={6}>
                               <CardImage brand={brand}/>
                            </GridItem>
                         ))

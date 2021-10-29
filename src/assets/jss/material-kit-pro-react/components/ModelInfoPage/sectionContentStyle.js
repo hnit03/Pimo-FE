@@ -11,13 +11,15 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Calibri, sans-serif",
         color: 'gray',
         fontSize: '1.1rem',
+        marginLeft: '0.5rem',
+        marginTop:'0.26rem',
     },
     icon: {
         marginTop: 0,
         color: '#ff93a6',
         fontSize:'1.2rem',
         marginBottom:'0.2rem',
-        marginTop:'0.1rem',
+        marginTop:'0.3rem',
         marginRight:'0.5rem'
 
       },
@@ -32,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
       iconIMG:{
           height:'1.8rem',
           width:'1.8rem',
+          marginLeft:'-0.2rem',
+          marginRight:'0.2rem',
       }
 }
 ));

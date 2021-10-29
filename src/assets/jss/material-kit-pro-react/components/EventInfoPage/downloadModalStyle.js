@@ -66,8 +66,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '-0.5rem'
     },
     scroll:{
+        marginTop:'1rem',
         width:'20rem',
-        height:'29.5rem',
+        height:'37rem',
         overflowY: 'scroll !important',
         '&::-webkit-scrollbar-track': {
             '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.3) !important',

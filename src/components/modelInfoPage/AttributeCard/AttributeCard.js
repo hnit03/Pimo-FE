@@ -37,11 +37,8 @@ export default function AttributeCard({ model }) {
                   </Grid>
                   <Grid item xs={1}>
                   </Grid>
-                  <Grid item xs={6}>
-                     <SectionContent list1={model.listBodyPart} name={name} value={value} />
-                  </Grid>
-                  <Grid item xs={5}>
-                     <SectionContent list1={model.listBodyAttr} name={name1} value={value1} />
+                  <Grid item xs={12}>
+                     <SectionContent list1={model.listBodyPart} list2={model.listBodyAttr} name={name} value={value} />
                   </Grid>
                </Grid>
             </Grid>

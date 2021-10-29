@@ -39,11 +39,12 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     width: '100%',
     marginTop: 0,
-    marginBottom: 0
+    marginTop: '-1rem',
+    marginBottom: '1rem'
   }
   ,title: {
     margin: 0,
-    marginBottom:'1rem',
+    marginBottom:'2rem',
     marginTop:'0.3rem',
     marginLeft: 0,
     textAlign: 'left',
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Calibri, sans-serif",
   },
   divider_Style: {
-    marginTop: '0rem !important',
+    marginBottom: '-0.2rem !important',
     width: '100%',
     fontFamily: "Calibri, sans-serif",
     fontSize: '1rem'
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: 'gray',
     float: 'left',
-    fontSize: '1rem',
+    fontSize: '1.1rem',
     width: '100%',
     fontFamily: "Calibri, sans-serif",
   },

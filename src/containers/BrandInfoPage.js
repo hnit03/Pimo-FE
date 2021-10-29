@@ -9,6 +9,7 @@ import { getInfo } from '../actions/brands';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import BrandInfo from "../components/BrandInfoPage/BrandInfo";
+import YouTube from "../components/CardImage/vi";
 
 export default function BrandInfoPage(props) {
    console.log('hihi ',props.match.params.id)
@@ -40,6 +41,7 @@ export default function BrandInfoPage(props) {
                   </Grid>
                </Box>
                <SectionFooter />
+               <YouTube/>
             </div >
          }
       </>

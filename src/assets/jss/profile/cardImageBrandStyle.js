@@ -24,21 +24,23 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    img: {
-    width: '45%',
+    width: '40%',
     height: '40vh',
     objectFit: 'cover',
     objectPosition: '50% 20%',
+    marginRight:'0.5rem !important'
  },
 
    thongtin: {
-      width: '46%',
+      width: '55%',
       float: 'right',
-      marginTop: '-10.5rem',
+      marginTop: '-28vh',
       transform: 'translateY(-50%)',
-      padding: '20px',
+      padding: '10px',
       textAlign: 'center',
       opacity: 1,
       transition: '0.5s',
+      paddingLeft: '1rem',
    },
    h2: {
       textAlign: 'Left',
@@ -71,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
       color: '#ff93a6',
       fontWeight:'800',
       margin:'0',
-      marginBottom: '0.2rem',
+      marginBottom: '0rem',
       padding: 0,
       opacity: 1,
       fontSize: '15px',
@@ -100,8 +102,8 @@ const useStyles = makeStyles((theme) => ({
       width: '95%',
       fontFamily: "Calibri, sans-serif",
       fontSize: '1rem',
-      marginTop:'0.5rem !important',
-      marginBottom:'1rem !important'
+      marginTop:'-0.2rem !important',
+      marginBottom:'0.5rem !important'
    },
    icon: {
     marginTop: 0,
