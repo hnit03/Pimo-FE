@@ -157,10 +157,10 @@ function Navbar() {
                               color: "transparent",
                            }}
                            dropdownList={[
-                              <Link to="/brand-profile/1" className={classes.dropdownLink}>
+                              <a href="https://brand.pimo.studio/" className={classes.dropdownLink}>
                                  <AccountCircleIcon className={classes.dropdownIcons} />
-                                 Thông tin
-                              </Link>,
+                                 Quản lý
+                              </a>,
                               <div onClick={handleLogout} className={classes.dropdownLink}
                                  style={{ color: 'red' }}>
                                  <LogoutIcon className={classes.dropdownIcons} />
