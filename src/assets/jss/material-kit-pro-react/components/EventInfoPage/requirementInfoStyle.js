@@ -4,14 +4,12 @@ const useStyles = makeStyles((theme) => ({
     box: {
         marginTop:'2rem',
         overflow: 'hidden',
-        margin: '0',
         width: '42rem',
-        height: '16.5rem',
+        height: '18rem',
         borderRadius: '0.2rem',
-        boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
         paddingBottom:'3rem',
         marginBottom:'3rem',
-        marginRight:'1rem',
+        marginLeft:'35.5rem',
       },
       titleReq:{
           color: '#ff93a6',
@@ -35,11 +33,45 @@ const useStyles = makeStyles((theme) => ({
             fontWeight:'700',
             marginLeft:'1.5rem',
             fontFamily: "Calibri, sans-serif",
-            marginTop:'2rem',
-            marginBottom: '0.5rem'
-      }
+            marginTop:'3rem',
+            marginBottom: '1rem',
+      },
+      icon: {
+        marginTop: 0,
+        color: '#ff93a6',
+        fontSize:'1.2rem',
+        marginBottom:'0.2rem',
+        marginTop:'0.1rem',
+        marginRight:'0.5rem'
 
-    
+      },
+      ul: {
+        float: 'left',
+        marginLeft: 0,
+        padding: 0,
+        width: '100%',
+        marginTop: 0,
+        marginBottom: 0
+      },
+      iconMUI:{
+        marginTop: 0,
+        color: '#ff93a6',
+        fontSize:'1.4rem',
+        marginBottom:'0.2rem',
+        marginTop:'0rem',
+        marginRight:'0.5rem'
+      },
+      bigIcon:{
+        marginTop: 0,
+        color: 'black',
+        fontSize:'2rem',
+        marginBottom:'0.2rem',
+        marginTop:'3.3rem',
+        marginRight:'-0.5rem',
+        marginLeft:'1.6rem'
+      }
+      
+   
 }
 ));
 export default useStyles;

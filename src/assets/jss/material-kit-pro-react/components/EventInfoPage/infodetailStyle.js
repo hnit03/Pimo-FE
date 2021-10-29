@@ -3,7 +3,7 @@ const useStyles = makeStyles((theme) => ({
   box: {
     marginTop:'11rem',
     overflow: 'hidden',
-    margin: '0',
+    margin: 'auto',
     width: '76rem',
     borderRadius: '0.2rem',
     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',

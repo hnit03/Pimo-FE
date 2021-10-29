@@ -2,38 +2,92 @@ import React from 'react';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/EventInfoPage/requirementInfoStyle';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBuilding } from '@fortawesome/free-solid-svg-icons'
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
+import { faTransgenderAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+
+import TodayIcon from '@mui/icons-material/Today';
+import EventIcon from '@mui/icons-material/Event';
 
 export default function RequirementInfo(props) {
+    
     const classes = useStyles();
     const bool = true;
     return (
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
             <Grid container spacing={1} className={classes.pageLeft_Style}>
-                <Grid item xs={0.5} ></Grid>
+                <Grid item xs={0.5} >
+
+                </Grid>
                 <Grid item xs={11} >
-                    <h1 className={classes.titleCard}>THÔNG TIN CHI TIẾT</h1>
+                <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <FontAwesomeIcon icon={faInfoCircle} className={classes.bigIcon} />
+                            <h1 className={classes.titleCard}>THÔNG TIN CHI TIẾT</h1>
+                        </li>
+                    </ul>
+                    
                 </Grid>
                 <Grid item xs={0.5} ></Grid>
                 <Grid item xs={1} ></Grid>
                 <Grid item xs={5.5} >
-                    <div className={classes.titleReq}>Thời gian bắt đầu</div>
-                    <div className={classes.valueReq}>{props.startDate}</div>
-                    <div className={classes.titleReq}>Tiền lương</div>
-                    <div className={classes.valueReq}>{props.salary}</div>
-                    <div className={classes.titleReq}>Giới tính</div>
-                    {props.model.map((item) =>
+                    <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <TodayIcon className={classes.iconMUI} />
+                            <div className={classes.titleReq}>Thời gian bắt đầu</div>
+                        </li>
+                        <div className={classes.valueReq}>{props.startDate}</div>
+                    </ul>
+
+                    <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <FontAwesomeIcon icon={faMoneyBill} className={classes.icon} />
+                            <div className={classes.titleReq} >Tiền lương</div>
+                        </li>
+                        <div className={classes.valueReq}>{props.salary} Đồng</div>
+                    </ul>
+
+                    <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <FontAwesomeIcon icon={faTransgenderAlt} className={classes.icon} />
+                            <div className={classes.titleReq}>Giới tính</div>
+                        </li>
+                        <div className={classes.valueReqList}>Người mẫu {props.model}</div>
+                    </ul>
+                    {/* <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <FontAwesomeIcon icon={faTransgenderAlt} className={classes.icon} />
+                            <div className={classes.titleReq}>Giới tính</div>
+                        </li>
+                        {props.model.map((item) =>
                         <div className={classes.valueReqList}>{item}</div>
-                        )
+                    )
                     }
+                    </ul>  */}
+                    
                 </Grid>
                 <Grid item xs={5.5} >
-                    <div className={classes.titleReq}>Thời gian kết thúc</div>
-                    <div className={classes.valueReq}>{props.endDate}</div>
-                    <div className={classes.titleReq}>Phong cách</div>
-                    {props.style.map((item) =>
-                        <div className={classes.valueReqList}>{item}</div>
-                        )
-                    }
+                <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <EventIcon className={classes.iconMUI} />
+                            <div className={classes.titleReq}>Thời gian kết thúc</div>
+                        </li>
+                        <div className={classes.valueReq}>{props.endDate}</div>
+                    </ul>
+                    
+                    
+                    <ul className={classes.ul}>
+                        <li style={{ display: 'flex', }} className={classes.li}>
+                            <FontAwesomeIcon icon={faStar} className={classes.icon} />
+                            <div className={classes.titleReq}>Phong cách</div>
+                        </li>
+                        <div className={classes.valueReqList}>{props.style}</div>
+                    </ul> 
+                    
+                    
                 </Grid>
             </Grid>
         </Box>

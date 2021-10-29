@@ -14,8 +14,6 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import CardImage from "../CardImage/CardImage";
-import Slider from "@mui/material/Slider";
 import { useDispatch } from "react-redux";
 import { getCastings } from "../../actions/castings";
 import { useSelector } from "react-redux";
@@ -82,7 +80,7 @@ export default function StandardImageList(props) {
       (data) => history.push(`/event-search/${data}`),
       [history],
    );
-
+   
    const handleSubmit = (e) => {
       e.preventDefault();
 
@@ -293,15 +291,21 @@ export default function StandardImageList(props) {
             <GridContainer spacing={2}>
                <Grid item xs={12} >
                </Grid>
-               {castings.castings !== undefined
+               {console.log(castings.castings)}
+               {
+               castings.castings !== undefined
                   ? castings.castings.length > 0
                      ? castings.castings.map((casting) => (
                         <Grid item xs={4} >
                            <EventCard
+                              id={casting.casting.id}
                               style={false} //mặc định k đổi nha
                               bool={true}
                               value={casting.casting.name}
                               dayTime={(new Date(casting.casting.openTime).toLocaleDateString("vi-VN", {
+                                 year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                              }))}
+                              endTime={(new Date(casting.casting.closeTime).toLocaleDateString("vi-VN", {
                                  year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
                               }))}
                               location={casting.casting.address}

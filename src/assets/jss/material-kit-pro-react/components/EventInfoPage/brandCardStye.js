@@ -1,64 +1,42 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-    // box: {
-    //     marginTop:'2rem',
-    //     overflow: 'hidden',
-    //     margin: '0',
-    //     width: '37rem',
-    //     height: '16.5rem',
-    //     borderRadius: '0.2rem',
-    //     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-    //     paddingBottom:'3rem',
-    //     marginBottom:'3rem',
-    //     marginLeft: '0'
-    
-    //   },
     box: {
         marginTop:'-22.5rem',
         overflow: 'hidden',
-        margin: '0',
-        width: '32rem',
-        height: '16.5rem',
+        width: '36rem',
+        height: '18rem',
         borderRadius: '0.2rem',
-        boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
         paddingBottom:'3rem',
         marginBottom:'3rem',
-        marginLeft: '44rem'
-    
       },
       hieuungbenngoai: {
-        width: '100%',
+        width: '120%',
         height: '15rem',
         padding: '1%',
         marginLeft: 0,
         marginTop: '10rem',
      },
      hieuung: {
-        width: '95%',
+        width: '107%',
         height: '12rem',
         overflow: 'hidden',
         margin: '3%',
         marginTop:"-0.5rem",
-        borderRadius: '0.1rem',
+        borderRadius: '0',
         transition: '0.4s',
-        '&:hover': {
-           backgroundColor: 'rgb(255,192,203, 0.5)',
-           '& img': {
-              backgroundColor: 'rgb(255,192,203, 0.5)',
-              opacity:'0.5'
-           },
-        },
+        borderRight:'3px solid pink',
+        
      },
      img: {
-      width: '42%',
+      width: '36%',
       height: '12rem',
       objectFit: 'cover',
       objectPosition: '50% 20%',
    },
   
      thongtin: {
-        width: '46%',
+        width: '55%',
         float: 'right',
         marginTop: '-8.6rem',
         transform: 'translateY(-50%)',
@@ -127,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         width: '95%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem',
-        marginTop:'0.5rem !important',
+        marginTop:'0.1rem !important',
         marginBottom:'1rem !important'
      },
      icon: {
@@ -157,11 +135,19 @@ const useStyles = makeStyles((theme) => ({
        fontSize:'2rem',
        fontWeight:'700',
        marginLeft:'0rem',
-       marginBottom: '1.7rem',
-       marginTop:'2rem'
+       marginBottom: '1.2rem',
+       marginTop:'1.5rem'    
        
-       
-   }
+   },
+   bigIcon:{
+      marginTop: 0,
+      color: 'black',
+      fontSize:'1.9rem',
+      marginBottom:'0.2rem',
+      marginTop:'1.8rem',
+      marginRight:'1rem',
+      marginLeft:'0.5rem'
+    }
 }
 ));
 export default useStyles;

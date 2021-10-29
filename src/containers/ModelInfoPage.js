@@ -9,7 +9,6 @@ import ListCardGallery from '../components/modelInfoPage/ListCardGallery/ListCar
 import SectionFooter from "../components/Footer/SectionFooter";
 import AttributeCard from '../components/modelInfoPage/AttributeCard/AttributeCard';
 import StyleCard from '../components/modelInfoPage/StyleCard/StyleCard';
-import GalleryModal from '../components/modelInfoPage/GalleryModal/GalleryModal'
 import ReviewAreas from '../components/modelInfoPage/ReviewAreas/ReviewAreas'
 import { withRouter } from "react-router";
 import { getInfo } from '../actions/models';
