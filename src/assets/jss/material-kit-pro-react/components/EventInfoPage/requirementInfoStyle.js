@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'2rem',
         overflow: 'hidden',
         width: '42rem',
-        height: '17rem',
+        height: '18rem',
         borderRadius: '0.2rem',
         paddingBottom:'3rem',
         marginBottom:'3rem',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
             fontWeight:'700',
             marginLeft:'1.5rem',
             fontFamily: "Calibri, sans-serif",
-            marginTop:'2rem',
+            marginTop:'3rem',
             marginBottom: '1rem',
       },
       icon: {
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'black',
         fontSize:'2rem',
         marginBottom:'0.2rem',
-        marginTop:'2.3rem',
+        marginTop:'3.3rem',
         marginRight:'-0.5rem',
         marginLeft:'1.6rem'
       }

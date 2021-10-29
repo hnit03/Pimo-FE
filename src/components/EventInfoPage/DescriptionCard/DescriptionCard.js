@@ -44,7 +44,7 @@ export default function DescriptionCard(props) {
                <p className={classes.valueReq}>
                   {
                      props.request==""?
-                     "Chiến dịch này không có yêu cầu chi tiết"
+                     "Chiến dịch này chưa có yêu cầu chi tiết"
                      :
                      props.request.split('<br/>').map(line => <div>{line}</div>)
                   }

@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'-22.5rem',
         overflow: 'hidden',
         width: '36rem',
-        height: '17rem',
+        height: '18rem',
         borderRadius: '0.2rem',
         paddingBottom:'3rem',
         marginBottom:'3rem',
@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         width: '95%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem',
-        marginTop:'0.5rem !important',
+        marginTop:'0.1rem !important',
         marginBottom:'1rem !important'
      },
      icon: {
@@ -135,17 +135,16 @@ const useStyles = makeStyles((theme) => ({
        fontSize:'2rem',
        fontWeight:'700',
        marginLeft:'0rem',
-       marginBottom: '1.7rem',
-       marginTop:'2rem'
-       
+       marginBottom: '1.2rem',
+       marginTop:'1.5rem'    
        
    },
    bigIcon:{
       marginTop: 0,
       color: 'black',
-      fontSize:'2rem',
+      fontSize:'1.9rem',
       marginBottom:'0.2rem',
-      marginTop:'2.3rem',
+      marginTop:'1.8rem',
       marginRight:'1rem',
       marginLeft:'0.5rem'
     }
