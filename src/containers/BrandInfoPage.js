@@ -6,6 +6,7 @@ import SectionFooter from "../components/Footer/SectionFooter";
 import BrandInfoCard from '../components/BrandInfo/BrandInfoCard/BrandInfoCard';
 import ListEvent from '../components/BrandInfo/ListEvent/ListEvent';
 import { getInfo } from '../actions/brands';
+import { getInfoByBrandID } from '../actions/castings';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import BrandInfo from "../components/BrandInfoPage/BrandInfo";
@@ -16,9 +17,14 @@ export default function BrandInfoPage(props) {
    window.scrollTo(0, 0);
 
    const brand = useSelector((state) => state.brands);
+   const castings = useSelector((state) => state.castings);
+   console.log("aaa",castings);
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getInfo(props.match.params.id));
+   }, [])
+   useEffect(() => {
+      dispatch(getInfoByBrandID(props.match.params.id));
    }, [])
    const classes = useStyles();
    document.body.style.backgroundImage = 'none';
@@ -36,7 +42,7 @@ export default function BrandInfoPage(props) {
                         }
                      </Grid>
                      <Grid item xs={12}>
-                        <ListEvent />
+                        <ListEvent castings={castings}/>
                      </Grid>
                   </Grid>
                </Box>

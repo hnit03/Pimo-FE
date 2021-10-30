@@ -9,6 +9,22 @@ import { useHistory } from 'react-router-dom';
 import TodayIcon from '@mui/icons-material/Today';
 
 export default function ListEvent(props) {
+    var bool= true;
+    var today = new Date();
+    var currentDay = today.getDate();
+    var currentMonth = today.getMonth()+1;
+    var currentYear = today.getFullYear();
+    var parts =props.date.split('-');
+    var month = parts[1];
+    var partsDate =parts[2].split('T');
+    var date = partsDate[0];
+    var time = partsDate[1].split(':');
+    var year = parts[0];
+    var currentDate = new Date(currentYear, currentMonth, currentDay,today.getHours(),today.getMinutes(),today.getSeconds()); 
+    var myDate = new Date(year, month, date,time[0],time[1],time[2]); 
+    if(currentDate>myDate){
+        var bool= false;
+    }
     const classes = useStyles();
     const history = useHistory();
     const onClickInfo = useCallback((param) => () => history.push(`/event-info/${param}`), [history]);
@@ -38,7 +54,7 @@ export default function ListEvent(props) {
                             <span className={classes.textIn} >{props.location}</span>
                         </li>
                     </ul>
-                    {props.bool ?
+                    {bool ?
                         <Chip label="Đang diễn ra" className={props.style ? classes.chipTrue : classes.chipTrueSmall} /> :
                         <Chip label="Đã kết thúc" className={props.style ? classes.chipFalse : classes.chipFalseSmall} />
                     }

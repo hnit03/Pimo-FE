@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     padding: 0,
     width: '100%',
-    marginTop: 0,
     marginTop: '-1rem',
     marginBottom: '1rem'
   }

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     objectFit: 'cover',
     objectPosition: '50% 50%',
     width: '103%',
-    height: '14rem',
+    height: '11.5rem',
     marginBottom: '0',    
     marginRight: '0',
   },
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
   chipTrueSmall:{
     color:'white !important',
-    backgroundColor: 'green !important',
+    backgroundColor: '#ff93a6 !important',
     fontSize: '0.9rem !important',
     fontWeight:'700',
     marginTop:'0.5rem',
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   chipFalseSmall:{
     marginTop:'0.5rem',
     color:'white !important',
-    backgroundColor: 'red !important',
+    backgroundColor: '#b7b3b3e0 !important',
     fontSize: '0.9rem !important',
     fontWeight:'700'
 },
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
 
 chipTrue:{
     color:'white !important',
-    backgroundColor: 'green !important',
+    backgroundColor: '#ff93a6 !important',
     fontSize: '1rem !important',
     fontWeight:'700',
     marginTop:'0.5rem',
@@ -134,7 +134,7 @@ chipTrue:{
 chipFalse:{
     marginTop:'0.5rem',
     color:'white !important',
-    backgroundColor: 'red !important',
+    backgroundColor: '#b7b3b3e0 !important',
     fontSize: '1rem !important',
     fontWeight:'700'
 },

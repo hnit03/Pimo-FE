@@ -133,3 +133,12 @@ export const getInfo = (id) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const getInfoByBrandID = (id) => async (dispatch) => {
+   try {
+      const { data } = await api.fetchCastingByBrandId(id);
+      dispatch({ type: 'CASTING_INFO_BY_BRAND', payload: data });
+   } catch (error) {
+      console.log(error.message);
+   }
+};

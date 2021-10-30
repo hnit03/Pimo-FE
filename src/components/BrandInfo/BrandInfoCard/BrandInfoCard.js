@@ -17,26 +17,26 @@ export default function StyleCard({ brand }) {
             </Grid>
             <Grid item xs={3.5} >
                <div>
-                  <img className={classes.logoBrand} src={brand.brand.logo} />
+                  <img className={classes.logoBrand} src={brand.brand.brand.logo}  />
                </div>
             </Grid>
             <Grid item xs={0.3} >
             </Grid>
             <Grid item xs={6}>
                <div className={classes.model_info_Style}>
-                  <h1 className={classes.title}>{brand.brand.name}</h1>
+                  <h1 className={classes.title}>{brand.brand.brand.name}</h1>
                   <ul className={classes.ul}>
                      <li style={{ display: 'flex', }} className={classes.li}>
-                        <WorkIcon className={classes.icon} /><span className={classes.text} >Fashion</span>
+                        <WorkIcon className={classes.icon} /><span className={classes.text} >{brand.brand.name}</span>
                      </li>
                      <li style={{ display: 'flex', }} className={classes.li}>
-                        <MailIcon className={classes.icon} /><span className={classes.text} >{brand.brand.mail}</span>
+                        <MailIcon className={classes.icon} /><span className={classes.text} >{brand.brand.brand.mail}</span>
                      </li>
                      <li style={{ display: 'flex', }} className={classes.li}>
-                        <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >{brand.brand.phone}</span>
+                        <LocalPhoneIcon className={classes.icon} /><span className={classes.text} >{brand.brand.brand.phone}</span>
                      </li>
                      <li style={{ display: 'flex', }} className={classes.li}>
-                        <LocationOn className={classes.icon} /><span className={classes.text} >{brand.brand.address}</span>
+                        <LocationOn className={classes.icon} /><span className={classes.text} >{brand.brand.brand.address}</span>
                      </li>
                   </ul>
                   <Divider className={classes.divider_Style} >Mô tả</Divider>
@@ -48,7 +48,7 @@ export default function StyleCard({ brand }) {
             </Grid>
             <Grid item xs={10} >
                <div className={classes.textLocation}>
-               {brand.brand.description}
+               {brand.brand.brand.description}
                </div>
             </Grid>
          </Grid>
