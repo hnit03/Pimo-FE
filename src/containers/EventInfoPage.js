@@ -64,12 +64,12 @@ export default function EventInfoPage(props) {
                               {
                                  casting.casting !== undefined
                                     ? <BrandCard
-                                       img={casting.brand.logo}
-                                       brandName={casting.brand.name}
-                                       brandEmail={casting.brand.mail}
-                                       brandPhone={casting.brand.phone}
-                                       brandAddress={casting.brand.address}
-                                       brandWorks="fashion"
+                                       img={casting.brand.brand.logo}
+                                       brandName={casting.brand.brand.name}
+                                       brandEmail={casting.brand.brand.mail}
+                                       brandPhone={casting.brand.brand.phone}
+                                       brandAddress={casting.brand.brand.address}
+                                       brandWorks={casting.brand.name}
                                     /> : null
                               }</div>
                         </div>
