@@ -13,8 +13,14 @@ import TodayIcon from '@mui/icons-material/Today';
 import EventIcon from '@mui/icons-material/Event';
 
 export default function RequirementInfo(props) {
-    
     const classes = useStyles();
+    const model = props.model.map((item) =>
+        item.genderName == "Nam" ?
+            <div className={classes.valueReqList}>Người mẫu nam</div> :
+            item.genderName == "Nữ" ?
+                <div className={classes.valueReqList}>Người mẫu nữ</div> :
+                <div className={classes.valueReqList}>Khác</div>
+    )
     const bool = true;
     return (
         <Box sx={{ flexGrow: 1 }} className={classes.box}>
@@ -23,13 +29,13 @@ export default function RequirementInfo(props) {
 
                 </Grid>
                 <Grid item xs={11} >
-                <ul className={classes.ul}>
+                    <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
                             <FontAwesomeIcon icon={faInfoCircle} className={classes.bigIcon} />
                             <h1 className={classes.titleCard}>THÔNG TIN CHI TIẾT</h1>
                         </li>
                     </ul>
-                    
+
                 </Grid>
                 <Grid item xs={0.5} ></Grid>
                 <Grid item xs={1} ></Grid>
@@ -55,39 +61,29 @@ export default function RequirementInfo(props) {
                             <FontAwesomeIcon icon={faTransgenderAlt} className={classes.icon} />
                             <div className={classes.titleReq}>Giới tính</div>
                         </li>
-                        <div className={classes.valueReqList}>Người mẫu {props.model}</div>
+                        {model}
                     </ul>
-                    {/* <ul className={classes.ul}>
-                        <li style={{ display: 'flex', }} className={classes.li}>
-                            <FontAwesomeIcon icon={faTransgenderAlt} className={classes.icon} />
-                            <div className={classes.titleReq}>Giới tính</div>
-                        </li>
-                        {props.model.map((item) =>
-                        <div className={classes.valueReqList}>{item}</div>
-                    )
-                    }
-                    </ul>  */}
-                    
+
                 </Grid>
                 <Grid item xs={5.5} >
-                <ul className={classes.ul}>
+                    <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
                             <EventIcon className={classes.iconMUI} />
                             <div className={classes.titleReq}>Thời gian kết thúc</div>
                         </li>
                         <div className={classes.valueReq}>{props.endDate}</div>
                     </ul>
-                    
-                    
+
                     <ul className={classes.ul}>
                         <li style={{ display: 'flex', }} className={classes.li}>
                             <FontAwesomeIcon icon={faStar} className={classes.icon} />
                             <div className={classes.titleReq}>Phong cách</div>
                         </li>
-                        <div className={classes.valueReqList}>{props.style}</div>
-                    </ul> 
-                    
-                    
+                        {props.style.map((item) =>
+                            <div className={classes.valueReqList}>{item.name}</div>
+                        )
+                        }
+                    </ul>
                 </Grid>
             </Grid>
         </Box>

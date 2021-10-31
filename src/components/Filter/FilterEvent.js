@@ -64,6 +64,9 @@ export default function StandardImageList(props) {
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
 
    const castings = useSelector((state) => state.castings);
+   console.log("abcd", castings);
+   console.log("abcdhhh", castings.castings);
+
    const history = useHistory();
    const dispatch = useDispatch();
 
@@ -80,7 +83,7 @@ export default function StandardImageList(props) {
       (data) => history.push(`/event-search/${data}`),
       [history],
    );
-   
+
    const handleSubmit = (e) => {
       e.preventDefault();
 
@@ -172,6 +175,7 @@ export default function StandardImageList(props) {
    };
 
    return (
+      // <h1>hellooo</h1>
       <div className={classes.containerFilterAndResult}>
          <div
             className={classes.container}
@@ -234,8 +238,8 @@ export default function StandardImageList(props) {
                      />
 
                      <p className={classes.titleSearch}>Thời gian</p>
-                     <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate} />
-                     <DateTime value={valueDateTimeEnd} setValue={setValueDateTimeEnd} label='thời gian kết thúc' />
+                     {/* <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate} />
+                     <DateTime value={valueDateTimeEnd} setValue={setValueDateTimeEnd} label='thời gian kết thúc' /> */}
 
                      <p className={classes.titleSearch}>Giới tính</p>
                      <FormGroup className={classes.containerCheckBox}>
@@ -255,7 +259,6 @@ export default function StandardImageList(props) {
                            />
                         ))}
                      </FormGroup>
-
                      <p className={classes.titleSearch}>Phong cách</p>
                      <FormGroup sx={{ marginBottom: '2.5rem' }} className={classes.containerCheckBox}>
                         {searchByStyleValue.map((value, index) => (
@@ -291,29 +294,30 @@ export default function StandardImageList(props) {
             <GridContainer spacing={2}>
                <Grid item xs={12} >
                </Grid>
-               {console.log(castings.castings)}
                {
-               castings.castings !== undefined
-                  ? castings.castings.length > 0
-                     ? castings.castings.map((casting) => (
-                        <Grid item xs={4} >
-                           <EventCard
-                              id={casting.casting.id}
-                              style={false} //mặc định k đổi nha
-                              bool={true}
-                              value={casting.casting.name}
-                              dayTime={(new Date(casting.casting.openTime).toLocaleDateString("vi-VN", {
-                                 year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                              }))}
-                              endTime={(new Date(casting.casting.closeTime).toLocaleDateString("vi-VN", {
-                                 year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                              }))}
-                              location={casting.casting.address}
-                              img={casting.casting.poster} />
-                        </Grid>
-                     ))
+                  castings.castings !== undefined ?
+                     castings.castings.length > 0
+                        ? castings.castings.map((casting) => (
+                           <Grid item xs={4} >
+                             <EventCard
+                                 id={casting.casting.id}
+                                 style={false} //mặc định k đổi nha
+                                 date={casting.casting.closeTime}
+                                 value={casting.casting.name}
+                                 dayTime={(new Date(casting.casting.openTime).toLocaleDateString("vi-VN", {
+                                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                                 }))}
+                                 endTime={(new Date(casting.casting.closeTime).toLocaleDateString("vi-VN", {
+                                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                                 }))}
+                                 location={casting.casting.address}
+                                 img={casting.casting.poster} /> 
+
+                          </Grid> 
+                      ))
                      : null
-                  : null}
+                     : null
+                     }
             </GridContainer>
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
                <Pagination
