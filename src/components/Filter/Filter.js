@@ -491,7 +491,7 @@ export default function StandardImageList(props) {
 
                }
             </GridContainer>
-            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
+            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "3%",marginTop: "2%" }}>
                <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />
             </Stack>
          </div>

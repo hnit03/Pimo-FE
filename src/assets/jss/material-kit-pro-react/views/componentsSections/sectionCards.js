@@ -27,6 +27,11 @@ import {
    sectionGray: {
      background: grayColor[14],
    },
+   vi:{
+      marginTop:'-0.3rem !important',
+      marginLeft:'0.2rem !important',
+      marginBottom:'1rem !important'
+   },
    sectionWhite: {
      background: whiteColor,
    },

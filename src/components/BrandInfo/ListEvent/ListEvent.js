@@ -21,6 +21,7 @@ export default function ListEvent({ castings }) {
                         castings.castings.map((item) =>
                             <Grid item xs={4} >
                                 <EventCard
+                                    id = {item.casting.id}
                                     style={true}
                                     date={item.casting.closeTime}
                                     value={item.casting.name}

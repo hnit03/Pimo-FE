@@ -8,8 +8,23 @@ import Button from '@mui/material/Button';
 import DownloadModal from '../DownloadModal/DownloadModal';
 
 export default function InfoDetails(props) {
+   var bool= true;
+    var today = new Date();
+    var currentDay = today.getDate();
+    var currentMonth = today.getMonth()+1;
+    var currentYear = today.getFullYear();
+    var parts =props.date.split('-');
+    var month = parts[1];
+    var partsDate =parts[2].split('T');
+    var date = partsDate[0];
+    var time = partsDate[1].split(':');
+    var year = parts[0];
+    var currentDate = new Date(currentYear, currentMonth, currentDay,today.getHours(),today.getMinutes(),today.getSeconds()); 
+    var myDate = new Date(year, month, date,time[0],time[1],time[2]); 
+    if(currentDate>myDate){
+        var bool= false;
+    }
    const classes = useStyles();
-   const bool = true;
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.box}>
          <Grid container spacing={2} className={classes.pageLeft_Style}>
@@ -19,7 +34,7 @@ export default function InfoDetails(props) {
             <Grid item xs={0.5} >
             </Grid>
             <Grid item xs={9} >
-               <h1>{props.castingName}</h1>
+               <h1 className={classes.h1}>{props.castingName}</h1>
                <ul className={classes.ul}>
                   <li style={{ display: 'flex', }} className={classes.li}>
                      <LocationOn className={classes.icon} />
@@ -32,7 +47,7 @@ export default function InfoDetails(props) {
                }
             </Grid>
             <Grid item xs={2} >
-               <DownloadModal />
+               <DownloadModal bool={bool}/>
             </Grid>
 
          </Grid>

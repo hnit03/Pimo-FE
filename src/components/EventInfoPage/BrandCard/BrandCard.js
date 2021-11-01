@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/EventInfoPage/brandCardStye';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,14 +9,18 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailIcon from '@mui/icons-material/Mail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from 'react-router-dom';
 
 export default function BrandCard(props) {
+   const history = useHistory();
+   const onClickInfo = useCallback((param) => () => history.push(`/brand-info/${param}`), [history]);
    const classes = useStyles();
    const bool = true;
    return (
       <Box sx={{ flexGrow: 1 }} className={classes.box}>
          <Grid container spacing={1} className={classes.pageLeft_Style}>
-            <Grid item xs={1} />
+            <Grid item xs={2} />
+            </Grid>
             <Grid item xs={10} >
                <ul className={classes.ul}>
                   <li style={{ display: 'flex', }} className={classes.li}>
@@ -25,7 +29,7 @@ export default function BrandCard(props) {
                   </li>
                </ul>
 
-               <div className={classes.hieuung}>
+               <div className={classes.hieuung} onClick={onClickInfo(props.id)}>
                   <div className={classes.noidung}>
                      <img src={props.img} className={classes.img} />
                      <div className={classes.phude}>
@@ -49,10 +53,8 @@ export default function BrandCard(props) {
                         </p>
                      </div>
                   </div>
-               </div>
-
+                  </div>
             </Grid>
-         </Grid>
       </Box>
    );
 }

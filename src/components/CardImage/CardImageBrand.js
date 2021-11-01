@@ -12,7 +12,6 @@ import MailIcon from '@mui/icons-material/Mail';
 export default function CardImage(brand) {
    const classes = useStyles();
    const history = useHistory();
-   console.log(brand);
    const onClickInfo = useCallback((param) => () => history.push(`/brand-info/${param}`), [history]);
    return (
       <div className={classes.hieuungbenngoai} onClick={onClickInfo(brand.brand.brand.id)}>
@@ -25,7 +24,7 @@ export default function CardImage(brand) {
                      <Divider className={classes.divider_Style} ></Divider>
                      <ul className={classes.ul}>
                             <li style={{ display: 'flex', }} className={classes.li}>
-                                <WorkIcon className={classes.icon} /><span className={classes.text} >Fashion</span>
+                                <WorkIcon className={classes.icon} /><span className={classes.text} >{brand.brand.name}</span>
                             </li>
                             <li style={{ display: 'flex', }} className={classes.li}>
                                 <MailIcon className={classes.icon} /><span className={classes.text} >{brand.brand.brand.mail}</span>

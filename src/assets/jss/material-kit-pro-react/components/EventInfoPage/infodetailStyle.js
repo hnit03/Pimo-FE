@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
     objectFit: 'cover',
     objectPosition: '50% 50%',
     width: '100.7%',
-    height: '27rem',
+    height: '30rem',
     marginBottom: '0',    
     marginRight: '0',
   },
   icon: {
     marginTop: 0,
     color: 'gray',
-    fontSize:'1.4rem',
+    fontSize:'1.6rem',
     marginBottom:'0.2rem',
     marginTop:'-0.5rem'
   },
@@ -29,32 +29,32 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     padding: 0,
     width: '100%',
-    marginTop: 0,
-    marginBottom: 0
+    marginTop: '-0.5rem',
+    marginBottom: "0.5rem"
   },
   text: {
     marginLeft: '1%',
    textAlign: 'left',
    color: 'gray',
    float: 'left',
-   fontSize: '1.1rem',
+   fontSize: '1.3rem',
    width: '100%',
    fontFamily: "Calibri, sans-serif",
-   marginTop:'-0.7rem',
+   marginTop:'-0.5rem',
    marginBottom:'0.2rem'
  },
  chipTrue:{
     color:'white !important',
-    backgroundColor: 'green !important',
-    fontSize: '1rem !important',
+    backgroundColor: '#ff93a6 !important',
+    fontSize: '1.1rem !important',
     fontWeight:'700',
     marginTop:'0.5rem',
 },
 chipFalse:{
     marginTop:'0.5rem',
     color:'white !important',
-    backgroundColor: 'red !important',
-    fontSize: '1rem !important',
+    backgroundColor: '#b7b3b3e0 !important',
+    fontSize: '1.1rem !important',
     fontWeight:'700'
 },
 button:{
@@ -63,6 +63,10 @@ button:{
     width:'100% !important',
     fontWeight:'700 !important',
     fontSize: '1.3rem !important'
+},
+h1:{
+  fontSize:'2.8rem !important',
+  marginTop:'0.9rem',
 }
   
 }

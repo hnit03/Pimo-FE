@@ -18,7 +18,6 @@ export default function BrandInfoPage(props) {
 
    const brand = useSelector((state) => state.brands);
    const castings = useSelector((state) => state.castings);
-   console.log("aaa",castings);
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getInfo(props.match.params.id));

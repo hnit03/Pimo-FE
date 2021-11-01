@@ -291,14 +291,15 @@ export default function StandardImageList(props) {
                marginLeft: "-5%",
             }}
          >
-            <GridContainer spacing={2}>
-               <Grid item xs={12} >
-               </Grid>
+
+            <Grid container spacing={2.2} item xs={11.8} className={classes.vi}>
+            <GridItem xs={12} sm={12} md={12}>
+            </GridItem> 
                {
                   castings.castings !== undefined ?
                      castings.castings.length > 0
                         ? castings.castings.map((casting) => (
-                           <Grid item xs={4} >
+                           <GridItem xs={3.8} sm={4} md={4}>
                              <EventCard
                                  id={casting.casting.id}
                                  style={false} //mặc định k đổi nha
@@ -312,14 +313,14 @@ export default function StandardImageList(props) {
                                  }))}
                                  location={casting.casting.address}
                                  img={casting.casting.poster} /> 
-
-                          </Grid> 
+                          </GridItem> 
                       ))
                      : null
                      : null
                      }
-            </GridContainer>
-            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "5%" }}>
+                     
+            </Grid>
+            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "2%" }}>
                <Pagination
                   onChange={handleChangePage}
                   defaultPage={parseInt(pageNo)}

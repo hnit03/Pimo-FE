@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     borderRadius: '0.2rem',
     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-
+    marginBottom:'0.5rem'
   },
   imgBrand: {
     objectFit: 'cover',

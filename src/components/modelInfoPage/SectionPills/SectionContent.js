@@ -22,7 +22,11 @@ export default function SectionContent(props) {
                      <FontAwesomeIcon icon={props.icon} className={classes.icon} />
                      }
                      <p className={classes.name_attribute}>{listAtr[props.num].text}:</p>
-                     <p className={classes.value_attribute}>{`${listAtr[props.num].value.quantityValue} ${listAtr[props.num].value.measure}`}</p>
+                     {listAtr[props.num].value===null?
+                     <p className={classes.value_attribute}>-</p>:<p className={classes.value_attribute}>{`${listAtr[props.num].value.quantityValue} ${listAtr[props.num].value.measure}`}</p>
+                     // <p className={classes.value_attribute}>{`${listAtr[props.num].value.quantityValue} ${listAtr[props.num].value.measure}`}</p>
+                     }
+                     
                   </li>
 
                </ul>

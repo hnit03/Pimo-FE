@@ -37,7 +37,7 @@ export default function EventInfoPage(props) {
                                  img={casting.casting.poster}
                                  castingName={casting.casting.name}
                                  castingAddress={casting.casting.address}
-                                 bool={true} /> : null
+                                 date={casting.casting.closeTime} /> : null
                         }
                      </Grid>
                      <Grid item xs={12}>
@@ -64,6 +64,7 @@ export default function EventInfoPage(props) {
                               {
                                  casting.casting !== undefined
                                     ? <BrandCard
+                                       id={casting.brand.brand.id}
                                        img={casting.brand.brand.logo}
                                        brandName={casting.brand.brand.name}
                                        brandEmail={casting.brand.brand.mail}

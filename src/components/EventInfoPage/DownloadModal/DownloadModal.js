@@ -6,13 +6,14 @@ import Grid from '@mui/material/Grid';
 import CloseIcon from '@mui/icons-material/Close';
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/EventInfoPage/downloadModalStyle';
 import DownloadPimo from '../../Accordion/DownloadPimoContent';
+import TransitionAlerts from "./Alert";
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '70rem',
-  height: '39rem',
+  height: '33rem',
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
@@ -30,7 +31,10 @@ export default function DownloadModal(props) {
   const classes = useStyles();
   return (
     <div>
-      <Button onClick={handleOpen} variant="outlined" className={classes.button}>ỨNG TUYỂN</Button>
+      {props.bool ?
+        <Button onClick={handleOpen} variant="outlined" className={classes.button}>ỨNG TUYỂN</Button>:
+        <TransitionAlerts/>
+      }
       <Modal
         keepMounted
         open={open}
@@ -46,7 +50,7 @@ export default function DownloadModal(props) {
               <CloseIcon onClick={handleClose} className={classes.close} />
             </Grid>
             <Grid item xs={12} className={classes.scroll}>
-                <DownloadPimo/>
+              <DownloadPimo />
             </Grid>
           </Grid>
         </Box>

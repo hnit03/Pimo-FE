@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '0.2rem',
         paddingBottom:'3rem',
         marginBottom:'3rem',
+        marginLeft:'3rem',
+        
       },
       hieuungbenngoai: {
         width: '120%',
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '10rem',
      },
      hieuung: {
-        width: '107%',
+        width: '106%',
         height: '12rem',
         overflow: 'hidden',
         margin: '3%',
@@ -33,11 +35,13 @@ const useStyles = makeStyles((theme) => ({
       height: '12rem',
       objectFit: 'cover',
       objectPosition: '50% 20%',
+      marginLeft:'-0.5rem'
    },
   
      thongtin: {
-        width: '55%',
+        width: '60%',
         float: 'right',
+        marginLeft:'-0.5rem',
         marginTop: '-8.6rem',
         transform: 'translateY(-50%)',
         padding: '20px',
@@ -134,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
    title:{
        fontSize:'2rem',
        fontWeight:'700',
-       marginLeft:'0rem',
+       //marginLeft:'1rem',
        marginBottom: '1.2rem',
        marginTop:'1.5rem'    
        
