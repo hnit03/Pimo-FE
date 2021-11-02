@@ -60,7 +60,7 @@ export default function SectionContent(props) {
                   <li style={{ display: 'flex', }} className={classes.li}>
                      <FaceIcon className={classes.icon} />
                      <p className={classes.name_attribute}>{listBody[0].text}:</p>
-                     <p className={classes.value_attribute}>{listBody[0].value.textValue}</p>
+                     {(listBody[0].value!==null)? <p className={classes.value_attribute}>{listBody[0].value.textValue}</p> : null}
                   </li>
                </ul>
 

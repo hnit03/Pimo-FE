@@ -44,7 +44,8 @@ export default function AttributeCard({ model }) {
             </Grid>
             <Grid item xs={4.5} >
                <div>
-                  <img className={classes.avatar_image_Style} src={model.imageDetail.fileName} alt="vioho" />
+                  {(model.imageDetail !== null) ? 
+                  (<img className={classes.avatar_image_Style} src={model.imageDetail.fileName} alt="vioho" />) : null}
                </div>
             </Grid>
          </Grid>
