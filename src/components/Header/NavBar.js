@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import navbarsStyle from "../../assets/jss/material-kit-pro-react/views/componentsSections/navbarsStyle";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Link } from "react-router-dom";
-import image from '../../assets/img/logoVi.png';
+import image from '../../assets/img/logo.png';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useHistory } from 'react-router-dom';
 import { auth, provider } from './../../adapters/firebase.js';
