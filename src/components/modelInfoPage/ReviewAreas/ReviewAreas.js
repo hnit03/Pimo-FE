@@ -9,9 +9,12 @@ import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 import Media from "../Media/Media.js";
 import Paginations from "../Pagination/Pagination.js";
+import Reply from "@material-ui/icons/Reply";
+import Button from "../CustomButtons/Button";
+import CustomInput from "../CustomInput/CustomInput.js";
 import style from "../../../assets/jss/material-kit-pro-react/views/componentsSections/contentAreas.js";
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/reviewAreasStyle';
-
+import avatar from "../../../assets/img/faces/avatar.jpg";
 
 
 const useStylesOfTemplate = makeStyles(style);
@@ -82,6 +85,31 @@ export default function ReviewAreas({ reviewList }) {
                            color="primary"
                         />
                      </div>
+                     <h3 className={classes.textCenter}>
+              Post your comment <br />
+              <small>- Logged In User -</small>
+            </h3>
+            <Media
+              avatar={avatar}
+              body={
+                <CustomInput
+                  id="logged"
+                  formControlProps={{
+                    fullWidth: true,
+                  }}
+                  inputProps={{
+                    multiline: true,
+                    rows: 6,
+                    placeholder: " Write some nice stuff or nothing...",
+                  }}
+                />
+              }
+              footer={
+                <Button color="primary" className={classes.floatRight}>
+                  <Reply /> Reply
+                </Button>
+              }
+            />
                   </div>
                </GridItem>
             </GridContainer>
