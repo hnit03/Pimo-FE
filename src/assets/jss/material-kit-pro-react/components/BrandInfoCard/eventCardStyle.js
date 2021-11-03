@@ -6,7 +6,19 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     borderRadius: '0.2rem',
     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-    marginBottom:'0.5rem'
+    marginBottom:'0.5rem',
+    transition: '0.2s',
+    '&:hover': {
+      backgroundColor: 'rgb(255,192,203, 0.5)',
+      '& imgBrand': {
+         backgroundColor: 'rgb(255,192,203, 0.5)',
+         opacity:'0.5'
+      },
+      '& imgBrandSmall': {
+        backgroundColor: 'rgb(255,192,203, 0.5)',
+        opacity:'0.5'
+     },
+   },
   },
   imgBrand: {
     objectFit: 'cover',

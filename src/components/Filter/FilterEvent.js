@@ -299,6 +299,7 @@ export default function StandardImageList(props) {
                   castings.castings !== undefined ?
                      castings.castings.length > 0
                         ? castings.castings.map((casting) => (
+                           casting.casting.status?
                            <GridItem xs={3.8} sm={4} md={4}>
                              <EventCard
                                  id={casting.casting.id}
@@ -313,7 +314,7 @@ export default function StandardImageList(props) {
                                  }))}
                                  location={casting.casting.address}
                                  img={casting.casting.poster} /> 
-                          </GridItem> 
+                          </GridItem> :null
                       ))
                      : null
                      : null

@@ -19,6 +19,7 @@ export default function ListEvent({ castings }) {
                 {
                     castings.castings != undefined ?
                         castings.castings.map((item) =>
+                        item.casting.status?
                             <Grid item xs={4} >
                                 <EventCard
                                     id = {item.casting.id}
@@ -34,7 +35,7 @@ export default function ListEvent({ castings }) {
                                     location={item.casting.address}
                                     img={item.casting.poster}
                                 />
-                            </Grid>
+                            </Grid>:null
                         )
                         : null
                 }

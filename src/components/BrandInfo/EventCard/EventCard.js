@@ -55,7 +55,8 @@ export default function ListEvent(props) {
                             <span className={classes.textIn} >{props.location}</span>
                         </li>
                     </ul>
-                    {bool ?
+                    {
+                    bool ?
                         <Chip label="Đang diễn ra" className={props.style ? classes.chipTrue : classes.chipTrueSmall} /> :
                         <Chip label="Đã kết thúc" className={props.style ? classes.chipFalse : classes.chipFalseSmall} />
                     }
