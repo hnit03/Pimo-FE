@@ -37,6 +37,7 @@ export default function StandardImageList(props) {
    const [valueMajor, setValueMajor] = React.useState(null);
    var [valueChoose, setValueChoose] = React.useState([]);
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
+   const [checkSearch, setCheckSearch] = React.useState(true);
 
    const brands = useSelector((state) => state.brands);
    const styles = useSelector((state) => state.styles);
@@ -44,7 +45,9 @@ export default function StandardImageList(props) {
    const dispatch = useDispatch();
 
    useEffect(() => {
-      dispatch(getBrands(pageNo));
+      if (checkSearch) {
+         dispatch(getBrands(pageNo));
+      }
       dispatch(getStyles());
    }, [pageNo]);
 
@@ -66,11 +69,24 @@ export default function StandardImageList(props) {
    const handleSubmit = (e) => {
       e.preventDefault();
       setValueChoose([]);
+      var styleID = 0;
+      if (styles.style !== undefined) {
+         styles.style.map((item) => {
+            if(item.name === valueMajor) {
+               styleID = item.id
+            }
+         });
+      }
       const data = {
          name: searchName,
          address: valueAddress,
-         category: valueMajor,
+         category: styleID,
       };
+      if(valueAddress === '' && valueMajor === null){
+         setCheckSearch(true);
+      } else {
+         setCheckSearch(false)
+      }
       dispatch(searchBrands(data, pageNo));
    };
 
@@ -180,7 +196,7 @@ export default function StandardImageList(props) {
                      ? brands.brandList.length > 0
                         ? brands.brandList.map((brand) => (
                            <GridItem xs={6} sm={6} md={6}>
-                              <CardImage brand={brand}/>
+                              <CardImage brand={brand} />
                            </GridItem>
                         ))
                         : null
@@ -188,7 +204,7 @@ export default function StandardImageList(props) {
                </GridContainer>
                <Stack
                   spacing={2}
-                  style={{ alignItems: "center", marginBottom: "3%",marginTop: "2%"  }}
+                  style={{ alignItems: "center", marginBottom: "3%", marginTop: "2%" }}
                >
                   <Pagination
                      onChange={handleChangePage}

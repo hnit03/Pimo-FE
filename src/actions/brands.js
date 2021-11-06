@@ -28,7 +28,7 @@ export const searchBrands = (filter, pageNo) => async (dispatch) => {
       if (filter.address !== null && filter.address !== '' && filter.address !== undefined) {
          path += '&Address=' + filter.address;
       }
-      if (filter.category !== null && filter.address !== '' && filter.category !== undefined) {
+      if (filter.category !== 0) {
          path += '&BrandCateId=' + filter.category;
       }
       if (pageNo !== null) {
