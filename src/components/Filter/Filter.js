@@ -61,13 +61,16 @@ export default function StandardImageList(props) {
    var [checkBoxSkinColor, setCheckBoxSkinColor] = React.useState([]);
    var [valueChoose, setValueChoose] = React.useState([]);
    const history = useHistory();
+   const [checkSearch, setCheckSearch] = React.useState(true);
 
    const models = useSelector((state) => state.models);
    const styles = useSelector((state) => state.styles);
 
    const dispatch = useDispatch();
    useEffect(() => {
-      dispatch(getModels(pageNo));
+      if (checkSearch) {
+         dispatch(getModels(pageNo));
+      }
       dispatch(getStyles());
    }, [pageNo]);
 
@@ -128,7 +131,20 @@ export default function StandardImageList(props) {
             "min_age": checkSearchAgeMin,
             "max_age": checkSearchAgeMax
          },
-         "tattoo" : checkTattoo
+         "tattoo": checkTattoo
+      }
+      if (searchName === ""
+         && sexList.length === 0
+         && styleList.length === 0
+         && checkBoxSkinColor.length === 0
+         && checkSearchHeightMin === ""
+         && checkSearchHeightMax === ""
+         && checkSearchAgeMin === ""
+         && checkSearchAgeMax === ""
+         && checkTattoo === null) {
+         setCheckSearch(true);
+      } else {
+         setCheckSearch(false)
       }
       dispatch(searchModels(data, pageNo))
    };
@@ -140,7 +156,7 @@ export default function StandardImageList(props) {
                setRadioUnChecked("");
             } else {
                setRadioUnChecked(e.target.value);
-               if('Không có hình xăm' === e.target.value) {
+               if ('Không có hình xăm' === e.target.value) {
                   setCheckTattoo(false)
                } else {
                   setCheckTattoo(true)
@@ -157,7 +173,7 @@ export default function StandardImageList(props) {
          case 3:
             const updateStyle = styles.style.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
-               
+
                return value;
             });
             setCheckBoxStyle(updateStyle);
@@ -491,8 +507,8 @@ export default function StandardImageList(props) {
 
                }
             </GridContainer>
-            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "3%",marginTop: "2%" }}>
-               <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={10} showFirstButton showLastButton />
+            <Stack spacing={2} style={{ alignItems: "center", marginBottom: "3%", marginTop: "2%" }}>
+               <Pagination onChange={handleChangePage} defaultPage={parseInt(pageNo)} count={models.totalPage} showFirstButton showLastButton />
             </Stack>
          </div>
       </div>
