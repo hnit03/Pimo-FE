@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     location_icon_small_Style: {
         color: 'red',
         fontSize: '1.2rem',
-
     },
     travelNotices_out_Style: {
         float: 'right',
@@ -61,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        marginTop: '0.5rem'
+        marginTop: '-1rem'
     },
     textTime_Style: {
         textAlign: 'center',
@@ -104,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     },
     divider_Style: {
         marginLeft:'5% !important',
-        width: '85%',
+        width: '90%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem',
         marginBottom:'1.2rem !important',

@@ -25,7 +25,7 @@ export default function ListTravelNotices({ model }) {
                            <Grid item xs={6} >
                               <TravelNotices task={task} />
                            </Grid>
-                          
+                        
                         </Grid>
                      ))
                   }
