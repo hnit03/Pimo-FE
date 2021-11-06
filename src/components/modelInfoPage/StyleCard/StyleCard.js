@@ -24,6 +24,9 @@ export default function StyleCard({ model }) {
                   <ModelProfile
                      aboutMe={model.model[0].model.description}
                      name={model.model[0].model.name}
+                     instagram={model.model[0].model.instagram}
+                     twitter={model.model[0].model.twitter}
+                     facebook={model.model[0].model.facebook}
                      modelType={`Người mẫu ${model.model[0].genderName} `}
                      location={`${model.model[0].model.district}, ${model.model[0].model.country}`}
                      dateOfBỉrth={birthDay.toLocaleDateString("vi-VN")}

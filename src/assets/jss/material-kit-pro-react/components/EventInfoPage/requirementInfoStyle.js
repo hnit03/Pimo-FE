@@ -12,9 +12,9 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:'35.5rem',
       },
       titleReq:{
-          color: '#ff93a6',
+          color: '#fc7198',
           fontSize: '1.2rem',
-          fontWeight:'700',
+          fontWeight:'800',
           width: '100%',
           //backgroundColor: 'pink'
       },
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       },
       icon: {
         marginTop: 0,
-        color: '#ff93a6',
+        color: '#fc7198',
         fontSize:'1.2rem',
         marginBottom:'0.2rem',
         marginTop:'0.1rem',
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
       },
       iconMUI:{
         marginTop: 0,
-        color: '#ff93a6',
+        color: '#fc7198',
         fontSize:'1.4rem',
         marginBottom:'0.2rem',
         marginTop:'0rem',

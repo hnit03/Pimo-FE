@@ -106,10 +106,6 @@ export default function CenterTabs({ model }) {
                      <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
                   )
                   )
-                  // personalGalleryList.map((item, index) => (
-                  //    <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
-                  // )
-                  // )
                }
             </Tabs>
             {
@@ -119,12 +115,6 @@ export default function CenterTabs({ model }) {
                   </TabPanel>
                )
                )
-               // personalGalleryList.map((item, index) => (
-               //    <TabPanel value={value} index={index}>
-               //       {view == true ? <SectionCarousel listCal={item.image} bool={true}/> : <QuiltedImageList list={item.image} bool={true}/>}
-               //    </TabPanel>
-               // )
-               // )
             }
          </Box>
       </div>

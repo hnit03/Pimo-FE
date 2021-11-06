@@ -37,30 +37,28 @@ export default function ModelInfoPage(props) {
                            <StyleCard model={model} />
                         </Grid>
                         <Grid item xs={12}>
-                           <AttributeCard model={model}/>
+                           <AttributeCard model={model} />
                         </Grid>
                         <Grid item xs={12} >
-                           <CenterTabs model={model}/>
+                           <ListTravelNotices model={model} />
                         </Grid>
                         <Grid item xs={12} >
-                           <ListCardGallery model={model}/>
+                           <CenterTabs model={model} />
                         </Grid>
                         <Grid item xs={12} >
-                           <Grid container spacing={2} className={classes.innerBox}>
-                              <Grid item xs={6} >
-                                 <ListTravelNotices model={model}/>
-                              </Grid>
-                              <Grid item xs={6} >
-                                 <ReviewAreas reviewList={reviews}/>
-                              </Grid>
-                           </Grid>
+                           <ListCardGallery model={model} />
                         </Grid>
+                        <Grid item xs={12} >
+                           <ReviewAreas reviewList={reviews} />
+                        </Grid>
+
+
                      </Grid>
                   </Box>
                   <SectionFooter />
                </div >
             ) : null
-}
+         }
       </>
    );
 }

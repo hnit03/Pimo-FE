@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight:'700',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1.2rem',
-        color:'#FF93A6',
+        color:'#fc7198',
         marginTop:'0.2rem',
     },
     value_attribute:{
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         marginTop: 0,
-        color: '#ff93a6',
+        color: '#fc7198',
         fontSize:'1.2rem',
         marginBottom:'0.2rem',
         marginTop:'0.3rem',

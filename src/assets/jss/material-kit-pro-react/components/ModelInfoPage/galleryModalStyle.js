@@ -11,8 +11,9 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '800 !important',
         '&:hover': {
             paddingTop: '5px',
-            backgroundColor: 'pink !important',
-            borderColor: 'pink !important',
+            transition:"0.5s",
+            backgroundColor: '#FC84A6 !important',
+            borderColor: 'white !important',
         }
     },
     divider_Style: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     close:{
         float:'right',
         '&:hover':{
-            color:'pink'
+            color:'#FC84A6'
         }
     },
     h1:{
@@ -34,29 +35,29 @@ const useStyles = makeStyles((theme) => ({
     iconViewCarouse: {
         padding: '5px 35px',
         backgroundColor: 'white',
-        border: '2px solid pink',
+        border: '2px solid #FC84A6',
         borderTopLeftRadius: '0.5rem',
         borderBottomLeftRadius: '0.5rem',
     },
     iconViewComfyIcon: {
         padding: '5px 35px',
-        backgroundColor: 'pink',
-        border: '2px solid pink',
+        backgroundColor: '#FC84A6',
+        border: '2px solid #FC84A6',
         borderTopRightRadius: '0.5rem',
         borderBottomRightRadius: '0.5rem',
 
     },
     iconViewCarouseChange: {
         padding: '5px 35px',
-        backgroundColor: 'pink',
-        border: '2px solid pink',
+        backgroundColor: '#FC84A6',
+        border: '2px solid #FC84A6',
         borderTopLeftRadius: '0.5rem',
         borderBottomLeftRadius: '0.5rem',
     },
     iconViewComfyIconChange: {
         padding: '5px 35px',
         backgroundColor: 'white',
-        border: '2px solid pink',
+        border: '2px solid #FC84A6',
         borderTopRightRadius: '0.5rem',
         borderBottomRightRadius: '0.5rem',
 

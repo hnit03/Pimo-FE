@@ -45,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
  },
  chipTrue:{
     color:'white !important',
-    backgroundColor: '#ff93a6 !important',
+    //backgroundColor: '#ff93a6 !important',#fc7198
+    backgroundColor: '#fc7198 !important',
     fontSize: '1.1rem !important',
     fontWeight:'700',
     marginTop:'0.5rem',

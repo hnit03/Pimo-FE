@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Calibri, sans-serif",
       },
       divider_Style: {
-        marginTop: '0rem !important',
+        marginTop: '0.3rem !important',
+        marginBottom: '-0.2rem !important',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
         fontSize: '1rem'
@@ -31,9 +32,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         color: 'gray',
         float: 'left',
-        fontSize: '1rem',
+        fontSize: '1.1rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
+        textDecoration: "none",
+      },
+      textInDiv:{
+        fontSize: '1.3rem',
+        fontWeight:'700',
       },
       textLocation: {
         color: 'gray',
@@ -44,6 +50,22 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0',
         marginBottom:'1rem',
     },
+    ins:{
+      '&:hover':{
+        color:'#C7125E !important'
+    },
+  },
+    twi:{
+      '&:hover':{
+        color:'#1C99E6 !important'
+    },
+  },
+    fa:{
+      '&:hover':{
+        color:'#0775E8 !important'
+    },
+  },
+
 }
 ));
 export default useStyles;

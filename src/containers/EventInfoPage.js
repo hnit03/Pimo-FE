@@ -70,7 +70,7 @@ export default function EventInfoPage(props) {
                                        brandEmail={casting.brand.mail}
                                        brandPhone={casting.brand.phone}
                                        brandAddress={casting.brand.address}
-                                       brandWorks={casting.name}
+                                       brandWorks={casting.categoryName.name}
                                     /> : null
                               }</div>
                         </div>

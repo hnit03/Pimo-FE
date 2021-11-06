@@ -26,29 +26,29 @@ const useStyles = makeStyles((theme) => ({
     iconViewCarouse: {
         padding: '5px 35px',
         backgroundColor: 'white',
-        border: '2px solid pink',
+        border: '2px solid #FC84A6',
         borderTopLeftRadius: '0.5rem',
         borderBottomLeftRadius: '0.5rem',
     },
     iconViewComfyIcon: {
         padding: '5px 35px',
-        backgroundColor: 'pink',
-        border: '2px solid pink',
+        backgroundColor: '#FC84A6',
+        border: '2px solid #FC84A6',
         borderTopRightRadius: '0.5rem',
         borderBottomRightRadius: '0.5rem',
 
     },
     iconViewCarouseChange: {
         padding: '5px 35px',
-        backgroundColor: 'pink',
-        border: '2px solid pink',
+        backgroundColor: '#FC84A6',
+        border: '2px solid #FC84A6',
         borderTopLeftRadius: '0.5rem',
         borderBottomLeftRadius: '0.5rem',
     },
     iconViewComfyIconChange: {
         padding: '5px 35px',
         backgroundColor: 'white',
-        border: '2px solid pink',
+        border: '2px solid #FC84A6',
         borderTopRightRadius: '0.5rem',
         borderBottomRightRadius: '0.5rem',
 
@@ -62,10 +62,10 @@ const useStyles = makeStyles((theme) => ({
     tabs: {
         marginLeft:'0',
         marginTop:'1rem !important',
-        borderRight: '1px solid pink',
+        borderRight: '1px solid #fc7198',
         fontFamily: "Calibri, sans-serif",
         '& .MuiTabs-indicator': {
-            backgroundColor: 'pink',
+            backgroundColor: '#fc7198',
         },
     },
     tab: {
@@ -77,15 +77,15 @@ const useStyles = makeStyles((theme) => ({
             "Calibri, sans-serif",
         ].join(','),
         '&:hover': {
-            color: 'pink',
+            color: '#fc7198',
             opacity: 1,
         },
         '&.Mui-selected': {
-            color: 'pink !important',
+            color: '#fc7198 !important',
             fontWeight: 'bold',
         },
         '&.Mui-focusVisible': {
-            backgroundColor: 'pink',
+            backgroundColor: '#fc7198',
         },
     }
 }

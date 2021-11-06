@@ -29,11 +29,11 @@ export default function AttributeCard({ model }) {
                <Grid container spacing={1}>
                   <Grid item xs={12}>
                      <h1 className={classes.h1}>THÔNG TIN CHI TIẾT</h1>
-                     <Divider className={classes.divider_Style} >Phong cách</Divider>
+                     <Divider className={classes.divider_Style} ><span  className={classes.textInDiv}>Phong cách</span></Divider>
                   </Grid>
                   <Grid item xs={12}>
                      <BasicChips label={modelStyle} />
-                     <Divider className={classes.divider_Style} >Bảng số đo và thông tin chi tiết</Divider>
+                     <Divider className={classes.divider_Style} ><span  className={classes.textInDiv}>Bảng số đo và thông tin chi tiết</span></Divider>
                   </Grid>
                   <Grid item xs={1}>
                   </Grid>

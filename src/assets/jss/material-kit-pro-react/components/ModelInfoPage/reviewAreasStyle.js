@@ -1,16 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     box:{
+        backgroundColor: 'pink',
+        //height: '30rem',
         margin: 'auto',
-        width: '35rem',
+        width: '75rem',
         background: 'white !important',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-        marginBottom: "3rem",
-        marginTop: "-1rem",
-        paddingLeft:'2rem',
-        paddingBottom:'0.8rem',
-        minHeight:'31rem',
-        float:'left'
+        marginBottom: '4rem',
+        marginTop: '-2rem'
     },
     h1:{
         fontSize: '3rem !important',
@@ -30,6 +28,23 @@ const useStyles = makeStyles((theme) => ({
     media:{
         marginLeft:'20rem !important',
         background: 'pink !important',
+    },
+    vi:{
+        width:'55rem !important',
+       // backgroundColor:'pink'
+    },
+    cmt:{
+        width:'55rem !important',
+        marginTop:'-5rem !important',
+        marginLeft:'6.5rem !important',
+        marginBottom: '2rem !important'
+    },
+    Name:{
+        width:'55rem !important',
+        marginTop:'5rem !important',
+        marginLeft:'6.5rem !important',
+        marginBottom: '2rem !important',
+        fontWeight:'700',
     }
 }
 ));

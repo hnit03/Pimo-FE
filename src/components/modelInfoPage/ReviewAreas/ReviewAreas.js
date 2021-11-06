@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui/core icons
 // core components
 import Divider from '@mui/material/Divider';
+import { styled } from '@mui/material/styles';
 import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
 import Media from "../Media/Media.js";
@@ -15,14 +16,42 @@ import CustomInput from "../CustomInput/CustomInput.js";
 import style from "../../../assets/jss/material-kit-pro-react/views/componentsSections/contentAreas.js";
 import useStyles from '../../../assets/jss/material-kit-pro-react/components/ModelInfoPage/reviewAreasStyle';
 import avatar from "../../../assets/img/faces/avatar.jpg";
-
+import Cookies from 'js-cookie';
+import { useSelector } from 'react-redux';
+import TextField from '@mui/material/TextField';
 
 const useStylesOfTemplate = makeStyles(style);
 
 export default function ReviewAreas({ reviewList }) {
-
+   const [name, setName] = useState('');
    const classes = useStylesOfTemplate();
    const classesRreview = useStyles();
+   useEffect(() => {
+      if (Cookies.get('name') !== undefined) {
+         setName(Cookies.get('name'));
+
+      }
+   }, [name])
+
+   const CssTextField = styled(TextField)({
+      '& label.Mui-focused': {
+         color: '#fc7198',
+      },
+      '& .MuiInput-underline:after': {
+         borderBottomColor: '#fc7198',
+      },
+      '& .MuiOutlinedInput-root': {
+         '& fieldset': {
+            borderColor: 'red',
+         },
+         '&:hover fieldset': {
+            borderColor: 'yellow',
+         },
+         '&.Mui-focused fieldset': {
+            borderColor: '#fc7198',
+         },
+      },
+   });
 
    return (
       <div className={classesRreview.box}>
@@ -30,9 +59,13 @@ export default function ReviewAreas({ reviewList }) {
 
             <GridContainer>
                <GridItem
-                  xs={12}
-                  sm={12}
-                  md={12}
+                  xs={1}
+
+               />
+               <GridItem
+                  xs={11}
+                  sm={11}
+                  md={11}
                   className={classes.mlAuto + " " + classes.mrAuto}
                >
                   <div>
@@ -85,11 +118,37 @@ export default function ReviewAreas({ reviewList }) {
                            color="primary"
                         />
                      </div>
-                     <h3 className={classes.textCenter}>
-              Post your comment <br />
-              <small>- Logged In User -</small>
-            </h3>
-            <Media
+
+                     {name === '' ?
+                        null
+                        :
+                        (<><h1 className={classes.textCenter}>
+                           Gửi đánh giá của bạn <br />
+
+                        </h1>
+                        <span className={classesRreview.Name}>{name}</span>
+                        <Media
+
+                        avatar={avatar}
+                     />
+                     <div className={classesRreview.vi}>
+                        
+                        <CssTextField
+                           className={classesRreview.cmt}
+                           id="standard-multiline-static"
+                           label=""
+                           multiline
+                           rows={4}
+                           variant="standard"
+                           placeholder="Chia sẻ suy nghĩ của bạn......"
+                        />
+                         </div>
+                        </>
+                        )
+                     }
+
+                     {/* <Media
+               
               avatar={avatar}
               body={
                 <CustomInput
@@ -109,7 +168,10 @@ export default function ReviewAreas({ reviewList }) {
                   <Reply /> Reply
                 </Button>
               }
-            />
+            /> */}
+                     
+
+                    
                   </div>
                </GridItem>
             </GridContainer>

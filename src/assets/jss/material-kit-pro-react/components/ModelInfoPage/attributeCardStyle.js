@@ -33,8 +33,11 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     height: '100% !important',
-  }
-
+  },
+  textInDiv:{
+    fontSize: '1.2rem',
+    //fontWeight:'700',
+  },
 }
 ));
 export default useStyles;

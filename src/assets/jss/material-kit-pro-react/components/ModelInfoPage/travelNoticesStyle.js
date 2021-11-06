@@ -2,20 +2,19 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     box: {
+        backgroundColor: 'pink',
+        //height: '30rem',
         margin: 'auto',
-        width: '35rem',
+        width: '75rem',
         background: 'white !important',
         boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
-        marginBottom: "3rem",
-        paddingBottom: '2rem',
-        marginTop: "-1rem",
-        float:'right',
-        marginRight:'1.5rem',
-       minHeight:'31rem',
+        marginBottom: '1rem',
+        marginTop: '3rem',
+        paddingBottom:'3rem',
     },
     location_icon_small_Style: {
         color: 'red',
-        fontSize: '0.9rem',
+        fontSize: '1.2rem',
 
     },
     travelNotices_out_Style: {
@@ -54,35 +53,36 @@ const useStyles = makeStyles((theme) => ({
     },
     location_icon_small_Style: {
         color: 'red',
-        fontSize: '0.9rem',
+        fontSize: '1.2rem',
     },
     textLocation_Style: {
         color: 'gray',
         float: 'left',
-        fontSize: '0.9rem',
+        fontSize: '1.2rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        marginTop: '0.1rem'
+        marginTop: '0.5rem'
     },
     textTime_Style: {
         textAlign: 'center',
         color: 'rgb(24, 112, 243)',
         float: 'left',
-        fontSize: '0.9rem',
+        fontSize: '1.1rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
         marginBottom: '0.2rem',
         fontWeight: 'bold',
-        color: '#f9a3b2',
+        color: '#fc7198',
     },
     textTimeDate_Style: {
         textAlign: 'center',
-        color: '#f9a3b2',
+        color: '#fc7198',
         float: 'left',
-        fontSize: '2.3rem',
+        fontSize: '2.5rem',
         width: '100%',
         fontFamily: "Calibri, sans-serif",
-        marginBottom: '0.2rem'
+        marginBottom: '0.2rem',
+        fontWeight: 'bold',
     },
     img: {
         marginLeft: '15%',
@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
         //padding:'0.8rem',
         paddingBottom: 0,
         marginBottom: '1rem',
-        marginTop: '3rem'
+        marginTop: '-1rem'
     },
     divider_Style: {
         marginLeft:'5% !important',
