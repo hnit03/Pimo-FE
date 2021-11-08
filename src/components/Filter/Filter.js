@@ -24,7 +24,7 @@ import { getModels, searchModels } from '../../actions/models';
 import { getStyles } from '../../actions/styles';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
+import Notfound from '../NotFound/NotFound';
 import {
    searchBySexValue,
    searchByStyleValue,
@@ -503,7 +503,7 @@ export default function StandardImageList(props) {
                               <CardImage model={model} />
                            </GridItem>
                         ))
-                     ) : (null)) : null
+                     ) : (<Notfound/>)) : null
 
                }
             </GridContainer>

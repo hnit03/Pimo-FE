@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     margin: '0',
     width: '100%',
+    //height: '53vh !important',
     borderRadius: '0.2rem',
     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
     marginBottom:'0.5rem',
@@ -159,6 +160,33 @@ smallBox:{
 name:{
     //backgroundColor:'pink !important',
     height: '3.7rem !important',
+},
+hieuung1:{
+  overflow: 'hidden',
+    margin: '0',
+    height: '53vh !important',
+    //width: '100%',
+    borderRadius: '0.2rem',
+    boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
+    marginBottom:'0.5rem',
+    transition: '0.2s',
+},
+img1: {
+  borderRadius: '0rem',
+  width: '100%',
+  height: '25vh !important',
+  objectFit: 'cover',
+  objectPosition: '50% 20%',
+},
+thongtin1: {
+  width: '87%',
+  float: 'left',
+  marginTop: '13.5vh',
+  transform: 'translateY(-50%)',
+  padding: '20px',
+  textAlign: 'center',
+  opacity: 1,
+  transition: '0.5s',
 },
 }
 ));

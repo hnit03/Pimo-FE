@@ -22,6 +22,7 @@ export default function ListEvent({ castings }) {
                         item.casting.status?
                             <Grid item xs={4} >
                                 <EventCard
+                                    loading = {false}
                                     id = {item.casting.id}
                                     style={true}
                                     date={item.casting.closeTime}

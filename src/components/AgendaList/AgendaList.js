@@ -4,7 +4,8 @@ import useStyles from '../../assets/jss/material-kit-pro-react/components/agenda
 const agendaTitle =
     [{ name: "Tổng quan", value: "#General" },
     { name: "Người mẫu", value: "#Model" },
-    { name: "Nhãn hàng", value: "#Brand" }];
+    { name: "Nhãn hàng", value: "#Brand" },
+    { name: "Thông tin liên lạc", value: "#Contact" }];
 const agendaGeneral = [{ name: "Tổng quan về Pimo", value: "#Overview" },
 { name: "Bảo mật thông tin", value: "#Security" }];
 const agendaModel = [{ name: "Làm việc với nhãn hàng", value: "#Working_with_Brands" },
@@ -24,37 +25,40 @@ export default function AgendaList(props) {
             </a>
             <a href={agendaGeneral[0].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaGeneral[0].name}</p>
-                </a>
+            </a>
             <a href={agendaGeneral[1].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaGeneral[1].name}</p>
-                </a>
+            </a>
             <a href={agendaTitle[1].value} className={classes.a}>
                 <p className={classes.agendaTitle}>{agendaTitle[1].name}</p>
-                </a>
+            </a>
             <a href={agendaModel[2].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaModel[2].name}</p>
-                </a>
+            </a>
             <a href={agendaModel[0].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaModel[0].name}</p>
-                </a>
+            </a>
             <a href={agendaModel[1].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaModel[1].name}</p>
-                </a>
+            </a>
             <a href={agendaModel[3].value} className={classes.a} >
                 <p className={classes.agendaTitleContent}>{agendaModel[3].name}</p>
-                </a>
+            </a>
             <a href={agendaTitle[2].value} className={classes.a}>
                 <p className={classes.agendaTitle}>{agendaTitle[2].name}</p>
-                </a>
+            </a>
             <a href={agendaBrand[0].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaBrand[0].name}</p>
-                </a>
+            </a>
             <a href={agendaBrand[1].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaBrand[1].name}</p>
-                </a>
+            </a>
             <a href={agendaBrand[2].value} className={classes.a}>
                 <p className={classes.agendaTitleContent}>{agendaBrand[2].name}</p>
-                </a>
+            </a>
+            <a href={agendaTitle[3].value} className={classes.a}>
+                <p className={classes.agendaTitle}>{agendaTitle[3].name}</p>
+            </a>
         </div>
     );
 

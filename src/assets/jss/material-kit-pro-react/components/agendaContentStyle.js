@@ -65,6 +65,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem',
     fontFamily: "Calibri, sans-serif",
   },
+  text1: {
+    textAlign: 'center',
+    color: 'gray',
+    float: 'left',
+    fontSize: '1rem',
+    fontFamily: "Calibri, sans-serif",
+    marginLeft:'1rem'
+  },
   ul: {
     margin: 0,
     padding: 0,
@@ -74,6 +82,18 @@ const useStyles = makeStyles((theme) => ({
   }, li: {
     margin: 'auto',
     width: '20%',
+  },
+  ul1:{
+    marginTop:'1rem',
+    margin: 0,
+    padding: 0,
+    width: '50rem',
+    textAlign: 'center',
+    marginBottom:'1rem',
+  },
+  li1: {
+    margin: 'auto',
+    width: '100%',
   }
 
 }

@@ -30,6 +30,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { useHistory } from "react-router-dom";
 import EventCard from "../BrandInfo/EventCard/EventCard";
 import Grid from '@mui/material/Grid';
+import Notfound from '../NotFound/NotFound';
 
 function formatDate(date) {
    var hours = date.getHours();
@@ -302,6 +303,7 @@ export default function StandardImageList(props) {
                            casting.casting.status?
                            <GridItem xs={3.8} sm={4} md={4}>
                              <EventCard
+                                 loading={true}
                                  id={casting.casting.id}
                                  style={false} //mặc định k đổi nha
                                  date={casting.casting.closeTime}
@@ -316,11 +318,12 @@ export default function StandardImageList(props) {
                                  img={casting.casting.poster} /> 
                           </GridItem> :null
                       ))
-                     : null
+                     : <Notfound/>
                      : null
                      }
                      
             </Grid>
+            
             <Stack spacing={2} style={{ alignItems: "center", marginBottom: "2%" }}>
                <Pagination
                   onChange={handleChangePage}
@@ -330,6 +333,7 @@ export default function StandardImageList(props) {
                   showLastButton
                />
             </Stack>
+            
          </div>
       </div>
    );

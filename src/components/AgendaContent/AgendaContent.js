@@ -4,6 +4,12 @@ import useStyles from '../../assets/jss/material-kit-pro-react/components/agenda
 import Divider from '@mui/material/Divider';
 import DownloadPimoApp from "../Accordion/DownloadPimo";
 import MailIcon from '@mui/icons-material/Mail';
+import LocationOn from '@material-ui/icons/LocationOn';
+import WorkIcon from '@mui/icons-material/Work';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
+
+
 var listOverview =
   [{ name: "PIMO LÀ GÌ?", value: "Pimo là một nền tảng kết nối giữa người mẫu và các nhãn hàng dành riêng cho thị trường Việt Nam. Chúng tôi có thể giúp nhãn hàng thuê nhiều người mẫu với các phong cách đa dạng bằng cách hỗ trợ nền tảng để các nhãn hàng tạo ra các sự kiện hấp dẫn, các chiến dịch thu hút người mẫu đăng ký tham gia. Đối với người mẫu, chúng tôi luôn cố gắng đưa đến những cơ hội làm việc phù hợp với khả năng, phong cách của họ. Ở Pimo,  cơ hội tìm kiếm việc làm trong lĩnh vực thời trang chưa bao giờ dễ dàng đến thế." },
   { name: "HIỆN TẠI TÔI ĐANG Ở TRONG DANH SÁCH CHỜ, LÀM THẾ NÀO ĐỂ TÔI CÓ THỂ BẮT ĐẦU ĐƯỢC DUYỆT?", value: "Pimo đang có nhu cầu rất cao! Chúng tôi đang cố gắng đưa bạn lên nền tảng sớm nhất có thể. Tuy nhiên, để quá trình xét duyệt thông tin diễn ra nhanh chóng, bạn nên đảm bảo cập nhật tiểu sử và hình ảnh của mình với thông tin mới nhất và chính xác nhất. Khi chúng tôi biết càng nhiều thông tin về bạn, thì càng dễ dàng được đưa ra khỏi danh sách chờ đợi." },
@@ -100,6 +106,20 @@ export default function AgendaContent(props) {
         <div id="Working_with_Model"><Accordions list={listWorkingWithModel} title={titleBrand[0]} /></div>
         <div id="Booking_Model"><Accordions list={listBookingModel} title={titleBrand[1]} /></div>
         <div id="Payments_brand"><Accordions list={listPaymentsBrand} title={titleBrand[2]} /></div>
+        <p className={classes.generalQuestion} id="Contact">Thông tin liên lạc</p>
+        <ul className={classes.ul1}>
+          <li style={{ display: 'flex', }} className={classes.li1}>
+            <MailIcon className={classes.icon} /><span className={classes.text1} >pimo.studio@gmail.com</span>
+          </li>
+          <li style={{ display: 'flex', }} className={classes.li1}>
+            <LocalPhoneIcon className={classes.icon} /><span className={classes.text1} >091.3333.999</span>
+          </li>
+          <li style={{ display: 'flex', }} className={classes.li1}>
+            <LocationOn className={classes.icon} /><span className={classes.text1} >421 Sư Vạn Hạnh, phường 12, quận 10, thành phố Hồ Chí Minh, 700000</span>
+          </li>
+        </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3919.5119465811986!2d106.66640011410338!3d10.772046792324506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zNDIxIFPGsCBW4bqhbiBI4bqhbmgsIFBoxrDhu51uZyAxMCAoUXXhuq1uIDEwKSwgUXXhuq1uIDEwLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmggNzAwMDAw!5e0!3m2!1svi!2s!4v1636384524071!5m2!1svi!2s"
+          width="900" height="450" style={{ border: "0", allowfullscreen: "", loading: "lazy" }}></iframe>
         <Divider className={classes.divider_Style}></Divider>
         <p className={classes.EndTitle}><i>{titleEnd}</i></p>
         <ul className={classes.ul}>

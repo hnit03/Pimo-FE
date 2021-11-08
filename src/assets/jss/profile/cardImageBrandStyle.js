@@ -129,6 +129,30 @@ const useStyles = makeStyles((theme) => ({
    width: '100%',
    fontFamily: "Calibri, sans-serif",
  },
+ hieuung1:{
+   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+   width: '95%',
+   height: '95%',
+   overflow: 'hidden',
+   margin: '2%',
+   borderRadius: '0.1rem',
+},
+img1: {
+   width: '43%',
+   height: '40vh !important',
+   objectFit: 'cover',
+   objectPosition: '50% 20%',
+},
+thongtin1: {
+   width: '50%',
+   float: 'right',
+   marginTop: '-21vh',
+   transform: 'translateY(-50%)',
+   padding: '20px',
+   textAlign: 'center',
+   opacity: 1,
+   transition: '0.5s',
+},
 }
 ));
 export default useStyles;

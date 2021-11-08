@@ -18,6 +18,7 @@ import CardImage from "../CardImage/CardImageBrand";
 import Slider from "@mui/material/Slider";
 import { useDispatch } from "react-redux";
 import { getBrands, searchBrands } from "../../actions/brands";
+import { getCategories } from "../../actions/categories";
 import { useSelector } from "react-redux";
 import DateTime from "./DateTimePicker";
 import { searchByAddressBrand, searchByMajor } from "./AddressData.js";
@@ -28,6 +29,7 @@ import IconButton from "@mui/material/IconButton";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useHistory } from "react-router-dom";
 import { getStyles } from "../../actions/styles";
+import Notfound from '../NotFound/NotFound';
 
 const useStyles = makeStyles(styles);
 export default function StandardImageList(props) {
@@ -41,9 +43,13 @@ export default function StandardImageList(props) {
 
    const brands = useSelector((state) => state.brands);
    const styles = useSelector((state) => state.styles);
+   const categories = useSelector((state) => state.categories);
    const history = useHistory();
    const dispatch = useDispatch();
-
+   useEffect(() => {
+      dispatch(getCategories());
+   }, [])
+   console.log("caa",categories.brandCateList);
    useEffect(() => {
       if (checkSearch) {
          dispatch(getBrands(pageNo));
@@ -69,18 +75,18 @@ export default function StandardImageList(props) {
    const handleSubmit = (e) => {
       e.preventDefault();
       setValueChoose([]);
-      var styleID = 0;
-      if (styles.style !== undefined) {
-         styles.style.map((item) => {
+      var categoriesID = 0;
+      if (categories.brandCateList !== undefined) {
+         categories.brandCateList.map((item) => {
             if(item.name === valueMajor) {
-               styleID = item.id
+               categoriesID = item.id
             }
          });
       }
       const data = {
          name: searchName,
          address: valueAddress,
-         category: styleID,
+         category: categoriesID,
       };
       if(valueAddress === '' && valueMajor === null){
          setCheckSearch(true);
@@ -104,8 +110,8 @@ export default function StandardImageList(props) {
       }
    };
    var categoryList = [];
-   if (styles.style !== undefined) {
-      styles.style.map((item) => {
+   if (categories.brandCateList !== undefined) {
+      categories.brandCateList.map((item) => {
          categoryList.push(item.name);
       });
    }
@@ -199,7 +205,7 @@ export default function StandardImageList(props) {
                               <CardImage brand={brand} />
                            </GridItem>
                         ))
-                        : null
+                        : <Notfound/>
                      : null}
                </GridContainer>
                <Stack

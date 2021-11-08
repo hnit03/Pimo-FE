@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 import useStyles from '../../assets/jss/profile/cardImageBrandStyle';
 import { useHistory } from 'react-router-dom';
@@ -8,12 +8,40 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import WorkIcon from '@mui/icons-material/Work';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailIcon from '@mui/icons-material/Mail';
+import Skeleton from '@mui/material/Skeleton';
 
 export default function CardImage(brand) {
    const classes = useStyles();
    const history = useHistory();
+   const [loading, setLoading] = useState(false);
+   useEffect(() => {
+      setLoading(true);
+      setTimeout(() => {
+         setLoading(false);
+      }, 1500);
+   }, []);
    const onClickInfo = useCallback((param) => () => history.push(`/brand-info/${param}`), [history]);
    return (
+      <div>
+      {loading ?
+         <div className={classes.hieuungbenngoai} >
+            <div className={classes.hieuung1} >
+               <div className={classes.noidung}>
+                  <Skeleton animation="wave" variant="rectangular" className={classes.img1} />
+                  
+               </div>
+               <div className={classes.thongtin1}> 
+               <Skeleton animation="wave" height={50} style={{ marginTop: 4 }} width="40%" />
+               <Skeleton animation="wave" height={2} width="100%"/>
+               <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="70%" className={classes.a}/>
+               <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="60%" className={classes.a}/>
+               <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="50%" className={classes.a}/>
+               <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="100%" className={classes.a}/>
+               <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="100%" className={classes.a}/>
+                  </div>
+            </div>
+         </div>
+         :
       <div className={classes.hieuungbenngoai} onClick={onClickInfo(brand.brand.brand.id)}>
          <div className={classes.hieuung}>
             <div className={classes.noidung}>
@@ -40,6 +68,9 @@ export default function CardImage(brand) {
                </div>
             </div>
          </div>
+          
+      </div>
+      }
       </div>
    );
 }
