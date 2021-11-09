@@ -38,7 +38,7 @@ const login = (postData, axiosConfig) => async (dispatch) => {
          dispatch({ type: 'LOGIN', payload: "@LoginFail: " + Math.random() })
       }
    } catch (error) {
-      console.log(error.message);
+      dispatch({ type: 'LOGIN', payload: "@LoginFail: " + Math.random() })
    }
 };
 

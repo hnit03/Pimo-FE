@@ -74,8 +74,12 @@ export default function ReviewAreas({ modelId }) {
          modelId: modelId
       }
       await dispatch(postReviews(postData, axiosConfig));
-      dispatch(getReviews(modelId, pageNo))
-      setReview('')
+      setTimeout(() => {
+            dispatch(getReviews(modelId, pageNo))
+            setReview('')
+         },
+         50
+      );
    }
 
    const handleChange = (event, value) => {
@@ -152,7 +156,7 @@ export default function ReviewAreas({ modelId }) {
                         ) : null
                      }
                      <div>
-                        <Pagination style={{ alignItems: "center", marginBottom: "3%", marginLeft: "28rem"}}
+                        <Pagination style={{ alignItems: "center", marginBottom: "3%", marginLeft: "28rem" }}
                            className={
                               classes.textCenter + " " + classes.justifyContentCenter
                            }
@@ -185,15 +189,15 @@ export default function ReviewAreas({ modelId }) {
                                     value={review}
                                  />
                               </div>
-                              <Button 
-                              variant="outlined" 
-                              onClick={handleSubmit} 
-                              className={classesRreview.button}>Chia sẻ</Button>
+                              <Button
+                                 variant="outlined"
+                                 onClick={handleSubmit}
+                                 className={classesRreview.button}>Chia sẻ</Button>
                            </>
                            )) : null
                      }
-                     
-                   
+
+
                   </div>
                </GridItem>
             </GridContainer>
