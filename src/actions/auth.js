@@ -28,6 +28,8 @@ const login = (postData, axiosConfig) => async (dispatch) => {
                   cookies.set('jwt', res.data.jwt, { path: '/', maxAge: 60 * 60 * 1000 });
                   cookies.set('id', jwt(res.data.jwt)[Object.keys(jwt(res.data.jwt))[4]], { path: '/', maxAge: 60})
                }
+            } else {
+               isExist = false;
             }
          })
       if (isExist) {

@@ -6,7 +6,9 @@ export default (brands = [], action) => {
       case 'FETCH_BRANDS':
          return action.payload;
       case 'BRAND_INFO':
-         return action.payload
+         return action.payload;
+      case 'CLEAR':
+         return true;
       default:
          return brands;
    }

@@ -16,7 +16,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from '../../actions/categories';
-import { signupBrand } from '../../actions/brands';
+import { signupBrand, clear } from '../../actions/brands';
 import SnackbarContent from "../Snackbar/SnackbarContent.js";
 
 import javascriptStyles from "../../assets/jss/material-kit-pro-react/views/componentsSections/javascriptStyles.js";
@@ -43,11 +43,15 @@ function SignUpDialog(props) {
    useEffect(() => {
       if (props.loginFail.indexOf('@LoginFail:') !== -1) {
          setSignupModal(true)
-         document.getElementById('loginFail').style.display = 'block';
-         setTimeout(
-            () => document.getElementById('loginFail').style.display = 'none',
-            3000
-         );
+         if (document.getElementById('loginFail') !== null) {
+            document.getElementById('loginFail').style.display = 'block';
+            setTimeout(
+               () => document.getElementById('loginFail').style.display = 'none',
+               3000
+            );
+         }
+      } else if (props.loginFail.indexOf('signUp#@!') !== -1) {
+         setSignupModal(true)
       }
    }, [props.loginFail])
 
@@ -68,13 +72,12 @@ function SignUpDialog(props) {
          }
       };
       dispatch(signupBrand(postData, axiosConfig));
-      if (brands.success === false) {
-         document.getElementById('signupFail').style.display = 'block';
-         setTimeout(
-            () => document.getElementById('signupFail').style.display = 'none',
-            3000
-         );
-      } else {
+      // setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
+   };
+
+   useEffect(() => {
+      console.log(brands);
+      if (brands.success === true) {
          setSignupModal(false)
          document.getElementById('signupSuccess').style.display = 'block';
          setTimeout(
@@ -82,9 +85,15 @@ function SignUpDialog(props) {
             3000
          );
          setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
+      } else if (brands.success === false) {
+         document.getElementById('signupFail').style.display = 'block';
+         setTimeout(
+            () => document.getElementById('signupFail').style.display = 'none',
+            3000
+         );
       }
-      // setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
-   };
+      dispatch(clear())
+   }, [brands])
 
    return (
       <Dialog
@@ -126,7 +135,7 @@ function SignUpDialog(props) {
                id="signup-modal-slide-description"
                className={classes.modalBody}
             >
-               <div id="signupFail" style={{
+               {/* <div id="signupFail" style={{
                   display: 'none',
                }}>
                   <SnackbarContent
@@ -138,7 +147,7 @@ function SignUpDialog(props) {
                      close
                      color="danger"
                   />
-               </div>
+               </div> */}
                <div id="loginFail" style={{
                   display: 'none',
                }}>
@@ -235,6 +244,7 @@ function SignUpDialog(props) {
                                  <InputAdornment
                                     position="start"
                                     className={classes.inputAdornment}
+                                    type="email"
                                  >
                                  </InputAdornment>
                               ),

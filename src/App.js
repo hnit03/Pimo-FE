@@ -37,6 +37,26 @@ function App() {
                color="success"
             />
          </div>
+         <div id="signupFail" style={{
+            position: 'fixed',
+            right: 0,
+            marginRight: '5%',
+            marginTop: '8%',
+            zIndex: 10000000000,
+            top: 0,
+            display: 'none',
+            width: '35%',
+         }}>
+            <SnackbarContent
+               message={
+                  <span style={{ fontSize: '120%', textAlign: 'right' }}>
+                     <b>Đăng ký thất bại: Tài khoản đã tồn tại</b>
+                  </span>
+               }
+               close
+               color="danger"
+            />
+         </div>
          <NavBar />
          <Switch>
             <Route exact={true} path="/" component={HomePage} />

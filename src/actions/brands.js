@@ -49,3 +49,11 @@ export const getInfo = (id) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const clear = () => async (dispatch) => {
+   try {
+      dispatch({ type: 'CLEAR', payload: true });
+   } catch (error) {
+      console.log(error.message);
+   }
+};

@@ -9,11 +9,19 @@ import laptop from "../../assets/img/laptop.jpg"
 import phone from "../../assets/img/phone.png"
 import phone2 from "../../assets/img/phone.jpg"
 import { Button } from '@material-ui/core';
+import SignUpDialog from '../Dialog/SignUpDialog'
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+const {useState, useCallback} = React;
+
 
 const useStyles = makeStyles(blogsStyle);
 
 function CardBlog({ ...rest }) {
    const classes = useStyles();
+   const [count, setCount] = useState(0);
    return (
       <div {...rest}>
          {/* Blogs 1 START */}
@@ -183,7 +191,15 @@ function CardBlog({ ...rest }) {
                                        color: 'white',
                                        padding: '0.5rem 1.4rem 0.5rem 1.4rem'
                                     }}
-                                    onClick={(e) => e.preventDefault()}
+                                    onClick={(e) => {
+                                       e.preventDefault()
+                                       setCount(count + 1)
+                                       // ReactDOM.render(
+                                       //    <Provider>
+                                       //       <SignUpDialog />
+                                       //    </Provider>
+                                       //    , document.getElementById('root'))
+                                    }}
                                     color="transparent"
                                  >
                                     <div style={{
@@ -193,6 +209,7 @@ function CardBlog({ ...rest }) {
                                        Đăng ký ngay
                                     </div>
                                  </Button>
+                                 { Array(count).fill(<SignUpDialog loginFail={'signUp#@!'} />) }
                               </div>
                            </GridItem>
                         </GridContainer>
