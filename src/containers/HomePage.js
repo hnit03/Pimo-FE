@@ -8,6 +8,10 @@ import android from "../assets/img/android.png"
 import ios from "../assets/img/ios.jpg"
 import SectionFooter from "../components/Footer/SectionFooter";
 import background from '../assets/img/background1.jpg';
+import Carousel1 from '../../src/components/modelInfoPage/SectionCarousel/SectionCarousel copy';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
    backgroundImage: {
@@ -17,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto'
    },
    logo: {
-      // marginTop: '37%',
       marginLeft: '21%'
    },
    slogan: {
@@ -26,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '40%',
       textAlign: 'center',
       marginLeft: '17.7%'
+   },
+   carousel:{
+      marginLeft:'38vh', 
+      marginTop:'0rem',
    }
 }));
 
@@ -34,6 +41,7 @@ export default function HomePage() {
    document.body.style.backgroundImage = `url(${background})`;
    // var footer = document.querySelector('footer')
    // if(footer !== null) {footer.style = 'display: block'}
+   
    return (
       <div>
          <div className={classes.slogan}>
@@ -62,13 +70,19 @@ export default function HomePage() {
                <GridItem xs={12} sm={12} md={12}>
                </GridItem>
             </GridContainer>
+            
             <div style={{textAlign: 'center'}}>
             <img width="60%" src={brandLogo} alt='' />
             </div>
+            <div className={classes.carousel}>
+            <Carousel1 bool={true} />
+            </div>
+            
             <div className={classes.cardBlog}>
                <CardBlog />
             </div>
          </div>
+         
          <SectionFooter />
       </div>
    );

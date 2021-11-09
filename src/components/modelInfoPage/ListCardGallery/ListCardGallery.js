@@ -20,6 +20,8 @@ export default function ListCardGallery({ model }) {
       })
    })
 
+
+
    const list = listProject.map((item) => {
       return (
          <Grid item xs={4}>

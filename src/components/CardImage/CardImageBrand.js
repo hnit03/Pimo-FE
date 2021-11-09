@@ -15,15 +15,17 @@ export default function CardImage(brand) {
    const history = useHistory();
    const [loading, setLoading] = useState(false);
    useEffect(() => {
-      setLoading(true);
+      setLoading(brand.bool);
       setTimeout(() => {
-         setLoading(false);
+         setLoading(!brand.bool);
       }, 1500);
+      //setLoading(brand.bool);
    }, []);
    const onClickInfo = useCallback((param) => () => history.push(`/brand-info/${param}`), [history]);
    return (
       <div>
       {loading ?
+         
          <div className={classes.hieuungbenngoai} >
             <div className={classes.hieuung1} >
                <div className={classes.noidung}>
@@ -40,6 +42,7 @@ export default function CardImage(brand) {
                <Skeleton animation="wave" height={25} style={{ marginTop: 4 }} width="100%" className={classes.a}/>
                   </div>
             </div>
+            {/* {setLoading(false)} */}
          </div>
          :
       <div className={classes.hieuungbenngoai} onClick={onClickInfo(brand.brand.brand.id)}>

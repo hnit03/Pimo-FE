@@ -202,7 +202,7 @@ export default function StandardImageList(props) {
                      ? brands.brandList.length > 0
                         ? brands.brandList.map((brand) => (
                            <GridItem xs={6} sm={6} md={6}>
-                              <CardImage brand={brand} />
+                              <CardImage brand={brand} bool={true}/>
                            </GridItem>
                         ))
                         : <Notfound/>
