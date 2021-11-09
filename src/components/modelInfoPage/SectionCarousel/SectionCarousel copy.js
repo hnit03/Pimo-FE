@@ -13,7 +13,7 @@ export default function Carousel1(props) {
    bool == true ? (carouselStyle = classes.carousel):(carouselStyle = classes.carouselSmall)
    var items = [
       {
-          name: "https://cdn2.vectorstock.com/i/1000x1000/54/86/fashion-banner-design-with-perfume-outfit-vector-31175486.jpg",
+          name: "https://img.freepik.com/free-vector/promotion-fashion-banner_1188-161.jpg?size=626&ext=jpg",
           description: "Probably the most random thing you have ever seen!"
       },
       {
@@ -21,7 +21,7 @@ export default function Carousel1(props) {
           description: "Hello World!"
       },
       {
-         name: "https://cdn3.vectorstock.com/i/1000x1000/54/82/fashion-banner-design-with-shirt-bag-camera-case-vector-31175482.jpg",
+         name: "https://image.freepik.com/free-vector/spring-sale-landing-page-with-photo-hand-drawn-flowers_1188-300.jpg",
          description: "Hello World!"
      },
       {
