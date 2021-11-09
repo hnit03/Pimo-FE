@@ -157,9 +157,9 @@ export default function ReviewAreas({ reviewList, modelId }) {
                                     placeholder="Chia sẻ suy nghĩ của bạn......"
                                  />
                               </div>
+                              <Button variant="outlined">Chia sẻ</Button>
                            </>
                            )) : null
-
                      }
 
                      {/* <Media
