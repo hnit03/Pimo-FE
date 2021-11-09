@@ -50,6 +50,7 @@ export const searchModels = (filter, pageNo) => async (dispatch) => {
          })
       }
       if (filter.tattoo !== null && filter.tattoo !== undefined) {
+         
          path += '&Tatoo=' + filter.tattoo;
       }
       if (filter.age.min_age !== null && filter.age.min_age > 0 && filter.age.min_age !== undefined) {
@@ -72,6 +73,7 @@ export const searchModels = (filter, pageNo) => async (dispatch) => {
       if (pageNo !== null) {
          path += '&PageNo=' + pageNo;
       }
+      console.log('tatooo', path)
       const { data } = await api.searchModels(path);
       dispatch({ type: 'FETCH_MODELS', payload: data });
    } catch (error) {

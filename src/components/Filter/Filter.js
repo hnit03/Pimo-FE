@@ -495,7 +495,9 @@ export default function StandardImageList(props) {
             }}
          >
             <GridContainer spacing={1}>
+               {console.log('ta',models.modelList)}
                {
+                  
                   (models.modelList !== undefined) ? (
                      (models.modelList.length > 0) ? (
                         models.modelList.map((model) => (
