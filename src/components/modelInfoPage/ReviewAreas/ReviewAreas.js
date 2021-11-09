@@ -19,19 +19,34 @@ import avatar from "../../../assets/img/faces/avatar.jpg";
 import Cookies from 'js-cookie';
 import { useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
+import { useDispatch } from 'react-redux';
+import { checkOwner } from '../../../actions/castings';
 
 const useStylesOfTemplate = makeStyles(style);
 
-export default function ReviewAreas({ reviewList }) {
+export default function ReviewAreas({ reviewList, modelId }) {
+   const dispatch = useDispatch();
    const [name, setName] = useState('');
    const classes = useStylesOfTemplate();
    const classesRreview = useStyles();
+   const [photo, setPhoto] = useState('')
+   const isOwned = useSelector((state) => state.castings);
+   const [check, setCheck] = useState(false);
+
    useEffect(() => {
       if (Cookies.get('name') !== undefined) {
          setName(Cookies.get('name'));
-
+         setPhoto(Cookies.get('logo'))
       }
    }, [name])
+
+   useEffect(() => {
+      dispatch(checkOwner(Cookies.get('jwt'), modelId));
+   }, [])
+
+   useEffect(() => {
+      setCheck(isOwned);
+   }, [isOwned])
 
    const CssTextField = styled(TextField)({
       '& label.Mui-focused': {
@@ -108,9 +123,9 @@ export default function ReviewAreas({ reviewList }) {
                            }
                            pages={[
                               { text: "«" },
-                              { text: 1 },
+                              { active: true, text: 1 },
                               { text: 2 },
-                              { active: true, text: 3 },
+                              { text: 3 },
                               { text: 4 },
                               { text: 5 },
                               { text: "»" },
@@ -118,33 +133,33 @@ export default function ReviewAreas({ reviewList }) {
                            color="primary"
                         />
                      </div>
+                     {check === true ? (
+                        name === '' ?
+                           null
+                           :
+                           (<><h1 className={classes.textCenter}>
+                              Gửi nhận xét của bạn <br />
 
-                     {name === '' ?
-                        null
-                        :
-                        (<><h1 className={classes.textCenter}>
-                           Gửi đánh giá của bạn <br />
+                           </h1>
+                              <span className={classesRreview.Name}>{name}</span>
+                              <Media
+                                 avatar={photo}
+                              />
+                              <div className={classesRreview.vi}>
 
-                        </h1>
-                        <span className={classesRreview.Name}>{name}</span>
-                        <Media
+                                 <CssTextField
+                                    className={classesRreview.cmt}
+                                    id="standard-multiline-static"
+                                    label=""
+                                    multiline
+                                    rows={4}
+                                    variant="standard"
+                                    placeholder="Chia sẻ suy nghĩ của bạn......"
+                                 />
+                              </div>
+                           </>
+                           )) : null
 
-                        avatar={avatar}
-                     />
-                     <div className={classesRreview.vi}>
-                        
-                        <CssTextField
-                           className={classesRreview.cmt}
-                           id="standard-multiline-static"
-                           label=""
-                           multiline
-                           rows={4}
-                           variant="standard"
-                           placeholder="Chia sẻ suy nghĩ của bạn......"
-                        />
-                         </div>
-                        </>
-                        )
                      }
 
                      {/* <Media
@@ -169,9 +184,9 @@ export default function ReviewAreas({ reviewList }) {
                 </Button>
               }
             /> */}
-                     
 
-                    
+
+
                   </div>
                </GridItem>
             </GridContainer>

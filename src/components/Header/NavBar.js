@@ -74,6 +74,8 @@ function Navbar() {
    const handleLogout = () => {
       Cookies.remove('name');
       Cookies.remove('jwt');
+      Cookies.remove('logo');
+      Cookies.remove('id');
       setName('');
       dispatch(logout());
    }

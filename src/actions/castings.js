@@ -143,3 +143,25 @@ export const getInfoByBrandID = (id) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const checkOwner = (jwt, modelId) => async (dispatch) => {
+   try {
+      let axiosConfig = {
+         headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+            'authorization': 'Bearer ' + jwt
+         }
+      };
+      const { data } = await api.getCastingBrowser(axiosConfig);
+      let check = false
+      data.castingBrowses.map(item => {
+         if (item.model.id == modelId) {
+            check = true
+         }
+      })
+      dispatch({ type: 'CHECK_OWNER', payload: check });
+   } catch (error) {
+      console.log(error.message);
+   }
+}

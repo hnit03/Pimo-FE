@@ -49,7 +49,7 @@ export default function ModelInfoPage(props) {
                            <ListCardGallery model={model} />
                         </Grid>
                         <Grid item xs={12} >
-                           <ReviewAreas reviewList={reviews} />
+                           <ReviewAreas reviewList={reviews} modelId={props.match.params.id} />
                         </Grid>
 
 

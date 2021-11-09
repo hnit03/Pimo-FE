@@ -43,7 +43,7 @@ function SignUpDialog(props) {
    useEffect(() => {
       if (props.loginFail.indexOf('@LoginFail:') !== -1) {
          setSignupModal(true)
-         document.getElementById('loginFail').style.display = 'cover';
+         document.getElementById('loginFail').style.display = 'block';
          setTimeout(
             () => document.getElementById('loginFail').style.display = 'none',
             3000

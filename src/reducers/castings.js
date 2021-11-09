@@ -9,6 +9,8 @@ export default (castings = [], action) => {
          return action.payload;
       case 'CASTING_INFO_BY_BRAND':
          return action.payload;
+      case 'CHECK_OWNER':
+         return action.payload;
       default:
          return castings;
    }
