@@ -52,7 +52,7 @@ export default function ModelProfile(props) {
                                 <li style={{ display: 'flex', }} className={classes.li} >
                                     <FacebookIcon className={classes.icon} style={{ color: '#0775E8' }} />
                                     <a href={props.facebook} className={classes.text} target="_blank">
-                                        <span className={classes.fa}>Facebook {props.facebook} nnnn</span></a>
+                                        <span className={classes.fa}>Facebook</span></a>
                                 </li>
                                 
                             }
