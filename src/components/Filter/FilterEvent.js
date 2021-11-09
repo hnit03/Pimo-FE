@@ -54,6 +54,7 @@ function formatDate(date) {
 const useStyles = makeStyles(styles);
 export default function StandardImageList(props) {
    const classes = useStyles();
+   const [checkSearch, setCheckSearch] = React.useState(true);
    const [searchName, setSearchName] = React.useState("");
    const [valueAddress, setValueAddress] = React.useState("");
    const [valueDateTimeStart, setValueDateTimeStart] = React.useState(null);
@@ -65,8 +66,7 @@ export default function StandardImageList(props) {
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
 
    const castings = useSelector((state) => state.castings);
-   console.log("abcd", castings);
-   console.log("abcdhhh", castings.castings);
+
 
    const history = useHistory();
    const dispatch = useDispatch();
@@ -129,6 +129,12 @@ export default function StandardImageList(props) {
             'end': dateTimeEnd,
          }
       }
+      // if(valueAddress === '' && valueMajor === null){
+      //    setCheckSearch(true);
+      // } else {
+      //    setCheckSearch(false)
+      // }
+      // dispatch(searchCasting(data, pageNo));
    };
 
    const handlerFilter = (e, value, item) => {
@@ -239,8 +245,8 @@ export default function StandardImageList(props) {
                      />
 
                      <p className={classes.titleSearch}>Thời gian</p>
-                     {/* <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate} />
-                     <DateTime value={valueDateTimeEnd} setValue={setValueDateTimeEnd} label='thời gian kết thúc' /> */}
+                     <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate} />
+                     <DateTime value={valueDateTimeEnd} setValue={setValueDateTimeEnd} label='thời gian kết thúc' />
 
                      <p className={classes.titleSearch}>Giới tính</p>
                      <FormGroup className={classes.containerCheckBox}>
