@@ -152,15 +152,15 @@ export default function ReviewAreas({ modelId }) {
                         ) : null
                      }
                      <div>
-                        <Pagination 
-                        className={
+                        <Pagination
+                           className={
                               classes.textCenter + " " + classes.justifyContentCenter
                            }
-                           onChange={handleChange} 
-                           defaultPage={parseInt(pageNo)} 
-                           count={reviewsList.totalPage} 
-                           showFirstButton 
-                           showLastButton/>
+                           onChange={handleChange}
+                           defaultPage={parseInt(pageNo)}
+                           count={reviewsList.totalPage}
+                           showFirstButton
+                           showLastButton />
                         {/* <Paginations
                            className={
                               classes.textCenter + " " + classes.justifyContentCenter
