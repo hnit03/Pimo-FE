@@ -70,14 +70,12 @@ export default function HomePage() {
                <GridItem xs={12} sm={12} md={12}>
                </GridItem>
             </GridContainer>
-            
             <div style={{textAlign: 'center'}}>
             <img width="60%" src={brandLogo} alt='' />
             </div>
-            <div className={classes.carousel}>
+            {/* <div className={classes.carousel}>
             <Carousel1 bool={true} />
-            </div>
-            
+            </div> */}
             <div className={classes.cardBlog}>
                <CardBlog />
             </div>

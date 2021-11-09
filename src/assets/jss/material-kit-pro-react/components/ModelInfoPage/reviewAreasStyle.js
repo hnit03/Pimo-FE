@@ -37,7 +37,24 @@ const useStyles = makeStyles((theme) => ({
         width:'55rem !important',
         marginTop:'-5rem !important',
         marginLeft:'6.5rem !important',
-        marginBottom: '2rem !important'
+        marginBottom: '2rem !important',
+        '& label.Mui-focused': {
+            color: '#fc7198',
+         },
+         '& .MuiInput-underline:after': {
+            borderBottomColor: '#fc7198',
+         },
+         '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+               borderColor: 'red',
+            },
+            '&:hover fieldset': {
+               borderColor: 'yellow',
+            },
+            '&.Mui-focused fieldset': {
+               borderColor: '#fc7198',
+            },
+         },
     },
     Name:{
         width:'55rem !important',
@@ -45,6 +62,18 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:'6.5rem !important',
         marginBottom: '2rem !important',
         fontWeight:'700',
+    },
+    button:{
+        backgroundColor:'#fc7198 !important',
+        fontFamily: "Calibri, sans-serif !important",
+        fontSize: '1rem !important',
+        padding: '8px 35px !important',
+        float: 'right',
+        fontWeight: 'bold',
+        marginRight:'7rem',
+        marginTop:'-0.5rem',
+        marginBottom:'4rem',
+
     }
 }
 ));

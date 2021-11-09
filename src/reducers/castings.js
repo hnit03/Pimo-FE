@@ -11,6 +11,8 @@ export default (castings = [], action) => {
          return action.payload;
       case 'CHECK_OWNER':
          return action.payload;
+      case 'SEARCH_CASTING':
+         return action.payload;
       default:
          return castings;
    }

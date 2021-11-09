@@ -164,4 +164,41 @@ export const checkOwner = (jwt, modelId) => async (dispatch) => {
    } catch (error) {
       console.log(error.message);
    }
-}
+};
+
+export const searchCasting = (filter, pageNo) => async (dispatch) => {
+   try {
+      
+      var path = '';
+      if (filter.name !== null && filter.name !== '' && filter.name !== undefined) {
+         path += '&Name=' + filter.name;
+      }
+      if (filter.address !== null && filter.address !== '' && filter.address !== undefined) {
+         path += '&Address=' + filter.address;
+      }
+      if (filter.sex !== null && filter.sex.length > 0 && filter.sex !== undefined) {
+         filter.sex.map(id => {
+            path += '&Genders=' + id;
+         })
+      }
+      if (filter.style !== null && filter.style.length > 0 && filter.style !== undefined) {
+         filter.style.map(id => {
+            path += '&Styles=' + id;
+         })
+      }
+      if (filter.dateTime.start !== null && filter.dateTime.start !== '' && filter.dateTime.start !== undefined) {
+         path += '&StartTime=' + (new Date(filter.dateTime.start).toISOString());
+      }
+      if (filter.dateTime.end !== null && filter.dateTime.end !== '' && filter.dateTime.end !== undefined) {
+         path += '&EndTime=' + (new Date(filter.dateTime.end).toISOString());
+      }
+      if (pageNo !== null) {
+         path += '&PageNo=' + pageNo;
+      }
+      console.log("path",path);
+      const { data } = await api.searchCasting(path);
+      dispatch({ type: 'SEARCH_CASTING', payload: data });
+   } catch (error) {
+      console.log("Search event error: " + error.message);
+   }
+};

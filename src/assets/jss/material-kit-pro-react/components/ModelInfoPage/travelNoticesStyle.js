@@ -117,6 +117,13 @@ const useStyles = makeStyles((theme) => ({
     divider: {
        marginTop: '5%',
         height: '100% !important',
+    },
+    noneText:{
+        fontFamily: "Calibri, sans-serif",
+        fontSize: '1.2rem',
+        marginLeft:'19rem',
+        marginTop:'1.5rem',
+        marginBottom:'1rem',
     }
 
 }

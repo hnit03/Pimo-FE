@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
@@ -10,17 +10,21 @@ import phone from "../../assets/img/phone.png"
 import phone2 from "../../assets/img/phone.jpg"
 import { Button } from '@material-ui/core';
 import SignUpDialog from '../Dialog/SignUpDialog'
+import { useHistory } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-const {useState, useCallback} = React;
+
 
 
 const useStyles = makeStyles(blogsStyle);
 
 function CardBlog({ ...rest }) {
+   const history = useHistory();
    const classes = useStyles();
+   const onClickSearchModel = useCallback(() => history.push('/model-search/1'), [history]);
+   const onClickSearchEvent = useCallback(() => history.push('/event-search/1'), [history]);
    const [count, setCount] = useState(0);
    return (
       <div {...rest}>
@@ -53,8 +57,10 @@ function CardBlog({ ...rest }) {
                               </p>
                               <Button
                                  href="#pablo"
+                                 
+                                 onClick={onClickSearchEvent}
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
-                                 onClick={(e) => e.preventDefault()}
+                                 // onClick={(e) => e.preventDefault()}
                                  color="transparent"
                               >
                                  <div style={{ fontWeight: '800' }}>
@@ -121,6 +127,7 @@ function CardBlog({ ...rest }) {
                               </p>
                               <Button
                                  href="#pablo"
+                                 onClick={onClickSearchModel}
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
                                  onClick={(e) => e.preventDefault()}
                                  color="transparent"

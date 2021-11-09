@@ -6,4 +6,5 @@ export const createCasting = (postData, axiosConfig) => axios.post(url, postData
 export const fetchCastings = (pageNo) =>  axios.get(`${url}?PageNo=${pageNo}`)
 export const fetchCastingById = (id) => axios.get(`${url}/information/${id}`)
 export const fetchCastingByBrandId = (id) => axios.get(`${url}/brand/${id}`)
+export const searchCasting = (path) => axios.get(`${url}?${path}`)
 export const getCastingBrowser = (axiosConfig) => axios.get(`https://api.pimo.studio/api/v1/browses`, axiosConfig)

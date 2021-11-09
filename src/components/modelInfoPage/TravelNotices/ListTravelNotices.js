@@ -19,16 +19,16 @@ export default function ListTravelNotices({ model }) {
                <div className={classes.boxLeft}>
                   <h1 className={classes.h1}>LỊCH TRÌNH SẮP TỚI</h1>
                   <Divider className={classes.divider_Style} ></Divider>
+                  <Grid container spacing={1}> 
                   {
+                     model.availabilityList.length>0?
                      model.availabilityList.map(task => (
-                        <Grid container spacing={1}>
-                           <Grid item xs={6} >
+                           <Grid item xs={4} >
                               <TravelNotices task={task} />
                            </Grid>
-                        
-                        </Grid>
-                     ))
+                     )):<span className={classes.noneText} >Người mẫu này chưa có lịch trình trong thời gian tới</span>
                   }
+                  </Grid>
                </div>
             </Grid>
 
