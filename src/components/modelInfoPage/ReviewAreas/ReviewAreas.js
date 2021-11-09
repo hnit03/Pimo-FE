@@ -61,21 +61,32 @@ export default function ReviewAreas({ modelId }) {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      const jwt = Cookies.get('jwt')
-      const axiosConfig = {
-         headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            "Access-Control-Allow-Origin": "*",
-            'authorization': 'Bearer ' + jwt
+      if (review !== '') {
+         const jwt = Cookies.get('jwt')
+         const axiosConfig = {
+            headers: {
+               'Content-Type': 'application/json;charset=UTF-8',
+               "Access-Control-Allow-Origin": "*",
+               'authorization': 'Bearer ' + jwt
+            }
+         };
+         const postData = {
+            review: review,
+            modelId: modelId
          }
-      };
-      const postData = {
-         review: review,
-         modelId: modelId
+         await dispatch(postReviews(postData, axiosConfig));
+         // setTimeout(() => {
+         //    dispatch(getReviews(modelId, pageNo))
+         //    setReview('')
+         // })
+         setTimeout(() => {
+               dispatch(getReviews(modelId, pageNo))
+               setReview('')
+            },
+            50
+         );
+
       }
-      await dispatch(postReviews(postData, axiosConfig));
-      dispatch(getReviews(modelId, pageNo))
-      setReview('')
    }
 
    const handleChange = (event, value) => {
@@ -152,7 +163,11 @@ export default function ReviewAreas({ modelId }) {
                         ) : null
                      }
                      <div>
+<<<<<<< Updated upstream
                         <Pagination
+=======
+                        <Pagination style={{ alignItems: "center", marginBottom: "3%", marginLeft: "28rem" }}
+>>>>>>> Stashed changes
                            className={
                               classes.textCenter + " " + classes.justifyContentCenter
                            }
@@ -200,11 +215,19 @@ export default function ReviewAreas({ modelId }) {
                                     value={review}
                                  />
                               </div>
+<<<<<<< Updated upstream
                               <Button variant="outlined" onClick={handleSubmit}>Chia sẻ</Button>
+=======
+                              <Button
+                                 variant="outlined"
+                                 onClick={handleSubmit}
+                                 className={classesRreview.button}>Chia sẻ</Button>
+>>>>>>> Stashed changes
                            </>
                            )) : null
                      }
 
+<<<<<<< Updated upstream
                      {/* <Media
                
               avatar={avatar}
@@ -229,6 +252,8 @@ export default function ReviewAreas({ modelId }) {
             /> */}
 
 
+=======
+>>>>>>> Stashed changes
 
                   </div>
                </GridItem>
