@@ -12,7 +12,6 @@ import StyleCard from '../components/modelInfoPage/StyleCard/StyleCard';
 import ReviewAreas from '../components/modelInfoPage/ReviewAreas/ReviewAreas'
 import { withRouter } from "react-router";
 import { getInfo } from '../actions/models';
-import { getReviews } from '../actions/reviews';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -22,7 +21,6 @@ export default function ModelInfoPage(props) {
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(getInfo(props.match.params.id));
-      dispatch(getReviews(props.match.params.id, 1));
    }, [])
 
    const classes = useStyles();
@@ -49,7 +47,7 @@ export default function ModelInfoPage(props) {
                            <ListCardGallery model={model} />
                         </Grid>
                         <Grid item xs={12} >
-                           <ReviewAreas reviewList={reviews} modelId={props.match.params.id} />
+                           <ReviewAreas modelId={props.match.params.id} />
                         </Grid>
 
 

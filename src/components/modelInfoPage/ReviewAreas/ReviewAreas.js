@@ -21,10 +21,12 @@ import { useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
 import { checkOwner } from '../../../actions/castings';
+import { postReviews, getReviews } from '../../../actions/reviews';
+import Pagination from "@mui/material/Pagination";
 
 const useStylesOfTemplate = makeStyles(style);
 
-export default function ReviewAreas({ reviewList, modelId }) {
+export default function ReviewAreas({ modelId }) {
    const dispatch = useDispatch();
    const [name, setName] = useState('');
    const classes = useStylesOfTemplate();
@@ -32,6 +34,10 @@ export default function ReviewAreas({ reviewList, modelId }) {
    const [photo, setPhoto] = useState('')
    const isOwned = useSelector((state) => state.castings);
    const [check, setCheck] = useState(false);
+   const [review, setReview] = useState('');
+   const reviews = useSelector((state) => state.reviews);
+   const [reviewsList, setReviewsList] = useState([]);
+   const [pageNo, setPageNo] = useState(1);
 
    useEffect(() => {
       if (Cookies.get('name') !== undefined) {
@@ -41,12 +47,41 @@ export default function ReviewAreas({ reviewList, modelId }) {
    }, [name])
 
    useEffect(() => {
+      dispatch(getReviews(modelId, pageNo))
       dispatch(checkOwner(Cookies.get('jwt'), modelId));
    }, [])
 
    useEffect(() => {
       setCheck(isOwned);
    }, [isOwned])
+
+   useEffect(() => {
+      setReviewsList(reviews);
+   }, [reviews])
+
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      const jwt = Cookies.get('jwt')
+      const axiosConfig = {
+         headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+            'authorization': 'Bearer ' + jwt
+         }
+      };
+      const postData = {
+         review: review,
+         modelId: modelId
+      }
+      await dispatch(postReviews(postData, axiosConfig));
+      dispatch(getReviews(modelId, pageNo))
+      setReview('')
+   }
+
+   const handleChange = (event, value) => {
+      setPageNo(value)
+      dispatch(getReviews(modelId, value))
+   }
 
    const CssTextField = styled(TextField)({
       '& label.Mui-focused': {
@@ -89,9 +124,9 @@ export default function ReviewAreas({ reviewList, modelId }) {
                      </h1>
                      <Divider className={classesRreview.divider_Style} ></Divider>
                      {
-                        (reviewList.reviewList !== undefined) ? (
-                           (reviewList.reviewList.length > 0) ? (
-                              (reviewList.reviewList.map(review => (
+                        (reviewsList.reviewList !== undefined) ? (
+                           (reviewsList.reviewList.length > 0) ? (
+                              (reviewsList.reviewList.map(review => (
                                  <Media
                                     className={classesRreview.media}
                                     avatar={review.brand.logo}
@@ -117,7 +152,16 @@ export default function ReviewAreas({ reviewList, modelId }) {
                         ) : null
                      }
                      <div>
-                        <Paginations
+                        <Pagination 
+                        className={
+                              classes.textCenter + " " + classes.justifyContentCenter
+                           }
+                           onChange={handleChange} 
+                           defaultPage={parseInt(pageNo)} 
+                           count={reviewsList.totalPage} 
+                           showFirstButton 
+                           showLastButton/>
+                        {/* <Paginations
                            className={
                               classes.textCenter + " " + classes.justifyContentCenter
                            }
@@ -125,29 +169,26 @@ export default function ReviewAreas({ reviewList, modelId }) {
                               { text: "«" },
                               { active: true, text: 1 },
                               { text: 2 },
-                              { text: 3 },
-                              { text: 4 },
-                              { text: 5 },
+                              // { text: 3 },
+                              // { text: 4 },
+                              // { text: 5 },
                               { text: "»" },
                            ]}
                            color="primary"
-                        />
+                        /> */}
                      </div>
                      {check === true ? (
                         name === '' ?
                            null
                            :
-                           (<><h1 className={classes.textCenter}>
-                              Gửi nhận xét của bạn <br />
-
-                           </h1>
+                           (<>
                               <span className={classesRreview.Name}>{name}</span>
                               <Media
                                  avatar={photo}
                               />
                               <div className={classesRreview.vi}>
 
-                                 <CssTextField
+                                 <TextField
                                     className={classesRreview.cmt}
                                     id="standard-multiline-static"
                                     label=""
@@ -155,9 +196,11 @@ export default function ReviewAreas({ reviewList, modelId }) {
                                     rows={4}
                                     variant="standard"
                                     placeholder="Chia sẻ suy nghĩ của bạn......"
+                                    onChange={(e) => setReview(e.target.value)}
+                                    value={review}
                                  />
                               </div>
-                              <Button variant="outlined">Chia sẻ</Button>
+                              <Button variant="outlined" onClick={handleSubmit}>Chia sẻ</Button>
                            </>
                            )) : null
                      }

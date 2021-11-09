@@ -8,3 +8,11 @@ export const getReviews = (id, pageNo) => async (dispatch) => {
       console.log(error.message);
    }
 };
+
+export const postReviews = (postData, axiosConfig) => async (dispatch) => {
+   try {
+      await api.postReview(postData, axiosConfig);
+   } catch (error) {
+      console.log(error.message);
+   }
+};
