@@ -35,6 +35,7 @@ function SignUpDialog(props) {
    const dispatch = useDispatch();
    const categories = useSelector((state) => state.categories);
    const brands = useSelector((state) => state.brands);
+   const signup = useSelector((state) => state.signup);
 
    useEffect(() => {
       dispatch(getCategories())
@@ -71,13 +72,33 @@ function SignUpDialog(props) {
             "Access-Control-Allow-Origin": "*",
          }
       };
-      dispatch(signupBrand(postData, axiosConfig));
+      await dispatch(signupBrand(postData, axiosConfig));
       // setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
    };
 
+   // useEffect(() => {
+   //    console.log(brands);
+   //    if (brands.success === true) {
+   //       setSignupModal(false)
+   //       document.getElementById('signupSuccess').style.display = 'block';
+   //       setTimeout(
+   //          () => document.getElementById('signupSuccess').style.display = 'none',
+   //          3000
+   //       );
+   //       setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
+   //    } else if (brands.success === false) {
+   //       document.getElementById('signupFail').style.display = 'block';
+   //       setTimeout(
+   //          () => document.getElementById('signupFail').style.display = 'none',
+   //          3000
+   //       );
+   //    }
+   //    dispatch(clear())
+   // }, [brands])
+
    useEffect(() => {
-      console.log(brands);
-      if (brands.success === true) {
+      console.log(signup);
+      if (signup.success === true) {
          setSignupModal(false)
          document.getElementById('signupSuccess').style.display = 'block';
          setTimeout(
@@ -85,7 +106,7 @@ function SignUpDialog(props) {
             3000
          );
          setBrandData({ name: '', lastName: '', email: '', phone: '', address: '', type: '' });
-      } else if (brands.success === false) {
+      } else if (signup.success === false) {
          document.getElementById('signupFail').style.display = 'block';
          setTimeout(
             () => document.getElementById('signupFail').style.display = 'none',
@@ -93,7 +114,7 @@ function SignUpDialog(props) {
          );
       }
       dispatch(clear())
-   }, [brands])
+   }, [signup])
 
    return (
       <Dialog
