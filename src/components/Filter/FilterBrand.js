@@ -42,21 +42,19 @@ export default function StandardImageList(props) {
    const [checkSearch, setCheckSearch] = React.useState(true);
 
    const brands = useSelector((state) => state.brands);
-   const styles = useSelector((state) => state.styles);
    const categories = useSelector((state) => state.categories);
    const history = useHistory();
    const dispatch = useDispatch();
-   useEffect(() => {
-      dispatch(getCategories());
-   }, [])
-   console.log("caa",categories.brandCateList);
+
+   
    useEffect(() => {
       if (checkSearch) {
          dispatch(getBrands(pageNo));
       }
       dispatch(getStyles());
+      dispatch(getCategories());
    }, [pageNo]);
-
+   console.log("caa",brands.brandList);
    const data = {
       address: valueAddress,
       category: valueMajor,
@@ -198,6 +196,7 @@ export default function StandardImageList(props) {
                }}
             >
                <GridContainer spacing={1}>
+                  {console.log("caa1",brands.brandList)}
                   {brands.brandList !== undefined
                      ? brands.brandList.length > 0
                         ? brands.brandList.map((brand) => (

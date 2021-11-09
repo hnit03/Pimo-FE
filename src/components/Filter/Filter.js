@@ -370,7 +370,7 @@ export default function StandardImageList(props) {
                            )}
                         </li>
                      </ul> */}
-                     <p className={classes.titleSearch}>Tìm kiếm theo màu da</p>
+                     {/* <p className={classes.titleSearch}>Tìm kiếm theo màu da</p>
                      <FormGroup className={classes.containerCheckBox}>
                         {searchBySkinColorValue.map((value, index) => (
                            <FormControlLabel
@@ -384,7 +384,7 @@ export default function StandardImageList(props) {
                               label={<p className={classes.customLabelCheckBox}>{value.name}</p>}
                            />
                         ))}
-                     </FormGroup>
+                     </FormGroup> */}
                      <p className={classes.titleSearch}>Tìm kiếm theo hình xăm</p>
                      <FormControl className={classes.formControl}>
                         <RadioGroup

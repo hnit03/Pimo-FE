@@ -12,8 +12,12 @@ export const signupBrand = (postData, axiosConfig) => async (dispatch) => {
 
 export const getBrands = (pageNo) => async (dispatch) => {
    try {
+      
       const { data } = await api.fetchBrands(pageNo);
+      
       dispatch({ type: 'FETCH_BRANDS', payload: data });
+      console.log("brandData1");
+      console.log("brandData",data);
    } catch (error) {
       console.log(error.message);
    }
@@ -51,9 +55,9 @@ export const getInfo = (id) => async (dispatch) => {
 };
 
 export const clear = () => async (dispatch) => {
-   try {
-      dispatch({ type: 'CLEAR', payload: true });
-   } catch (error) {
-      console.log(error.message);
-   }
+   // try {
+   //    dispatch({ type: 'CLEAR', payload: true });
+   // } catch (error) {
+   //    console.log(error.message);
+   // }
 };

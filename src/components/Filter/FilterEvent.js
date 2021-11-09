@@ -7,15 +7,12 @@ import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControl from "@mui/material/FormControl";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useDispatch } from "react-redux";
-import { getCastings } from "../../actions/castings";
+import { getCastings, searchCasting } from "../../actions/castings";
 import { useSelector } from "react-redux";
 import DateTime from "./DateTimePicker";
 import { searchByAddressEvent } from "./AddressData.js";
@@ -24,7 +21,8 @@ import { searchByMonopolytimeValue } from "./RadioData.js";
 import { listTop3Label } from "./Top3StyleData";
 import IconButton from "@mui/material/IconButton";
 import Autocomplete from "@mui/material/Autocomplete";
-import { searchByStyleValue, searchBySexValue } from './CheckBoxData';
+import { getStyles } from '../../actions/styles';
+import { searchBySexValue } from './CheckBoxData';
 import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
 import { useHistory } from "react-router-dom";
@@ -56,6 +54,7 @@ export default function StandardImageList(props) {
    const classes = useStyles();
    const [checkSearch, setCheckSearch] = React.useState(true);
    const [searchName, setSearchName] = React.useState("");
+   const [searchAddress, setSearchAddress] = React.useState("");
    const [valueAddress, setValueAddress] = React.useState("");
    const [valueDateTimeStart, setValueDateTimeStart] = React.useState(null);
    const [valueDateTimeEnd, setValueDateTimeEnd] = React.useState(null);
@@ -64,15 +63,17 @@ export default function StandardImageList(props) {
    var [checkBoxSex, setCheckBoxSex] = React.useState([]);
    var [valueChoose, setValueChoose] = React.useState([]);
    const [pageNo, setPageNo] = React.useState(props.pageOffset);
-
    const castings = useSelector((state) => state.castings);
-
+   const styles = useSelector((state) => state.styles);
 
    const history = useHistory();
    const dispatch = useDispatch();
 
    useEffect(() => {
-      dispatch(getCastings(pageNo));
+      if (checkSearch) {
+         dispatch(getCastings(pageNo));
+      }
+      dispatch(getStyles());
    }, [pageNo]);
 
    const handleChangePage = (event, value) => {
@@ -123,18 +124,25 @@ export default function StandardImageList(props) {
          "name": searchName,
          "style": styleList,
          "sex": styleSex,
-         "address": valueAddress,
+         "address": searchAddress,
          "dateTime": {
-            'start': dateTimeStart,
+            'start': dateTimeStart ,
             'end': dateTimeEnd,
          }
       }
-      // if(valueAddress === '' && valueMajor === null){
-      //    setCheckSearch(true);
-      // } else {
-      //    setCheckSearch(false)
-      // }
-      // dispatch(searchCasting(data, pageNo));
+      if(searchName === '' &&
+       styleList.length === 0 && 
+       styleSex.length === 0 &&
+       valueAddress === '' && 
+       dateTimeStart === '' && 
+       dateTimeEnd === ''
+       ){
+         setCheckSearch(true);
+      } else {
+         setCheckSearch(false)
+      }
+      {console.log("vihi")}
+      dispatch(searchCasting(data, pageNo));
    };
 
    const handlerFilter = (e, value, item) => {
@@ -143,8 +151,9 @@ export default function StandardImageList(props) {
 
             break;
          case 2:
-            const updateStyle = searchByStyleValue.map((value) => {
+            const updateStyle = styles.style.map((value) => {
                value.checked = value.id === item.id ? !value.checked : value.checked;
+
                return value;
             });
             setCheckBoxStyle(updateStyle);
@@ -168,7 +177,7 @@ export default function StandardImageList(props) {
                return value;
             });
             setCheckBoxStyle(clearStyle);
-
+            setSearchAddress("");
             setSearchName("");
             setValueAddress("");
             setValueDateTimeStart(null);
@@ -223,9 +232,19 @@ export default function StandardImageList(props) {
                      </div>
 
                      <p className={classes.titleSearch}>Địa chỉ</p>
-                     <Autocomplete
-                        disablePortal
-                        id="combo-box-demo"
+                     <TextField 
+                     id="outlined-basic" 
+                     label="Địa chỉ" 
+                     variant="outlined" 
+                     className={classes.searchHeight}
+                     value={searchAddress}
+                     onChange={(e) => setSearchAddress(e.target.value)}
+                     sx={{ marginTop: "1rem" }}
+                     style={{width:'45vh'}}
+                     />
+                     {/* <Autocomplete
+                       
+                       
                         options={searchByAddressEvent}
                         value={valueAddress}
                         onChange={(e, value) => {
@@ -242,7 +261,7 @@ export default function StandardImageList(props) {
 
                            />
                         )}
-                     />
+                     /> */}
 
                      <p className={classes.titleSearch}>Thời gian</p>
                      <DateTime value={valueDateTimeStart} setValue={setValueDateTimeStart} label='thời gian bắt đầu' checked={checkInputDate} />
@@ -267,23 +286,31 @@ export default function StandardImageList(props) {
                         ))}
                      </FormGroup>
                      <p className={classes.titleSearch}>Phong cách</p>
-                     <FormGroup sx={{ marginBottom: '2.5rem' }} className={classes.containerCheckBox}>
-                        {searchByStyleValue.map((value, index) => (
-                           <FormControlLabel
-                              control={
-                                 <Checkbox
-                                    checked={value.checked}
-                                    value={value.id}
-                                    onClick={(input) => handlerFilter(input, 2, value)}
-                                    className={classes.checkBox}
-                                 />
-                              }
-                              label={
-                                 <p className={classes.customLabelCheckBox}>{value.name}</p>
-                              }
-                           />
-                        ))}
-                     </FormGroup>
+                     <div className={classes.containerCheckBox} style={{ marginBottom: "2rem" }}>
+                        {
+                           (styles.style !== undefined) ?
+                              (
+                                 (styles.style.length > 0) ? (
+                                    styles.style.map(style => (
+                                       <FormControlLabel
+                                          control={
+                                             <Checkbox
+                                            
+                                                className={classes.checkBox}
+                                                checked={style.checked}
+                                                onClick={(input) => handlerFilter(input, 2, style)}
+                                             />
+                                          }
+                                          label={
+                                             <p className={classes.customLabelCheckBox}>{style.name}</p>
+                                          }
+                                       />
+                                    ))
+                                 ) : null
+                              ) : null
+                        }
+                        
+                     </div>
                   </form>
                </GridItem>
             </GridContainer>
