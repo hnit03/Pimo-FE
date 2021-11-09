@@ -68,7 +68,7 @@ export default function StandardImageList(props) {
 
    const history = useHistory();
    const dispatch = useDispatch();
-
+   window.scrollTo(0, 0);
    useEffect(() => {
       if (checkSearch) {
          dispatch(getCastings(pageNo));

@@ -13,8 +13,11 @@ const useStyles = makeStyles((theme) => ({
 
    },
    img:{
-    margin: '0% 38% 5rem 40%',
-   }
+    margin: '0% 38% 5rem 44%',
+    width:'6.5rem',
+    height:'6.5rem',
+   },
+
 }
 ));
 export default useStyles;

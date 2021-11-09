@@ -57,7 +57,6 @@ function CardBlog({ ...rest }) {
                               </p>
                               <Button
                                  href="#pablo"
-                                 
                                  onClick={onClickSearchEvent}
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
                                  // onClick={(e) => e.preventDefault()}
@@ -129,7 +128,6 @@ function CardBlog({ ...rest }) {
                                  href="#pablo"
                                  onClick={onClickSearchModel}
                                  style={{ backgroundColor: '#f69cb8', color: 'white', padding: '0.7rem' }}
-                                 onClick={(e) => e.preventDefault()}
                                  color="transparent"
                               >
                                  <div style={{

@@ -65,7 +65,7 @@ export default function StandardImageList(props) {
 
    const models = useSelector((state) => state.models);
    const styles = useSelector((state) => state.styles);
-
+   window.scrollTo(0, 0);
    const dispatch = useDispatch();
    useEffect(() => {
       if (checkSearch) {
