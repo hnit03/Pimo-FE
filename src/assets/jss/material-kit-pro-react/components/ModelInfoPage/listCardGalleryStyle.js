@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize:"3.5rem",
         fontWeight:"bold",
         textAlign:"center",
-        marginBottom:0,
+        marginBottom:'1rem !important',
         marginTop:'3rem',
     },
     galleryDes:{
@@ -42,6 +42,13 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor:'pink !important',
             borderColor:'pink !important',
         }
+    },
+    noneText:{
+        fontFamily: "Calibri, sans-serif",
+        fontSize: '1.2rem',
+        marginLeft:'23rem',
+        marginTop:'1.5rem !important',
+        marginBottom:'2rem',
     }
 }
 ));

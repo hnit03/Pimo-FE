@@ -18,6 +18,7 @@ export default function ListEvent({ castings }) {
                 <Grid container spacing={3} item xs={10.6} >
                 {
                     castings.castings != undefined ?
+                    castings.castings.length>0?
                         castings.castings.map((item) =>
                         item.casting.status?
                             <Grid item xs={4} >
@@ -37,7 +38,7 @@ export default function ListEvent({ castings }) {
                                     img={item.casting.poster}
                                 />
                             </Grid>:null
-                        )
+                        ):<span className={classes.noneText}>Nhãn hàng này chưa tổ chức chiến dịch nào</span>
                         : null
                 }
                 </Grid>

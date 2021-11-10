@@ -78,8 +78,10 @@ export default function CenterTabs({ model }) {
    return (
       <div className={classes.box}>
          <h1 className={classes.h1} >BỘ SƯU TẬP CÁ NHÂN</h1>
-
-         {view == true ?
+         
+         {
+            listName.length>0?
+            view == true ?
             (<div className={classes.button}>
                <ViewComfyIcon className={classes.iconViewCarouse} onClick={() => changeViewType(false)} />
                <ViewCarouselIcon className={classes.iconViewComfyIcon} onClick={() => changeViewType(true)} />
@@ -87,36 +89,38 @@ export default function CenterTabs({ model }) {
             (<div className={classes.button}>
                <ViewComfyIcon className={classes.iconViewCarouseChange} onClick={() => changeViewType(false)} />
                <ViewCarouselIcon className={classes.iconViewComfyIconChange} onClick={() => changeViewType(true)} />
-            </div>)
+            </div>):<span className={classes.noneText}>Người mẫu này chưa có bộ sưu tập cá nhân</span>
          }
-
-         <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 500 }}
-            className={classes.innerTabs}>
-            <Tabs
-               className={classes.tabs}
-               orientation="vertical"
-               variant="scrollable"
-               value={value}
-               onChange={handleChange}
-               aria-label="Vertical tabs example"
-               sx={{ borderRight: 1, borderColor: 'divider' }}
-            >
+         {
+            listName.length>0?
+            <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 500 }}
+               className={classes.innerTabs}>
+               <Tabs
+                  className={classes.tabs}
+                  orientation="vertical"
+                  variant="scrollable"
+                  value={value}
+                  onChange={handleChange}
+                  aria-label="Vertical tabs example"
+                  sx={{ borderRight: 1, borderColor: 'divider' }}
+               >
+                  {
+                     listName.map((item, index) => (
+                        <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
+                     )
+                     )
+                  }
+               </Tabs>
                {
-                  listName.map((item, index) => (
-                     <Tab className={classes.tab} label={item.name} {...a11yProps({ index })} />
+                  listImage.map((item, index) => (
+                     <TabPanel value={value} index={index}>
+                        {view == true ? <SectionCarousel listCal={item.image} bool={true} /> : <QuiltedImageList list={item.image} bool={true}/>}
+                     </TabPanel>
                   )
                   )
                }
-            </Tabs>
-            {
-               listImage.map((item, index) => (
-                  <TabPanel value={value} index={index}>
-                     {view == true ? <SectionCarousel listCal={item.image} bool={true} /> : <QuiltedImageList list={item.image} bool={true}/>}
-                  </TabPanel>
-               )
-               )
-            }
-         </Box>
+            </Box>:null
+         }
       </div>
    );
 }

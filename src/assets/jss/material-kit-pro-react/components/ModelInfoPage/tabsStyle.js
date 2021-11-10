@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     box: {
         backgroundColor: 'pink',
-        height: '41rem',
+        //height: '41rem',
         margin: 'auto',
         width: '75rem',
         background: 'white !important',
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '3rem',
         textAlign: 'center',
         paddingTop: '2.5rem',
-        paddingBottom: '0',
+        paddingBottom: '1rem',
         marginBottom: '0.6rem',
 
     },
@@ -87,6 +87,13 @@ const useStyles = makeStyles((theme) => ({
         '&.Mui-focusVisible': {
             backgroundColor: '#fc7198',
         },
+    },
+    noneText:{
+        fontFamily: "Calibri, sans-serif",
+        fontSize: '1.2rem',
+        marginLeft:'26.5rem',
+        marginTop:'3rem',
+        marginBottom:'2rem',
     }
 }
 ));

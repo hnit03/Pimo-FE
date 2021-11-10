@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: 0,
         marginBottom: '1rem',
         marginTop: '3rem',
-        marginLeft:'-2rem',
+        marginLeft:'-6.5rem',
+        fontSize:"3.5rem",
     },
     divider_Style: {
         marginLeft:'5% !important',
@@ -74,6 +75,13 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'-0.5rem',
         marginBottom:'4rem',
 
+    },
+    noneText:{
+      fontFamily: "Calibri, sans-serif",
+      fontSize: '1.2rem',
+      marginLeft:'19rem',
+      marginTop:'1.5rem',
+      marginBottom:'3rem',
     }
 }
 ));

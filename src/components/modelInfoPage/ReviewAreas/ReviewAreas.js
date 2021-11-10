@@ -152,11 +152,11 @@ export default function ReviewAreas({ modelId }) {
                                     }
                                  />
                               )))
-                           ) : null
+                           ) : <span className={classesRreview.noneText}>Người mẫu này chưa được nhận xét từ nhãn hàng</span>
                         ) : null
                      }
                      <div>
-                        <Pagination style={{ alignItems: "center", marginBottom: "3%", marginLeft: "28rem" }}
+                        <Pagination style={{ alignItems: "center", marginBottom: "3%", marginLeft: "28rem", marginTop: "2%" }}
                            className={
                               classes.textCenter + " " + classes.justifyContentCenter
                            }

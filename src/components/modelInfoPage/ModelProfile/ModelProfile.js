@@ -41,27 +41,30 @@ export default function ModelProfile(props) {
                     </Grid>
                     <Grid item xs={6} >
                         <ul className={classes.ul}>
-                            {props.instagram == "" ?
+                            {props.instagram !==  null? 
+                                props.instagram == "" ?
                                 null : <li style={{ display: 'flex', }} className={classes.li}>
                                     <InstagramIcon className={classes.icon} style={{ color: '#C7125E' }} />
                                     <a
                                         href={props.instagram}
                                         className={classes.text} target="_blank"><span className={classes.ins}>Instagram</span></a>
-                                </li>}
-                            {props.facebook == "" ? null :
+                                </li>:null}
+                            {props.facebook !== null ?
+                                props.facebook == "" ? null :
                                 <li style={{ display: 'flex', }} className={classes.li} >
                                     <FacebookIcon className={classes.icon} style={{ color: '#0775E8' }} />
                                     <a href={props.facebook} className={classes.text} target="_blank">
                                         <span className={classes.fa}>Facebook</span></a>
-                                </li>
+                                </li>:null
                                 
                             }
-                            {props.twitter == "" ? null :
-                            <li style={{ display: 'flex', }} className={classes.li}>
-                                <TwitterIcon className={classes.icon} style={{ color: '#1C99E6' }} />
-                                <a href={props.twitter} className={classes.text} target="_blank">
-                                    <span className={classes.twi}>Twitter</span></a>
-                            </li>
+                            {props.twitter !== null ?
+                                props.twitter == "" ? null :
+                                <li style={{ display: 'flex', }} className={classes.li}>
+                                    <TwitterIcon className={classes.icon} style={{ color: '#1C99E6' }} />
+                                    <a href={props.twitter} className={classes.text} target="_blank">
+                                        <span className={classes.twi}>Twitter</span></a>
+                                </li>:null
                             }
 
 
@@ -73,7 +76,7 @@ export default function ModelProfile(props) {
             </div >
             <Divider className={classes.divider_Style} ><span className={classes.textInDiv}>Giới thiệu</span></Divider>
             <div className={classes.textLocation}>
-                {props.aboutMe}
+                {props.aboutMe===null?'Người mẫu này chưa điền mô tả bản thân':props.aboutMe}
             </div>
         </Root >
     );

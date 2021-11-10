@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3)',
     marginBottom: '3rem',
     marginTop:'2rem',
-    paddingBottom: '5rem'
+    paddingBottom: '2rem'
 
   },
   logoBrand: {
@@ -75,6 +75,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '0',
     marginBottom:'1rem',
 },
+noneText:{
+  fontFamily: "Calibri, sans-serif",
+  fontSize: '1.2rem',
+  marginLeft:'23rem',
+  marginTop:'1.5rem',
+  marginBottom:'1rem',
+}
 }
 ));
 export default useStyles;
